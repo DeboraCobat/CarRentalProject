@@ -12,3 +12,19 @@
 
 3. Need assistance / figure things out
 - where to start/ 
+
+2023/03/24 Gabriel
+
+
+1. Done / not done since last scrum:
+- contributed to project plan
+- modified as per teacher recommendation
+- project proposal uploaded
+
+2. To do until next Scrum:
+- setup the initial project
+- setup the database
+
+3. Need assistance / figure things out
+- what the next steps are
+- figure out gitpush repository
