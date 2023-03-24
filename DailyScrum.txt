@@ -6,25 +6,9 @@
 - build first Backlog
 
 2. To do until next Scrum:
-- figure out how to add car listings
-- understand how to implement 
-
-3. Need assistance / figure things out
-
-
-2023/03/24 Gabriel
-
-
-1. Done / not done since last scrum:
-- contributed to project plan
-- modified as per teacher recommendation
-- project proposal uploaded
-
-2. To do until next Scrum:
 - setup the initial project
-- setup the database
+- setup database
+- build the cars listing to admin
 
 3. Need assistance / figure things out
-- what the next steps are
-- figure out gitpush repository
-- 
+- where to start/ 
