@@ -1,18 +1,3 @@
-2023/03/24 Debora
-
-1. Done / not done since last scrum:
-- created project plan
-- project proposal uploaded
-- build first Backlog
-
-2. To do until next Scrum:
-- setup the initial project
-- setup database
-- build the cars listing to admin
-
-3. Need assistance / figure things out
-- where to start/ 
-
 2023/03/24 Gabriel
 
 
@@ -24,6 +9,7 @@
 2. To do until next Scrum:
 - setup the initial project
 - setup the database
+- start work with the core /url - vehicle listing
 
 3. Need assistance / figure things out
 - what the next steps are
