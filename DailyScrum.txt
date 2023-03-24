@@ -9,7 +9,9 @@
 2. To do until next Scrum:
 - setup the initial project
 - setup the database
-- start work with the core /url - vehicle listing
+- start work with the core /url: vehicle listing exibithion
+ - BE: getAllVehicles() return json
+ - FE: Display Admin Panel/ Display vehicles listing
 
 3. Need assistance / figure things out
 - what the next steps are
