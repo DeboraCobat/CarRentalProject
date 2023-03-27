@@ -18,7 +18,7 @@
 - figure out gitpush repository
 _______________________________________________________________________
 
-2023/03/24 Gabriel
+2023/03/27 Gabriel
 1. Done / not done since last scrum:
 - add and view a list of vehicles functionality has been added
 

@@ -1,12 +1,12 @@
-{% for admin %}
+{% extends "master.html.twig" %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Admin Panel</title>
-  </head>
-  <body>
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to Admin Panel</h1>
+    <p>Select an option you wish to manage</p> </br>
+
     <nav>
       <ul>
         <li><a href="userslist.html.twig">Users</a></li>
@@ -14,9 +14,6 @@
         <li><a href="reservationslist.html.twig">Reservations</a></li>
       </ul>
     </nav>
-    <h1>Welcome to Admin Panel</h1>
-    <p>Select an option you wish to manage</p>
-  </body>
-</html>
+    
 
-{% endfor admin %}
+{% endblock content %}

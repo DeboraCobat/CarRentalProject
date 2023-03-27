@@ -38,6 +38,17 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 /////////////////////////////////////////////////////////////////////// UPDATE
 // URL HANDLERS GO BELOW
 
+// ADMIN PANEL
+
+// STATE 1: DISPLAY admin panel
+
+$app->get('/adminpanel', function ($request, $response, $args) {
+    return $this->get('view')->render($response, 'adminpanel.html.twig');
+});
+
+
+// VEHICLES
+
 // STATE 1: DISPLAY add vehicle form
 $app->get('/addvehicle', function ($request, $response, $args) {
     return $this->get('view')->render($response, 'addvehicle.html.twig');
@@ -48,7 +59,7 @@ $app->get('/addvehicle', function ($request, $response, $args) {
 //'data' => $data, 
 
 // DISPLAY all vehicles
-$app->get('/vehicles', function ($request, $response, $args) {
+$app->get('/vehicleslist', function ($request, $response, $args) {
     $vehicles = DB::query("SELECT * FROM vehicles");
     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
