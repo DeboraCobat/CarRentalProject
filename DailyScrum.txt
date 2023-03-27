@@ -27,6 +27,7 @@ _______________________________________________________________________
 - setup database (Debora)
 - test the admin panel templates
 - focus on login/registration
+- vehicle image upload (image shows in uploads directory and filepath shows in database)
 
 3. Need assistance / figure things out
 - how to manage databases when using 2 servers
