@@ -1040,6 +1040,57 @@
             "install-path": "../slim/http"
         },
         {
+            "name": "slim/middleware",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slimphp/Slim-Middleware.git",
+                "reference": "1190251a89a3044eda9d16dcb456dc92dba2d0c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slimphp/Slim-Middleware/zipball/1190251a89a3044eda9d16dcb456dc92dba2d0c8",
+                "reference": "1190251a89a3044eda9d16dcb456dc92dba2d0c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "slim/slim": ">=2.3.0"
+            },
+            "time": "2013-09-18T18:13:40+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Slim": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
+                }
+            ],
+            "description": "Slim Framework middleware",
+            "homepage": "http://github.com/codeguy/Slim",
+            "keywords": [
+                "middleware",
+                "slim"
+            ],
+            "support": {
+                "issues": "https://github.com/slimphp/Slim-Middleware/issues",
+                "source": "https://github.com/slimphp/Slim-Middleware/tree/1.0.0"
+            },
+            "abandoned": true,
+            "install-path": "../slim/middleware"
+        },
+        {
             "name": "slim/php-view",
             "version": "3.2.0",
             "version_normalized": "3.2.0.0",
