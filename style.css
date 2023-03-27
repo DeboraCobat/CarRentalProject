@@ -16,3 +16,12 @@ body {
   background-color: yellow;
   color: red;
 }
+
+/* Navigadion sidebar for Admin Panel -------*/
+
+/* Style for the left sidebar */
+
+.sidebar {
+  flex: 0 0 200px; /* Set width of sidebar */
+
+}

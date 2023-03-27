@@ -22,7 +22,7 @@ AppFactory::setContainer($container);
 // Set view in Container
 // tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
 $container->set('view', function () {
-    return Twig::create(__DIR__ . '/templates', ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
+    return Twig::create(__DIR__ . '/templates'); //, ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
 });
 
 // creates a new instance of a Slim Framework application
@@ -35,8 +35,20 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 
 
-/////////////////////////////////////////////////////////////////////// UPDATE
+/////////////////////////////////////////////////////////////////////
+
 // URL HANDLERS GO BELOW
+
+// ADMIN PANEL
+
+// STATE 1: DISPLAY admin panel
+
+$app->get('/adminpanel', function ($request, $response, $args) {
+    return $this->get('view')->render($response, 'adminpanel.html.twig');
+});
+
+
+// VEHICLES
 
 // STATE 1: DISPLAY add vehicle form
 $app->get('/addvehicle', function ($request, $response, $args) {
@@ -48,10 +60,21 @@ $app->get('/addvehicle', function ($request, $response, $args) {
 //'data' => $data, 
 
 // DISPLAY all vehicles
-$app->get('/vehicles', function ($request, $response, $args) {
+$app->get('/vehicleslist', function ($request, $response, $args) {
     $vehicles = DB::query("SELECT * FROM vehicles");
     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
+
+// get the name of the uploaded file
+$filename = $_FILES['file']['name'];
+// choose where to save the uploaded file
+$location = "uploads/".$filename;
+// save the uploaded file to the local filesystem
+if( move_uploaded_file($_FILES['file']['tmp_name'], $location)){
+    echo 'File uploaded successfully';
+} else {
+    echo 'Error uploading file.';
+}
 
 // STATE 2&3: receiving a submission
 $app->post('/addvehicle', function ($request, $response, $args) {
