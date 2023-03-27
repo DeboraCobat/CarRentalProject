@@ -119,9 +119,9 @@ $app->post('/addvehicle', function ($request, $response, $args) {
         $errorList[] = "Daily rate must be a valid float number between 0 and 10000";
         $dailyRate = "";
     }
-    if (!in_array($availability, array('true', 'false'))) {
-        $errorList[] = "Availability must be either 'true' or 'false'";
-        $availability = "";
+    if (!in_array($availability, array(0, 1))) {
+        $errorList[] = "Availability must be either 0 or 1";
+        $availability = 0;
     }
     if (filter_var($seats, FILTER_VALIDATE_INT) === false || $seats < 1 || $seats > 20) {
         $errorList[] = "Number of seats must be a valid integer between 1 and 20";
