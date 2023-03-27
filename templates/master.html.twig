@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css"/>
+        <title>{% block title %}{% endblock %}AutoGo</title>
+        {% block addHead %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="centeredContent">{% block content %}{% endblock %}
+            <div id="footer">
+                {% block footer %}
+                    &copy; Copyright 2023 by <a href="http://carrentalproject.org/">you</a>.
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
