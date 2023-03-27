@@ -2,11 +2,16 @@
 <html>
     <head>
         {% block addHead %}
-        <link rel="stylesheet" href="/style.css"/>
-        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">        <title>{% block title %}{% endblock %}</title>
         {% endblock %}
     </head>
     <body>
+        <div class="sidebar">
+            {% include 'adminpanel.html.twig' %}
+        </div>
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
         <div id="centeredContent">{% block content %}{% endblock %}
             <div id="footer">
                 {% block footer %}

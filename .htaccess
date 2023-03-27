@@ -3,8 +3,8 @@ RewriteCond %{REQUEST_FILENAME} !-REQUEST_FILENAME
 RewriteRule ^ index.php [QSA,L]
 
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html.twig [NC,L]
+RewriteRule ^userslist$ userslist.html.twig [L]
+RewriteRule ^vehicleslist$ vehicleslist.html.twig [L]
+RewriteRule ^reservationslist$ reservationslist.html.twig [L]
 
-AddHandler php-cgi .twig
-Action php-cgi /cgi-bin/php.cgi
+
