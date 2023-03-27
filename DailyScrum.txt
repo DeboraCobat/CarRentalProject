@@ -16,3 +16,15 @@
 3. Need assistance / figure things out
 - what the next steps are
 - figure out gitpush repository
+_______________________________________________________________________
+
+2023/03/24 Gabriel
+1. Done / not done since last scrum:
+- add and view a list of vehicles functionality has been added
+
+2. To do until next Scrum:
+- be able to connect to the host
+- setup database (Debora)
+
+3. Need assistance / figure things out
+- how to manage databases when using 2 servers
