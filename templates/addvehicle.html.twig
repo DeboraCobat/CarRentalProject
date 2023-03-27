@@ -1,4 +1,6 @@
-{% extends "master.html.twig" %}
+{% extends "adminpanel.html.twig" %}
+
+{% block title %}Add Vehicle{% endblock %}
 
 {% block content %}
 
@@ -10,7 +12,10 @@
     </ul>
 {% endif %}
 
+<h1>Add a vehicle</h1>
+
 <form method="post" action="/addvehicle">
+<select
     <label for="make">Make:</label>
     <input type="text" id="make" name="make" value="{{ v.make }}"><br>
 

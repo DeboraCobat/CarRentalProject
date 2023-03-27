@@ -22,7 +22,7 @@ AppFactory::setContainer($container);
 // Set view in Container
 // tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
 $container->set('view', function () {
-    return Twig::create(__DIR__ . '/templates', ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
+    return Twig::create(__DIR__ . '/templates'); //, ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
 });
 
 // creates a new instance of a Slim Framework application
