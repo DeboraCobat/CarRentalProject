@@ -7,3 +7,7 @@ RewriteRule ^userslist$ userslist.html.twig [L]
 RewriteRule ^vehicleslist$ vehicleslist.html.twig [L]
 RewriteRule ^reservationslist$ reservationslist.html.twig [L]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbfc60ce796b95167615bce6f067a148ca8a7f21
