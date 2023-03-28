@@ -31,3 +31,30 @@ _______________________________________________________________________
 
 3. Need assistance / figure things out
 - how to manage databases when using 2 servers
+
+_______________________________________________________________________
+
+
+2023/03/28 Debora
+1. Done / not done since last scrum:
+- setup database (Debora)
+- image file path completed
+- started edit and delete functionality
+- admin panel menu fixed in all pages / test the admin panel templates
+- link twig templates: “add vehicle” button and link to “list of vehicles” - vehicle image upload (image shows in uploads directory and filepath shows in database)
+- availability 
+
+2. To do until next Scrum:
+- finish vehicle CRUD / finish edit and delete functionality
+- display the image in the vehicle list
+- focus on login/registration
+- implement the customers 
+- start implementing bootstrap (styling)
+
+3. Need assistance / figure things out
+- how to manage databases when using 2 servers
+- Cache problem
+- CSS link on twig templates
+- php files separated or just index?
+- separate databases
+- 405 Method Not Allowed
