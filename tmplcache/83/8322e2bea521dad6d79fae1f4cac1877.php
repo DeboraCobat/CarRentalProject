@@ -27,8 +27,10 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         $this->parent = false;
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'addHead' => [$this, 'block_addHead'],
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
             'content' => [$this, 'block_content'],
             'footer' => [$this, 'block_footer'],
         ];
@@ -41,57 +43,80 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         echo "<!DOCTYPE html>
 <html>
     <head>
-        <link rel=\"stylesheet\" href=\"/style.css\"/>
-        <title>";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
-        echo "AutoGo</title>
         ";
-        // line 6
+        // line 4
         $this->displayBlock('addHead', $context, $blocks);
-        // line 8
+        // line 7
         echo "    </head>
     <body>
-        <div id=\"centeredContent\">";
+        <div class=\"sidebar\">
+            ";
         // line 10
-        $this->displayBlock('content', $context, $blocks);
+        $this->loadTemplate("adminpanel.html.twig", "master.html.twig", 10)->display($context);
         // line 11
+        echo "        </div>
+        ";
+        // line 12
+        $this->displayBlock('body', $context, $blocks);
+        // line 13
+        echo "
+        ";
+        // line 14
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 15
+        echo "        <div id=\"centeredContent\">";
+        $this->displayBlock('content', $context, $blocks);
+        // line 16
         echo "            <div id=\"footer\">
                 ";
-        // line 12
+        // line 17
         $this->displayBlock('footer', $context, $blocks);
-        // line 15
+        // line 20
         echo "            </div>
         </div>
     </body>
 </html>";
     }
 
-    // line 5
+    // line 4
+    public function block_addHead($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 5
+        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/styles.css\">        <title>";
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+        ";
+    }
+
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 6
-    public function block_addHead($context, array $blocks = [])
+    // line 12
+    public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 7
-        echo "        ";
     }
 
-    // line 10
+    // line 14
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+    }
+
+    // line 15
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 12
+    // line 17
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 13
+        // line 18
         echo "                    &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 ";
     }
@@ -101,9 +126,14 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         return "master.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  95 => 13,  91 => 12,  85 => 10,  81 => 7,  77 => 6,  71 => 5,  64 => 15,  62 => 12,  59 => 11,  57 => 10,  53 => 8,  51 => 6,  47 => 5,  41 => 1,);
+        return array (  120 => 18,  116 => 17,  110 => 15,  104 => 14,  98 => 12,  86 => 5,  82 => 4,  75 => 20,  73 => 17,  70 => 16,  67 => 15,  65 => 14,  62 => 13,  60 => 12,  57 => 11,  55 => 10,  50 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -111,12 +141,17 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        <link rel=\"stylesheet\" href=\"/style.css\"/>
-        <title>{% block title %}{% endblock %}AutoGo</title>
         {% block addHead %}
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/styles.css\">        <title>{% block title %}{% endblock %}</title>
         {% endblock %}
     </head>
     <body>
+        <div class=\"sidebar\">
+            {% include 'adminpanel.html.twig' %}
+        </div>
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
         <div id=\"centeredContent\">{% block content %}{% endblock %}
             <div id=\"footer\">
                 {% block footer %}

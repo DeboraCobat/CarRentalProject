@@ -24,50 +24,25 @@ class __TwigTemplate_ed9ab034d8ed4ffa19037f8f402c6ad4 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "master.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("master.html.twig", "adminpanel.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        echo "Admin Panel";
-    }
-
-    // line 5
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 6
+        // line 20
         echo "
-<h1>Welcome to Admin Panel</h1>
-    <p>Select an option you wish to manage</p> </br>
-
-    <nav>
-      <ul>
-        <li><a href=\"userslist.html.twig\">Users</a></li>
-        <li><a href=\"http://carrentalproject.org/vehicleslist\">Vehicles</a></li>
-        <li><a href=\"reservationslist.html.twig\">Reservations</a></li>
-      </ul>
-    </nav>
-    
-
+<p>Select an option you wish to manage</p>
+  <nav>
+     <ul>
+      <li><a href=\"userslist\">Users</a></li>
+       <li><a href=\"vehicleslist\">Vehicles</a></li>
+       <li><a href=\"reservationslist\">Reservations</a></li>
+    </ul>
+  </nav>
 ";
     }
 
@@ -76,19 +51,14 @@ class __TwigTemplate_ed9ab034d8ed4ffa19037f8f402c6ad4 extends Template
         return "adminpanel.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  37 => 20,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"master.html.twig\" %}
+        return new Source("{# {% extends \"master.html.twig\" %}
 
 {% block title %}Admin Panel{% endblock %}
 
@@ -106,6 +76,16 @@ class __TwigTemplate_ed9ab034d8ed4ffa19037f8f402c6ad4 extends Template
     </nav>
     
 
-{% endblock content %}", "adminpanel.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\adminpanel.html.twig");
+{% endblock content %} #}
+
+<p>Select an option you wish to manage</p>
+  <nav>
+     <ul>
+      <li><a href=\"userslist\">Users</a></li>
+       <li><a href=\"vehicleslist\">Vehicles</a></li>
+       <li><a href=\"reservationslist\">Reservations</a></li>
+    </ul>
+  </nav>
+", "adminpanel.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\adminpanel.html.twig");
     }
 }
