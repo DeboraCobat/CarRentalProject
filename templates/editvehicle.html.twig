@@ -1,0 +1,53 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Edit Vehicle{% endblock %}
+
+{% block content %}
+
+{% if errorList %}
+<ul>
+{% for error in errorList %}
+<li>{{ error }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h1>Edit vehicle</h1>
+<form method="post" action="/editvehicle/{{ v.id }}" enctype="multipart/form-data">
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" value="{{ v.make }}"><br>
+
+    <label for="model">Model:</label>
+<input type="text" id="model" name="model" value="{{ v.model }}"><br>
+
+<label for="year">Year:</label>
+<input type="number" id="year" name="year" value="{{ v.year }}"><br>
+
+<label for="color">Color:</label>
+<input type="text" id="color" name="color" value="{{ v.color }}"><br>
+
+<label for="license_plate">License Plate:</label>
+<input type="text" id="license_plate" name="license_plate" value="{{ v.license_plate }}"><br>
+
+<label for="daily_rate">Daily Rate:</label>
+<input type="number" id="daily_rate" name="daily_rate" value="{{ v.daily_rate }}"><br>
+
+<label for="availability">Availability:</label>
+<input type="text" id="availability" name="availability" value="{{ v.availability }}"><br>
+
+<label for="seats">Number of Seats:</label>
+<input type="number" id="seats" name="seats" value="{{ v.seats }}"><br>
+
+<label for="lper100">Fuel Consumption (L/100km):</label>
+<input type="number" id="lper100" name="lper100" value="{{ v.lper100 }}"><br>
+
+<label for="image">Upload Image:</label>
+<input type="file" id="file" name="file"><br>
+
+{# <label for="image_filepath">Image Filepath:</label>
+<input type="text" id="image_filepath" name="image_filepath" value="{{ v.image_filepath }}"><br> #}
+
+<input type="submit" value="Update Vehicle">
+
+</form>
+{% endblock content %}

@@ -8,6 +8,7 @@ use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
 
+
 require __DIR__ . '/vendor/autoload.php';
 
 DB::$dbName = 'carrental';
@@ -35,12 +36,10 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 
 
-/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
 
 // URL HANDLERS GO BELOW
-
 // ADMIN PANEL
-
 // STATE 1: DISPLAY admin panel
 
 $app->get('/adminpanel', function ($request, $response, $args) {
@@ -59,13 +58,13 @@ $app->get('/addvehicle', function ($request, $response, $args) {
 // $data = print_r($auctions[1]);
 //'data' => $data, 
 
-// DISPLAY all vehicles
+// DISPLAY ALL VEHICLES function /////////////////////////////////////////////////////////
 $app->get('/vehicleslist', function ($request, $response, $args) {
     $vehicles = DB::query("SELECT * FROM vehicles");
     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
 
-// STATE 2&3: receiving a submission
+// ADD VEHICLE function //////////////////////////////////////////////////////////////////
 $app->post('/addvehicle', function ($request, $response, $args) {
 
     if (($_FILES['file']['name']!="")){
@@ -87,32 +86,6 @@ $app->post('/addvehicle', function ($request, $response, $args) {
     }
    }
           
-    // // choose where to save the uploaded file
-    // $location = "uploads/" . $filename;
-    // // save the uploaded file to the local filesystem
-    // if (move_uploaded_file($_FILES['image']['tmp_name'], $location)) {
-    //     echo 'File uploaded successfully';
-    // } else {
-    //     echo 'Error uploading file.';
-    // }}
-
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // // check if a file was uploaded
-    // if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-    //     $filename = $_FILES['image']['name'];
-    //     // choose where to save the uploaded file
-    //     $location = "uploads/" . $filename;
-    //     // save the uploaded file to the local filesystem
-    //     if (move_uploaded_file($_FILES['image']['tmp_name'], $location)) {
-    //         echo 'File uploaded successfully';
-    //     } else {
-    //         echo 'Error uploading file.';
-    //     }
-    // } else {
-    //     echo 'No file uploaded.';
-    // }
-
-
     // extract values submitted
     $data = $request->getParsedBody();
     $make = $data['make'];
@@ -126,6 +99,7 @@ $app->post('/addvehicle', function ($request, $response, $args) {
     $lper100 = $data['lper100'];
     // $filename = $data['file'];
     
+    //TODO go further with the validation
     // validate
     $errorList = [];
     if (strlen($make) < 2 || strlen($make) > 50) {
@@ -188,8 +162,8 @@ $app->post('/addvehicle', function ($request, $response, $args) {
     } else {
 
 
-        // STATE 3: success
-        // insert vehicle into database
+        // STATE 3
+        // INSERT VEHICLE into database
         DB::insert('vehicles', [
             'make' => $make,
             'model' => $model,
@@ -209,5 +183,67 @@ $app->post('/addvehicle', function ($request, $response, $args) {
     }
 });
 
+// TO FIX - GET vehicle by its make 
+$app->get('/vehicle', function ($request, $response, $args) {
+    $make = $request->getQueryParam('make'); // get the make query parameter from the request
+    $query = "SELECT * FROM vehicles";
+    $params = array();
 
+    if ($make) {
+        $query .= " WHERE make = '%s'";
+        $params[] = $make;
+    }
+
+    $vehicles = DB::query($query, $params);
+    return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
+});
+
+
+// EDIT VEHICLE FUNCTIONALITY ///////////////////////////////////////////// DOESNT WORK /////////// YET
+$app->get('/editvehicle/{id}', function ($request, $response, $args) {
+    $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
+    return $this->get('view')->render($response, 'editvehicle.html.twig', ['vehicle' => $vehicle]);
+ });
+ 
+ $app->post('/editvehicle/{id}', function ($request, $response, $args) {
+    $data = $request->getParsedBody();
+    $id = $args['id'];
+    $make = $data['make'];
+    $model = $data['model'];
+    $year = $data['year'];
+    $color = $data['color'];
+    $licensePlate = $data['license_plate'];
+    $dailyRate = $data['daily_rate'];
+    $availability = $data['availability'];
+    $seats = $data['seats'];
+    $lper100 = $data['lper100'];
+    DB::update('vehicles', [
+       'make' => $make,
+       'model' => $model,
+       'year' => $year,
+       'color' => $color,
+       'license_plate' => $licensePlate,
+       'daily_rate' => $dailyRate,
+       'availability' => $availability,
+       'seats' => $seats,
+       'lper100' => $lper100
+    ], "id=%i", $id);
+    return $response->withHeader('Location', '/vehicleslist')->withStatus(302);
+ });
+
+ // DELETE VEHICLE function //////////////////////////////////////////////////////////////////
+ $app->post('/deletevehicle/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $result = DB::delete('vehicles', "id=%i", $id);
+    if ($result) {
+        return $response->withJson(['success' => true, 'message' => "Vehicle with id {$id} deleted"]);
+    } else {
+        return $response->withJson(['success' => false, 'message' => "Vehicle with id {$id} not found"]);
+    }
+});
+
+
+
+
+ 
 $app->run();
