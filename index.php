@@ -65,19 +65,52 @@ $app->get('/vehicleslist', function ($request, $response, $args) {
     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
 
-// get the name of the uploaded file
-$filename = $_FILES['file']['name'];
-// choose where to save the uploaded file
-$location = "uploads/".$filename;
-// save the uploaded file to the local filesystem
-if( move_uploaded_file($_FILES['file']['tmp_name'], $location)){
-    echo 'File uploaded successfully';
-} else {
-    echo 'Error uploading file.';
-}
-
 // STATE 2&3: receiving a submission
 $app->post('/addvehicle', function ($request, $response, $args) {
+
+    if (($_FILES['file']['name']!="")){
+        // Where the file is going to be stored
+            $target_dir = "uploads/";
+            $file = $_FILES['file']['name'];
+            $path = pathinfo($file);
+            $filename = $path['filename'];
+            $ext = $path['extension'];
+            $temp_name = $_FILES['file']['tmp_name'];
+            $path_filename_ext = $target_dir.$filename.".".$ext;
+
+            // Check if file already exists
+    if (file_exists($path_filename_ext)) {
+        echo "Sorry, file already exists.";
+        }else{
+        move_uploaded_file($temp_name,$path_filename_ext);
+        echo "Congratulations! File Uploaded Successfully.";
+    }
+   }
+          
+    // // choose where to save the uploaded file
+    // $location = "uploads/" . $filename;
+    // // save the uploaded file to the local filesystem
+    // if (move_uploaded_file($_FILES['image']['tmp_name'], $location)) {
+    //     echo 'File uploaded successfully';
+    // } else {
+    //     echo 'Error uploading file.';
+    // }}
+
+    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // // check if a file was uploaded
+    // if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+    //     $filename = $_FILES['image']['name'];
+    //     // choose where to save the uploaded file
+    //     $location = "uploads/" . $filename;
+    //     // save the uploaded file to the local filesystem
+    //     if (move_uploaded_file($_FILES['image']['tmp_name'], $location)) {
+    //         echo 'File uploaded successfully';
+    //     } else {
+    //         echo 'Error uploading file.';
+    //     }
+    // } else {
+    //     echo 'No file uploaded.';
+    // }
 
 
     // extract values submitted
@@ -91,8 +124,8 @@ $app->post('/addvehicle', function ($request, $response, $args) {
     $availability = $data['availability'];
     $seats = $data['seats'];
     $lper100 = $data['lper100'];
-    $imageFilepath = $data['image'];
-
+    // $filename = $data['file'];
+    
     // validate
     $errorList = [];
     if (strlen($make) < 2 || strlen($make) > 50) {
@@ -131,11 +164,11 @@ $app->post('/addvehicle', function ($request, $response, $args) {
         $errorList[] = "Liters per 100km must be a valid float number between 0 and 99";
         $lper100 = "";
     }
-    if (isset($imageFilepath['image_filepath'])) {
-        // do something with $car['image_filepath']
-    } else {
-        // handle the case where 'image_filepath' is not set
-    }
+    // if (isset($imageFilepath['image_filepath'])) {
+    //     // do something with $car['image_filepath']
+    // } else {
+    //     // handle the case where 'image_filepath' is not set
+    // }
 
 
     if ($errorList) { // STATE 2: errors
@@ -148,10 +181,13 @@ $app->post('/addvehicle', function ($request, $response, $args) {
             'daily_rate' => $dailyRate,
             'seats' => $seats,
             'lper100' => $lper100,
-            'availability' => $availability
+            'availability' => $availability,
+            // 'image_filepath' => $location
         ];
         return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
     } else {
+
+
         // STATE 3: success
         // insert vehicle into database
         DB::insert('vehicles', [
@@ -164,7 +200,7 @@ $app->post('/addvehicle', function ($request, $response, $args) {
             'availability' => $availability,
             'seats' => $seats,
             'lper100' => $lper100,
-            'image_filepath' => $imageFilepath
+            'image_filepath' =>$path_filename_ext
         ]);
         $successMessage = "Vehicle added successfully!";
         return $this->get('view')->render($response, 'addvehicle.html.twig', ['successMessage' => $successMessage]);

@@ -2,8 +2,6 @@
 
 {% block title %}Add Vehicle{% endblock %}
 
-{% block title %}Add Vehicle{% endblock %}
-
 {% block content %}
 
 {% if errorList %}
@@ -16,7 +14,7 @@
 
 <h1>Add a vehicle</h1>
 
-<form method="post" action="/addvehicle">
+<form method="post" action="/addvehicle" enctype="multipart/form-data">
     <label for="make">Make:</label>
     <input type="text" id="make" name="make" value="{{ v.make }}"><br>
 
@@ -45,7 +43,7 @@
     <input type="number" id="lper100" name="lper100" value="{{ v.lper100 }}"><br>
 
     <label for="image">Upload Image:</label>
-    <input type="file" id="image" name="file"><br>
+    <input type="file" id="file" name="file"><br>
 
     {# <label for="image_filepath">Image Filepath:</label>
     <input type="text" id="image_filepath" name="image_filepath" value="{{ v.image_filepath }}"><br> #}
