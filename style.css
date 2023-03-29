@@ -21,7 +21,3 @@ body {
 
 /* Style for the left sidebar */
 
-.sidebar {
-  flex: 0 0 200px; /* Set width of sidebar */
-
-}
