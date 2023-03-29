@@ -7,6 +7,11 @@
         {% endblock %}
      </head>
     <body>
+        <div class="sidebar">
+            {% include 'admin/adminpanel.html.twig' %}
+        </div>
+        {% block body %}{% endblock %}
+
         {% block javascripts %}{% endblock %}
         <div id="centeredContent">{% block content %}{% endblock %}
             <div id="footer">

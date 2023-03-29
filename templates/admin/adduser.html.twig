@@ -1,4 +1,4 @@
-{% extends "master.html.twig" %}
+{% extends "admin/master.html.twig" %}
 
 {% block title %}Add User{% endblock %}
 
@@ -13,7 +13,7 @@
 {% endif %}
 
 <h1>Add a user</h1>
-<form method="post" action="/adduser">
+<form method="post" action="/admin/adduser">
     
 <label for="first_name">First Name:</label>
 <input type="text" id="first_name" name="first_name" value="{{ u.first_name }}"><br>

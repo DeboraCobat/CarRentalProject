@@ -11,16 +11,16 @@ use Psr\Http\Message\UploadedFileInterface;
 
 require_once 'init.php';
 
-$app->get('/adminpanel', function ($request, $response, $args) {
-  return $this->get('view')->render($response, 'adminpanel.html.twig');
+$app->get('/admin/adminpanel', function ($request, $response, $args) {
+  return $this->get('view')->render($response, 'admin/adminpanel.html.twig');
 });
 
 
 // VEHICLES
 
 // STATE 1: DISPLAY add vehicle form
-$app->get('/addvehicle', function ($request, $response, $args) {
-  return $this->get('view')->render($response, 'addvehicle.html.twig');
+$app->get('/admin/addvehicle', function ($request, $response, $args) {
+  return $this->get('view')->render($response, 'admin/addvehicle.html.twig');
 });
 
 //used to understand how data goes
@@ -28,14 +28,14 @@ $app->get('/addvehicle', function ($request, $response, $args) {
 //'data' => $data, 
 
 // DISPLAY ALL VEHICLES function /////////////////////////////////////////////////////////
-$app->get('/vehicleslist', function ($request, $response, $args) {
+$app->get('/admin/vehicleslist', function ($request, $response, $args) {
   $vehicles = DB::query("SELECT *, image_filepath AS image FROM vehicles");
 
-  return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
+  return $this->get('view')->render($response, 'admin/vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
 
 // ADD VEHICLE function //////////////////////////////////////////////////////////////////
-$app->post('/addvehicle', function ($request, $response, $args) {
+$app->post('/admin/addvehicle', function ($request, $response, $args) {
 
   if (($_FILES['file']['name'] != "")) {
       // Where the file is going to be stored
@@ -128,7 +128,7 @@ $app->post('/addvehicle', function ($request, $response, $args) {
           'availability' => $availability,
           // 'image_filepath' => $location
       ];
-      return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
+      return $this->get('view')->render($response, 'admin/addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
   } else {
 
 
@@ -147,9 +147,9 @@ $app->post('/addvehicle', function ($request, $response, $args) {
           'image_filepath' => $path_filename_ext
       ]);
       $successMessage = "Vehicle added successfully!";
-      return $this->get('view')->render($response, 'http://carrentalproject.org/vehicleslist', ['successMessage' => $successMessage]);
+      return $this->get('view')->render($response, 'http://carrentalproject.org/admin/vehicleslist', ['successMessage' => $successMessage]);
       $errorMessage = "Error adding vehicle to database: ";
-      return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorMessage' => $errorMessage]);
+      return $this->get('view')->render($response, 'admin/addvehicle.html.twig', ['errorMessage' => $errorMessage]);
   }
 });
 
@@ -165,20 +165,20 @@ $app->get('/vehicle', function ($request, $response, $args) {
   }
 
   $vehicles = DB::query($query, $params);
-  return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
+  return $this->get('view')->render($response, 'admin/vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
 
 
 // EDIT VEHICLE FUNCTIONALITY ///////////////////////////////////////////// DOESNT WORK /////////// YET
 
 // GET route to retrieve the vehicle with the given ID
-$app->get('/editvehicle/{id}', function ($request, $response, $args) {
+$app->get('/admin/editvehicle/{id}', function ($request, $response, $args) {
   $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
-  return $this->get('view')->render($response, 'editvehicle.html.twig', ['vehicle' => $vehicle]);
+  return $this->get('view')->render($response, 'admin/editvehicle.html.twig', ['vehicle' => $vehicle]);
 });
 
 // POST route to update the vehicle with the given ID
-$app->post('/editvehicle/{id}', function ($request, $response, $args) {
+$app->post('/admin/editvehicle/{id}', function ($request, $response, $args) {
   $data = $request->getParsedBody();
   $id = $args['id'];
   
@@ -193,36 +193,36 @@ $app->post('/editvehicle/{id}', function ($request, $response, $args) {
   DB::update('vehicles', $updates, "id=%i", $id);
   
   // Redirect back to the vehicles list page
-  return $response->withHeader('Location', '/vehicleslist')->withStatus(302);
+  return $response->withHeader('Location', '/admin/vehicleslist')->withStatus(302);
 });
 
 
 
 // VIEW VEHICLE function //////////////////////////////////////////////////////////////////
-$app->get('/vehicles/{id}', function ($request, $response, $args) {
+$app->get('/admin/vehicles/{id}', function ($request, $response, $args) {
   $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
   //var_dump($vehicle); // Debugging code to show vehicle info
   if (!$vehicle) {
       $errorMessage = "Vehicle not found";
-      return $this->get('view')->render($response, 'vehicleslist.html.twig', ['errorMessage' => $errorMessage]);
+      return $this->get('view')->render($response, 'admin/vehicleslist.html.twig', ['errorMessage' => $errorMessage]);
   }
-  return $this->get('view')->render($response, 'viewvehicle.html.twig', ['vehicle' => $vehicle]);
+  return $this->get('view')->render($response, 'admin/viewvehicle.html.twig', ['vehicle' => $vehicle]);
 });
 
 
 
 // DELETE VEHICLE function //////////////////////////////////////////////////////////////////
-$app->get('/deletevehicle/{id}', function ($request, $response, $args) {
+$app->get('/admin/deletevehicle/{id}', function ($request, $response, $args) {
   $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
-  return $this->get('view')->render($response, 'deletevehicle.html.twig', ['vehicle' => $vehicle]);
+  return $this->get('view')->render($response, 'admin/deletevehicle.html.twig', ['vehicle' => $vehicle]);
 });
 
-$app->post('/deletevehicle/{id}', function ($request, $response, $args) {
+$app->post('/admin/deletevehicle/{id}', function ($request, $response, $args) {
   $id = $args['id'];
   $result = DB::delete('vehicles', "id=%i", $id);
   if ($result) {
-      echo '<script>alert("Vehicle with id ' . $id . ' was deleted."); window.location.href="/vehicleslist";</script>';
+      echo '<script>alert("Vehicle with id ' . $id . ' was deleted."); window.location.href="/admin/vehicleslist";</script>';
   } else {
-      echo '<script>alert("Vehicle with id ' . $id . ' was not deleted."); window.location.href="/vehicleslist";</script>';
+      echo '<script>alert("Vehicle with id ' . $id . ' was not deleted."); window.location.href="/admin/vehicleslist";</script>';
   }
 });

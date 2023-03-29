@@ -1,10 +1,10 @@
-{% extends "master.html.twig" %}
+{% extends "admin/master.html.twig" %}
 
 {% block title %}Edit Vehicle{% endblock %}
 
 {% block content %}
   <h1>Edit Vehicle</h1>
-  <form method="POST" action="/editvehicle/{{ vehicle.id }}">
+  <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
     <label for="make">Make:</label>
     <input type="text" id="make" name="make" value="{{ vehicle.make }}"><br>
 

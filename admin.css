@@ -1,0 +1,26 @@
+/* Navigadion sidebar for Admin Panel ----------------------------------------------------------------
+
+/* Override default body margin to fit container-fluid 
+body {
+    margin: 0;
+  }
+  
+  /* Style for the main header 
+  header {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the sidebar 
+  .navbar {
+    height: 20vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  .navbar-nav {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+   */

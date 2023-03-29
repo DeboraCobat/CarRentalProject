@@ -13,24 +13,25 @@ require_once 'init.php';
 
 
 // DISPLAY ALL USERS function /////////////////////////////////////////////////////////
-$app->get('/userslist', function ($request, $response, $args) {
+$app->get('/admin/userslist', function ($request, $response, $args) {
   $users = DB::query("SELECT * FROM users");
 
-  return $this->get('view')->render($response, 'userslist.html.twig', ['users' => $users]);
+  return $this->get('view')->render($response, 'admin/userslist.html.twig', ['users' => $users]);
 });
 
-/////////////////////////////////////////////////////////////////////////////
-$app->get('/adduser', function ($request, $response, $args) {
+////////////////////ADD USER/////////////////////////////////////////////////////////
+
+$app->get('/admin/adduser', function ($request, $response, $args) {
   $successMessage = '';
   $errorList = [];
-  return $this->get('view')->render($response, 'adduser.html.twig', [
+  return $this->get('view')->render($response, 'admin/adduser.html.twig', [
       'successMessage' => $successMessage,
       'errorList' => $errorList
   ]);
 });
 
 
-$app->post('/adduser', function ($request, $response, $args) {
+$app->post('admin/adduser', function ($request, $response, $args) {
 
   // Extract values submitted
   $data = $request->getParsedBody();
@@ -95,9 +96,12 @@ $app->post('/adduser', function ($request, $response, $args) {
           'license' => $license,
           'license_expiration' => $licenseExpiration
       ];
-      return $this->get('view')->render($response, 'adduser.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
-  } else { // STATE 3: insert user into database
-      // STATE 3
+      return $this->get('view')->render($response, 'admin/adduser.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
+  } else { 
+    
+    // STATE 3: insert user into database
+  
+
 // INSERT USER into database
 DB::insert('users', [
   'first_name' => $firstName,
@@ -112,8 +116,9 @@ DB::insert('users', [
   ]);
   
   $successMessage = "User added successfully!";
-  return $this->get('view')->render($response, 'userslist.html.twig', ['successMessage' => $successMessage]);
+  return $this->get('view')->render($response, 'admin/userslist.html.twig', ['successMessage' => $successMessage]);
   $errorMessage = "Error adding user to database: ";
-  return $this->get('view')->render($response, 'adduser.html.twig', ['errorMessage' => $errorMessage]);
+  return $this->get('view')->render($response, 'admin/adduser.html.twig', ['errorMessage' => $errorMessage]);
 }
 });
+

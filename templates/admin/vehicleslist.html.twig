@@ -1,4 +1,4 @@
-{% extends "master.html.twig" %}
+{% extends "admin/master.html.twig" %}
 
 {% block title %}All Vehicles{% endblock %}
 
@@ -36,7 +36,7 @@
       {% endfor %}
     </tbody>
   </table> </br>
-  <button class="btn" onclick="location.href='addvehicle'">Add Vehicle</button></br>
+  <button class="btn" onclick="location.href='/admin/addvehicle'">Add Vehicle</button></br>
   </div></br>
 
 {% endblock %}
