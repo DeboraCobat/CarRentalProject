@@ -35,3 +35,11 @@ $app->post('/login', function ($request, $response, $args) {
         return $response->withHeader('Location', '/clientprofile')->withStatus(302);
     }
 });
+
+//////////// LOG OUT ////////
+
+//Logout route
+$app->get('/logout', function ($request, $response, $args) {
+    return $this->get('view')->render($response, 'logout.html.twig');
+});
+
