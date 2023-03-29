@@ -4,7 +4,7 @@
 
 {% block content %}
   <h1>All Vehicles</h1>
-  <table>
+  <table class="listTable">
     <thead>
       <tr>
         <th>Make</th>
@@ -31,10 +31,12 @@
           <td>{{ vehicle.availability }}</td>
           <td>{{ vehicle.seats }}</td>
           <td>{{ vehicle.lper100 }}</td>
-          <td><img src="{{ vehicle.image }}"></td>
+          <td><img src="{{ vehicle.image_filepath }}" width="100"></td>
         </tr>
       {% endfor %}
     </tbody>
-    <button class="btn" onclick="location.href='addvehicle'">Add Vehicle</button></br>
-  </table>
+  </table> </br>
+  <button class="btn" onclick="location.href='addvehicle'">Add Vehicle</button></br>
+  </div></br>
+
 {% endblock %}

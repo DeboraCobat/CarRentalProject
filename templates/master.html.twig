@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <title>{% block title %} Admin Panel {% endblock %}</title>
+            <link rel="stylesheet" type="text/css" href="/style.css">
         {% block addHead %}
-        <link rel="stylesheet" type="text/css" href="../css/styles.css">        <title>{% block title %}{% endblock %}</title>
         {% endblock %}
-    </head>
+     </head>
     <body>
         <div class="sidebar">
             {% include 'adminpanel.html.twig' %}

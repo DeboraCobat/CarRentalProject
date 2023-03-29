@@ -1,0 +1,33 @@
+{% extends "master.html.twig" %}
+
+{% block title %}All Users{% endblock %}
+
+{% block content %}
+  <h1>All Users</h1>
+  <table class="listTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Driver's License</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.drivers_license }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> </br>
+  <button class="btn" onclick="location.href='adduser'">Add User</button></br>
+  </div></br>
+
+{% endblock %}

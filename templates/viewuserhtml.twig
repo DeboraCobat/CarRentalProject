@@ -1,0 +1,43 @@
+{% extends "master.html.twig" %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+
+<h1>User List</h1>
+{% if userList is empty %}
+<p>No users found.</p>
+{% else %}
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>User Type</th>
+<th>Address</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Date of Birth</th>
+<th>Driver's License</th>
+<th>License Expiration</th>
+</tr>
+</thead>
+<tbody>
+{% for user in userList %}
+<tr>
+<td>{{ user.id }}</td>
+<td>{{ user.first_name }} {{ user.last_name }}</td>
+<td>{{ user.user_type }}</td>
+<td>{{ user.address }}</td>
+<td>{{ user.phone }}</td>
+<td>{{ user.email }}</td>
+<td>{{ user.dob|date("m/d/Y") }}</td>
+<td>{{ user.license }}</td>
+<td>{{ user.license_expiration|date("m/d/Y") }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+{% endblock content %}

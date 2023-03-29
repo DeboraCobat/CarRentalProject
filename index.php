@@ -9,241 +9,260 @@ use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
 
 
-require __DIR__ . '/vendor/autoload.php';
+// require_once __DIR__ . '/vendor/autoload.php';
 
-DB::$dbName = 'carrental';
-DB::$user = 'carrental';
-DB::$password = '1lvTox19lz]Itajh';
-DB::$host = 'localhost';
+// DB::$dbName = 'carrental';
+// DB::$user = 'carrental';
+// DB::$password = '1lvTox19lz]Itajh';
+// DB::$host = 'localhost';
 
-// Create Container
-$container = new Container();
-AppFactory::setContainer($container);
+// // Create Container
+// $container = new Container();
+// AppFactory::setContainer($container);
 
-// Set view in Container
-// tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
-$container->set('view', function () {
-    return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
-});
+// // Set view in Container
+// // tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
+// $container->set('view', function () {
+//     return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
+// });
 
-// creates a new instance of a Slim Framework application
-$app = AppFactory::create();
+// // creates a new instance of a Slim Framework application
+// $app = AppFactory::create();
 
-// Add Twig-View Middleware
-$app->add(TwigMiddleware::createFromContainer($app));
+// // Add Twig-View Middleware
+// $app->add(TwigMiddleware::createFromContainer($app));
 
-$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+// $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
-
+require_once 'init.php';
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+require_once 'vehicle.php';
+
+require_once 'user.php';
 // URL HANDLERS GO BELOW
 // ADMIN PANEL
 // STATE 1: DISPLAY admin panel
 
-$app->get('/adminpanel', function ($request, $response, $args) {
-    return $this->get('view')->render($response, 'adminpanel.html.twig');
-});
+// $app->get('/adminpanel', function ($request, $response, $args) {
+//     return $this->get('view')->render($response, 'adminpanel.html.twig');
+// });
 
 
-// VEHICLES
+// // VEHICLES
 
-// STATE 1: DISPLAY add vehicle form
-$app->get('/addvehicle', function ($request, $response, $args) {
-    return $this->get('view')->render($response, 'addvehicle.html.twig');
-});
+// // STATE 1: DISPLAY add vehicle form
+// $app->get('/addvehicle', function ($request, $response, $args) {
+//     return $this->get('view')->render($response, 'addvehicle.html.twig');
+// });
 
-//used to understand how data goes
-// $data = print_r($auctions[1]);
-//'data' => $data, 
+// //used to understand how data goes
+// // $data = print_r($auctions[1]);
+// //'data' => $data, 
 
-// DISPLAY ALL VEHICLES function /////////////////////////////////////////////////////////
-$app->get('/vehicleslist', function ($request, $response, $args) {
-    $vehicles = DB::query("SELECT * FROM vehicles");
-    return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
-});
+// // DISPLAY ALL VEHICLES function /////////////////////////////////////////////////////////
+// $app->get('/vehicleslist', function ($request, $response, $args) {
+//     $vehicles = DB::query("SELECT *, image_filepath AS image FROM vehicles");
 
-// ADD VEHICLE function //////////////////////////////////////////////////////////////////
-$app->post('/addvehicle', function ($request, $response, $args) {
+//     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
+// });
 
-    if (($_FILES['file']['name']!="")){
-        // Where the file is going to be stored
-            $target_dir = "uploads/";
-            $file = $_FILES['file']['name'];
-            $path = pathinfo($file);
-            $filename = $path['filename'];
-            $ext = $path['extension'];
-            $temp_name = $_FILES['file']['tmp_name'];
-            $path_filename_ext = $target_dir.$filename.".".$ext;
+// // ADD VEHICLE function //////////////////////////////////////////////////////////////////
+// $app->post('/addvehicle', function ($request, $response, $args) {
 
-            // Check if file already exists
-    if (file_exists($path_filename_ext)) {
-        echo "Sorry, file already exists.";
-        }else{
-        move_uploaded_file($temp_name,$path_filename_ext);
-        echo "Congratulations! File Uploaded Successfully.";
-    }
-   }
-          
-    // extract values submitted
-    $data = $request->getParsedBody();
-    $make = $data['make'];
-    $model = $data['model'];
-    $year = $data['year'];
-    $color = $data['color'];
-    $licensePlate = $data['license_plate'];
-    $dailyRate = $data['daily_rate'];
-    $availability = $data['availability'];
-    $seats = $data['seats'];
-    $lper100 = $data['lper100'];
-    // $filename = $data['file'];
+//     if (($_FILES['file']['name'] != "")) {
+//         // Where the file is going to be stored
+//         $target_dir = "uploads/";
+//         $file = $_FILES['file']['name'];
+//         $path = pathinfo($file);
+//         $filename = $path['filename'];
+//         $ext = $path['extension'];
+//         $temp_name = $_FILES['file']['tmp_name'];
+//         $path_filename_ext = $target_dir . $filename . "." . $ext;
+
+//         // Check if file already exists
+//         if (file_exists($path_filename_ext)) {
+//             echo "Sorry, file already exists.";
+//         } else {
+//             move_uploaded_file($temp_name, $path_filename_ext);
+//             echo "Congratulations! File Uploaded Successfully.";
+//         }
+//     }
+
+//     // extract values submitted
+//     $data = $request->getParsedBody();
+//     $make = $data['make'];
+//     $model = $data['model'];
+//     $year = $data['year'];
+//     $color = $data['color'];
+//     $licensePlate = $data['license_plate'];
+//     $dailyRate = $data['daily_rate'];
+//     $availability = $data['availability'];
+//     $seats = $data['seats'];
+//     $lper100 = $data['lper100'];
+//     // $filename = $data['file'];
+
+//     //TODO go further with the validation
+//     // validate
+//     $errorList = [];
+//     if (strlen($make) < 2 || strlen($make) > 50) {
+//         $errorList[] = "Make must be 2-50 characters long";
+//         $make = "";
+//     }
+//     if (strlen($model) < 1 || strlen($model) > 50) {
+//         $errorList[] = "Model must be 1-50 characters long";
+//         $model = "";
+//     }
+//     if (filter_var($year, FILTER_VALIDATE_INT) === false || $year < 1900 || $year > (int)date('Y') + 1) {
+//         $errorList[] = "Year must be a valid integer number between 1900 and " . ((int)date('Y') + 1);
+//         $year = "";
+//     }
+//     if (strlen($color) < 1 || strlen($color) > 50) {
+//         $errorList[] = "Color must be 1-50 characters long";
+//         $color = "";
+//     }
+//     if (strlen($licensePlate) < 1 || strlen($licensePlate) > 10) {
+//         $errorList[] = "License plate must be 1-10 characters long";
+//         $licensePlate = "";
+//     }
+//     if (filter_var($dailyRate, FILTER_VALIDATE_FLOAT) === false || $dailyRate < 0 || $dailyRate > 10000) {
+//         $errorList[] = "Daily rate must be a valid float number between 0 and 10000";
+//         $dailyRate = "";
+//     }
+//     if (!in_array($availability, array(0, 1))) {
+//         $errorList[] = "Availability must be either 0 or 1";
+//         $availability = 0;
+//     }
+//     if (filter_var($seats, FILTER_VALIDATE_INT) === false || $seats < 1 || $seats > 20) {
+//         $errorList[] = "Number of seats must be a valid integer between 1 and 20";
+//         $seats = "";
+//     }
+//     if (filter_var($lper100, FILTER_VALIDATE_FLOAT) === false || $lper100 < 0 || $lper100 > 99) {
+//         $errorList[] = "Liters per 100km must be a valid float number between 0 and 99";
+//         $lper100 = "";
+//     }
+//     // if (isset($imageFilepath['image_filepath'])) {
+//     //     // do something with $car['image_filepath']
+//     // } else {
+//     //     // handle the case where 'image_filepath' is not set
+//     // }
+
+
+//     if ($errorList) { // STATE 2: errors
+//         $valuesList = [
+//             'make' => $make,
+//             'model' => $model,
+//             'year' => $year,
+//             'color' => $color,
+//             'license_plate' => $licensePlate,
+//             'daily_rate' => $dailyRate,
+//             'seats' => $seats,
+//             'lper100' => $lper100,
+//             'availability' => $availability,
+//             // 'image_filepath' => $location
+//         ];
+//         return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
+//     } else {
+
+
+//         // STATE 3
+//         // INSERT VEHICLE into database
+//         DB::insert('vehicles', [
+//             'make' => $make,
+//             'model' => $model,
+//             'year' => $year,
+//             'color' => $color,
+//             'license_plate' => $licensePlate,
+//             'daily_rate' => $dailyRate,
+//             'availability' => $availability,
+//             'seats' => $seats,
+//             'lper100' => $lper100,
+//             'image_filepath' => $path_filename_ext
+//         ]);
+//         $successMessage = "Vehicle added successfully!";
+//         return $this->get('view')->render($response, 'http://carrentalproject.org/vehicleslist', ['successMessage' => $successMessage]);
+//         $errorMessage = "Error adding vehicle to database: ";
+//         return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorMessage' => $errorMessage]);
+//     }
+// });
+
+// // TO FIX - GET vehicle by its make 
+// $app->get('/vehicle', function ($request, $response, $args) {
+//     $make = $request->getQueryParam('make'); // get the make query parameter from the request
+//     $query = "SELECT * FROM vehicles";
+//     $params = array();
+
+//     if ($make) {
+//         $query .= " WHERE make = '%s'";
+//         $params[] = $make;
+//     }
+
+//     $vehicles = DB::query($query, $params);
+//     return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
+// });
+
+
+// // EDIT VEHICLE FUNCTIONALITY ///////////////////////////////////////////// DOESNT WORK /////////// YET
+
+// // GET route to retrieve the vehicle with the given ID
+// $app->get('/editvehicle/{id}', function ($request, $response, $args) {
+//     $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
+//     return $this->get('view')->render($response, 'editvehicle.html.twig', ['vehicle' => $vehicle]);
+// });
+
+// // POST route to update the vehicle with the given ID
+// $app->post('/editvehicle/{id}', function ($request, $response, $args) {
+//     $data = $request->getParsedBody();
+//     $id = $args['id'];
     
-    //TODO go further with the validation
-    // validate
-    $errorList = [];
-    if (strlen($make) < 2 || strlen($make) > 50) {
-        $errorList[] = "Make must be 2-50 characters long";
-        $make = "";
-    }
-    if (strlen($model) < 1 || strlen($model) > 50) {
-        $errorList[] = "Model must be 1-50 characters long";
-        $model = "";
-    }
-    if (filter_var($year, FILTER_VALIDATE_INT) === false || $year < 1900 || $year > (int)date('Y') + 1) {
-        $errorList[] = "Year must be a valid integer number between 1900 and " . ((int)date('Y') + 1);
-        $year = "";
-    }
-    if (strlen($color) < 1 || strlen($color) > 50) {
-        $errorList[] = "Color must be 1-50 characters long";
-        $color = "";
-    }
-    if (strlen($licensePlate) < 1 || strlen($licensePlate) > 10) {
-        $errorList[] = "License plate must be 1-10 characters long";
-        $licensePlate = "";
-    }
-    if (filter_var($dailyRate, FILTER_VALIDATE_FLOAT) === false || $dailyRate < 0 || $dailyRate > 10000) {
-        $errorList[] = "Daily rate must be a valid float number between 0 and 10000";
-        $dailyRate = "";
-    }
-    if (!in_array($availability, array(0, 1))) {
-        $errorList[] = "Availability must be either 0 or 1";
-        $availability = 0;
-    }
-    if (filter_var($seats, FILTER_VALIDATE_INT) === false || $seats < 1 || $seats > 20) {
-        $errorList[] = "Number of seats must be a valid integer between 1 and 20";
-        $seats = "";
-    }
-    if (filter_var($lper100, FILTER_VALIDATE_FLOAT) === false || $lper100 < 0 || $lper100 > 99) {
-        $errorList[] = "Liters per 100km must be a valid float number between 0 and 99";
-        $lper100 = "";
-    }
-    // if (isset($imageFilepath['image_filepath'])) {
-    //     // do something with $car['image_filepath']
-    // } else {
-    //     // handle the case where 'image_filepath' is not set
-    // }
+//     // Loop through each column in the vehicles table and update it with the corresponding value in the form data
+//     $columns = ['make', 'model', 'year', 'color', 'license_plate', 'daily_rate', 'availability', 'seats', 'lper100'];
+//     $updates = [];
+//     foreach ($columns as $column) {
+//         if (isset($data[$column])) {
+//             $updates[$column] = $data[$column];
+//         }
+//     }
+//     DB::update('vehicles', $updates, "id=%i", $id);
+    
+//     // Redirect back to the vehicles list page
+//     return $response->withHeader('Location', '/vehicleslist')->withStatus(302);
+// });
 
 
-    if ($errorList) { // STATE 2: errors
-        $valuesList = [
-            'make' => $make,
-            'model' => $model,
-            'year' => $year,
-            'color' => $color,
-            'license_plate' => $licensePlate,
-            'daily_rate' => $dailyRate,
-            'seats' => $seats,
-            'lper100' => $lper100,
-            'availability' => $availability,
-            // 'image_filepath' => $location
-        ];
-        return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
-    } else {
+
+// // VIEW VEHICLE function //////////////////////////////////////////////////////////////////
+// $app->get('/vehicles/{id}', function ($request, $response, $args) {
+//     $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
+//     //var_dump($vehicle); // Debugging code to show vehicle info
+//     if (!$vehicle) {
+//         $errorMessage = "Vehicle not found";
+//         return $this->get('view')->render($response, 'vehicleslist.html.twig', ['errorMessage' => $errorMessage]);
+//     }
+//     return $this->get('view')->render($response, 'viewvehicle.html.twig', ['vehicle' => $vehicle]);
+// });
 
 
-        // STATE 3
-        // INSERT VEHICLE into database
-        DB::insert('vehicles', [
-            'make' => $make,
-            'model' => $model,
-            'year' => $year,
-            'color' => $color,
-            'license_plate' => $licensePlate,
-            'daily_rate' => $dailyRate,
-            'availability' => $availability,
-            'seats' => $seats,
-            'lper100' => $lper100,
-            'image_filepath' =>$path_filename_ext
-        ]);
-        $successMessage = "Vehicle added successfully!";
-        return $this->get('view')->render($response, 'addvehicle.html.twig', ['successMessage' => $successMessage]);
-        $errorMessage = "Error adding vehicle to database: ";
-        return $this->get('view')->render($response, 'addvehicle.html.twig', ['errorMessage' => $errorMessage]);
-    }
-});
 
-// TO FIX - GET vehicle by its make 
-$app->get('/vehicle', function ($request, $response, $args) {
-    $make = $request->getQueryParam('make'); // get the make query parameter from the request
-    $query = "SELECT * FROM vehicles";
-    $params = array();
+// // DELETE VEHICLE function //////////////////////////////////////////////////////////////////
+// $app->get('/deletevehicle/{id}', function ($request, $response, $args) {
+//     $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
+//     return $this->get('view')->render($response, 'deletevehicle.html.twig', ['vehicle' => $vehicle]);
+// });
 
-    if ($make) {
-        $query .= " WHERE make = '%s'";
-        $params[] = $make;
-    }
-
-    $vehicles = DB::query($query, $params);
-    return $this->get('view')->render($response, 'vehicleslist.html.twig', ['vehicles' => $vehicles]);
-});
-
-
-// EDIT VEHICLE FUNCTIONALITY ///////////////////////////////////////////// DOESNT WORK /////////// YET
-$app->get('/editvehicle/{id}', function ($request, $response, $args) {
-    $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
-    return $this->get('view')->render($response, 'editvehicle.html.twig', ['vehicle' => $vehicle]);
- });
- 
- $app->post('/editvehicle/{id}', function ($request, $response, $args) {
-    $data = $request->getParsedBody();
-    $id = $args['id'];
-    $make = $data['make'];
-    $model = $data['model'];
-    $year = $data['year'];
-    $color = $data['color'];
-    $licensePlate = $data['license_plate'];
-    $dailyRate = $data['daily_rate'];
-    $availability = $data['availability'];
-    $seats = $data['seats'];
-    $lper100 = $data['lper100'];
-    DB::update('vehicles', [
-       'make' => $make,
-       'model' => $model,
-       'year' => $year,
-       'color' => $color,
-       'license_plate' => $licensePlate,
-       'daily_rate' => $dailyRate,
-       'availability' => $availability,
-       'seats' => $seats,
-       'lper100' => $lper100
-    ], "id=%i", $id);
-    return $response->withHeader('Location', '/vehicleslist')->withStatus(302);
- });
-
- // DELETE VEHICLE function //////////////////////////////////////////////////////////////////
- $app->post('/deletevehicle/{id}', function ($request, $response, $args) {
-    $id = $args['id'];
-    $result = DB::delete('vehicles', "id=%i", $id);
-    if ($result) {
-        return $response->withJson(['success' => true, 'message' => "Vehicle with id {$id} deleted"]);
-    } else {
-        return $response->withJson(['success' => false, 'message' => "Vehicle with id {$id} not found"]);
-    }
-});
+// $app->post('/deletevehicle/{id}', function ($request, $response, $args) {
+//     $id = $args['id'];
+//     $result = DB::delete('vehicles', "id=%i", $id);
+//     if ($result) {
+//         echo '<script>alert("Vehicle with id ' . $id . ' was deleted."); window.location.href="/vehicleslist";</script>';
+//     } else {
+//         echo '<script>alert("Vehicle with id ' . $id . ' was not deleted."); window.location.href="/vehicleslist";</script>';
+//     }
+// });
 
 
 
 
- 
+
 $app->run();

@@ -1,0 +1,40 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Vehicle{% endblock %}
+
+{% block content %}
+  <h1>Vehicle</h1>
+  <table class="listTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>License Plate</th>
+        <th>Daily Rate</th>
+        <th>Availability</th>
+        <th>Seats</th>
+        <th>L/100km</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="{{ vehicle.image }}"></td>
+        <td>{{ vehicle.make }}</td>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.year }}</td>
+        <td>{{ vehicle.color }}</td>
+        <td>{{ vehicle.license_plate }}</td>
+        <td>{{ vehicle.daily_rate }}</td>
+        <td>{{ vehicle.availability }}</td>
+        <td>{{ vehicle.seats }}</td>
+        <td>{{ vehicle.lper100 }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </br>
+  <button class="btn" onclick="location.href='http://carrentalproject.org/addvehicle'">Add Vehicle</button>
+  </br>
+{% endblock %}

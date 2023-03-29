@@ -1,9 +1,3 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-REQUEST_FILENAME
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
-
-RewriteEngine On
-RewriteRule ^userslist$ userslist.html.twig [L]
-RewriteRule ^vehicleslist$ vehicleslist.html.twig [L]
-RewriteRule ^reservationslist$ reservationslist.html.twig [L]
-

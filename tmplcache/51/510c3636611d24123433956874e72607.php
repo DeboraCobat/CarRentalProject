@@ -56,7 +56,7 @@ class __TwigTemplate_65718a1e670119fb42bae7157e534c54 extends Template
         $macros = $this->macros;
         // line 6
         echo "  <h1>All Vehicles</h1>
-  <table>
+  <table class=\"listTable\">
     <thead>
       <tr>
         <th>Make</th>
@@ -117,8 +117,8 @@ class __TwigTemplate_65718a1e670119fb42bae7157e534c54 extends Template
             echo "</td>
           <td><img src=\"";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image", [], "any", false, false, false, 34), "html", null, true);
-            echo "\"></td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image_filepath", [], "any", false, false, false, 34), "html", null, true);
+            echo "\" width=\"100\"></td>
         </tr>
       ";
         }
@@ -127,7 +127,10 @@ class __TwigTemplate_65718a1e670119fb42bae7157e534c54 extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 37
         echo "    </tbody>
-  </table>
+  </table> </br>
+  <button class=\"btn\" onclick=\"location.href='addvehicle'\">Add Vehicle</button></br>
+  </div></br>
+
 ";
     }
 
@@ -154,7 +157,7 @@ class __TwigTemplate_65718a1e670119fb42bae7157e534c54 extends Template
 
 {% block content %}
   <h1>All Vehicles</h1>
-  <table>
+  <table class=\"listTable\">
     <thead>
       <tr>
         <th>Make</th>
@@ -181,12 +184,14 @@ class __TwigTemplate_65718a1e670119fb42bae7157e534c54 extends Template
           <td>{{ vehicle.availability }}</td>
           <td>{{ vehicle.seats }}</td>
           <td>{{ vehicle.lper100 }}</td>
-          <td><img src=\"{{ vehicle.image }}\"></td>
+          <td><img src=\"{{ vehicle.image_filepath }}\" width=\"100\"></td>
         </tr>
       {% endfor %}
     </tbody>
-  </table>
-{% endblock %}
-", "vehicleslist.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\vehicleslist.html.twig");
+  </table> </br>
+  <button class=\"btn\" onclick=\"location.href='addvehicle'\">Add Vehicle</button></br>
+  </div></br>
+
+{% endblock %}", "vehicleslist.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\vehicleslist.html.twig");
     }
 }
