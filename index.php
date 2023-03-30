@@ -17,6 +17,8 @@ require_once 'reservation.php';
 
 require_once 'login.php';
 
+require_once 'register.php';
+
 require_once 'customer.php';
 
 require_once 'user.php';

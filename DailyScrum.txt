@@ -1,7 +1,7 @@
-Disclaimer: the notes from March 24 to 28 are one to the team.
+Disclaimer: the notes from March 24 to 28 are one to whole team.
 
 
-2023/03/24 Gabriel
+2023/03/24
 
 
 1. Done / not done since last scrum:
@@ -21,7 +21,7 @@ Disclaimer: the notes from March 24 to 28 are one to the team.
 - figure out gitpush repository
 _______________________________________________________________________
 
-2023/03/27 Gabriel
+2023/03/27 
 1. Done / not done since last scrum:
 - add and view a list of vehicles functionality has been added
 
@@ -81,7 +81,7 @@ _______________________________________________________________________
 - calendar function fucntionalities
 
 
-2023/03/28 Debora
+2023/03/29 Debora
 
 1. Done / not done since last scrum:
 - login is done
@@ -89,6 +89,43 @@ _______________________________________________________________________
 2. To do until next Scrum:
 - registration needs work
 - commit the latest version of project with all the proper URL's
+
+3. Need assistance / figure things out
+- calendar function fucntionalities
+
+__________________________________________________
+
+2023/03/30 Gabriel
+
+1. Done / not done since last scrum:
+- setup the hosting for the project
+- adminCRUD complete
+- Google Analytics
+
+2. To do until next Scrum:
+- 405 method not allowed
+- vehicles might require fine tuning (validations)
+- complete user CRUD
+- integrate reservations (design the route for reservation)
+
+3. Need assistance / figure things out
+- troubleshoot hosting
+- calendar function fucntionalities
+
+
+
+2023/03/30 Debora
+
+1. Done / not done since last scrum:
+- commit the latest version of project with all the proper URL's
+- unified css
+- UI date selection
+
+2. To do until next Scrum:
+- registration needs work
+- design the route for reservation
+- work on register form /log out / login security
+- integrate reservations (design the route for reservation)
 
 3. Need assistance / figure things out
 - calendar function fucntionalities
