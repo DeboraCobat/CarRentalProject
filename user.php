@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -12,14 +13,14 @@ use Psr\Http\Message\UploadedFileInterface;
 require_once 'init.php';
 
 
-// DISPLAY ALL USERS function /////////////////////////////////////////////////////////
+// DISPLAY ALL USERS function
 $app->get('/admin/userslist', function ($request, $response, $args) {
   $users = DB::query("SELECT * FROM users");
 
   return $this->get('view')->render($response, 'admin/userslist.html.twig', ['users' => $users]);
 });
 
-////////////////////ADD USER/////////////////////////////////////////////////////////
+////////////////////ADD USER
 
 $app->get('/admin/adduser', function ($request, $response, $args) {
   $successMessage = '';
