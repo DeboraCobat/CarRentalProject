@@ -21,7 +21,6 @@ require_once 'customer.php';
 
 require_once 'user.php';
 
-
 $app->run();
 
 
