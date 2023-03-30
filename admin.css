@@ -1,26 +1,47 @@
-/* Navigadion sidebar for Admin Panel ----------------------------------------------------------------*/
 
-Override default body margin to fit container-fluid 
+
+/* Remove margin and padding from body element */
 body {
-    margin: 0;
-  }
-  
-  Style for the main header 
-  header {
-    margin-bottom: 20px;
-  }
-  
-  Style for the sidebar 
-  .navbar {
-    height: 20vh;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-  }
-  
-  .navbar-nav {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  
+  background-color: lightgray;
+  font-family: Arial, sans-serif;
+  color: #444444;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for admin bar */
+.adminbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Center content */
+.centeredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+/* Footer style */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Set link styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,15 +1,12 @@
 body {
   background-color: lightgray;
+  font-family: Arial, sans-serif;
+  color: #444444;
   margin: 0;
   padding: 0;
 }
 
-#centeredContent {
-  margin: 0 auto;
-  padding: 20px;
-  width: 500px; /* 960px; */
-  background-color: white;
-}
+/* Errors messages */
 
 .errorMessage {
   font-weight: bold;
@@ -17,7 +14,38 @@ body {
   color: red;
 }
 
-/* Navigadion sidebar for Admin Panel -------*/
+/* Center the content in the middle of the page */
+.centeredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+/* Set max width for content */
+.container {
+  max-width: 768px;
+}
 
-/* Style for the left sidebar */
+/* Set padding for body */
+body {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 
+/* Set footer styles */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Set link styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

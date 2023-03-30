@@ -2,18 +2,18 @@
 <html>
     <head>
             <title>{% block title %}{% endblock %}</title>
+            <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="/style.css">
         {% block addHead %}
         {% endblock %}
      </head>
-    <body>
-        {% block javascripts %}{% endblock %}
-        <div id="centeredContent">{% block content %}{% endblock %}
-            <div id="footer">
+     <body>
+        <div class="centeredContent"> {% block content %}{% endblock %}
+          <div class="footer">
                 {% block footer %}
                     &copy; Copyright 2023 by <a href="http://carrentalproject.org/">you</a>.
                 {% endblock %}
             </div>
         </div>
     </body>
-</html>
+</html> 

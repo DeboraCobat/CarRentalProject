@@ -1,0 +1,22 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Rent a car{% endblock %}
+
+{% block content %}
+
+<h1>Select a pick-up date</h1>
+ 
+<form method="post">
+  <label for="departure-date">Departure date:</label>
+  <input type="date" id="departure-date" name="departure_date" required>
+  <label for="return-date">Return date:</label>
+  <input type="date" id="return-date" name="return_date" required>
+  <button type="submit">Submit</button>
+</form>
+
+{% if departureDate is defined and returnDate is defined %}
+  <p>You selected a departure date of {{ departureDate }} and a return date of {{ returnDate }}.</p>
+{% endif %}
+
+
+ {% endblock %}
