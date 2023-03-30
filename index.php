@@ -22,6 +22,12 @@ require_once 'customer.php';
 require_once 'user.php';
 
 
+// Route for the home page
+$app->get('/', function ($request, $response, $args) {
+    return $this->view->render($response, 'login.html.twig');
+});
+
+
 $app->run();
 
 
