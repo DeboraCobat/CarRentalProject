@@ -11,11 +11,18 @@ use Psr\Http\Message\UploadedFileInterface;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-DB::$dbName = 'carrental';
-DB::$user = 'carrental';
-DB::$password = '1lvTox19lz]Itajh';
-DB::$host = 'localhost';
+if ($_SERVER['SERVER_NAME'] == 'carrental.org') {
 
+  DB::$dbName = 'carrental';
+  DB::$user = 'carrental';
+  DB::$password = '1lvTox19lz]Itajh';
+  DB::$host = 'localhost';
+} else { // hosted on external server
+   DB::$dbName = 'cp5065_gabriel';
+   DB::$user = 'cp5065_gabriel';
+   DB::$password = '=ozlB,15R5n4';
+  
+}
 // Create Container
 $container = new Container();
 AppFactory::setContainer($container);
