@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* master.html.twig */
-class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
+/* admin/master.html.twig */
+class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
 {
     private $source;
     private $macros = [];
@@ -29,6 +29,7 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'addHead' => [$this, 'block_addHead'],
+            'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
             'content' => [$this, 'block_content'],
             'footer' => [$this, 'block_footer'],
@@ -53,18 +54,29 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         // line 8
         echo "     </head>
     <body>
-        ";
-        // line 10
-        $this->displayBlock('javascripts', $context, $blocks);
+        <div class=\"sidebar\">
+            ";
         // line 11
+        $this->loadTemplate("admin/adminpanel.html.twig", "admin/master.html.twig", 11)->display($context);
+        // line 12
+        echo "        </div>
+        ";
+        // line 13
+        $this->displayBlock('body', $context, $blocks);
+        // line 14
+        echo "
+        ";
+        // line 15
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 16
         echo "        <div id=\"centeredContent\">";
         $this->displayBlock('content', $context, $blocks);
-        // line 12
+        // line 17
         echo "            <div id=\"footer\">
                 ";
-        // line 13
+        // line 18
         $this->displayBlock('footer', $context, $blocks);
-        // line 16
+        // line 21
         echo "            </div>
         </div>
     </body>
@@ -85,35 +97,46 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         echo "        ";
     }
 
-    // line 10
+    // line 13
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+    }
+
+    // line 15
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 11
+    // line 16
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 13
+    // line 18
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 14
+        // line 19
         echo "                    &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 ";
     }
 
     public function getTemplateName()
     {
-        return "master.html.twig";
+        return "admin/master.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
     }
 
     public function getDebugInfo()
     {
-        return array (  105 => 14,  101 => 13,  95 => 11,  89 => 10,  85 => 7,  81 => 6,  75 => 4,  68 => 16,  66 => 13,  63 => 12,  60 => 11,  58 => 10,  54 => 8,  52 => 6,  47 => 4,  42 => 1,);
+        return array (  123 => 19,  119 => 18,  113 => 16,  107 => 15,  101 => 13,  97 => 7,  93 => 6,  87 => 4,  80 => 21,  78 => 18,  75 => 17,  72 => 16,  70 => 15,  67 => 14,  65 => 13,  62 => 12,  60 => 11,  55 => 8,  53 => 6,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -127,6 +150,11 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         {% endblock %}
      </head>
     <body>
+        <div class=\"sidebar\">
+            {% include 'admin/adminpanel.html.twig' %}
+        </div>
+        {% block body %}{% endblock %}
+
         {% block javascripts %}{% endblock %}
         <div id=\"centeredContent\">{% block content %}{% endblock %}
             <div id=\"footer\">
@@ -136,6 +164,6 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
             </div>
         </div>
     </body>
-</html>", "master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\master.html.twig");
+</html>", "admin/master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\master.html.twig");
     }
 }
