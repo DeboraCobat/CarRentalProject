@@ -11,7 +11,7 @@ use Psr\Http\Message\UploadedFileInterface;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
+if ($_SERVER['SERVER_NAME'] == 'carrental.org') {
 
   DB::$dbName = 'carrental';
   DB::$user = 'carrental';
