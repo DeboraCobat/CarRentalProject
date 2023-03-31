@@ -20,12 +20,51 @@ $app->get('/admin/reservationslist', function ($request, $response, $args) {
 });
 
 
-// USER CAN SEE CALENDAR
-$app->group('/selectdate', function (RouteCollectorProxy $group) {
-    $group->get('', function ($request, $response, $args) {
-        $viewData = [];
-        return $this->get('view')->render($response, 'selectdate.html.twig', $viewData);
-    });
+// // USER CAN SEE CALENDAR
+// $app->group('/selectdate', function (RouteCollectorProxy $group) {
+//     $group->get('', function ($request, $response, $args) {
+//         $viewData = [];
+//         return $this->get('view')->render($response, 'selectdate.html.twig', $viewData);
+//     });
+// });
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+// $app->get('/selectdate', function ($request, $response, $args) {
+//     $viewData = [];
+//     return $this->get('view')->render($response, 'selectdate.html.twig', $viewData);
+// });
+
+// $app->post('/selectdate', function ($request, $response, $args) {
+//     $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
+//     $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
+
+//     $availableVehicles = DB::query("SELECT id FROM vehicles WHERE %s < return_date AND %s > pickup_date", $pickupDateTime, $returnDateTime);
+
+//     return $this->get('view')->render($response, 'selectvehicle.html.twig', [
+//         'availableVehicles' => $availableVehicles,
+//         'pickupDateTime' => $pickupDateTime,
+//         'returnDateTime' => $returnDateTime
+//     ]);
+// });
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$app->get('/selectdate', function ($request, $response, $args) {
+    $viewData = [];
+    return $this->get('view')->render($response, 'index.html.twig', $viewData);
+});
+
+$app->post('/selectdate', function ($request, $response, $args) {
+    $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
+    $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
+
+    $availableVehicles = DB::query("SELECT id FROM vehicles WHERE %s < return_date AND %s > pickup_date", $pickupDateTime, $returnDateTime);
+
+    return $this->get('view')->render($response, 'selectvehicle.html.twig', [
+        'availableVehicles' => $availableVehicles,
+        'pickupDateTime' => $pickupDateTime,
+        'returnDateTime' => $returnDateTime
+    ]);
 });
 
 

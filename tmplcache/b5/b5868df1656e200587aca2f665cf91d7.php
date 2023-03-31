@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* admin/adminpanel.html.twig */
-class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
+class __TwigTemplate_6f98c3800cdf24ecd23f44799e4c326a extends Template
 {
     private $source;
     private $macros = [];
@@ -85,6 +85,6 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
        <li><a href=\"vehicleslist\">Vehicles</a></li>
        <li><a href=\"reservationslist\">Reservations</a></li>
     </ul>
-  </nav>", "admin/adminpanel.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\adminpanel.html.twig");
+  </nav>", "admin/adminpanel.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/adminpanel.html.twig");
     }
 }

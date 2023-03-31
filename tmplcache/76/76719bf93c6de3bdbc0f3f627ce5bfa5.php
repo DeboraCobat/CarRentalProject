@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* admin/master.html.twig */
-class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
+/* master.html.twig */
+class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 {
     private $source;
     private $macros = [];
@@ -29,8 +29,6 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'addHead' => [$this, 'block_addHead'],
-            'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
             'content' => [$this, 'block_content'],
             'footer' => [$this, 'block_footer'],
         ];
@@ -47,40 +45,35 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
         // line 4
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
         ";
         // line 7
         $this->displayBlock('addHead', $context, $blocks);
         // line 9
         echo "     </head>
-    <body>
-        <div class=\"adminbar\">
-            ";
-        // line 12
-        $this->loadTemplate("admin/adminpanel.html.twig", "admin/master.html.twig", 12)->display($context);
-        // line 13
-        echo "        </div>
-        ";
-        // line 14
-        $this->displayBlock('body', $context, $blocks);
-        // line 15
-        echo "
-        ";
-        // line 16
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 17
-        echo "        <div class=\"centeredContent\">";
+     <body>
+        <div class=\"centeredContent\"> ";
+        // line 11
         $this->displayBlock('content', $context, $blocks);
-        // line 18
-        echo "            <div class=\"footer\">
+        // line 12
+        echo "          <div class=\"footer\">
                 ";
-        // line 19
+        // line 13
         $this->displayBlock('footer', $context, $blocks);
-        // line 22
+        // line 16
         echo "            </div>
         </div>
     </body>
+    <!-- Google tag (gtag.js) -->
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TVEQKKS963');
+</script>
 </html> ";
     }
 
@@ -98,46 +91,29 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
         echo "        ";
     }
 
-    // line 14
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-    }
-
-    // line 16
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-    }
-
-    // line 17
+    // line 11
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 19
+    // line 13
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 20
+        // line 14
         echo "                    &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 ";
     }
 
     public function getTemplateName()
     {
-        return "admin/master.html.twig";
-    }
-
-    public function isTraitable()
-    {
-        return false;
+        return "master.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  124 => 20,  120 => 19,  114 => 17,  108 => 16,  102 => 14,  98 => 8,  94 => 7,  88 => 4,  81 => 22,  79 => 19,  76 => 18,  73 => 17,  71 => 16,  68 => 15,  66 => 14,  63 => 13,  61 => 12,  56 => 9,  54 => 7,  48 => 4,  43 => 1,);
+        return array (  105 => 14,  101 => 13,  95 => 11,  91 => 8,  87 => 7,  81 => 4,  65 => 16,  63 => 13,  60 => 12,  58 => 11,  54 => 9,  52 => 7,  46 => 4,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -146,26 +122,29 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
 <html>
     <head>
             <title>{% block title %}{% endblock %}</title>
-            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
         {% block addHead %}
         {% endblock %}
      </head>
-    <body>
-        <div class=\"adminbar\">
-            {% include 'admin/adminpanel.html.twig' %}
-        </div>
-        {% block body %}{% endblock %}
-
-        {% block javascripts %}{% endblock %}
-        <div class=\"centeredContent\">{% block content %}{% endblock %}
-            <div class=\"footer\">
+     <body>
+        <div class=\"centeredContent\"> {% block content %}{% endblock %}
+          <div class=\"footer\">
                 {% block footer %}
                     &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 {% endblock %}
             </div>
         </div>
     </body>
-</html> ", "admin/master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\master.html.twig");
+    <!-- Google tag (gtag.js) -->
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TVEQKKS963');
+</script>
+</html> ", "master.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/master.html.twig");
     }
 }

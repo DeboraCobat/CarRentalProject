@@ -1,0 +1,37 @@
+{% extends 'master.html.twig' %}
+
+{% block content %}
+    <h1>Available Vehicles</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th>Availability</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle in availableVehicles %}
+                <tr>
+                    <td>{{ vehicle.id }}</td>
+                    <td>{{ vehicle.make }}</td>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.year }}</td>
+                    <td>{{ vehicle.color }}</td>
+                    <td>{{ vehicle.availability }}</td>
+                    <td>
+                        <form method="post" action="{{ base_path('booking', {'vehicle_id': vehicle.id}) }}">
+                            <input type="hidden" name="pickup_date" value="{{ pickupDateTime }}">
+                            <input type="hidden" name="return_date" value="{{ returnDateTime }}">
+                            <button type="submit">Select</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

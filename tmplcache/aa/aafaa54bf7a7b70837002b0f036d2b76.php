@@ -96,12 +96,9 @@ class __TwigTemplate_640771ce133e393fcaba925311223fb2 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "last_name", [], "any", false, false, false, 22), "html", null, true);
         echo "\"><br>
 
-<label for=\"user_type\">User Type:</label>
-<select id=\"user_type\" name=\"user_type\">
-    <option value=\"admin\">Admin</option>
-    <option value=\"customer\">Customer</option>
-</select><br>
-
+";
+        // line 29
+        echo "
 <label for=\"address\">Address:</label>
 <input type=\"text\" id=\"address\" name=\"address\" value=\"";
         // line 31
@@ -156,7 +153,7 @@ class __TwigTemplate_640771ce133e393fcaba925311223fb2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  138 => 46,  132 => 43,  126 => 40,  120 => 37,  114 => 34,  108 => 31,  96 => 22,  90 => 19,  83 => 14,  79 => 12,  70 => 10,  66 => 9,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  135 => 46,  129 => 43,  123 => 40,  117 => 37,  111 => 34,  105 => 31,  101 => 29,  96 => 22,  90 => 19,  83 => 14,  79 => 12,  70 => 10,  66 => 9,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,11 +181,11 @@ class __TwigTemplate_640771ce133e393fcaba925311223fb2 extends Template
 <label for=\"last_name\">Last Name:</label>
 <input type=\"text\" id=\"last_name\" name=\"last_name\" value=\"{{ u.last_name }}\"><br>
 
-<label for=\"user_type\">User Type:</label>
+{# <label for=\"user_type\">User Type:</label>
 <select id=\"user_type\" name=\"user_type\">
     <option value=\"admin\">Admin</option>
     <option value=\"customer\">Customer</option>
-</select><br>
+</select><br> #}
 
 <label for=\"address\">Address:</label>
 <input type=\"text\" id=\"address\" name=\"address\" value=\"{{ u.address }}\"><br>
