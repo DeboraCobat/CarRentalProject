@@ -49,12 +49,12 @@ $app->get('/admin/reservationslist', function ($request, $response, $args) {
 // });
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-$app->get('/selectdate', function ($request, $response, $args) {
+$app->get('/', function ($request, $response, $args) {
     $viewData = [];
     return $this->get('view')->render($response, 'index.html.twig', $viewData);
 });
 
-$app->post('/selectdate', function ($request, $response, $args) {
+$app->post('/', function ($request, $response, $args) {
     $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
     $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
 
