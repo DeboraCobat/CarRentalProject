@@ -34,7 +34,11 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
     {
         $macros = $this->macros;
         // line 15
-        echo "
+        echo "<head>
+  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
+  <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+</head>
+
   <nav>
      <ul class=adminbar>
       <li><a href=\"userslist\">Users</a></li>
@@ -70,6 +74,10 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
     </nav>
     
 {% endblock content %} #}
+<head>
+  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
+  <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+</head>
 
   <nav>
      <ul class=adminbar>
