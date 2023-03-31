@@ -16,7 +16,7 @@ require_once __DIR__ . '/vendor/autoload.php';
   DB::$dbName = 'carrental';
   DB::$user = 'carrental';
   DB::$password = '1lvTox19lz]Itajh';
-//   DB::$host = 'localhost';
+  DB::$host = 'localhost';
 // } else { // hosted on external server
 //    DB::$dbName = 'cp5065_gabriel';
 //    DB::$user = 'cp5065_gabriel';

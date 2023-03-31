@@ -31,13 +31,13 @@ $app->get('/admin/adduser', function ($request, $response, $args) {
 });
 
 
-$app->post('admin/adduser', function ($request, $response, $args) {
+$app->post('/admin/adduser', function ($request, $response, $args) {
 
   // Extract values submitted
   $data = $request->getParsedBody();
   $firstName = $data['first_name'];
   $lastName = $data['last_name'];
-  $usertype = $data['user_type'];
+//   $usertype = $data['user_type'];
   $address = $data['address'];
   $phone = $data['phone'];
   $email = $data['email'];
@@ -55,10 +55,10 @@ $app->post('admin/adduser', function ($request, $response, $args) {
       $errorList[] = "Last name must be 1-50 characters long";
       $lastName = "";
   }
-  if (!in_array($usertype, array('admin', 'customer'))) {
-      $errorList[] = "User type must be either 'admin' or 'customer'";
-      $users = 'customer';
-  }
+//   if (!in_array($usertype, array('admin', 'customer'))) {
+//       $errorList[] = "User type must be either 'admin' or 'customer'";
+//       $users = 'customer';
+//   }
   if (strlen($address) < 2 || strlen($address) > 100) {
       $errorList[] = "Address must be 2-100 characters long";
       $address = "";
@@ -88,7 +88,7 @@ $app->post('admin/adduser', function ($request, $response, $args) {
       $valuesList = [
           'first_name' => $firstName,
           'last_name' => $lastName,
-          'usertype' => $usertype,
+        //   'usertype' => $usertype,
           'address' => $address,
           'phone' => $phone,
           'email' => $email,
@@ -106,7 +106,7 @@ $app->post('admin/adduser', function ($request, $response, $args) {
 DB::insert('users', [
   'first_name' => $firstName,
   'last_name' => $lastName,
-  'users' => $users,
+//   'users' => $users,
   'address' => $address,
   'phone' => $phone,
   'email' => $email,
