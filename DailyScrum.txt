@@ -129,3 +129,22 @@ __________________________________________________
 
 3. Need assistance / figure things out
 - calendar function fucntionalities
+
+__________________________________________________
+
+2023/03/31 Gabriel
+
+1. Done / not done since last scrum:
+-  managed to have vehicles with available within a certain time frame populate list
+- adminCRUD complete
+- Google Analytics
+
+2. To do until next Scrum:
+- 405 method not allowed
+- vehicles might require fine tuning (validations)
+- complete user CRUD
+- integrate reservations (design the route for reservation)
+
+3. Need assistance / figure things out
+- troubleshoot hosting
+- calendar function fucntionalities
