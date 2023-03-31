@@ -136,15 +136,31 @@ __________________________________________________
 
 1. Done / not done since last scrum:
 -  managed to have vehicles with available within a certain time frame populate list
-- adminCRUD complete
-- Google Analytics
+-  405 method 
+-  selectdate page complete, user can select date and time (pickup and return)
+- selectvehicle page displays apprpriate vehicle
+- design of the reservation path
 
 2. To do until next Scrum:
-- 405 method not allowed
-- vehicles might require fine tuning (validations)
+- 
+- more vehicles might require fine tuning (validations)
 - complete user CRUD
-- integrate reservations (design the route for reservation)
+- the user route from start to finish needs to be complete (user be able to complete booking)
 
 3. Need assistance / figure things out
-- troubleshoot hosting
-- calendar function fucntionalities
+- troubleshoot hosting and filezille
+
+
+2023/03/30 Debora
+
+1. Done / not done since last scrum:
+- design the route for reservation 
+
+2. To do until next Scrum:
+- integrate pages of the website
+- work on register form /log out / login security
+- registration needs work
+- start payment integration
+
+3. Need assistance / figure things out
+- access database on cpanel
