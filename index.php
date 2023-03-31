@@ -21,6 +21,8 @@ require_once 'customer.php';
 
 require_once 'user.php';
 
+require_once '1bookingprocess.php';
+
 $app->run();
 
 

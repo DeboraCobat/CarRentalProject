@@ -47,40 +47,41 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
         // line 4
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
+            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
         ";
-        // line 6
+        // line 7
         $this->displayBlock('addHead', $context, $blocks);
-        // line 8
+        // line 9
         echo "     </head>
     <body>
-        <div class=\"sidebar\">
+        <div class=\"adminbar\">
             ";
-        // line 11
-        $this->loadTemplate("admin/adminpanel.html.twig", "admin/master.html.twig", 11)->display($context);
         // line 12
+        $this->loadTemplate("admin/adminpanel.html.twig", "admin/master.html.twig", 12)->display($context);
+        // line 13
         echo "        </div>
         ";
-        // line 13
-        $this->displayBlock('body', $context, $blocks);
         // line 14
+        $this->displayBlock('body', $context, $blocks);
+        // line 15
         echo "
         ";
-        // line 15
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 16
-        echo "        <div id=\"centeredContent\">";
-        $this->displayBlock('content', $context, $blocks);
+        $this->displayBlock('javascripts', $context, $blocks);
         // line 17
-        echo "            <div id=\"footer\">
-                ";
+        echo "        <div class=\"centeredContent\">";
+        $this->displayBlock('content', $context, $blocks);
         // line 18
+        echo "            <div class=\"footer\">
+                ";
+        // line 19
         $this->displayBlock('footer', $context, $blocks);
-        // line 21
+        // line 22
         echo "            </div>
         </div>
     </body>
-</html>";
+</html> ";
     }
 
     // line 4
@@ -89,37 +90,37 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
         $macros = $this->macros;
     }
 
-    // line 6
+    // line 7
     public function block_addHead($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 7
+        // line 8
         echo "        ";
     }
 
-    // line 13
+    // line 14
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 15
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 16
+    // line 17
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 18
+    // line 19
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 19
+        // line 20
         echo "                    &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 ";
     }
@@ -136,7 +137,7 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
 
     public function getDebugInfo()
     {
-        return array (  123 => 19,  119 => 18,  113 => 16,  107 => 15,  101 => 13,  97 => 7,  93 => 6,  87 => 4,  80 => 21,  78 => 18,  75 => 17,  72 => 16,  70 => 15,  67 => 14,  65 => 13,  62 => 12,  60 => 11,  55 => 8,  53 => 6,  48 => 4,  43 => 1,);
+        return array (  124 => 20,  120 => 19,  114 => 17,  108 => 16,  102 => 14,  98 => 8,  94 => 7,  88 => 4,  81 => 22,  79 => 19,  76 => 18,  73 => 17,  71 => 16,  68 => 15,  66 => 14,  63 => 13,  61 => 12,  56 => 9,  54 => 7,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -145,25 +146,26 @@ class __TwigTemplate_1d27c6d8367dc6a0cc828b72f286777e extends Template
 <html>
     <head>
             <title>{% block title %}{% endblock %}</title>
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
+            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
         {% block addHead %}
         {% endblock %}
      </head>
     <body>
-        <div class=\"sidebar\">
+        <div class=\"adminbar\">
             {% include 'admin/adminpanel.html.twig' %}
         </div>
         {% block body %}{% endblock %}
 
         {% block javascripts %}{% endblock %}
-        <div id=\"centeredContent\">{% block content %}{% endblock %}
-            <div id=\"footer\">
+        <div class=\"centeredContent\">{% block content %}{% endblock %}
+            <div class=\"footer\">
                 {% block footer %}
                     &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 {% endblock %}
             </div>
         </div>
     </body>
-</html>", "admin/master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\master.html.twig");
+</html> ", "admin/master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\master.html.twig");
     }
 }

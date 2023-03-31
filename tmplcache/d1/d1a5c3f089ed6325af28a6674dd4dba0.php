@@ -63,37 +63,31 @@ class __TwigTemplate_0a991f11bff5d4a325d627a5c7e8c6c6 extends Template
         <th>Email</th>
         <th>Phone</th>
         <th>Address</th>
-        <th>Driver's License</th>
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       ";
-        // line 20
+        // line 18
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["users"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 21
+            // line 19
             echo "        <tr>
           <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 20), "html", null, true);
+            echo "</td>
+          <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+          <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
           <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", [], "any", false, false, false, 25), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "drivers_license", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
         </tr>
       ";
@@ -101,7 +95,7 @@ class __TwigTemplate_0a991f11bff5d4a325d627a5c7e8c6c6 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 26
         echo "    </tbody>
   </table> </br>
   <button class=\"btn\" onclick=\"location.href='adduser'\">Add User</button></br>
@@ -122,7 +116,7 @@ class __TwigTemplate_0a991f11bff5d4a325d627a5c7e8c6c6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  105 => 29,  96 => 26,  92 => 25,  88 => 24,  84 => 23,  80 => 22,  77 => 21,  73 => 20,  58 => 7,  54 => 6,  47 => 4,  36 => 2,);
+        return array (  99 => 26,  90 => 23,  86 => 22,  82 => 21,  78 => 20,  75 => 19,  71 => 18,  58 => 7,  54 => 6,  47 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -141,8 +135,6 @@ class __TwigTemplate_0a991f11bff5d4a325d627a5c7e8c6c6 extends Template
         <th>Email</th>
         <th>Phone</th>
         <th>Address</th>
-        <th>Driver's License</th>
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -152,7 +144,6 @@ class __TwigTemplate_0a991f11bff5d4a325d627a5c7e8c6c6 extends Template
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.address }}</td>
-          <td>{{ user.drivers_license }}</td>
         </tr>
       {% endfor %}
     </tbody>

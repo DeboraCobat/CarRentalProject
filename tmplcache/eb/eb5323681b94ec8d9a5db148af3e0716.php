@@ -35,9 +35,8 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
         $macros = $this->macros;
         // line 15
         echo "
-<p>Select an option you wish to manage</p>
   <nav>
-     <ul>
+     <ul class=adminbar>
       <li><a href=\"userslist\">Users</a></li>
        <li><a href=\"vehicleslist\">Vehicles</a></li>
        <li><a href=\"reservationslist\">Reservations</a></li>
@@ -72,9 +71,8 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
     
 {% endblock content %} #}
 
-<p>Select an option you wish to manage</p>
   <nav>
-     <ul>
+     <ul class=adminbar>
       <li><a href=\"userslist\">Users</a></li>
        <li><a href=\"vehicleslist\">Vehicles</a></li>
        <li><a href=\"reservationslist\">Reservations</a></li>

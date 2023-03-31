@@ -29,7 +29,6 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'addHead' => [$this, 'block_addHead'],
-            'javascripts' => [$this, 'block_javascripts'],
             'content' => [$this, 'block_content'],
             'footer' => [$this, 'block_footer'],
         ];
@@ -46,21 +45,19 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         // line 4
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
         ";
-        // line 6
+        // line 7
         $this->displayBlock('addHead', $context, $blocks);
-        // line 8
+        // line 9
         echo "     </head>
-    <body>
-        ";
-        // line 10
-        $this->displayBlock('javascripts', $context, $blocks);
+     <body>
+        <div class=\"centeredContent\"> ";
         // line 11
-        echo "        <div id=\"centeredContent\">";
         $this->displayBlock('content', $context, $blocks);
         // line 12
-        echo "            <div id=\"footer\">
+        echo "          <div class=\"footer\">
                 ";
         // line 13
         $this->displayBlock('footer', $context, $blocks);
@@ -68,7 +65,16 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         echo "            </div>
         </div>
     </body>
-</html>";
+    <!-- Google tag (gtag.js) -->
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TVEQKKS963');
+</script>
+</html> ";
     }
 
     // line 4
@@ -77,18 +83,12 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
         $macros = $this->macros;
     }
 
-    // line 6
+    // line 7
     public function block_addHead($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 7
+        // line 8
         echo "        ";
-    }
-
-    // line 10
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
     }
 
     // line 11
@@ -113,7 +113,7 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
 
     public function getDebugInfo()
     {
-        return array (  105 => 14,  101 => 13,  95 => 11,  89 => 10,  85 => 7,  81 => 6,  75 => 4,  68 => 16,  66 => 13,  63 => 12,  60 => 11,  58 => 10,  54 => 8,  52 => 6,  47 => 4,  42 => 1,);
+        return array (  105 => 14,  101 => 13,  95 => 11,  91 => 8,  87 => 7,  81 => 4,  65 => 16,  63 => 13,  60 => 12,  58 => 11,  54 => 9,  52 => 7,  46 => 4,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -122,20 +122,29 @@ class __TwigTemplate_57cb6d3a4c7ec8fc46f6354150369735 extends Template
 <html>
     <head>
             <title>{% block title %}{% endblock %}</title>
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
         {% block addHead %}
         {% endblock %}
      </head>
-    <body>
-        {% block javascripts %}{% endblock %}
-        <div id=\"centeredContent\">{% block content %}{% endblock %}
-            <div id=\"footer\">
+     <body>
+        <div class=\"centeredContent\"> {% block content %}{% endblock %}
+          <div class=\"footer\">
                 {% block footer %}
                     &copy; Copyright 2023 by <a href=\"http://carrentalproject.org/\">you</a>.
                 {% endblock %}
             </div>
         </div>
     </body>
-</html>", "master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\master.html.twig");
+    <!-- Google tag (gtag.js) -->
+<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TVEQKKS963');
+</script>
+</html> ", "master.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\master.html.twig");
     }
 }
