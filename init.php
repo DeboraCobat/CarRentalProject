@@ -11,10 +11,10 @@ use Psr\Http\Message\UploadedFileInterface;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// if ($_SERVER['SERVER_NAME'] == 'carrental.org') {
+// if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
 
-  DB::$dbName = 'carrental';
-  DB::$user = 'carrental';
+  DB::$dbName = 'carrentalproject';
+  DB::$user = 'carrentalproject';
   DB::$password = '1lvTox19lz]Itajh';
   DB::$host = 'localhost';
 // } else { // hosted on external server
@@ -30,7 +30,7 @@ AppFactory::setContainer($container);
 // Set view in Container
 // tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
 $container->set('view', function () {
-    return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
+    return Twig::create(__DIR__ . '/templates');//,  ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
 });
 
 // creates a new instance of a Slim Framework application
