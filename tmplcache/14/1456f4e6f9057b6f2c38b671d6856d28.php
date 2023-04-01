@@ -82,9 +82,9 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
         // line 14
         echo "
 <div class=\"container\">
-  <div class=\"row justify-content-start mt-5\">
-    <div class=\"col-md-11 col-lg-11\">
-      <h1 class=\"mb-4\">Add a User</h1>
+  <div class=\"row justify-content-center mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add a User</h1>
 
       <form method=\"post\" action=\"/admin/adduser\">
 
@@ -194,9 +194,9 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
 {% endif %}
 
 <div class=\"container\">
-  <div class=\"row justify-content-start mt-5\">
-    <div class=\"col-md-11 col-lg-11\">
-      <h1 class=\"mb-4\">Add a User</h1>
+  <div class=\"row justify-content-center mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add a User</h1>
 
       <form method=\"post\" action=\"/admin/adduser\">
 
