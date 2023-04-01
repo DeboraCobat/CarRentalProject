@@ -1,4 +1,5 @@
 <?php
+session_start ();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -16,15 +17,14 @@ require_once 'vehicle.php';
 require_once 'reservation.php';
 
 require_once 'customer.php';
-
 require_once 'user.php';
 
 require_once 'login.php';
+//require_once 'logout.php';
 
 require_once 'register.php';
 
 require_once '1bookingprocess.php';
-
 
 $app->run();
 

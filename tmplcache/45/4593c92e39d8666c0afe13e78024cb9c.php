@@ -55,9 +55,8 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "    <h1 class=\"mb-4\">All Vehicles</h1>
-<div class=\"table-responsive\">
-  <table class=\"table table-bordered table-striped\">
+        echo "  <h1>All Vehicles</h1>
+  <table class=\"listTable\">
     <thead>
       <tr>
         <th>Make</th>
@@ -74,51 +73,51 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
     </thead>
     <tbody>
       ";
-        // line 24
+        // line 23
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["vehicles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["vehicle"]) {
-            // line 25
+            // line 24
             echo "        <tr>
           <td>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "make", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+          <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "make", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "model", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
           <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "model", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "year", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
           <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "year", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "color", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
           <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "color", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "license_plate", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
           <td>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "license_plate", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "daily_rate", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
           <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "daily_rate", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "availability", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
           <td>";
             // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "availability", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "seats", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
           <td>";
             // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "seats", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "lper100", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "lper100", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
           <td><img src=\"";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image_filepath", [], "any", false, false, false, 35), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image_filepath", [], "any", false, false, false, 34), "html", null, true);
             echo "\" width=\"100\"></td>
         </tr>
       ";
@@ -126,13 +125,11 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vehicle'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 37
         echo "    </tbody>
-  </table> 
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='addvehicle'\">Add Vehicle</button>
-</div>
+  </table> </br>
+  <button class=\"btn\" onclick=\"location.href='/admin/addvehicle'\">Add Vehicle</button></br>
+  </div></br>
 
 ";
     }
@@ -149,7 +146,7 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
 
     public function getDebugInfo()
     {
-        return array (  130 => 38,  121 => 35,  117 => 34,  113 => 33,  109 => 32,  105 => 31,  101 => 30,  97 => 29,  93 => 28,  89 => 27,  85 => 26,  82 => 25,  78 => 24,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  129 => 37,  120 => 34,  116 => 33,  112 => 32,  108 => 31,  104 => 30,  100 => 29,  96 => 28,  92 => 27,  88 => 26,  84 => 25,  81 => 24,  77 => 23,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -159,9 +156,8 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
 {% block title %}All Vehicles{% endblock %}
 
 {% block content %}
-    <h1 class=\"mb-4\">All Vehicles</h1>
-<div class=\"table-responsive\">
-  <table class=\"table table-bordered table-striped\">
+  <h1>All Vehicles</h1>
+  <table class=\"listTable\">
     <thead>
       <tr>
         <th>Make</th>
@@ -192,11 +188,9 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
         </tr>
       {% endfor %}
     </tbody>
-  </table> 
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='addvehicle'\">Add Vehicle</button>
-</div>
+  </table> </br>
+  <button class=\"btn\" onclick=\"location.href='/admin/addvehicle'\">Add Vehicle</button></br>
+  </div></br>
 
 {% endblock %}
 ", "admin/vehicleslist.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/vehicleslist.html.twig");
