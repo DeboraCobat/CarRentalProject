@@ -18,57 +18,24 @@ $app->get('/findmyreservation', function (Request $request, Response $response, 
     return $this->get('view')->render($response, 'findmyreservation.html.twig');
 });
 
-//     $email = $request->getQueryParam('email');
-//     $reservationId = $request->getQueryParam('reservationId');
+// $app->post('/findmyreservation', function (Request $request, Response $response) {
+//     $data = $request->getParsedBody();
 
-//     // If the email and reservation ID are not provided, render the template with empty values
-//     if (!$email || !$reservationId) {
-//         return $this->view->render($response, 'findmyreservation.html.twig', [
-//             'email' => '',
-//             'reservationId' => ''
-//         ]);
-//     }
+//     // Retrieve the email and reservation ID from the form data
+//     $email = $data['email'];
+//     $reservationId = $data['reservationId'];
 
-//     // Query the database to retrieve the reservation data for the user and reservation ID
-//     // Make sure to sanitize user input to prevent SQL injection attacks
-//     $reservation = DB::queryFirstRow('SELECT * FROM reservations WHERE email = %s AND id_reservation = %i', 
-//         filter_var($email, FILTER_SANITIZE_EMAIL), 
-//         filter_var($reservationId, FILTER_SANITIZE_NUMBER_INT)
+//     // Query the database to find the reservation based on the email and reservation ID provided
+//     $reservation = queryReservation($email, $reservationId);
+
+//     // Render the reservation details in a new Twig template
+//     $response->getBody()->write(
+//         $this->get('view')->render(
+//             $response,
+//             'reservation_details.html.twig',
+//             ['reservation' => $reservation]
+//         )
 //     );
 
-//     // If the reservation was not found, render the template with an error message
-//     if (!$reservation) {
-//         return $this->view->render($response, 'findmyreservation.html.twig', [
-//             'email' => $email,
-//             'reservationId' => $reservationId,
-//             'error' => 'Reservation not found'
-//         ]);
-//     }
-
-//     // Render the template with the reservation data
-//     return $this->view->render($response, 'findmyreservation.html.twig', [
-//         'email' => $email,
-//         'reservationId' => $reservationId,
-//         'reservation' => $reservation
-//     ]);
-// });
-
-
-// // Define a route that accepts a GET request with the user's email and reservation ID as parameters
-// $app->get('/findmyreservation/{email}/{reservationId}', function (Request $request, Response $response, $args) {
-    
-//     // Retrieve the user's email and reservation ID from the route parameters
-//     $email = filter_var($args['email'], FILTER_SANITIZE_EMAIL);
-//     $reservationId = filter_var($args['reservationId'], FILTER_SANITIZE_NUMBER_INT);
-
-//     // Query the database to retrieve the reservation data for the user and reservation ID
-//     $reservation = DB::queryFirstRow('SELECT * FROM reservations WHERE email = %s AND id_reservation = %i', $email, $reservationId);
-
-//     // If the reservation was not found, return a 404 error
-//     if (!$reservation) {
-//         throw new \Slim\Exception\HttpNotFoundException($request);
-//     }
-
-//     // Render the findmyreservation.html.twig template with the reservation data
-//     return $this->view->render($response, 'findmyreservation.html.twig', ['reservation' => $reservation]);
+//     return $response;
 // });
