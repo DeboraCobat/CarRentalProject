@@ -57,27 +57,39 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
         // line 6
         echo "
 <body>
-  <h1>Login</h1>
-  ";
-        // line 9
+  <div class=\"container\">
+    <div class=\"row justify-content-center mt-5 mb-5\">
+      <div class=\"col-md-8 col-lg-6\">
+        <h1>Login</h1>
+
+        ";
+        // line 13
         if (array_key_exists("message", $context)) {
-            // line 10
-            echo "    <p>";
+            // line 14
+            echo "          <p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
-  ";
+        ";
         }
-        // line 12
-        echo "  <form method=\"post\" action=\"/login\">
-    <label for=\"email\">Email:</label><br>
-    <input type=\"email\" id=\"email\" name=\"email\"><br>
+        // line 16
+        echo "
+        <div class=\"form-group\">
+          <form method=\"post\" action=\"/login\">
+            <label for=\"email\">Email:</label><br>
+            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
-    <label for=\"password\">Password:</label><br>
-    <input type=\"password\" id=\"password\" name=\"password\"><br>
+            <label for=\"password\">Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"></br>
+          </form>
+        </div>
 
-    <input type=\"submit\" value=\"Log in\"><br>
-  </form><br>
-</body><br>
+            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+          
+        
+      </div>
+    </div>
+  </div>
+</body>
 
 ";
     }
@@ -94,7 +106,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
     public function getDebugInfo()
     {
-        return array (  71 => 12,  65 => 10,  63 => 9,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  75 => 16,  69 => 14,  67 => 13,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -106,20 +118,32 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 {% block content %}
 
 <body>
-  <h1>Login</h1>
-  {% if message is defined %}
-    <p>{{ message }}</p>
-  {% endif %}
-  <form method=\"post\" action=\"/login\">
-    <label for=\"email\">Email:</label><br>
-    <input type=\"email\" id=\"email\" name=\"email\"><br>
+  <div class=\"container\">
+    <div class=\"row justify-content-center mt-5 mb-5\">
+      <div class=\"col-md-8 col-lg-6\">
+        <h1>Login</h1>
 
-    <label for=\"password\">Password:</label><br>
-    <input type=\"password\" id=\"password\" name=\"password\"><br>
+        {% if message is defined %}
+          <p>{{ message }}</p>
+        {% endif %}
 
-    <input type=\"submit\" value=\"Log in\"><br>
-  </form><br>
-</body><br>
+        <div class=\"form-group\">
+          <form method=\"post\" action=\"/login\">
+            <label for=\"email\">Email:</label><br>
+            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
+
+            <label for=\"password\">Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"></br>
+          </form>
+        </div>
+
+            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+          
+        
+      </div>
+    </div>
+  </div>
+</body>
 
 {% endblock %}
 ", "login.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login.html.twig");
