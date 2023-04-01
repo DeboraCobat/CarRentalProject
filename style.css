@@ -1,88 +1,51 @@
-/* colors and fonts */
-:root {
-  --primary-color: #07F26D;
-  --secondary-color: #BF5B04;
-  --background-color: #F2F2F2;
-  --font-color: #444444;
-  --button-color: #0ABF58;
-  --dark-green: #025940;
-  --font-family: Arial, sans-serif;
-}
-
-/* global styles */
-* {
-  box-sizing: border-box;
+body {
+  background-color: lightgray;
+  font-family: Arial, sans-serif;
+  color: #444444;
   margin: 0;
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
+/* Errors messages */
+
+.errorMessage {
+  font-weight: bold;
+  background-color: yellow;
+  color: red;
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--font-color);
-  font-family: var(--font-family);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 3rem;
-}
-
-/*Content*/
-.navbar + .centered-content {
-  margin-top: 70px;
-}
-
-.centered-content {
+/* Center the content in the middle of the page */
+.centeredContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100% - 140px); /* Subtracting the navbar and footer heights */
-  margin-bottom: 50px; /* Add a margin to the bottom */
-  margin-left: auto; /* Center the content horizontally */
-  margin-right: auto;
-  max-width: 960px; /* Set a max width for the content */
+  height: 50vh;
+}
+/* Set max width for content */
+.container {
+  max-width: 768px;
 }
 
-/* navbar styles */
-.navbar {
-  background-color: var(--primary-color);
+/* Set padding for body */
+body {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-  color: #fff;
-}
-
-.navbar-nav .nav-item.active .nav-link {
-  color: var(--dark-green);
-}
-
-.navbar-toggler {
-  border-color: #fff;
-}
-
-/* footer styles */
+/* Set footer styles */
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 2rem;
   text-align: center;
-  padding: 10px;
-  background-color: var(--dark-green);
-  color: #fff;
-
+  font-size: 0.8rem;
 }
 
-/* link styles */
+/* Set link styles */
 a {
-  color: var(--secondary-color);
+  color: #007bff;
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--primary-color);
+  text-decoration: underline;
 }

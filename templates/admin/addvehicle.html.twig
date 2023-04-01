@@ -12,88 +12,6 @@
     </ul>
 {% endif %}
 
-<div class="container">
-  <div class="row justify-content-start mt-5">
-    <div class="col-md-11 col-lg-11">
-      <h1 class="mb-4">Add Vehicle</h1>
-
-  <form method="post" action="/admin/addvehicle" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="make">Make:</label>
-      <input type="text" class="form-control" id="make" name="make" value="{{ v.make }}">
-    </div>
-
-    <div class="form-group">
-      <label for="model">Model:</label>
-      <input type="text" class="form-control" id="model" name="model" value="{{ v.model }}">
-    </div>
-
-    <div class="form-group">
-      <label for="year">Year:</label>
-      <input type="number" class="form-control" id="year" name="year" value="{{ v.year }}">
-    </div>
-
-    <div class="form-group">
-      <label for="color">Color:</label>
-      <input type="text" class="form-control" id="color" name="color" value="{{ v.color }}">
-    </div>
-
-    <div class="form-group">
-      <label for="license_plate">License Plate:</label>
-      <input type="text" class="form-control" id="license_plate" name="license_plate" value="{{ v.license_plate }}">
-    </div>
-
-    <div class="form-group">
-      <label for="daily_rate">Daily Rate:</label>
-      <input type="number" class="form-control" id="daily_rate" name="daily_rate" value="{{ v.daily_rate }}">
-    </div>
-
-    <div class="form-group">
-      <label for="availability">Availability:</label>
-      <input type="text" class="form-control" id="availability" name="availability" value="{{ v.availability }}">
-    </div>
-
-    <div class="form-group">
-      <label for="seats">Number of Seats:</label>
-      <input type="number" class="form-control" id="seats" name="seats" value="{{ v.seats }}">
-    </div>
-
-    <div class="form-group">
-      <label for="lper100">Fuel Consumption (L/100km):</label>
-      <input type="number" class="form-control" id="lper100" name="lper100" value="{{ v.lper100 }}">
-    </div>
-
-    <div class="form-group">
-      <label for="image">Upload Image:</label>
-      <input type="file" class="form-control-file" id="file" name="file">
-    </div>
-
-    {# <div class="form-group">
-      <label for="image_filepath">Image Filepath:</label>
-      <input type="text" class="form-control" id="image_filepath" name="image_filepath" value="{{ v.image_filepath }}">
-    </div> #}
-
-    <button type="submit" class="btn btn-primary">Add Vehicle</button>
-  </form>
-</div>
-
-
-{% endblock content %}
-
-{# {% extends "admin/master.html.twig" %}
-
-{% block title %}Add Vehicle{% endblock %}
-
-{% block content %}
-
-{% if errorList %}
-    <ul>
-    {% for error in errorList %}
-        <li>{{ error }}</li>
-    {% endfor %}
-    </ul>
-{% endif %}
-
 <h1>Add a vehicle</h1>
 
 <form method="post" action="/admin/addvehicle" enctype="multipart/form-data">
@@ -130,8 +48,7 @@
     {# <label for="image_filepath">Image Filepath:</label>
     <input type="text" id="image_filepath" name="image_filepath" value="{{ v.image_filepath }}"><br> #}
 
-    {# <input type="submit" value="Add Vehicle">
+    <input type="submit" value="Add Vehicle">
 </form>
 
-{% endblock content %} #}
-
+{% endblock content %}

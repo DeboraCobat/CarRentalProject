@@ -54,6 +54,7 @@ $app->get('/', function ($request, $response, $args) {
     return $this->get('view')->render($response, 'index.html.twig', $viewData);
 });
 
+//Todo
 $app->post('/', function ($request, $response, $args) {
     $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
     $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];

@@ -1,84 +1,25 @@
-
-{# <!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Combined CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/admin.css">
-        {% block addHead %}{% endblock %}
-    </head>
-    <body>
-        <div class="container">
-            <div class="centeredContent">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
-
-        <div class="admin-container">
-            <div class="admin-sidebar">
-                {% include 'admin/adminpanel.html.twig' %}
-            </div>
-        </div>
-
-        <div class="admin-content">
-            {% block body %}{% endblock %}
-        </div>
-        
-        <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        {% block javascripts %}{% endblock %}
-        
-        <div class="footer">
-            {% block footer %}
-                &copy; {{ 2023 }}
-            {% endblock %}
-        </div>
-    
-</body>
-</html>
- #}
-
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Combined CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/admin.css">
-        {% block addHead %}{% endblock %}
-    </head>
-     <body>
-
-        <div class="admin-container">
-            <div class="admin-sidebar">
-                {% include 'admin/adminpanel.html.twig' %}
-            </div>
-            
-            <div class="admin-content">
-                 <div class="container">
-                    <div class="centeredContent">
-                    {% block content %}{% endblock %}
-                    </div>
-                 </div>
-            </div>
+            <title>{% block title %}{% endblock %}</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="/admin.css">
+        {% block addHead %}
+        {% endblock %}
+     </head>
+    <body>
+        <div class="adminbar">
+            {% include 'admin/adminpanel.html.twig' %}
         </div>
-        
-        <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        {% block body %}{% endblock %}
+
         {% block javascripts %}{% endblock %}
-        
-        <div class="footer">
-            {% block footer %}
-                &copy; {{ 2023 }}
-            {% endblock %}
+        <div class="centeredContent">{% block content %}{% endblock %}
+            <div class="footer">
+                {% block footer %}
+                    &copy; Copyright 2023 by <a href="http://carrentalproject.org/">you</a>.
+                {% endblock %}
+            </div>
         </div>
     </body>
-</html>
+</html> 

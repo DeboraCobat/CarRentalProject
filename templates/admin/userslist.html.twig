@@ -1,38 +1,31 @@
+
 {% extends "admin/master.html.twig" %}
 
 {% block title %}All Users{% endblock %}
 
 {% block content %}
-  <h1 class="mb-4">All Users</h1>
-<div class="table-responsive">
-  <table class="table table-bordered table-striped">
+  <h1>All Users</h1>
+  <table class="listTable">
     <thead>
       <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
         <th>Address</th>
-        <th>Date of Birth</th>
-        <th>Driver's License</th>
-        <th>License Expiration</th>
       </tr>
     </thead>
     <tbody>
       {% for user in users %}
         <tr>
-          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.address }}</td>
-          <td>{{ user.dob }}</td>
-          <td>{{ user.license }}</td>
-          <td>{{ user.license_expiration }}</td>
         </tr>
       {% endfor %}
     </tbody>
-  </table>
-</div>
-<div class="mt-4">
-  <button class="btn btn-primary" onclick="location.href='adduser'">Add User</button>
-</div>
+  </table> </br>
+  <button class="btn" onclick="location.href='adduser'">Add User</button></br>
+  </div></br>
+
 {% endblock %}

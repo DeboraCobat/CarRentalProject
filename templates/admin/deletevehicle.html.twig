@@ -3,26 +3,6 @@
 {% block title %}Delete Vehicle{% endblock %}
 
 {% block content %}
-<div class="container my-4">
-  <h1 class="mb-4">Delete Vehicle</h1>
-  <div class="card p-3">
-    <p class="mb-3">Are you sure you want to delete the following vehicle?</p>
-    <p><strong>ID:</strong> {{ vehicle.id }}</p>
-    <p><strong>Make:</strong> {{ vehicle.make }}</p>
-    <p><strong>Model:</strong> {{ vehicle.model }}</p>
-    <p><strong>Year:</strong> {{ vehicle.year }}</p>
-    <form method="post" action="/admin/deletevehicle/{{ vehicle.id }}">
-      <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
-  </div>
-</div>
-{% endblock %}
-
-{# {% extends "admin/master.html.twig" %}
-
-{% block title %}Delete Vehicle{% endblock %}
-
-{% block content %}
   <h1>Delete Vehicle</h1>
   <p>Are you sure you want to delete the following vehicle?</p>
   <p><strong>ID:</strong> {{ vehicle.id }}</p>
@@ -32,5 +12,4 @@
   <form method="post" action="/admin/deletevehicle/{{ vehicle.id }}">
     <button type="submit">Delete</button>
   </form>
-{% endblock %} #}
-
+{% endblock %}

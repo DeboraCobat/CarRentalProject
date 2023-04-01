@@ -3,65 +3,6 @@
 {% block title %}Edit Vehicle{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>Edit Vehicle</h1>
-    <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
-      <div class="form-group">
-        <label for="make">Make:</label>
-        <input type="text" id="make" name="make" class="form-control" value="{{ vehicle.make }}">
-      </div>
-
-      <div class="form-group">
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" class="form-control" value="{{ vehicle.model }}">
-      </div>
-
-      <div class="form-group">
-        <label for="year">Year:</label>
-        <input type="number" id="year" name="year" class="form-control" value="{{ vehicle.year }}">
-      </div>
-
-      <div class="form-group">
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" class="form-control" value="{{ vehicle.color }}">
-      </div>
-
-      <div class="form-group">
-        <label for="license_plate">License Plate:</label>
-        <input type="text" id="license_plate" name="license_plate" class="form-control" value="{{ vehicle.license_plate }}">
-      </div>
-
-      <div class="form-group">
-        <label for="daily_rate">Daily Rate:</label>
-        <input type="number" id="daily_rate" name="daily_rate" step="0.01" class="form-control" value="{{ vehicle.daily_rate }}">
-      </div>
-
-      <div class="form-group">
-        <label for="availability">Availability:</label>
-        <input type="text" id="availability" name="availability" class="form-control" value="{{ vehicle.availability }}">
-      </div>
-
-      <div class="form-group">
-        <label for="seats">Seats:</label>
-        <input type="number" id="seats" name="seats" class="form-control" value="{{ vehicle.seats }}">
-      </div>
-
-      <div class="form-group">
-        <label for="lper100">L/100km:</label>
-        <input type="number" id="lper100" name="lper100" step="0.01" class="form-control" value="{{ vehicle.lper100 }}">
-      </div>
-
-      <button type="submit" class="btn btn-primary">Save Changes</button>
-    </form>
-  </div>
-{% endblock %}
-
-
-{# {% extends "admin/master.html.twig" %}
-
-{% block title %}Edit Vehicle{% endblock %}
-
-{% block content %}
   <h1>Edit Vehicle</h1>
   <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
     <label for="make">Make:</label>
@@ -93,4 +34,4 @@
 
     <input type="submit" value="Save Changes">
   </form>
-{% endblock %} #}
+{% endblock %}
