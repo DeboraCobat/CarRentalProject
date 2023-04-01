@@ -16,15 +16,15 @@ require_once 'vehicle.php';
 require_once 'reservation.php';
 
 require_once 'customer.php';
+
 require_once 'user.php';
 
 require_once 'login.php';
 
 require_once 'register.php';
 
-
-
 require_once '1bookingprocess.php';
+
 
 $app->run();
 
@@ -248,8 +248,3 @@ $app->run();
 //         echo '<script>alert("Vehicle with id ' . $id . ' was not deleted."); window.location.href="/vehicleslist";</script>';
 //     }
 // });
-
-
-
-
-
