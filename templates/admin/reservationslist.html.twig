@@ -1,7 +1,47 @@
 {% extends "admin/master.html.twig" %}
 
-{% block title %}Reservation List{% endblock %}
+{% block title %}All Reservations{% endblock %}
 
 {% block content %}
-  <h1>All Reservations</h1>
-  {% endblock %}
+  <h1 class="mb-4">Reservations</h1>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer ID</th>
+        <th>Vehicle ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Rental Price</th>
+        <th>Insurance Price</th>
+        <th>Taxes</th>
+        <th>Total</th>
+        <th>Notes</th>
+        <th>Payment Confirmation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in rental_items %}
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.customer_id }}</td>
+          <td>{{ item.vehicle_id }}</td>
+          <td>{{ item.start_date }}</td>
+          <td>{{ item.end_date }}</td>
+          <td>{{ item.rental_price }}</td>
+          <td>{{ item.insurance_price }}</td>
+          <td>{{ item.taxes }}</td>
+          <td>{{ item.total }}</td>
+          <td>{{ item.notes }}</td>
+          <td>{{ item.payment_confirmation }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="mt-4">
+  <button class="btn btn-primary" onclick="location.href='reservationslist'">Add Reservation</button>
+</div>
+{% endblock %}
+

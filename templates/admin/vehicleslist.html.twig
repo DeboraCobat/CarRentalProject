@@ -3,8 +3,9 @@
 {% block title %}All Vehicles{% endblock %}
 
 {% block content %}
-  <h1>All Vehicles</h1>
-  <table class="listTable">
+    <h1 class="mb-4">All Vehicles</h1>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Make</th>
@@ -35,8 +36,10 @@
         </tr>
       {% endfor %}
     </tbody>
-  </table> </br>
-  <button class="btn" onclick="location.href='/admin/addvehicle'">Add Vehicle</button></br>
-  </div></br>
+  </table> 
+</div>
+<div class="mt-4">
+  <button class="btn btn-primary" onclick="location.href='addvehicle'">Add Vehicle</button>
+</div>
 
 {% endblock %}

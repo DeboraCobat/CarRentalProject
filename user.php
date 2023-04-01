@@ -38,7 +38,7 @@ $app->post('/admin/adduser', function ($request, $response, $args) {
   $data = $request->getParsedBody();
   $firstName = $data['first_name'];
   $lastName = $data['last_name'];
-//   $usertype = $data['user_type'];
+  //$usertype = $data['user_type'];
   $address = $data['address'];
   $phone = $data['phone'];
   $email = $data['email'];

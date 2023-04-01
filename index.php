@@ -1,4 +1,5 @@
 <?php
+session_start ();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -19,6 +20,7 @@ require_once 'customer.php';
 require_once 'user.php';
 
 require_once 'login.php';
+//require_once 'logout.php';
 
 require_once 'register.php';
 

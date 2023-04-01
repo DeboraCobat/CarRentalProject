@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #07F26D;
+    --secondary-color: #BF5B04;
+    --background-color: #F2F2F2;
+    --font-color: #444444;
+    --button-color: #0ABF58;
+    --dark-green: #025940;
+    --font-family: Arial, sans-serif;
+  }
+  
+/* CSS for the admin sidebar */
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20%; /* set the width of the sidebar to 20% */
+    overflow-y: auto; /* enable scrolling for the sidebar content */
+  }
+  
+/* CSS for the admin content */
+.admin-content {
+    margin-left: 20%; 
+}
+
+form {
+    margin-bottom: 10%;
+    margin-right: auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--dark-green);
+    color: #fff;
+  
+  }
+
+  
