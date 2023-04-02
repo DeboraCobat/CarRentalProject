@@ -30,7 +30,6 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
             'title' => [$this, 'block_title'],
             'addHead' => [$this, 'block_addHead'],
             'content' => [$this, 'block_content'],
-            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -107,13 +106,9 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         $this->displayBlock('content', $context, $blocks);
         // line 51
         echo "    </div>
-    <div class=\"footer\">
-      ";
-        // line 53
-        $this->displayBlock('footer', $context, $blocks);
-        // line 56
-        echo "    </div>
-  </div>
+    ";
+        // line 57
+        echo "  </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
   <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
   <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
@@ -159,17 +154,6 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         $macros = $this->macros;
     }
 
-    // line 53
-    public function block_footer($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 54
-        echo "      &copy; ";
-        echo 2023;
-        echo "
-      ";
-    }
-
     public function getTemplateName()
     {
         return "master.html.twig";
@@ -182,7 +166,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
     public function getDebugInfo()
     {
-        return array (  167 => 54,  163 => 53,  157 => 50,  153 => 11,  149 => 10,  143 => 7,  138 => 74,  128 => 66,  126 => 65,  115 => 56,  113 => 53,  109 => 51,  107 => 50,  99 => 44,  90 => 37,  81 => 30,  79 => 29,  62 => 15,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
+        return array (  152 => 50,  148 => 11,  144 => 10,  138 => 7,  133 => 74,  123 => 66,  121 => 65,  111 => 57,  108 => 51,  106 => 50,  98 => 44,  89 => 37,  80 => 30,  78 => 29,  61 => 15,  56 => 12,  54 => 10,  48 => 7,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -238,11 +222,11 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
     <div class=\"centeredContent\">
       {% block content %}{% endblock %}
     </div>
-    <div class=\"footer\">
+    {# <div class=\"footer\">
       {% block footer %}
       &copy; {{ 2023 }}
       {% endblock %}
-    </div>
+    </div> #}
   </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
   <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
