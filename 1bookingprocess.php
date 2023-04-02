@@ -43,40 +43,31 @@ $app->post('/selectvehicle', function ($request, $response, $args) {
 
 ///////////////////////////////////////////////// BOOKING PAGE /////////////////////////////////////////////////
 
-$app->get('/vehicle/{id}', function ($request, $response, $args) {
-  $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $args['id']);
+$app->get('/booking/trip-details', function ($request, $response, $args) {
+  // Retrieve values from the URL
+  $vehicleId = $request->getQueryParam('vehicleId');
+  $pickupDateTime = $request->getQueryParam('pickupDate') . ' ' . $request->getQueryParam('pickupTime');
+  $returnDateTime = $request->getQueryParam('returnDate') . ' ' . $request->getQueryParam('returnTime');
 
-  // Render the vehicle details page with the selected vehicle data
-  return $this->get('view')->render($response, 'vehicle.html.twig', [
-    'vehicle' => $vehicle
-  ]);
-});
+  // Query the database to get the vehicle information
+  $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id=%d", $vehicleId);
 
-$app->get('/booking/{id}', function ($request, $response, $args) {
-  // Get the vehicle from the database
-  $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id=%d", $args['id']);
-
-  // Render the booking form template
+  // Render the booking details page with the booking information
   return $this->get('view')->render($response, 'booking.html.twig', [
-    'vehicle' => $vehicle,
-  ]);
-});
-
-$app->post('/booking/{id}', function ($request, $response, $args) {
-  $vehicleId = $args['id'];
-  $pickupDateTime = $request->getParam('pickupDateTime');
-  $returnDateTime = $request->getParam('returnDateTime');
-  
-  // Redirect to the booking details page with the trip details as query parameters
-  return $response->withRedirect($this->router->url_for('booking_details', [
-      'id' => $vehicleId,
+      'vehicle' => $vehicle,
       'pickupDateTime' => $pickupDateTime,
       'returnDateTime' => $returnDateTime,
-  ]));
+      // 'vehicleImage' => 'path/to/vehicle/image/' . $ vehicle['image'] // Change the path according to your project structure/
+      
+  ]);
 });
 
 
 
+
+
+
+// 
 // // Controller action that renders the booking details page
 // function bookingDetails($request, $response, $args) {
 //   // Get the vehicle ID from the URL query parameter

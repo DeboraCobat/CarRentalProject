@@ -14,19 +14,7 @@ use Slim\Flash\Messages;
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
-if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
 
-// // DB::$dbName = 'carrental';
-// // DB::$user = 'carrental';
-// // DB::$password = '1lvTox19lz]Itajh';
-// // DB::$host = 'localhost';
-
-DB::$dbName = 'cp5065_gabriel';
-DB::$user = 'cp5065_debora';
-DB::$password = '=ozlB,15R5n4';
-DB::$host = 'fsd07.com';
-
-} else { //hosted on external server
 
   // DB::$dbName = 'carrental';
   // DB::$user = 'carrental';
