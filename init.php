@@ -5,6 +5,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use DI\Container;
+use Twig\Loader\LoaderInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
@@ -14,12 +15,16 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 
+
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 // create a log channel
 $log = new Logger ('main');
 $log->pushHandler (new StreamHandler(__DIR__ . '/applogs/everything.log', Logger::DEBUG));
 $log->pushHandler (new StreamHandler(__DIR__ . '/applogs/errors.log', Logger::ERROR));
+
+//
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
 
@@ -52,10 +57,6 @@ $container->set('view', function () {
     return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache','/cache', 'debug' => true]);
 });
 
-// $container->set(\Slim\Flash\Messages::class, function () {
-//     return new \Slim\Flash\Messages();
-// });
-
 
 // creates a new instance of a Slim Framework application
 $app = AppFactory::create();
@@ -66,4 +67,17 @@ $app->add(TwigMiddleware::createFromContainer($app));
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+
+// function pepper_hash_password($password) {
+//     // Define your pepper constant
+//     $pepper = "gKj7#fE2$";
+
+//     // Concatenate the pepper constant and password
+//     $peppered_password = $pepper . $password;
+
+//     // Hash the peppered password using SHA-256
+//     $hashed_password = hash('sha256', $peppered_password);
+
+//     return $hashed_password;
+// }
 

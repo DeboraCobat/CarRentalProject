@@ -130,6 +130,17 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
         echo "\">
         </div>
         
+        <div class=\"form-group\">
+          <label for=\"password\">Password</label>
+          <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"";
+        // line 64
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "password", [], "any", false, false, false, 64), "html", null, true);
+        echo "\">
+        </div>
+
+         ";
+        // line 71
+        echo "
         <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
       </form>
       
@@ -152,7 +163,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 59,  121 => 54,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  143 => 71,  137 => 64,  129 => 59,  121 => 54,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -218,6 +229,16 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
           <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
         </div>
         
+        <div class=\"form-group\">
+          <label for=\"password\">Password</label>
+          <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"{{ u.password }}\">
+        </div>
+
+         {# <div class=\"form-group\">
+          <label for=\"confirm_password\">Confirm Password</label>
+          <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"{{ u.password }}\">
+        </div> #}
+
         <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
       </form>
       
