@@ -60,7 +60,17 @@ class __TwigTemplate_758f80a4993c1adc8ac6828bc7504940 extends Template
             <div class=\"col-md-8 col-lg-6\">
                 <div class=\"form-group\">
                     <form method=\"post\" action=\"/forgotpassword\">
-                        <label for=\"email\">Email address:</label>
+                            ";
+        // line 11
+        if (($context["message"] ?? null)) {
+            // line 12
+            echo "                            <div class=\"alert alert-success\">";
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</div>
+                            ";
+        }
+        // line 14
+        echo "                        <label for=\"email\">Email address:</label>
                         <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
                         <button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>
                     </form>
@@ -83,7 +93,7 @@ class __TwigTemplate_758f80a4993c1adc8ac6828bc7504940 extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  73 => 14,  67 => 12,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -98,6 +108,9 @@ class __TwigTemplate_758f80a4993c1adc8ac6828bc7504940 extends Template
             <div class=\"col-md-8 col-lg-6\">
                 <div class=\"form-group\">
                     <form method=\"post\" action=\"/forgotpassword\">
+                            {% if message %}
+                            <div class=\"alert alert-success\">{{ message }}</div>
+                            {% endif %}
                         <label for=\"email\">Email address:</label>
                         <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
                         <button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>

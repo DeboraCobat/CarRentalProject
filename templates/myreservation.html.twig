@@ -1,0 +1,16 @@
+{% extends "master.html.twig" %}
+
+{% block title %}find my reservation{% endblock %}
+
+{% block content %}
+<html>
+    <body>
+        <h1>Your reservation details:</h1>
+        <p>Customer name: {{ myreservation.customer_id }}</p>
+        <p>Vehicle: {{ myreservation.vehicle_id }}</p>
+        <p>Reservation details:
+         My reservation starts: {{ myreservation.start_date }}</p>
+         My reservation ends: {{ myreservation.end_date }}</p>
+    </body>
+</html>
+{% endblock %}
