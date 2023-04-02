@@ -1,10 +1,10 @@
 :root {
   --primary-color: #07F26D;
   --secondary-color: #BF5B04;
-  --background-color: #F2F2F2;
+  --background-color: #dfd6a7;
   --font-color: #444444;
   --button-color: #0ABF58;
-  --dark-green: #025940;
+  --dark-footer: #f7b05b;
   --font-family: Arial, sans-serif;
 }
 
@@ -51,6 +51,27 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #fff;
 }
 
+.navbar-brand video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.logo-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Add your logo animation styles here */
+}
+
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -58,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   text-align: center;
   padding: 10px;
-  background-color: var(--dark-green);
+  background-color: var(--dark-footer);
   color: #fff;
 }
 
