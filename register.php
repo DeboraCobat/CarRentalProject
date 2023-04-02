@@ -12,12 +12,6 @@ use Slim\Routing\RouteCollectorProxy;
 
 require_once 'init.php';
 
-
-// $app->get('/register', function ($request, $response, $args) {
-//     return $this->get('view')->render($response,  'register.html.twig');
-// });
-
-
 // Display register page
 $app->get('/register', function ($request, $response, $args) {
     $successMessage = '';
@@ -101,6 +95,7 @@ $app->get('/register', function ($request, $response, $args) {
     
   
   // INSERT USER into database
+  
   DB::insert('users', [
     'first_name' => $firstName,
     'last_name' => $lastName,
