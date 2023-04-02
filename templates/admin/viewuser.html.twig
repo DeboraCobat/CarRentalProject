@@ -4,8 +4,12 @@
 
 {% block content %}
 
-<h1>User List</h1>
-{% if userList is empty %}
+<div class="container">
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-8 col-lg-6">
+    
+    <h1>User List</h1>
+    {% if userList is empty %}
 <p>No users found.</p>
 {% else %}
 <table>

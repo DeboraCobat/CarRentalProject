@@ -27,23 +27,29 @@
 
  {% endblock %} #}
 
-{% extends 'master.html.twig' %}
+{% extends "master.html.twig" %}
+
+{% block title %}home page{% endblock %}
 
 {% block content %}
+<div class="container">
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-8 col-lg-6">
+
   <h1>Enter trip details</h1>
-  <form method="post" action="/selectvehicle">
+  <form method="post" class="form-group" action="/selectvehicle">
     <label for="pickup_date">Pickup date:</label>
-    <input type="date" id="pickup_date" name="pickup_date" required>
+    <input type="date" class="form-group" id="pickup_date" name="pickup_date" required>
     
     <label for="pickup_time">Pickup time:</label>
-    <input type="time" id="pickup_time" name="pickup_time" required>
+    <input type="time" class="form-group" id="pickup_time" name="pickup_time" required>
     <br>
     <label for="return_date">Return date:</label>
-    <input type="date" id="return_date" name="return_date" required>
+    <input type="date" class="form-group" id="return_date" name="return_date" required>
     
     <label for="return_time">Return time:</label>
-    <input type="time" id="return_time" name="return_time" required>
+    <input type="time" class="form-group" id="return_time" name="return_time" required>
     <br><br>
-    <button type="submit">Select Vehicle</button>
+    <button type="submit" class="btn btn-primary" >Select Vehicle</button>
   </form>
 {% endblock %}

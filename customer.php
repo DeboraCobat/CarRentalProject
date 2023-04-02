@@ -12,9 +12,30 @@ use Psr\Http\Message\UploadedFileInterface;
 require_once 'init.php';
 
 
-////////////////// CLIENT URL ///////////////////
+//// FINDING RESERVATION
 
-$app->get('/clientprofile', function ($request, $response, $args) {
-    return $this->get('view')->render($response, 'clientprofile.html.twig');
+$app->get('/findmyreservation', function (Request $request, Response $response, $args) {
+    return $this->get('view')->render($response, 'findmyreservation.html.twig');
 });
 
+// $app->post('/findmyreservation', function (Request $request, Response $response) {
+//     $data = $request->getParsedBody();
+
+//     // Retrieve the email and reservation ID from the form data
+//     $email = $data['email'];
+//     $reservationId = $data['reservationId'];
+
+//     // Query the database to find the reservation based on the email and reservation ID provided
+//     $reservation = queryReservation($email, $reservationId);
+
+//     // Render the reservation details in a new Twig template
+//     $response->getBody()->write(
+//         $this->get('view')->render(
+//             $response,
+//             'reservation_details.html.twig',
+//             ['reservation' => $reservation]
+//         )
+//     );
+
+//     return $response;
+// });

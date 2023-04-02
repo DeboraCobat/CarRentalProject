@@ -5,6 +5,77 @@
 {% block content %}
 
 {% if errorList %}
+  <ul>
+    {% for error in errorList %}
+      <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<div class="container">
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-8 col-lg-6">
+      <h1>Add a User</h1>
+
+      <form method="post" action="/admin/adduser">
+
+        <div class="form-group">
+          <label for="first_name">First Name:</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" value="{{ u.first_name }}">
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="{{ u.last_name }}">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" class="form-control" id="address" name="address" value="{{ u.address }}">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="text" class="form-control" id="phone" name="phone" value="{{ u.phone }}">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ u.email }}">
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" class="form-control" id="dob" name="dob" value="{{ u.dob }}">
+        </div>
+
+        <div class="form-group">
+          <label for="license">Driver's License:</label>
+          <input type="text" class="form-control" id="license" name="license" value="{{ u.license }}">
+        </div>
+
+        <div class="form-group">
+          <label for="license_expiration">License Expiration:</label>
+          <input type="date" class="form-control" id="license_expiration" name="license_expiration" value="{{ u.license_expiration }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add User</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+{# {% extends "admin/master.html.twig" %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+
+{% if errorList %}
 <ul>
 {% for error in errorList %}
 <li>{{ error }}</li>
@@ -27,7 +98,7 @@
     <option value="customer">Customer</option>
 </select><br> #}
 
-<label for="address">Address:</label>
+{# <label for="address">Address:</label>
 <input type="text" id="address" name="address" value="{{ u.address }}"><br>
 
 <label for="phone">Phone:</label>
@@ -48,4 +119,4 @@
 <input type="submit" value="Add User">
 
 </form>
-{% endblock content %}
+{% endblock content %} #}

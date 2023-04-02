@@ -1,51 +1,92 @@
-body {
-  background-color: lightgray;
-  font-family: Arial, sans-serif;
-  color: #444444;
+:root {
+  --primary-color: #07F26D;
+  --secondary-color: #BF5B04;
+  --background-color: #dfd6a7;
+  --font-color: #444444;
+  --button-color: #0ABF58;
+  --dark-footer: #f7b05b;
+  --font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Errors messages */
-
-.errorMessage {
-  font-weight: bold;
-  background-color: yellow;
-  color: red;
+html, body {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
 }
 
-/* Center the content in the middle of the page */
-.centeredContent {
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 3rem;
+}
+
+.centered-content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-}
-/* Set max width for content */
-.container {
-  max-width: 768px;
+  height: calc(100% - 155px);
+  margin: 15px auto 50px auto;
+  max-width: 960px;
 }
 
-/* Set padding for body */
-body {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.navbar {
+  background-color: var(--primary-color);
 }
 
-/* Set footer styles */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--dark-green);
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.navbar-brand video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.logo-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Add your logo animation styles here */
+}
+
+
 .footer {
-  margin-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  font-size: 0.8rem;
+  padding: 10px;
+  background-color: var(--dark-footer);
+  color: #fff;
 }
 
-/* Set link styles */
 a {
-  color: #007bff;
-  text-decoration: none;
+  color: var(--secondary-color);
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--primary-color);
 }

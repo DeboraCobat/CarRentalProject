@@ -1,0 +1,36 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Customer Dashboard{% endblock %}
+
+{% block content %}
+
+  <h1>Your Profile</h1>
+
+  <div class="container">
+  <div class="row justify-content-center mt-5 mb-5">
+  <div class="col-md-8 col-lg-6">
+
+  <h1>All Users</h1>
+
+  <div class="table-responsive">
+    <ul>
+      <li><strong>Name</strong></li>
+      <li><strong>Email</strong></li>
+      <li><strong>Phone</strong></li>
+      <li><strong>Address</strong></li>
+      <li><strong>Date of Birth</strong></li>
+      <li><strong>Driver's License</strong></li>
+      <li><strong>License Expiration</strong></li>
+      {% for user in users %}
+        <li>{{ user.first_name }} {{ user.last_name }}</li>
+        <li>{{ user.email }}</li>
+        <li>{{ user.phone }}</li>
+        <li>{{ user.address }}</li>
+        <li>{{ user.dob }}</li>
+        <li>{{ user.license }}</li>
+        <li>{{ user.license_expiration }}</li>
+      {% endfor %}
+      </ul>
+  </div>
+  
+{% endblock %}
