@@ -2,7 +2,9 @@
 
 {% block title %}Success Page{% endblock %}
 
+
 {% block content %}
+
   {% if error %}
     <div class="alert alert-danger">Invalid email or password</div>
     <a href="/login" class="btn btn-primary">Try Again</a>
@@ -11,3 +13,8 @@
     <p>You have successfully logged in. <a href="/">Click to continue</a></p>
   {% endif %}
 {% endblock %}
+
+{# 
+{% if message %}
+  <div class="alert alert-success">{{ message }}</div>
+{% endif %} #}

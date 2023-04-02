@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* forgotpassword_success.html.twig */
-class __TwigTemplate_5d5a967280a0fcddcf3d2f0c9968e648 extends Template
+/* resetpassword_error.html.twig */
+class __TwigTemplate_d76f7bc8ac1ab156dead3e03ba065eff extends Template
 {
     private $source;
     private $macros = [];
@@ -39,7 +39,7 @@ class __TwigTemplate_5d5a967280a0fcddcf3d2f0c9968e648 extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("master.html.twig", "forgotpassword_success.html.twig", 1);
+        $this->parent = $this->loadTemplate("master.html.twig", "resetpassword_error.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -47,7 +47,7 @@ class __TwigTemplate_5d5a967280a0fcddcf3d2f0c9968e648 extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Password Reset Email Sent";
+        echo "Password Reset Error";
     }
 
     // line 5
@@ -55,30 +55,14 @@ class __TwigTemplate_5d5a967280a0fcddcf3d2f0c9968e648 extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "<div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-        <div class=\"col-md-8 col-lg-6\">
-            ";
-        // line 9
-        if (($context["message"] ?? null)) {
-            // line 10
-            echo "            <div class=\"alert alert-success\">";
-            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-            echo "</div>
-            ";
-        }
-        // line 11
-        echo " 
-            </div>
-        </div>
-    </div>
-</div>
+        echo "  <div class=\"alert alert-danger\">Sorry, we couldn't reset your password. Please try again later or contact support.</div>
+  <a href=\"/forgot-password\" class=\"btn btn-primary\">Reset Password</a>
 ";
     }
 
     public function getTemplateName()
     {
-        return "forgotpassword_success.html.twig";
+        return "resetpassword_error.html.twig";
     }
 
     public function isTraitable()
@@ -88,27 +72,19 @@ class __TwigTemplate_5d5a967280a0fcddcf3d2f0c9968e648 extends Template
 
     public function getDebugInfo()
     {
-        return array (  71 => 11,  65 => 10,  63 => 9,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Password Reset Email Sent{% endblock %}
+{% block title %}Password Reset Error{% endblock %}
 
 {% block content %}
-<div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-        <div class=\"col-md-8 col-lg-6\">
-            {% if message %}
-            <div class=\"alert alert-success\">{{ message }}</div>
-            {% endif %} 
-            </div>
-        </div>
-    </div>
-</div>
+  <div class=\"alert alert-danger\">Sorry, we couldn't reset your password. Please try again later or contact support.</div>
+  <a href=\"/forgot-password\" class=\"btn btn-primary\">Reset Password</a>
 {% endblock %}
-", "forgotpassword_success.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/forgotpassword_success.html.twig");
+", "resetpassword_error.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/resetpassword_error.html.twig");
     }
 }

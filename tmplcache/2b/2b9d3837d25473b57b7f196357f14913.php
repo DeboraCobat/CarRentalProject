@@ -55,16 +55,19 @@ class __TwigTemplate_758f80a4993c1adc8ac6828bc7504940 extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "<div class=\"container\">
-<div class=\"row justify-content-center mt-5 mb-5\">
-<div class=\"col-md-8 col-lg-6\">
-<div class=\"form-group\">
-<form method=\"post\" action=\"/forgotpassword\">
-<label for=\"email\">Email address:</label>
-<input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
-<button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>
-</form>
-</div>
+        echo "    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5 mb-5\">
+            <div class=\"col-md-8 col-lg-6\">
+                <div class=\"form-group\">
+                    <form method=\"post\" action=\"/forgotpassword\">
+                        <label for=\"email\">Email address:</label>
+                        <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
+                        <button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 ";
     }
 
@@ -90,16 +93,21 @@ class __TwigTemplate_758f80a4993c1adc8ac6828bc7504940 extends Template
 {% block title %}Forgot Password Page{% endblock %}
 
 {% block content %}
-<div class=\"container\">
-<div class=\"row justify-content-center mt-5 mb-5\">
-<div class=\"col-md-8 col-lg-6\">
-<div class=\"form-group\">
-<form method=\"post\" action=\"/forgotpassword\">
-<label for=\"email\">Email address:</label>
-<input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
-<button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>
-</form>
-</div>
-{% endblock %}", "forgotpassword.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/forgotpassword.html.twig");
+    <div class=\"container\">
+        <div class=\"row justify-content-center mt-5 mb-5\">
+            <div class=\"col-md-8 col-lg-6\">
+                <div class=\"form-group\">
+                    <form method=\"post\" action=\"/forgotpassword\">
+                        <label for=\"email\">Email address:</label>
+                        <input type=\"email\" id=\"email\" name=\"email\" class=\"form-control\"> </br>
+                        <button type=\"submit\" class=\"btn btn-primary\">Send reset link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+", "forgotpassword.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/forgotpassword.html.twig");
     }
 }

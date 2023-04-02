@@ -9,7 +9,7 @@ use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
 
-//SETUP TEH WHOLE SYSTEM
+//SETUP THE WHOLE SYSTEM
 require_once 'init.php';
 
 

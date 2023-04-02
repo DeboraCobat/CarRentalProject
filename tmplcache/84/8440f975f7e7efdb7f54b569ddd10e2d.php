@@ -50,19 +50,29 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
         echo "Success Page";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
-        echo "  ";
+        // line 7
+        if (($context["message"] ?? null)) {
+            // line 8
+            echo "  <div class=\"alert alert-success\">";
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</div>
+";
+        }
+        // line 10
+        echo "
+  ";
+        // line 11
         if (($context["error"] ?? null)) {
-            // line 7
+            // line 12
             echo "    <div class=\"alert alert-danger\">Invalid email or password</div>
     <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
   ";
         } else {
-            // line 10
+            // line 15
             echo "    <h1>Login Success</h1>
     <p>You have successfully logged in. <a href=\"/\">Click to continue</a></p>
   ";
@@ -81,7 +91,7 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
 
     public function getDebugInfo()
     {
-        return array (  66 => 10,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  76 => 15,  71 => 12,  69 => 11,  66 => 10,  60 => 8,  58 => 7,  54 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -90,7 +100,12 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
 
 {% block title %}Success Page{% endblock %}
 
+
 {% block content %}
+{% if message %}
+  <div class=\"alert alert-success\">{{ message }}</div>
+{% endif %}
+
   {% if error %}
     <div class=\"alert alert-danger\">Invalid email or password</div>
     <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
@@ -99,6 +114,8 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
     <p>You have successfully logged in. <a href=\"/\">Click to continue</a></p>
   {% endif %}
 {% endblock %}
+
+
 ", "login_success.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login_success.html.twig");
     }
 }
