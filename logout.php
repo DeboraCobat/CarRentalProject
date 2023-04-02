@@ -11,9 +11,10 @@ use Psr\Http\Message\UploadedFileInterface;
 
 require_once 'init.php';
 
+// Define route for logout page
 $app->get('/logout', function (Request $request, Response $response) {
+  // Unset session variable
+  unset($_SESSION['blogUser']);
+  // Render Twig template for logout page
   return $this->get('view')->render($response, 'logout.html.twig');
 });
-
-// // session_reset();
-//         unset($_SESSION['blogUser']);

@@ -1,5 +1,4 @@
 <?php
-// session_start();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -107,6 +106,15 @@ $app->get('/register', function ($request, $response, $args) {
     'license' => $license,
     'license_expiration' => $licenseExpiration
     ]);
+
+    ///// global $passwordPepper; ENCRYPETDPASSWORD  
+// $pwdPeppered = hash hmac("sha256", $pass1, $passwordPepper);
+// SpwdHashed = password hash($pwdPeppered, PASSWORD DEFAULT); // PASSWORD @var string SpwdHashed
+// DB:: insert('users', ['name' -> $name,
+// 'email' -> $email, 'password' -> $pwdHashed]
+// 'imageData' =› $photoData,
+// 'imageMimeType =› $mimeType]);
+// return $this-›view-›render
     
     $successMessage = "User added successfully!";
     return $this->get('view')->render($response, 'register.html.twig', ['successMessage' => $successMessage]);

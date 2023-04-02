@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -9,107 +8,82 @@ use DI\Container;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
+use Respect\Validation\Validator as Validator;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 require_once 'init.php';
 
-
+// display login
 $app->get('/login', function (Request $request, Response $response) {
     return $this->get('view')->render($response, 'login.html.twig');
 });
 
-$app->get('/customerprofile', function (Request $request, Response $response) {
-    //return $this->get('view')->render($response, 'customerprofile.html.twig');
-    // Check if user is logged in
-    // if (!isset($_SESSION['email'])) {
-    //     // User is not logged in, redirect to login page
-    //     return $response->withHeader('Location', '/login')->withStatus(302);
-    // }
-
-    // // User is logged in, display customer profile page
-    // return $this->get('view')->render($response, 'customerprofile.html.twig');
+// receiving submission
+$app->post('/login', function ($request, $response, $args) use ($log, $passwordPepper) {
+    $email = $request->getParam('email');
+    $password = $request->getParam('password');
+    //
+    $record = DB::queryFirstRow("SELECT id, is_admin, first_name, last_name, email, password FROM users WHERE email = %s", $email);
     
-//     $successMessage = '';
-//     $errorList = [];
-//     return $this->get('view')->render($response, 'customerprofile.html.twig', [
-//       'successMessage' => $successMessage,
-//       'errorList' => $errorList
-//   ]);
-});
+    if ($record) {
+        $pwdPeppered = hash_hmac('sha256', $password, $passwordPepper);
+        $pwdHashed = $record['password'];
 
-$app->post('/login', function ($request, $response, $args) {
-    $data = $request->getParsedBody();
-    $email = $data['email'];
-    $password = $data['password'];
+        if (password_verify($pwdPeppered, $pwdHashed)) {
+            unset($record['password']);
+            $_SERVER['user'] = $record;
+            $log->debug(sprintf('Login successful for email %s, uid=%d, from %s', $email, $record['id'], $_SERVER['REMOTE_ADDR']));
 
-    // // Validate user input
-    // $errorList = array();
-    // if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //     $errorList[] = 'Invalid email';
-    // }
+            return $this->get('view')->render($response, 'login_success.html.twig', ['userSession' => $_SESSION['user']]);
+        }
 
-    // if (empty($password)) {
-    //     $errorList[] = 'Password is required';
-    // }
+        // Temporary solution to allow for old plain-text passwords to continue to work
+        else if ($record['password'] == $password) {
+            unset($record['password']);
+            $_SERVER['user'] = $record;
+            $log->debug(sprintf('Login successful for email %s, uid=%d, from %s', $email, $record['id'], $_SERVER['REMOTE_ADDR']));
 
-    // // Check if there are any errors
-    // if (count($errorList) > 0) {
-    //     return $this->get('view')->render($response, 'login.html.twig', ['errors' => $errorList]);
-    // }
-
-    // // Check if email exists
-    $user = DB::queryFirstRow("SELECT * FROM users WHERE email = %s", $email);
-    // if (!$user) {
-    //     $errorList[] = 'Invalid email or password';
-    //     return $this->get('view')->render($response, 'login.html.twig', ['errors' => $errorList]);
-    // }
-
-    // // Verify password
-    if (!password_verify($password, $user['password'])) {
-        $errorList[] = 'Invalid email or password';
-        return $this->get('view')->render($response, 'login.html.twig', ['errors' => $errorList]);
+            return $this->get('view')->render($response, 'login_success.html.twig', ['userSession' => $_SESSION['user']]);
+        }
     }
 
-    // Store user session data
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['email'] = $user['email'];
-    $_SESSION['is_admin'] = $user['is_admin'];
+    $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
 
-    // Determine which page to forward to
-    if ($user['is_admin']) {
-        // Admin user
-        return $response->withHeader('Location', 'admin/adminpanel')->withStatus(302);
-    } else {
-        // Customer
-        return $response->withHeader('Location', '/customerprofile')->withStatus(302);
-    }
+    return $this->get('view')->render($response, 'login.html.twig', ['error' => true]);
 });
 
+// Sapp-›get ('/logout', function ($request, $response, Sargs) use ($log) {
+// $log-›debug(sprintf("Logout successful for wid-%d, from %s", @$_SESSION[ 'user Jl'id'], $_SERVER[ 'REMOTE_ADDR']));
+// unset($_SESSION[' user']);
+// return $this-›view-›render ($response, 'logout.html.twig', ['usersession' => null J);
 
 
-// // Display the login form
-// $app->get('/login', function (Request $request, Response $response) {
-//     return $this->get('view')->render($response, 'login.html.twig');
-// });
+/////////// bBLOGDAY03 SAMPLE
 
-// $app->get('/customerprofile', function (Request $request, Response $response) {
-//     return $this->get('view')->render($response, 'customerprofile.html.twig');
-// });
+// $app->post('/login', function (Request $request, Response $response) use ($link) {
+//     $email = $request->getParsedBody()['email'] ?? '';
+//     $password = $request->getParsedBody()['password'] ?? '';
 
+//     $result = mysqli_query($link, sprintf("SELECT * FROM users WHERE email='%s'",
+//         mysqli_real_escape_string($link, $email)));
+    
+//     if (!$result) {
+//         die("SQL Query failed: " . mysqli_error($link));
+//     }
+    
+//     $userRecord = mysqli_fetch_assoc($result);
+//     $loginSuccessful = ($userRecord != null) && ($userRecord['password'] == $password);
 
-// $app->post('/login', function ($request, $response, $args) {
-//     $data = $request->getParsedBody();
-//     $email = $data['email'];
-//     $password = $data['password'];
-
-//     // Retrieve user information from database
-//     $user = DB::queryFirstRow("SELECT * FROM users WHERE email = %s", $email);
-
-//     // Determine which page to forward to
-//     if ($user && $user['is_admin']) {
-//         // Admin user
-//         return $response->withHeader('Location', 'admin/adminpanel')->withStatus(302);
-//     } else {
-//         // Customer
-//         return $response->withHeader('Location', '/customerprofile')->withStatus(302);
+//     if (!$loginSuccessful) { // STATE 2: login failed
+//         $this->get('view')->render($response, 'login.html.twig', [
+//             'errorMessage' => 'Invalid email or password'
+//         ]);
+//     } else { // login successful
+//         unset($userRecord['password']); // for safety reasons remove the password
+//         $_SESSION['blogUser'] = $userRecord;
+//         $this->get('view')->render($response, 'index.html.twig', [
+//             'message' => 'login successful'
+//         ]);
 //     }
 // });
