@@ -5,12 +5,12 @@
 {% block content %}
 <html>
     <body>
-        <h1>Your reservation details:</h1>
-        <p>Customer name: {{ myreservation.customer_id }}</p>
-        <p>Vehicle: {{ myreservation.vehicle_id }}</p>
-        <p>Reservation details:
-         My reservation starts: {{ myreservation.start_date }}</p>
-         My reservation ends: {{ myreservation.end_date }}</p>
+        <h1>Your reservation</h1></br>
+        <p>Name: {{ myreservation.customer_id }}</p></br>
+        <p>Vehicle: {{ myreservation.vehicle_id }}</p></br>
+        <h3>Reservation details</h3> </br>
+         <p>My reservation starts:</br> {{ myreservation.start_date }}</p></br>
+        <p> My reservation ends: </br>{{ myreservation.end_date }}</p></br>
     </body>
 </html>
 {% endblock %}

@@ -57,15 +57,24 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
         // line 6
         echo "<html>
     <body>
-        <h1>Your reservation details:</h1>
-        <p>User ID: ";
+        <h1>Your reservation</h1></br>
+        <p>Name: ";
         // line 9
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "customer_id", [], "any", false, false, false, 9), "html", null, true);
-        echo "</p>
-        <p>Vehicle ID: ";
+        echo "</p></br>
+        <p>Vehicle: ";
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "vehicle_id", [], "any", false, false, false, 10), "html", null, true);
-        echo "</p>
+        echo "</p></br>
+        <h3>Reservation details</h3> </br>
+         <p>My reservation starts:</br> ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "start_date", [], "any", false, false, false, 12), "html", null, true);
+        echo "</p></br>
+        <p> My reservation ends: </br>";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "end_date", [], "any", false, false, false, 13), "html", null, true);
+        echo "</p></br>
     </body>
 </html>
 ";
@@ -83,7 +92,7 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 
     public function getDebugInfo()
     {
-        return array (  67 => 10,  63 => 9,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  76 => 13,  72 => 12,  67 => 10,  63 => 9,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -95,9 +104,12 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 {% block content %}
 <html>
     <body>
-        <h1>Your reservation details:</h1>
-        <p>User ID: {{ myreservation.customer_id }}</p>
-        <p>Vehicle ID: {{ myreservation.vehicle_id }}</p>
+        <h1>Your reservation</h1></br>
+        <p>Name: {{ myreservation.customer_id }}</p></br>
+        <p>Vehicle: {{ myreservation.vehicle_id }}</p></br>
+        <h3>Reservation details</h3> </br>
+         <p>My reservation starts:</br> {{ myreservation.start_date }}</p></br>
+        <p> My reservation ends: </br>{{ myreservation.end_date }}</p></br>
     </body>
 </html>
 {% endblock %}
