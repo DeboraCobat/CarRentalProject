@@ -27,9 +27,11 @@ class ComposerStaticInit4c64f8b7f72e0c9fc166c0cf179ed39e
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Stripe\\' => 7,
             'Slim\\Views\\' => 11,
             'Slim\\Psr7\\' => 10,
             'Slim\\Http\\' => 10,
+            'Slim\\Flash\\' => 11,
             'Slim\\Csrf\\' => 10,
             'Slim\\' => 5,
         ),
@@ -85,6 +87,10 @@ class ComposerStaticInit4c64f8b7f72e0c9fc166c0cf179ed39e
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
+        ),
         'Slim\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/php-view/src',
@@ -97,6 +103,10 @@ class ComposerStaticInit4c64f8b7f72e0c9fc166c0cf179ed39e
         'Slim\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/http/src',
+        ),
+        'Slim\\Flash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/flash/src',
         ),
         'Slim\\Csrf\\' => 
         array (
