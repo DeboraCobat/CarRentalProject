@@ -66,3 +66,4 @@ $app->add(TwigMiddleware::createFromContainer($app));
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+

@@ -12,41 +12,47 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-    <div class="container">
-      <a class="navbar-brand" href="/">
-      <img src="images/logo.png">
-      {# <video src="/images/logo-animation.mp4" autoplay loop></video> #}
-      <div class="logo-animation"></div>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="findmyreservation">Find my reservation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login">Login</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="images/logo.png">
+          <div class="logo-animation"></div>
+        </a>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="findmyreservation">Find my reservation</a>
+            </li>
+            {% if auth.isLoggedIn %}
+            <li class="nav-item">
+              <a class="nav-link" href="customerprofile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="centeredContent">
-      {% block content %}{% endblock %}
-    </div>
-    <div class="footer">
-      {% block footer %}
-        &copy; {{ 2023 }}
-      {% endblock %}
+    </nav>
+    <div class="container">
+      <div class="centeredContent">
+        {% block content %}{% endblock %}
+      </div>
+      <div class="footer">
+        {% block footer %}
+          &copy; {{ 2023 }}
+        {% endblock %}
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

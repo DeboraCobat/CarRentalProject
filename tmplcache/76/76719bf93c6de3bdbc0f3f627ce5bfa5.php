@@ -57,46 +57,58 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         echo "</head>
 
 <body>
-  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-  
-    <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\">
-      ";
-        // line 21
-        echo "      <div class=\"logo-animation\"></div>
-      </a>
-      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-      </button>
-
-      <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
-        <ul class=\"navbar-nav\">
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"register\">Register</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"login\">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class=\"container\">
-    <div class=\"centeredContent\">
-      ";
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+      <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">
+          <img src=\"images/logo.png\">
+          <div class=\"logo-animation\"></div>
+        </a>
+        <button class=\"navbar-toggler\" type=\"button\">
+          <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+          <ul class=\"navbar-nav\">
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
+            </li>
+            ";
+        // line 29
+        if (twig_get_attribute($this->env, $this->source, ($context["auth"] ?? null), "isLoggedIn", [], "any", false, false, false, 29)) {
+            // line 30
+            echo "            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"customerprofile\">Profile</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"logout\">Logout</a>
+            </li>
+            ";
+        } else {
+            // line 37
+            echo "            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"register\">Register</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"login\">Login</a>
+            </li>
+            ";
+        }
         // line 44
-        $this->displayBlock('content', $context, $blocks);
-        // line 45
-        echo "    </div>
-    <div class=\"footer\">
-      ";
-        // line 47
-        $this->displayBlock('footer', $context, $blocks);
+        echo "          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class=\"container\">
+      <div class=\"centeredContent\">
+        ";
         // line 50
+        $this->displayBlock('content', $context, $blocks);
+        // line 51
+        echo "      </div>
+      <div class=\"footer\">
+        ";
+        // line 53
+        $this->displayBlock('footer', $context, $blocks);
+        // line 56
         echo "    </div>
   </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -131,21 +143,21 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         echo "  ";
     }
 
-    // line 44
+    // line 50
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 47
+    // line 53
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 48
-        echo "        &copy; ";
+        // line 54
+        echo "          &copy; ";
         echo 2023;
         echo "
-      ";
+        ";
     }
 
     public function getTemplateName()
@@ -153,9 +165,14 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         return "master.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  145 => 48,  141 => 47,  135 => 44,  131 => 11,  127 => 10,  121 => 7,  100 => 50,  98 => 47,  94 => 45,  92 => 44,  67 => 21,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
+        return array (  157 => 54,  153 => 53,  147 => 50,  143 => 11,  139 => 10,  133 => 7,  112 => 56,  110 => 53,  106 => 51,  104 => 50,  96 => 44,  87 => 37,  78 => 30,  76 => 29,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -174,41 +191,47 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 </head>
 
 <body>
-  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-  
-    <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\">
-      {# <video src=\"/images/logo-animation.mp4\" autoplay loop></video> #}
-      <div class=\"logo-animation\"></div>
-      </a>
-      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-      </button>
-
-      <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
-        <ul class=\"navbar-nav\">
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"register\">Register</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"login\">Login</a>
-          </li>
-        </ul>
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+      <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"/\">
+          <img src=\"images/logo.png\">
+          <div class=\"logo-animation\"></div>
+        </a>
+        <button class=\"navbar-toggler\" type=\"button\">
+          <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+          <ul class=\"navbar-nav\">
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
+            </li>
+            {% if auth.isLoggedIn %}
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"customerprofile\">Profile</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"logout\">Logout</a>
+            </li>
+            {% else %}
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"register\">Register</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"login\">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class=\"container\">
-    <div class=\"centeredContent\">
-      {% block content %}{% endblock %}
-    </div>
-    <div class=\"footer\">
-      {% block footer %}
-        &copy; {{ 2023 }}
-      {% endblock %}
+    </nav>
+    <div class=\"container\">
+      <div class=\"centeredContent\">
+        {% block content %}{% endblock %}
+      </div>
+      <div class=\"footer\">
+        {% block footer %}
+          &copy; {{ 2023 }}
+        {% endblock %}
     </div>
   </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>

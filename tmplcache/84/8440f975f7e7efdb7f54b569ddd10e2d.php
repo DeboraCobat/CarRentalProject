@@ -47,7 +47,7 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Logout Page";
+        echo "Success Page";
     }
 
     // line 5
@@ -55,9 +55,18 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "  <h1>Login Success</h1>
-  <p>You have successfully logged in. <a href=\"index.php\">Click to continue</a></p>
-";
+        echo "  ";
+        if (($context["error"] ?? null)) {
+            // line 7
+            echo "    <div class=\"alert alert-danger\">Invalid email or password</div>
+    <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
+  ";
+        } else {
+            // line 10
+            echo "    <h1>Login Success</h1>
+    <p>You have successfully logged in. <a href=\"/\">Click to continue</a></p>
+  ";
+        }
     }
 
     public function getTemplateName()
@@ -72,21 +81,24 @@ class __TwigTemplate_d42bed7dc1564ea91c8edb52c721924b extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  66 => 10,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Logout Page{% endblock %}
+{% block title %}Success Page{% endblock %}
 
 {% block content %}
-  <h1>Login Success</h1>
-  <p>You have successfully logged in. <a href=\"index.php\">Click to continue</a></p>
+  {% if error %}
+    <div class=\"alert alert-danger\">Invalid email or password</div>
+    <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
+  {% else %}
+    <h1>Login Success</h1>
+    <p>You have successfully logged in. <a href=\"/\">Click to continue</a></p>
+  {% endif %}
 {% endblock %}
-
-
 ", "login_success.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login_success.html.twig");
     }
 }

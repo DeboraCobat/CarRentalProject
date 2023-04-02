@@ -8,13 +8,17 @@ use DI\Container;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
+use Respect\Validation\Validator as Validator;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 require_once 'init.php';
 
-// Define route for logout page
-$app->get('/logout', function (Request $request, Response $response) {
-  // Unset session variable
-  unset($_SESSION['blogUser']);
-  // Render Twig template for logout page
-  return $this->get('view')->render($response, 'logout.html.twig');
-});
+
+function check_auth() {
+  if (!isset($_SESSION['user'])) { // if the user is not logged in
+    header('Location: login.php'); // redirect to the login page
+    exit;
+  }
+}
+?>
