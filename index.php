@@ -16,7 +16,8 @@ require_once 'vehicle.php';
 
 require_once 'reservation.php';
 
-require_once 'customer.php';
+require_once 'findreservation.php';
+
 require_once 'user.php';
 
 require_once 'login.php';

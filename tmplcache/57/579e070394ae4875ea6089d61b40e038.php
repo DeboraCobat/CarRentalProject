@@ -81,7 +81,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
       ";
         // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["rental_items"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["reservations"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 30
             echo "        <tr>
@@ -190,7 +190,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
       </tr>
     </thead>
     <tbody>
-      {% for item in rental_items %}
+      {% for item in reservations %}
         <tr>
           <td>{{ item.id }}</td>
           <td>{{ item.customer_id }}</td>
