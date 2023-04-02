@@ -58,6 +58,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
 <body>
   <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+  
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"/\">Logo</a>
       <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -82,15 +83,15 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
   <div class=\"container\">
     <div class=\"centeredContent\">
       ";
-        // line 39
-        $this->displayBlock('content', $context, $blocks);
         // line 40
+        $this->displayBlock('content', $context, $blocks);
+        // line 41
         echo "    </div>
     <div class=\"footer\">
       ";
-        // line 42
+        // line 43
         $this->displayBlock('footer', $context, $blocks);
-        // line 45
+        // line 46
         echo "    </div>
   </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -125,17 +126,17 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         echo "  ";
     }
 
-    // line 39
+    // line 40
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 42
+    // line 43
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 43
+        // line 44
         echo "        &copy; ";
         echo 2023;
         echo "
@@ -149,7 +150,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
     public function getDebugInfo()
     {
-        return array (  139 => 43,  135 => 42,  129 => 39,  125 => 11,  121 => 10,  115 => 7,  94 => 45,  92 => 42,  88 => 40,  86 => 39,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
+        return array (  140 => 44,  136 => 43,  130 => 40,  126 => 11,  122 => 10,  116 => 7,  95 => 46,  93 => 43,  89 => 41,  87 => 40,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -169,6 +170,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
 <body>
   <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+  
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"/\">Logo</a>
       <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">

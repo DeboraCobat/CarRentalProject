@@ -76,16 +76,14 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
         <div class=\"form-group\">
           <form method=\"post\" action=\"/login\">
             <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
+            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
             <label for=\"password\">Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"></br>
-          </form>
-        </div>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
             <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-          
-        
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -130,16 +128,14 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
         <div class=\"form-group\">
           <form method=\"post\" action=\"/login\">
             <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
+            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
             <label for=\"password\">Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"></br>
-          </form>
-        </div>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
             <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-          
-        
+          </form>
+        </div>
       </div>
     </div>
   </div>
