@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+// session_start();
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -58,6 +58,19 @@ $app->get('/', function ($request, $response, $args) {
 $app->post('/', function ($request, $response, $args) {
     $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
     $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
+
+    if (isset($request->getParsedBody()['pickup_time'])) {
+        $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
+    } else {
+        // handle the case where the pickup_time key is missing
+    }
+    
+    if (isset($request->getParsedBody()['return_time'])) {
+        $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
+    } else {
+        // handle the case where the return_time key is missing
+    }
+    
 
     $availableVehicles = DB::query("SELECT id FROM vehicles WHERE %s < return_date AND %s > pickup_date", $pickupDateTime, $returnDateTime);
 

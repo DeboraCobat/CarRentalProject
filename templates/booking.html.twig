@@ -1,72 +1,19 @@
 {% extends 'master.html.twig' %}
 
 {% block content %}
-  <h1>Booking Confirmation</h1>
-  <p>Thank you for booking with us! Your booking details are:</p>
-  <table>
-    <tr>
-      <td>Vehicle:</td>
-      <td>{{ booking.vehicle.make }} {{ booking.vehicle.model }}</td>
-    </tr>
-    <tr>
-      <td>Pickup Date:</td>
-      <td>{{ booking.pickupDate|date('Y-m-d H:i:s') }}</td>
-    </tr>
-    <tr>
-      <td>Return Date:</td>
-      <td>{{ booking.returnDate|date('Y-m-d H:i:s') }}</td>
-    </tr>
-    <tr>
-      <td>Rental Days:</td>
-      <td>{{ booking.rentalDays }}</td>
-    </tr>
-    <tr>
-      <td>Price:</td>
-      <td>${{ booking.price }}/day</td>
-    </tr>
-    <tr>
-      <td>Subtotal:</td>
-      <td>${{ booking.subtotal }}</td>
-    </tr>
-    <tr>
-      <td>Tax ({{ booking.taxRate }}%):</td>
-      <td>${{ booking.taxAmount }}</td>
-    </tr>
-    <tr>
-      <td>Total:</td>
-      <td>${{ booking.total }}</td>
-    </tr>
-  </table>
-  <hr>
-  <h2>Contact Information</h2>
-  <table>
-    <tr>
-      <td>Name:</td>
-      <td>{{ booking.name }}</td>
-    </tr>
-    <tr>
-      <td>Address:</td>
-      <td>{{ booking.address }}</td>
-    </tr>
-    <tr>
-      <td>Phone:</td>
-      <td>{{ booking.phone }}</td>
-    </tr>
-    <tr>
-      <td>Email:</td>
-      <td>{{ booking.email }}</td>
-    </tr>
-    <tr>
-      <td>Date of Birth:</td>
-      <td>{{ booking.dob|date('Y-m-d') }}</td>
-    </tr>
-    <tr>
-      <td>License Number:</td>
-      <td>{{ booking.licenseNumber }}</td>
-    </tr>
-    <tr>
-      <td>License Expiration:</td>
-      <td>{{ booking.licenseExpiration|date('Y-m-d') }}</td>
-    </tr>
-  </table>
+    <h1>Booking</h1>
+    <div class="vehicle-details">
+        <img src="/{{ vehicle.image_filepath }}" width="200">
+        <p>{{ vehicle.make }} {{ vehicle.model }}</p>
+        <p>{{ vehicle.seats }} seats</p>
+    </div>
+    <form id="booking-form" method="post" action="{{ url_for('booking_details', {'id': vehicle.id}) }}">
+        <label for="pickup-date-time">Pickup Date/Time:</label>
+        <input type="datetime-local" name="pickupDateTime" id="pickup-date-time" required>
+        <br>
+        <label for="return-date-time">Return Date/Time:</label>
+        <input type="datetime-local" name="returnDateTime" id="return-date-time" required>
+        <br>
+        <input type="submit" value="Book Now">
+    </form>
 {% endblock %}

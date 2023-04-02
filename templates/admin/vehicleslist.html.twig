@@ -31,7 +31,7 @@
           <td>{{ vehicle.availability }}</td>
           <td>{{ vehicle.seats }}</td>
           <td>{{ vehicle.lper100 }}</td>
-          <td><img src="{{ vehicle.image_filepath }}" width="100"></td>
+          <td><img src="/{{ vehicle.image_filepath }}" width="100"></td>
         </tr>
       {% endfor %}
     </tbody>

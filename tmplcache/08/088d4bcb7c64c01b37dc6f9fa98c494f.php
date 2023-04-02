@@ -120,7 +120,7 @@ class __TwigTemplate_5fb9c2795cdbbe529dda0beabd4d2e12 extends Template
   <div class=\"row\">
     <div class=\"col-md-6\">
       <h2>Rental Details</h2>
-      <form method=\"post\" action=\"/book\">
+      <form method=\"post\" action=\"/booking\">
         <input type=\"hidden\" name=\"vehicle_id\" value=\"";
         // line 45
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "id", [], "any", false, false, false, 45), "html", null, true);
@@ -288,7 +288,7 @@ class __TwigTemplate_5fb9c2795cdbbe529dda0beabd4d2e12 extends Template
   <div class=\"row\">
     <div class=\"col-md-6\">
       <h2>Rental Details</h2>
-      <form method=\"post\" action=\"/book\">
+      <form method=\"post\" action=\"/booking\">
         <input type=\"hidden\" name=\"vehicle_id\" value=\"{{ vehicle.id }}\">
         <input type=\"hidden\" name=\"pickup_date\" value=\"{{ pickupDateTime }}\">
         <input type=\"hidden\" name=\"return_date\" value=\"{{ returnDateTime }}\">

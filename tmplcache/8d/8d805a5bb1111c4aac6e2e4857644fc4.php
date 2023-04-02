@@ -115,7 +115,7 @@ class __TwigTemplate_f463326170dc92cd4082c30100da05d8 extends Template
             // line 33
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "lper100", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
-          <td><img src=\"";
+          <td><img src=\"/";
             // line 34
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image_filepath", [], "any", false, false, false, 34), "html", null, true);
             echo "\" width=\"100\"></td>
@@ -184,7 +184,7 @@ class __TwigTemplate_f463326170dc92cd4082c30100da05d8 extends Template
           <td>{{ vehicle.availability }}</td>
           <td>{{ vehicle.seats }}</td>
           <td>{{ vehicle.lper100 }}</td>
-          <td><img src=\"{{ vehicle.image_filepath }}\" width=\"100\"></td>
+          <td><img src=\"/{{ vehicle.image_filepath }}\" width=\"100\"></td>
         </tr>
       {% endfor %}
     </tbody>
