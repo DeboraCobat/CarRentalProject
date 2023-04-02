@@ -18,6 +18,10 @@ $app->get('/findmyreservation', function (Request $request, Response $response, 
     return $this->get('view')->render($response, 'findmyreservation.html.twig');
 });
 
+// $myreservation = DB::queryFirstRow("SELECT * FROM reservations WHERE reservations.customer_id = 9");
+
+// $myreservation = DB::queryFirstRow("SELECT * FROM reservations WHERE reservations.customer_id = %i", $args['id']);
+
 // $app->post('/findmyreservation', function (Request $request, Response $response) {
 //     $data = $request->getParsedBody();
 
