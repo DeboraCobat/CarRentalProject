@@ -12,47 +12,47 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="images/logo.png">
-          <div class="logo-animation"></div>
-        </a>
-        <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="findmyreservation">Find my reservation</a>
-            </li>
-            {% if auth.isLoggedIn %}
-            <li class="nav-item">
-              <a class="nav-link" href="customerprofile">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="register">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login">Login</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" {{ navClass }}>
     <div class="container">
-      <div class="centeredContent">
-        {% block content %}{% endblock %}
+      <a class="navbar-brand" href="/">
+        <img src="images/logo.png">
+        <div class="logo-animation"></div>
+      </a>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="findmyreservation">Find my reservation</a>
+          </li>
+          {% if auth.isLoggedIn %}
+          <li class="nav-item">
+            <a class="nav-link" href="customerprofile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Login</a>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-      <div class="footer">
-        {% block footer %}
-          &copy; {{ 2023 }}
-        {% endblock %}
+    </div>
+  </nav>
+  <div class="container">
+    <div class="centeredContent">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+      {% block footer %}
+      &copy; {{ 2023 }}
+      {% endblock %}
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -61,8 +61,8 @@
 </body>
 
 
-  <!-- Google tag (gtag.js) -->
-
+<!-- Google tag (gtag.js) -->
+{% if auth.isLoggedIn %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -70,4 +70,5 @@
   gtag('js', new Date());
   gtag('config', 'G-TVEQKKS963');
 </script>
+{% endif %}
 </html>

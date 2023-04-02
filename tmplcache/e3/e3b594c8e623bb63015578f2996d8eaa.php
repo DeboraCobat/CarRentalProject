@@ -114,23 +114,9 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
         echo "\">
         </div>
         
-        <div class=\"form-group\">
-          <label for=\"license\">Driver's License:</label>
-          <input type=\"text\" class=\"form-control\" id=\"license\" name=\"license\" value=\"";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 54), "html", null, true);
-        echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"license_expiration\">License Expiration:</label>
-          <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"";
-        // line 59
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 59), "html", null, true);
-        echo "\">
-        </div>
-        
-        <div class=\"form-group\">
+        ";
+        // line 62
+        echo "        <div class=\"form-group\">
           <label for=\"password\">Password</label>
           <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"";
         // line 64
@@ -163,7 +149,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
     public function getDebugInfo()
     {
-        return array (  143 => 71,  137 => 64,  129 => 59,  121 => 54,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  129 => 71,  123 => 64,  119 => 62,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -219,7 +205,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
           <input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"{{ u.dob }}\">
         </div>
         
-        <div class=\"form-group\">
+        {# <div class=\"form-group\">
           <label for=\"license\">Driver's License:</label>
           <input type=\"text\" class=\"form-control\" id=\"license\" name=\"license\" value=\"{{ u.license }}\">
         </div>
@@ -228,7 +214,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
           <label for=\"license_expiration\">License Expiration:</label>
           <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
         </div>
-        
+         #}
         <div class=\"form-group\">
           <label for=\"password\">Password</label>
           <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"{{ u.password }}\">
@@ -236,7 +222,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
          {# <div class=\"form-group\">
           <label for=\"confirm_password\">Confirm Password</label>
-          <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"{{ u.password }}\">
+          <input type=\"password\" class=\"form-control\" id=\"confirm_password\" name=\"confirm_password\" value=\"{{ u.password }}\">
         </div> #}
 
         <button type=\"submit\" class=\"btn btn-primary\">Submit</button>

@@ -15,8 +15,6 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 
-
-
 require_once __DIR__ . '/vendor/autoload.php';
 
 // create a log channel
@@ -24,7 +22,9 @@ $log = new Logger ('main');
 $log->pushHandler (new StreamHandler(__DIR__ . '/applogs/everything.log', Logger::DEBUG));
 $log->pushHandler (new StreamHandler(__DIR__ . '/applogs/errors.log', Logger::ERROR));
 
-//
+//password pepper
+$passwordpepper = "gKj7#fE2$";
+
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
 
@@ -68,9 +68,10 @@ $app->add(TwigMiddleware::createFromContainer($app));
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 
+
 // function pepper_hash_password($password) {
 //     // Define your pepper constant
-//     $pepper = "gKj7#fE2$";
+//     $passwordpepper = "gKj7#fE2$";
 
 //     // Concatenate the pepper constant and password
 //     $peppered_password = $pepper . $password;

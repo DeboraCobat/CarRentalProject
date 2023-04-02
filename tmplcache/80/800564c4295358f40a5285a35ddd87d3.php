@@ -80,6 +80,9 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
             <label for=\"password\">Password:</label><br>
             <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+            
+
+            
 
             <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
           </form>
@@ -132,6 +135,9 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
             <label for=\"password\">Password:</label><br>
             <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+            
+
+            
 
             <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
           </form>
