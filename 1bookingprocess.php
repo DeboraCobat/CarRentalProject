@@ -103,7 +103,7 @@ $app->post('/booking/{id}', function ($request, $response, $args) {
 
 
 
-/////////////////////////////////// abandoned code /////////////// must reuse later ////////////
+/////////////////////////////////// abandoned code /////////////// might reuse later ////////////
 
 
 // Display trip details form
