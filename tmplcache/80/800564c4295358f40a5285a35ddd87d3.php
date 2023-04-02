@@ -87,7 +87,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
         <hr>
 
-        <p>Forgot your password? <a href=\"/forgot-password\">Reset it</a>.</p>
+        <p>Forgot your password? <a href=\"/forgotpassword\">Reset it</a>.</p>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
         <hr>
 
-        <p>Forgot your password? <a href=\"/forgot-password\">Reset it</a>.</p>
+        <p>Forgot your password? <a href=\"/forgotpassword\">Reset it</a>.</p>
       </div>
     </div>
   </div>

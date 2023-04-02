@@ -13,17 +13,11 @@ use Slim\Flash\Messages;
 use Respect\Validation\Validator as Validator;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-// create a log channel
-$log = new Logger ('main');
-$log->pushHandler (new StreamHandler(__DIR__ . '/applogs/everything.log', Logger::DEBUG));
-$log->pushHandler (new StreamHandler(__DIR__ . '/applogs/errors.log', Logger::ERROR));
-
-//password pepper
-$passwordpepper = "gKj7#fE2$";
+require __DIR__ . '/vendor/autoload.php';
 
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
@@ -67,18 +61,11 @@ $app->add(TwigMiddleware::createFromContainer($app));
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+// create a log channel
+$log = new Logger('main');
+$log->pushHandler(new StreamHandler(__DIR__ . '/applogs/everything.log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler(__DIR__ . '/applogs/errors.log', Logger::ERROR));
 
-
-// function pepper_hash_password($password) {
-//     // Define your pepper constant
-//     $passwordpepper = "gKj7#fE2$";
-
-//     // Concatenate the pepper constant and password
-//     $peppered_password = $pepper . $password;
-
-//     // Hash the peppered password using SHA-256
-//     $hashed_password = hash('sha256', $peppered_password);
-
-//     return $hashed_password;
-// }
+//password pepper
+$passwordpepper = "gKj7#fE2$";
 
