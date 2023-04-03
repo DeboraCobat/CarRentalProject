@@ -8,76 +8,93 @@
 			{% block title %}{% endblock %}
 		</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/style.css"> {% block addHead %}{% endblock %}
+		<link rel="stylesheet" type="text/css" href="/styles.css"> {% block addHead %}{% endblock %}
 		</head>
 
 		<body>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				<div class="container">
-					<a
-						class="navbar-brand" href="/">
-						{# <img src="images/logo.png" style="width: 75px;"> #}
-						<video src="images/logo-animation.mp4" autoplay loop style="width: 15px;"></video>
-						<div class="logo-animation"></div>
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="findmyreservation">Find my reservation</a>
-							</li>
-							{% if userSession %}
+					<a class="navbar-brand" href="/">
+						<div></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-left" id="navbarNav">
+							<ul class="navbar-nav">
 								<li class="nav-item">
-									<a class="nav-link" href="logout">Logout</a>
+									<a class="nav-link" href="findmyreservation">Find my reservation</a>
 								</li>
-							{% else %}
-								<li class="nav-item">
-									<a class="nav-link" href="register">Register</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="login">Login</a>
-								</li>
-							{% endif %}
-							{% if userSession %}
-								<li class="nav-item">
-									<p class="nav-link">Hello
-										{{ userSession.first_name }}!</p>
-								</li>
-							{% endif %}
-						</ul>
+								{% if userSession %}
+									<li class="nav-item">
+										<a class="nav-link" href="logout">Logout</a>
+									</li>
+								{% else %}
+									<li class="nav-item">
+										<a class="nav-link" href="register">Register</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="login">Login</a>
+									</li>
+								{% endif %}
+								{% if userSession %}
+									<li class="nav-item">
+										<p class="nav-link">Hello
+											{{ userSession.first_name }}!</p>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
 					</div>
-
-				</div>
-			</nav>
-			<div class="container">
-				<div class="centeredContent"> {% block content %}{% endblock %}
-					</div>
-					<div class="footer">
+				</nav>
+				<div class="container">
+					<div class="centeredContent"> {% block content %}{% endblock %}
+						</div>
 						{% block footer %}
-							&copy;
-							{{ 2023 }}
-						{% endblock %}
-					</div>
-				</div>
-				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-			</body>
+						<div class="footer">
+							
+								<div class="footer">
+									<div class="social-media"></div>
+									<!-- Placeholder for social media logo -->
+									<div class="social-media"></div>
+									<!-- Placeholder for social media logo -->
+									<div class="social-media"></div>
+									<!-- Placeholder for social media logo -->
+
+									<div
+										class="contact-info">
+										<!-- Placeholder for contact information -->
+										Contact us: info@yourcompany.com | 555-555-5555
+									</div>
+
+									<div
+										class="newsletter">
+										<!-- Placeholder for newsletter -->
+										Subscribe to our newsletter
+										<input type="email" placeholder="Enter your email address">
+										<button>Subscribe</button>
+									</div>
+									&copy;
+									{{ 2023 }}
+								{% endblock %}
+							</div>
+						</div>
+						<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+						<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-			<!-- Google tag (gtag.js) -->
+						<!-- Google tag (gtag.js) -->
 
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
+						<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963"></script>
+						<script>
+							window.dataLayer = window.dataLayer || [];
 function gtag() {
 dataLayer.push(arguments);
 }
 gtag('js', new Date());
 gtag('config', 'G-TVEQKKS963');
-			</script>
+						</script>
+					</body>
+				</body>
+			</body>
 		</html>

@@ -47,48 +47,49 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Reset Password";
+        echo "Reset Password
+";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
-        echo "  <div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-      <div class=\"col-md-8 col-lg-6\">
-        <h1>Reset Password</h1>
+        // line 7
+        echo "\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t<h1>Reset Password</h1>
 
-        ";
-        // line 11
+\t\t\t\t";
+        // line 12
         if (array_key_exists("message", $context)) {
-            // line 12
-            echo "          <p>";
+            // line 13
+            echo "\t\t\t\t\t<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
-        ";
+\t\t\t\t";
         }
-        // line 14
+        // line 15
         echo "
-        <div class=\"form-group\">
-            <form method=\"post\" action=\"/resetpassword\">
-                <label for=\"token\">Token:</label><br>
-                <input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
+\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t<form method=\"post\" action=\"/resetpassword\">
+\t\t\t\t\t\t<label for=\"token\">Token:</label><br>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
 
 
-            <label for=\"password\">New Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+\t\t\t\t\t\t<label for=\"password\">New Password:</label><br>
+\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-            <label for=\"password_confirm\">Confirm New Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
+\t\t\t\t\t\t<label for=\"password_confirm\">Confirm New Password:</label><br>
+\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
 
-            <button type=\"submit\" class=\"btn btn-primary\">Reset Password</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset Password</button>
+\t\t\t\t\t</form>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 ";
     }
 
@@ -104,43 +105,44 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 14,  67 => 12,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  74 => 15,  68 => 13,  66 => 12,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Reset Password{% endblock %}
+{% block title %}Reset Password
+{% endblock %}
 
 {% block content %}
-  <div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-      <div class=\"col-md-8 col-lg-6\">
-        <h1>Reset Password</h1>
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t<h1>Reset Password</h1>
 
-        {% if message is defined %}
-          <p>{{ message }}</p>
-        {% endif %}
+\t\t\t\t{% if message is defined %}
+\t\t\t\t\t<p>{{ message }}</p>
+\t\t\t\t{% endif %}
 
-        <div class=\"form-group\">
-            <form method=\"post\" action=\"/resetpassword\">
-                <label for=\"token\">Token:</label><br>
-                <input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
+\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t<form method=\"post\" action=\"/resetpassword\">
+\t\t\t\t\t\t<label for=\"token\">Token:</label><br>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
 
 
-            <label for=\"password\">New Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+\t\t\t\t\t\t<label for=\"password\">New Password:</label><br>
+\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-            <label for=\"password_confirm\">Confirm New Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
+\t\t\t\t\t\t<label for=\"password_confirm\">Confirm New Password:</label><br>
+\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
 
-            <button type=\"submit\" class=\"btn btn-primary\">Reset Password</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset Password</button>
+\t\t\t\t\t</form>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 {% endblock %}
 ", "resetpassword.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/resetpassword.html.twig");
     }
