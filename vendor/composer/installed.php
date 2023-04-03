@@ -14,7 +14,6 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'bb62b4de02e47d1137ffaf1747ea1485092c0d9b',
             'reference' => 'a67c9dbdfe0ed9c436963abcbfbc9ca4a512b784',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
