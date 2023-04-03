@@ -5,7 +5,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require_once 'init.php';
 
-// FINDING RESERVATION
+// FINDING RESERVATION WITHOUT LOGIN
 
 $app->get('/findmyreservation', function (Request $request, Response $response) {
     return $this->get('view')->render($response, 'findmyreservation.html.twig');
@@ -13,41 +13,27 @@ $app->get('/findmyreservation', function (Request $request, Response $response) 
 
 $app->post('/findmyreservation', function (Request $request, Response $response) use ($log) {
     $data = $request->getParsedBody();
+    $reservationId = isset($data['reservationId']) ? $data['reservationId'] : '';
 
-    // // Retrieve the email and reservation ID from the form data
-    // $email = $data['email'];
-    // $reservationId = $data['reservationId'];
+    $reservations = DB::query("SELECT * FROM reservations WHERE id = %i", $reservationId);
 
-    $log->debug(sprintf(
-        "USER ID",
-        $_SESSION['user']['id'],
-    ));
+    if ($reservations) {
+        foreach ($reservations as &$reservation) {
+            // Query the database to find the corresponding vehicle based on the reservation's vehicle ID
+            $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $reservation['vehicle_id']);
 
+            // Add the vehicle information to the reservation array
+            $reservation['vehicle'] = $vehicle;
+        }
 
-    // Query the database to find the reservation based on the email and reservation ID provided
-    $reservation = DB::queryFirstRow("SELECT * FROM reservations WHERE customer_id = %i", $_SESSION['user']['id']);
+        // Render the reservation details in a new Twig template
+        return $this->get('view')->render($response, 'myreservation.html.twig', ['reservations' => $reservations]);
+    } else {
+        // Render a message indicating that no reservation was found
+        return $this->get('view')->render($response, 'myreservation.html.twig', ['message' => 'No reservation was found for the provided email and reservation ID.']);
+    }
 
-    $log->debug(sprintf(
-        "USER RESERVATIONS",
-        $reservation,
-    ));
-
-
-    // if ($reservation) {
-    //     // Query the database to find the corresponding vehicle based on the reservation's vehicle ID
-    //     $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $reservation['vehicle_id']);
-
-    //     // Add the vehicle information to the reservation array
-    //     $reservation['vehicle'] = $vehicle;
-
-    //     // Render the reservation details in a new Twig template
-    //     return $this->get('view')->render($response, 'myreservation.html.twig', ['error' => true]);
-    // } else {
-    //     // Render a message indicating that no reservation was found
-    //     return $this->get('view')->render($response, 'myreservation.html.twig', ['message' => 'No reservation was found for the provided email and reservation ID.']);
-    // }
-
-    // return $response;
+    return $response;
 });
 
 
