@@ -5,7 +5,71 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require_once 'init.php';
 
-// Define $app and $auth here, if not defined already
+// $app->post('/login', function ($request, $response, $args) {
+    
+//     $email = $data['email'];
+//     $password = $data['password'];
+    
+//     if ($email === 'usuario' && $password === 'senha') {
+        
+//         session_start();
+//         $_SESSION['email'] = $email;
+        
+//         // Redirecione para a página inicial
+//         return $response->withRedirect('/home');
+//     } else {
+        
+//         // Informe ao usuário que as informações de login são inválidas
+//         $view = $this->get('view');
+//         return $view->render($response, 'login.html.twig', ['error' => 'Usuário ou senha inválido']);
+//     }
+// });
+
+// // Rota de logout
+// $app->get('/logout', function ($request, $response, $args) {
+    
+//     // Destrua a sessão do usuário
+//     session_start();
+//     session_destroy();
+    
+//     // Redirecione para a página de login
+//     return $response->withRedirect('/login');
+// });
+
+// // Rota protegida (requer autenticação)
+// $app->get('/home', function ($request, $response, $args) {
+    
+//     // Verifique se há uma sessão de usuário válida
+//     session_start();
+//     if (!isset($_SESSION['email'])) {
+        
+//         // Redirecione para a página de login se não houver sessão válida
+//         return $response->withRedirect('/login');
+//     }
+    
+//     // Verifique se o usuário está no modo de administração
+//     $isAdmin = $_SESSION['is_admin'];
+//     if ($isAdmin) {
+        
+//         // Se o usuário estiver no modo de administração, redirecione para a página do painel de administração
+//         return $response->withRedirect('/admin/adminpanel');
+//     } else {
+        
+//         // Se o usuário não estiver no modo de administração, mostre a página de boas-vindas
+//         $view = $this->get('view');
+//         return $view->render($response, '/', ['email' => $_SESSION['email']]);
+//     }
+// });
+
+
+// // Rota de login (exibição do formulário)
+// $app->get('/login', function ($request, $response, $args) {
+    
+//     // Exiba o formulário de login
+//     $view = $this->get('view');
+//     return $view->render($response, 'login.twig');
+// });
+
 
 // Display login
 $app->get('/login', function (Request $request, Response $response) {

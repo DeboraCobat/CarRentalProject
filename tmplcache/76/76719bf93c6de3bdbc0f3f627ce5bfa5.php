@@ -61,7 +61,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
   
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\">
+      <img src=\"images/logo.png\" style=\"width: 75px;\">
       ";
         // line 21
         echo "      <div class=\"logo-animation\"></div>
@@ -80,6 +80,8 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
           </li>
           <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"login\">Login</a>
+
+         
           </li>
         </ul>
       </div>
@@ -88,15 +90,15 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
   <div class=\"container\">
     <div class=\"centeredContent\">
       ";
-        // line 44
+        // line 46
         $this->displayBlock('content', $context, $blocks);
-        // line 45
+        // line 47
         echo "    </div>
     <div class=\"footer\">
       ";
-        // line 47
+        // line 49
         $this->displayBlock('footer', $context, $blocks);
-        // line 50
+        // line 52
         echo "    </div>
   </div>
   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -131,17 +133,17 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         echo "  ";
     }
 
-    // line 44
+    // line 46
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 47
+    // line 49
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 48
+        // line 50
         echo "        &copy; ";
         echo 2023;
         echo "
@@ -155,7 +157,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
     public function getDebugInfo()
     {
-        return array (  145 => 48,  141 => 47,  135 => 44,  131 => 11,  127 => 10,  121 => 7,  100 => 50,  98 => 47,  94 => 45,  92 => 44,  67 => 21,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
+        return array (  147 => 50,  143 => 49,  137 => 46,  133 => 11,  129 => 10,  123 => 7,  102 => 52,  100 => 49,  96 => 47,  94 => 46,  67 => 21,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -178,8 +180,8 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
   
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\">
-      {# <video src=\"/images/logo-animation.mp4\" autoplay loop></video> #}
+      <img src=\"images/logo.png\" style=\"width: 75px;\">
+      {# <video src=\"/images/logo-animation.mp4\" autoplay loop style=\"width: 15px;\"></video> #}
       <div class=\"logo-animation\"></div>
       </a>
       <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -196,6 +198,8 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
           </li>
           <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"login\">Login</a>
+
+         
           </li>
         </ul>
       </div>
