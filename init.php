@@ -55,3 +55,6 @@ $app->add(TwigMiddleware::createFromContainer($app));
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+// Set up logging
+$log = new Logger('login');
+$log->pushHandler(new StreamHandler(__DIR__ . '/logs/login.log', Logger::INFO));

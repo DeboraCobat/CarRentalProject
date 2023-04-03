@@ -61,33 +61,29 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
         <h1>Login</h1>
+
         ";
-        // line 12
-        if ((array_key_exists("message", $context) &&  !twig_test_empty(($context["message"] ?? null)))) {
-            // line 13
-            echo "        <p class=\"alert alert-danger\">";
+        // line 13
+        if (array_key_exists("message", $context)) {
+            // line 14
+            echo "          <p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
         ";
         }
-        // line 15
-        echo "        <form method=\"post\" action=\"/login\">
-          <div class=\"form-group\">
-            <label for=\"email\">Email:</label>
-              <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" required>
-          </div>
+        // line 16
+        echo "
+        <div class=\"form-group\">
+          <form method=\"post\" action=\"/login\">
+            <label for=\"email\">Email:</label><br>
+            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
-          <div class=\"form-group\">
-            <label for=\"password\">Password:</label>
-              <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" required>
-          </div>
+            <label for=\"password\">Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-          <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-        </form>
-
-        <hr>
-
-        <p>Forgot your password? <a href=\"/forgotpassword\">Reset it</a>.</p>
+            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -108,7 +104,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
     public function getDebugInfo()
     {
-        return array (  74 => 15,  68 => 13,  66 => 12,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  75 => 16,  69 => 14,  67 => 13,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,26 +120,22 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
         <h1>Login</h1>
-        {% if message is defined and message is not empty %}
-        <p class=\"alert alert-danger\">{{ message }}</p>
+
+        {% if message is defined %}
+          <p>{{ message }}</p>
         {% endif %}
-        <form method=\"post\" action=\"/login\">
-          <div class=\"form-group\">
-            <label for=\"email\">Email:</label>
-              <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" required>
-          </div>
 
-          <div class=\"form-group\">
-            <label for=\"password\">Password:</label>
-              <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" required>
-          </div>
+        <div class=\"form-group\">
+          <form method=\"post\" action=\"/login\">
+            <label for=\"email\">Email:</label><br>
+            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
-          <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-        </form>
+            <label for=\"password\">Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-        <hr>
-
-        <p>Forgot your password? <a href=\"/forgotpassword\">Reset it</a>.</p>
+            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

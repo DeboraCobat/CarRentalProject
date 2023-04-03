@@ -18,6 +18,5 @@
         "psr/http-message": "^1.0",
         "slim/flash": "^0.4.0",
         "stripe/stripe-php": "^10.12"       
-        "stripe/stripe-php": "^10.12"       
     }
 }

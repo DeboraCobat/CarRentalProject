@@ -5,7 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "857c12052e51d5be59141abfdb19e202",
-    "content-hash": "857c12052e51d5be59141abfdb19e202",
+
     "packages": [
         {
             "name": "fig/http-message-util",
