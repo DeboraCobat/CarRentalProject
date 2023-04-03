@@ -29,32 +29,13 @@ $app->get('/admin/addvehicle', function ($request, $response, $args) {
 
 // DISPLAY ALL VEHICLES function /////////////////////////////////////////////////////////
 $app->get('/admin/vehicleslist', function ($request, $response, $args) {
-  $vehicles = DB::query("SELECT *, image_filepath AS image FROM vehicles");
+  $vehicles = DB::query("SELECT * FROM vehicles");
 
   return $this->get('view')->render($response, 'admin/vehicleslist.html.twig', ['vehicles' => $vehicles]);
 });
 
 // ADD VEHICLE function //////////////////////////////////////////////////////////////////
 $app->post('/admin/addvehicle', function ($request, $response, $args) {
-
-  if (($_FILES['file']['name'] != "")) {
-      // Where the file is going to be stored
-      $target_dir = "uploads/";
-      $file = $_FILES['file']['name'];
-      $path = pathinfo($file);
-      $filename = $path['filename'];
-      $ext = $path['extension'];
-      $temp_name = $_FILES['file']['tmp_name'];
-      $path_filename_ext = $target_dir . $filename . "." . $ext;
-
-      // Check if file already exists
-      if (file_exists($path_filename_ext)) {
-          echo "Sorry, file already exists.";
-      } else {
-          move_uploaded_file($temp_name, $path_filename_ext);
-          echo "Congratulations! File Uploaded Successfully.";
-      }
-  }
 
   // extract values submitted
   $data = $request->getParsedBody();
@@ -67,8 +48,36 @@ $app->post('/admin/addvehicle', function ($request, $response, $args) {
   $availability = $data['availability'];
   $seats = $data['seats'];
   $lper100 = $data['lper100'];
-  // $filename = $data['file'];
+//   $filename = isset($_FILES['image']) ? $_FILES['image']['name'] : '';
+//   $file = isset($_FILES['image']) ? $_FILES['image']['name'] : '';
 
+
+
+  if (($_FILES['file']['name']!="")){
+    // Where the file is going to be stored
+        // $target_dir = "uploads/";
+        // $file = $_FILES['image']['name'];
+        // $path = pathinfo($file);
+        // $filename = $path['filename'];
+        // $ext = $path['extension'];
+        // $temp_name = $_FILES['image']['tmp_name'];
+        // $path_filename_ext = $target_dir.$filename.".".$ext;
+        $target_dir = "uploads/";
+            $file = $_FILES['file']['name'];
+            $path = pathinfo($file);
+            $filename = $path['filename'];
+            $ext = $path['extension'];
+            $temp_name = $_FILES['file']['tmp_name'];
+            $path_filename_ext = $target_dir.$filename.".".$ext;
+
+        // Check if file already exists
+        if (file_exists($path_filename_ext)) {
+            echo "Sorry, file already exists.";
+            }else{
+            move_uploaded_file($temp_name,$path_filename_ext);
+            echo "Congratulations! File Uploaded Successfully.";
+        }
+       }
   //TODO go further with the validation
   // validate
   $errorList = [];
@@ -108,11 +117,11 @@ $app->post('/admin/addvehicle', function ($request, $response, $args) {
       $errorList[] = "Liters per 100km must be a valid float number between 0 and 99";
       $lper100 = "";
   }
-  // if (isset($imageFilepath['image_filepath'])) {
-  //     // do something with $car['image_filepath']
-  // } else {
-  //     // handle the case where 'image_filepath' is not set
-  // }
+  if (isset($filename)) {
+      // do something with $car['image_filepath']
+  } else {
+      // handle the case where 'image_filepath' is not set
+  }
 
 
   if ($errorList) { // STATE 2: errors
@@ -126,11 +135,13 @@ $app->post('/admin/addvehicle', function ($request, $response, $args) {
           'seats' => $seats,
           'lper100' => $lper100,
           'availability' => $availability,
-          // 'image_filepath' => $location
+        //   'image_filepath' => $filename
+        'image_filepath' =>$path_filename_ext
       ];
       return $this->get('view')->render($response, 'admin/addvehicle.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
   } else {
 
+    
 
       // STATE 3
       // INSERT VEHICLE into database
@@ -144,10 +155,10 @@ $app->post('/admin/addvehicle', function ($request, $response, $args) {
           'availability' => $availability,
           'seats' => $seats,
           'lper100' => $lper100,
-          'image_filepath' => $path_filename_ext
+          'image_filepath' =>$path_filename_ext
       ]);
       $successMessage = "Vehicle added successfully!";
-      return $this->get('view')->render($response, 'http://carrentalproject.org/admin/vehicleslist', ['successMessage' => $successMessage]);
+      return $response->withRedirect('/admin/vehicleslist');
       $errorMessage = "Error adding vehicle to database: ";
       return $this->get('view')->render($response, 'admin/addvehicle.html.twig', ['errorMessage' => $errorMessage]);
   }

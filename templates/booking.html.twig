@@ -1,72 +1,105 @@
 {% extends 'master.html.twig' %}
 
 {% block content %}
-  <h1>Booking Confirmation</h1>
-  <p>Thank you for booking with us! Your booking details are:</p>
-  <table>
-    <tr>
-      <td>Vehicle:</td>
-      <td>{{ booking.vehicle.make }} {{ booking.vehicle.model }}</td>
-    </tr>
-    <tr>
-      <td>Pickup Date:</td>
-      <td>{{ booking.pickupDate|date('Y-m-d H:i:s') }}</td>
-    </tr>
-    <tr>
-      <td>Return Date:</td>
-      <td>{{ booking.returnDate|date('Y-m-d H:i:s') }}</td>
-    </tr>
-    <tr>
-      <td>Rental Days:</td>
-      <td>{{ booking.rentalDays }}</td>
-    </tr>
-    <tr>
-      <td>Price:</td>
-      <td>${{ booking.price }}/day</td>
-    </tr>
-    <tr>
-      <td>Subtotal:</td>
-      <td>${{ booking.subtotal }}</td>
-    </tr>
-    <tr>
-      <td>Tax ({{ booking.taxRate }}%):</td>
-      <td>${{ booking.taxAmount }}</td>
-    </tr>
-    <tr>
-      <td>Total:</td>
-      <td>${{ booking.total }}</td>
-    </tr>
-  </table>
-  <hr>
-  <h2>Contact Information</h2>
-  <table>
-    <tr>
-      <td>Name:</td>
-      <td>{{ booking.name }}</td>
-    </tr>
-    <tr>
-      <td>Address:</td>
-      <td>{{ booking.address }}</td>
-    </tr>
-    <tr>
-      <td>Phone:</td>
-      <td>{{ booking.phone }}</td>
-    </tr>
-    <tr>
-      <td>Email:</td>
-      <td>{{ booking.email }}</td>
-    </tr>
-    <tr>
-      <td>Date of Birth:</td>
-      <td>{{ booking.dob|date('Y-m-d') }}</td>
-    </tr>
-    <tr>
-      <td>License Number:</td>
-      <td>{{ booking.licenseNumber }}</td>
-    </tr>
-    <tr>
-      <td>License Expiration:</td>
-      <td>{{ booking.licenseExpiration|date('Y-m-d') }}</td>
-    </tr>
-  </table>
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <div style="flex: 1;">
+    
+    <form autocomplete="off" method="post" id="userForm" style="text-align: center;" action="checkout-charge.php">
+  
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" required><br><br>
+  
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required><br><br>
+  
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" required><br><br>
+  
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" name="phone" required><br><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" required><br><br>
+  
+  <input type="checkbox" id="tosCheckbox" name="tosCheckbox" required>
+  <label for="tosCheckbox">I have read and agree to the Terms of Service</label><br><br>
+  
+  <input type="submit" value="Book" id="bookButton">
+</form>
+
+<script> // to ensure that the TOS button is clicked before hitting submit
+  const tosCheckbox = document.getElementById('tosCheckbox');
+  const bookButton = document.getElementById('bookButton');
+  const userForm = document.getElementById('userForm');
+  
+  tosCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+      bookButton.disabled = false;
+    } else {
+      bookButton.disabled = true;
+    }
+  });
+  
+  userForm.addEventListener('submit', function(event) {
+    if (!tosCheckbox.checked) {
+      event.preventDefault();
+      alert('Please accept the Terms of Service to continue.');
+    }
+  });
+</script>
+
+</div>
+
+        </div>
+        <div style="flex: 1; text-align: center;">
+            <img src="/{{ vehicle.image_filepath }}" width="200">
+            <h1>Your Trip Details</h1>
+            <p>{{ vehicle.make }} {{ vehicle.model }}, {{ vehicle.seats }} seats</p>
+            <p>Pickup Date and Time: {{ pickupDateTime|date('Y-m-d H:i') }}</p>
+            <p>Return Date and Time: {{ returnDateTime|date('Y-m-d H:i') }}</p>
+
+            {% set rentalDays = date(returnDateTime).diff(date(pickupDateTime)).days %}
+            <p>Daily Price: ${{ vehicle.daily_rate }}</p>
+            <p>Rental Days: {{ rentalDays }}</p>
+
+            <form style="text-align: center;">
+              <input type="checkbox" name="insurance" id="insurance" checked> 
+              <label for="insurance">Take insurance (10% extra)</label><br><br>
+              <p>Total Rental Price: $<span id="totalPrice">{{ vehicle.daily_rate * rentalDays }}</span></p>
+              <p>Tax (15%): $<span id="tax">{{ vehicle.daily_rate * rentalDays * 0.15 }}</span></p>
+              <p>Final Rental Price: $<span id="finalPrice">{{ vehicle.daily_rate * rentalDays * 1.15 }}</span></p>
+            </form>
+
+            <script>
+              const insuranceCheckbox = document.getElementById('insurance');
+              const totalPriceElement = document.getElementById('totalPrice');
+              const taxElement = document.getElementById('tax');
+              const finalPriceElement = document.getElementById('finalPrice');
+
+              let totalPrice = {{ vehicle.daily_rate * rentalDays }};
+              let tax = {{ vehicle.daily_rate * rentalDays * 0.15 }};
+              let finalPrice = {{ vehicle.daily_rate * rentalDays * 1.15 }};
+
+              insuranceCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                  totalPrice = {{ vehicle.daily_rate * rentalDays * 1.1 }};
+                  tax = {{ vehicle.daily_rate * rentalDays * 1.1 * 0.15 }};
+                  finalPrice = {{ vehicle.daily_rate * rentalDays * 1.1 * 1.15 }};
+                } else {
+                  totalPrice = {{ vehicle.daily_rate * rentalDays }};
+                  tax = {{ vehicle.daily_rate * rentalDays * 0.15 }};
+                  finalPrice = {{ vehicle.daily_rate * rentalDays * 1.15 }};
+                }
+
+                totalPriceElement.textContent = totalPrice.toFixed(2);
+                taxElement.textContent = tax.toFixed(2);
+                finalPriceElement.textContent = finalPrice.toFixed(2);
+              });
+            </script>
+        </div>
+    </div>
 {% endblock %}

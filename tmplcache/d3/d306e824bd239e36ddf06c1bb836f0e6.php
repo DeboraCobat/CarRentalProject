@@ -81,71 +81,96 @@ class __TwigTemplate_3b7d61facdd541d5582128d7487b4db3 extends Template
         }
         // line 14
         echo "
-<h1>Add a vehicle</h1>
+<div class=\"container\">
+  <div class=\"row justify-content-center mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add Vehicle</h1>
 
-<form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
-    <label for=\"make\">Make:</label>
-    <input type=\"text\" id=\"make\" name=\"make\" value=\"";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "make", [], "any", false, false, false, 19), "html", null, true);
-        echo "\"><br>
+  <form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
+    <div class=\"form-group\">
+      <label for=\"make\">Make:</label>
+      <input type=\"text\" class=\"form-control\" id=\"make\" name=\"make\" value=\"";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "make", [], "any", false, false, false, 23), "html", null, true);
+        echo "\">
+    </div>
 
-    <label for=\"model\">Model:</label>
-    <input type=\"text\" id=\"model\" name=\"model\" value=\"";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "model", [], "any", false, false, false, 22), "html", null, true);
-        echo "\"><br>
-
-    <label for=\"year\">Year:</label>
-    <input type=\"number\" id=\"year\" name=\"year\" value=\"";
-        // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "year", [], "any", false, false, false, 25), "html", null, true);
-        echo "\"><br>
-
-    <label for=\"color\">Color:</label>
-    <input type=\"text\" id=\"color\" name=\"color\" value=\"";
+    <div class=\"form-group\">
+      <label for=\"model\">Model:</label>
+      <input type=\"text\" class=\"form-control\" id=\"model\" name=\"model\" value=\"";
         // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "color", [], "any", false, false, false, 28), "html", null, true);
-        echo "\"><br>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "model", [], "any", false, false, false, 28), "html", null, true);
+        echo "\">
+    </div>
 
-    <label for=\"license_plate\">License Plate:</label>
-    <input type=\"text\" id=\"license_plate\" name=\"license_plate\" value=\"";
-        // line 31
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "license_plate", [], "any", false, false, false, 31), "html", null, true);
-        echo "\"><br>
+    <div class=\"form-group\">
+      <label for=\"year\">Year:</label>
+      <input type=\"number\" class=\"form-control\" id=\"year\" name=\"year\" value=\"";
+        // line 33
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "year", [], "any", false, false, false, 33), "html", null, true);
+        echo "\">
+    </div>
 
-    <label for=\"daily_rate\">Daily Rate:</label>
-    <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" value=\"";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "daily_rate", [], "any", false, false, false, 34), "html", null, true);
-        echo "\"><br>
+    <div class=\"form-group\">
+      <label for=\"color\">Color:</label>
+      <input type=\"text\" class=\"form-control\" id=\"color\" name=\"color\" value=\"";
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "color", [], "any", false, false, false, 38), "html", null, true);
+        echo "\">
+    </div>
 
-    <label for=\"availability\">Availability:</label>
-    <input type=\"text\" id=\"availability\" name=\"availability\" value=\"";
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "availability", [], "any", false, false, false, 37), "html", null, true);
-        echo "\"><br>
-
-    <label for=\"seats\">Number of Seats:</label>
-    <input type=\"number\" id=\"seats\" name=\"seats\" value=\"";
-        // line 40
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "seats", [], "any", false, false, false, 40), "html", null, true);
-        echo "\"><br>
-
-    <label for=\"lper100\">Fuel Consumption (L/100km):</label>
-    <input type=\"number\" id=\"lper100\" name=\"lper100\" value=\"";
+    <div class=\"form-group\">
+      <label for=\"license_plate\">License Plate:</label>
+      <input type=\"text\" class=\"form-control\" id=\"license_plate\" name=\"license_plate\" value=\"";
         // line 43
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "lper100", [], "any", false, false, false, 43), "html", null, true);
-        echo "\"><br>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "license_plate", [], "any", false, false, false, 43), "html", null, true);
+        echo "\">
+    </div>
 
-    <label for=\"image\">Upload Image:</label>
-    <input type=\"file\" id=\"file\" name=\"file\"><br>
+    <div class=\"form-group\">
+      <label for=\"daily_rate\">Daily Rate:</label>
+      <input type=\"number\" class=\"form-control\" id=\"daily_rate\" name=\"daily_rate\" value=\"";
+        // line 48
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "daily_rate", [], "any", false, false, false, 48), "html", null, true);
+        echo "\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"availability\">Availability:</label>
+      <input type=\"text\" class=\"form-control\" id=\"availability\" name=\"availability\" value=\"";
+        // line 53
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "availability", [], "any", false, false, false, 53), "html", null, true);
+        echo "\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"seats\">Number of Seats:</label>
+      <input type=\"number\" class=\"form-control\" id=\"seats\" name=\"seats\" value=\"";
+        // line 58
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "seats", [], "any", false, false, false, 58), "html", null, true);
+        echo "\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"lper100\">Fuel Consumption (L/100km):</label>
+      <input type=\"number\" class=\"form-control\" id=\"lper100\" name=\"lper100\" value=\"";
+        // line 63
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["v"] ?? null), "lper100", [], "any", false, false, false, 63), "html", null, true);
+        echo "\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"image\">Upload Image:</label>
+      <input type=\"file\" class=\"form-control-file\" id=\"file\" name=\"file\">
+    </div>
 
     ";
-        // line 50
+        // line 75
         echo "
-    <input type=\"submit\" value=\"Add Vehicle\">
-</form>
+    <button type=\"submit\" class=\"btn btn-primary\">Add Vehicle</button>
+  </form>
+</div>
+
 
 ";
     }
@@ -162,12 +187,94 @@ class __TwigTemplate_3b7d61facdd541d5582128d7487b4db3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  146 => 50,  138 => 43,  132 => 40,  126 => 37,  120 => 34,  114 => 31,  108 => 28,  102 => 25,  96 => 22,  90 => 19,  83 => 14,  79 => 12,  70 => 10,  66 => 9,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  169 => 75,  158 => 63,  150 => 58,  142 => 53,  134 => 48,  126 => 43,  118 => 38,  110 => 33,  102 => 28,  94 => 23,  83 => 14,  79 => 12,  70 => 10,  66 => 9,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"admin/master.html.twig\" %}
+
+{% block title %}Add Vehicle{% endblock %}
+
+{% block content %}
+
+{% if errorList %}
+    <ul>
+    {% for error in errorList %}
+        <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<div class=\"container\">
+  <div class=\"row justify-content-center mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add Vehicle</h1>
+
+  <form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
+    <div class=\"form-group\">
+      <label for=\"make\">Make:</label>
+      <input type=\"text\" class=\"form-control\" id=\"make\" name=\"make\" value=\"{{ v.make }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"model\">Model:</label>
+      <input type=\"text\" class=\"form-control\" id=\"model\" name=\"model\" value=\"{{ v.model }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"year\">Year:</label>
+      <input type=\"number\" class=\"form-control\" id=\"year\" name=\"year\" value=\"{{ v.year }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"color\">Color:</label>
+      <input type=\"text\" class=\"form-control\" id=\"color\" name=\"color\" value=\"{{ v.color }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"license_plate\">License Plate:</label>
+      <input type=\"text\" class=\"form-control\" id=\"license_plate\" name=\"license_plate\" value=\"{{ v.license_plate }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"daily_rate\">Daily Rate:</label>
+      <input type=\"number\" class=\"form-control\" id=\"daily_rate\" name=\"daily_rate\" value=\"{{ v.daily_rate }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"availability\">Availability:</label>
+      <input type=\"text\" class=\"form-control\" id=\"availability\" name=\"availability\" value=\"{{ v.availability }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"seats\">Number of Seats:</label>
+      <input type=\"number\" class=\"form-control\" id=\"seats\" name=\"seats\" value=\"{{ v.seats }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"lper100\">Fuel Consumption (L/100km):</label>
+      <input type=\"number\" class=\"form-control\" id=\"lper100\" name=\"lper100\" value=\"{{ v.lper100 }}\">
+    </div>
+
+    <div class=\"form-group\">
+      <label for=\"image\">Upload Image:</label>
+      <input type=\"file\" class=\"form-control-file\" id=\"file\" name=\"file\">
+    </div>
+
+    {# <div class=\"form-group\">
+      <label for=\"image_filepath\">Image Filepath:</label>
+      <input type=\"text\" class=\"form-control\" id=\"image_filepath\" name=\"image_filepath\" value=\"{{ v.image_filepath }}\">
+    </div> #}
+
+    <button type=\"submit\" class=\"btn btn-primary\">Add Vehicle</button>
+  </form>
+</div>
+
+
+{% endblock content %}
+
+{# {% extends \"admin/master.html.twig\" %}
 
 {% block title %}Add Vehicle{% endblock %}
 
@@ -217,9 +324,11 @@ class __TwigTemplate_3b7d61facdd541d5582128d7487b4db3 extends Template
     {# <label for=\"image_filepath\">Image Filepath:</label>
     <input type=\"text\" id=\"image_filepath\" name=\"image_filepath\" value=\"{{ v.image_filepath }}\"><br> #}
 
-    <input type=\"submit\" value=\"Add Vehicle\">
+    {# <input type=\"submit\" value=\"Add Vehicle\">
 </form>
 
-{% endblock content %}", "admin/addvehicle.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\addvehicle.html.twig");
+{% endblock content %} #}
+
+", "admin/addvehicle.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\addvehicle.html.twig");
     }
 }
