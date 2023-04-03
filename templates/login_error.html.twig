@@ -1,0 +1,11 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Login Error{% endblock %}
+
+{% block content %}
+  <h2>Login Error</h2>
+  {% if error %}
+        <p>Your login attempt failed. Please check your email and password and try again.</p>
+    {% endif %}
+  <a href="/login" class="btn btn-primary">Try Again</a>
+{% endblock %}
