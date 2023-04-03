@@ -8,18 +8,13 @@ use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
 use Slim\Flash\Messages;
-
-
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Respect\Validation\Validator as Validator;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
-
-
-  // DB::$dbName = 'carrental';
-  // DB::$user = 'carrental';
-  // DB::$password = '1lvTox19lz]Itajh';
-  // DB::$host = 'localhost';
  // hosted on external server
    DB::$dbName = 'cp5065_gabriel';
    DB::$user = 'cp5065_gabriel';
@@ -41,14 +36,8 @@ $container->set('view', function () {
     return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache','/cache', 'debug' => true]);
 });
 
-// $container->set(\Slim\Flash\Messages::class, function () {
-//     return new \Slim\Flash\Messages();
-// });
-
-
 // creates a new instance of a Slim Framework application
 $app = AppFactory::create();
-//$app = AppFactory::createFromContainer($container);
 
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::createFromContainer($app));
@@ -56,5 +45,19 @@ $app->add(TwigMiddleware::createFromContainer($app));
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Set up logging
-$log = new Monolog\Logger('login');
-$log->pushHandler(new Monolog\Handler\StreamHandler(__DIR__ . '/applogs/everything.log', Monolog\Logger::INFO));
+$log = new Logger('login');
+$log->pushHandler(new StreamHandler(dirname(__FILE__) . '/applogs/everything.log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler(dirname(__FILE__) . '/applogs/errors.log', Logger::ERROR));
+
+// All templates will be given userSession variable
+$container->set('view', function () use ($container) {
+  $view = Twig::create(__DIR__ . '/templates', ['cache' => __DIR__ . '/tmplcache', 'debug' => true]);
+
+  $view->getEnvironment()->addGlobal('userSession', function_exists('session_start') && !empty($_SESSION['user']) ? $_SESSION['user'] : null);
+  //$view->getEnvironment()->addGlobal('flashMessage', getAndClearFlashMessage());
+
+  return $view;
+});
+
+
+$passwordPepper = 'mmyb7oSAeXG9DTz2uFqu';

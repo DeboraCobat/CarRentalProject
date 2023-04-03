@@ -15,9 +15,10 @@ require_once '1bookingprocess.php';
 
 //LOGIN
 require_once 'login.php';
-//require_once 'logout.php';
 require_once 'register.php';
 require_once 'resetpassword.php';
+
+require_once 'customerprofile.php';
 
 
 $app->run();

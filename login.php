@@ -5,71 +5,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require_once 'init.php';
 
-// $app->post('/login', function ($request, $response, $args) {
-    
-//     $email = $data['email'];
-//     $password = $data['password'];
-    
-//     if ($email === 'usuario' && $password === 'senha') {
-        
-//         session_start();
-//         $_SESSION['email'] = $email;
-        
-//         // Redirecione para a página inicial
-//         return $response->withRedirect('/home');
-//     } else {
-        
-//         // Informe ao usuário que as informações de login são inválidas
-//         $view = $this->get('view');
-//         return $view->render($response, 'login.html.twig', ['error' => 'Usuário ou senha inválido']);
-//     }
-// });
-
-// // Rota de logout
-// $app->get('/logout', function ($request, $response, $args) {
-    
-//     // Destrua a sessão do usuário
-//     session_start();
-//     session_destroy();
-    
-//     // Redirecione para a página de login
-//     return $response->withRedirect('/login');
-// });
-
-// // Rota protegida (requer autenticação)
-// $app->get('/home', function ($request, $response, $args) {
-    
-//     // Verifique se há uma sessão de usuário válida
-//     session_start();
-//     if (!isset($_SESSION['email'])) {
-        
-//         // Redirecione para a página de login se não houver sessão válida
-//         return $response->withRedirect('/login');
-//     }
-    
-//     // Verifique se o usuário está no modo de administração
-//     $isAdmin = $_SESSION['is_admin'];
-//     if ($isAdmin) {
-        
-//         // Se o usuário estiver no modo de administração, redirecione para a página do painel de administração
-//         return $response->withRedirect('/admin/adminpanel');
-//     } else {
-        
-//         // Se o usuário não estiver no modo de administração, mostre a página de boas-vindas
-//         $view = $this->get('view');
-//         return $view->render($response, '/', ['email' => $_SESSION['email']]);
-//     }
-// });
-
-
-// // Rota de login (exibição do formulário)
-// $app->get('/login', function ($request, $response, $args) {
-    
-//     // Exiba o formulário de login
-//     $view = $this->get('view');
-//     return $view->render($response, 'login.twig');
-// });
-
 
 // Display login
 $app->get('/login', function (Request $request, Response $response) {
@@ -77,7 +12,9 @@ $app->get('/login', function (Request $request, Response $response) {
 });
     
 // Receive submission
-$app->post('/login', function (Request $request, Response $response, $args) use ($app, $log, $passwordPepper) {
+// $app->post('/login', function (Request $request, Response $response, $args) use ($app, $log, $passwordPepper) {
+
+$app->post('/login', function (Request $request, Response $response, $args) use ($log) {
     $data = $request->getParsedBody();
     $email = isset($data['email']) ? $data['email'] : '';
     $password = isset($data['password']) ? $data['password'] : '';
@@ -85,28 +22,43 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
     
     // Check if user exists
     $record = DB::queryFirstRow("SELECT is_admin, email, password FROM users WHERE email = %s", $email);
+    $loginSuccess = false;
 
     if ($record) {
-        $pwdPeppered = hash_hmac('sha256', $password, $passwordPepper);
+        global $passwordPepper;
+        $pwdPeppered = hash_hmac("sha256", $password, $passwordPepper);
         $pwdHashed = $record['password'];
-    
-        // Check if password is correct
-        if ($pwdPeppered === $pwdHashed) {
-            // authenticated, redirect to appropriate page based on user type
-            if ($record['is_admin']) {
-                return $response->withHeader('Location', 'admin/adminpanel')->withStatus(302);
-            } else {
-                return $response->withHeader('Location', '/customerprofile')->withStatus(302);
-            }
-        } else {
-            // incorrect password, show error message
-            $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
-            return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
+        if (password_verify($pwdPeppered, $pwdHashed)) {
+            $loginSuccess = true;
         }
-    }    
+        // WARNING: only temporary solution to allow for old plain-text passwords to continue to work
+        // Plain text passwords comparison
+        else if ($record['password'] == $password) {
+            $loginSuccess = true;
+        }
+    }
 
-    //  // Show error message
-     return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
+    // Check if password is correct
+    if ($loginSuccess) {
+        unset($record['password']); // for security reasons remove password from session
+        $_SESSION['user'] = $record; // remember user logged in
+        $log->debug(sprintf("Login successful for email %s, uid=%d, from %s", $email, $record['id'], $_SERVER['REMOTE_ADDR']));
+
+        // authenticated, redirect to appropriate page based on user type
+        if ($record['is_admin']) {
+            return $response->withHeader('Location', 'admin/adminpanel')->withStatus(302);
+        } else {
+            return $response->withHeader('Location', '/customerprofile')->withStatus(302);
+        }
+
+    } else {
+        // incorrect password, show error message
+        $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
+        return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
+    }
+
+    // Show error message
+    return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
 });
 
 // Check if user is logged in
