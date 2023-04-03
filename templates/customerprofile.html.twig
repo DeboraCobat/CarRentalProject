@@ -1,45 +1,56 @@
 {% extends "master.html.twig" %}
 
-{% block title %}Customer Dashboard{% endblock %}
+{% block title %}Customer Dashboard
+{% endblock %}
 
 {% block content %}
 
-  <h1>Your Profile</h1>
+	<h1>Your Profile</h1>
 
-  <div class="container">
-    <div class="row justify-content-center mt-5 mb-5">
-      <div class="col-md-8 col-lg-6">
+	<div class="container">
+		<div class="row justify-content-center mt-5 mb-5">
+			<div class="col-md-8 col-lg-6">
 
-        <div class="table-responsive">
-          <ul>
-            <li><strong>Name</strong></li>
-            <li><strong>Email</strong></li>
-            <li><strong>Phone</strong></li>
-            <li><strong>Address</strong></li>
-            <li><strong>Date of Birth</strong></li>
-            <li><strong>Driver's License</strong></li>
-            <li><strong>License Expiration</strong></li>
-            <li>{{ userSession.first_name }} {{ userSession.last_name }}</li>
-            <li>{{ userSession.email }}</li>
-            <li>{{ userSession.phone }}</li>
-            <li>{{ userSession.address }}</li>
-            <li>{{ userSession.dob }}</li>
-            <li>{{ userSession.license }}</li>
-            <li>{{ userSession.license_expiration }}</li>
-            {# {% for user in users %}
-              <li>{{ user.first_name }} {{ user.last_name }}</li>
-              <li>{{ user.email }}</li>
-              <li>{{ user.phone }}</li>
-              <li>{{ user.address }}</li>
-              <li>{{ user.dob }}</li>
-              <li>{{ user.license }}</li>
-              <li>{{ user.license_expiration }}</li>
-            {% endfor %} #}
-          </ul>
-        </div>
+				<div class="table-responsive">
+					<ul>
+						<li>
+							<strong>Name</strong>
+						</li>
+						<li>{{ userSession.first_name }}
+							{{ userSession.last_name }}</li>
 
-      </div>
-    </div>
-  </div>
-  
-{% endblock %}
+					</li>
+					<li>
+						<strong>Email</strong>
+					</li>
+					<li>{{ userSession.email }}</li>
+
+				</li>
+				<li>
+					<strong>Phone</strong>
+				</li>
+				<li>{{ userSession.phone }}</li>
+
+			</li>
+			<li>
+				<strong>Address</strong>
+			</li>
+			<li>{{ userSession.address }}</li>
+
+		</li>
+		<li>
+			<strong>Date of Birth</strong>
+		</li>
+		<li>{{ userSession.dob }}</li>
+
+	</li>
+	<li>
+		<strong>Driver's License</strong>
+	</li>
+	<li>{{ userSession.license }}</li>
+
+</li>
+<li>
+	<strong>License Expiration</strong>
+</li>
+<li>{{ userSession.license_expiration }}</li></li></ul></div></div></div></div>{% endblock %}

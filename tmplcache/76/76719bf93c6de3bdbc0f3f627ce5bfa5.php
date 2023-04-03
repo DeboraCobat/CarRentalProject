@@ -41,113 +41,142 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         echo "<!DOCTYPE html>
 <html lang=\"en\">
 
-<head>
-  <meta charset=\"UTF-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <title>";
-        // line 7
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+\t\t<title>
+\t\t\t";
+        // line 8
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-  <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
-  ";
-        // line 10
+        // line 9
+        echo "\t\t</title>
+\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"> ";
+        // line 11
         $this->displayBlock('addHead', $context, $blocks);
         // line 12
-        echo "</head>
+        echo "\t\t</head>
 
-<body>
-  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-  
-    <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\" style=\"width: 75px;\">
-      ";
+\t\t<body>
+\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+
+\t\t\t\t<div class=\"container\">
+\t\t\t\t\t<a
+\t\t\t\t\t\tclass=\"navbar-brand\" href=\"/\">
+\t\t\t\t\t\t";
         // line 21
-        echo "      <div class=\"logo-animation\"></div>
-      </a>
-      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-      </button>
+        echo "\t\t\t\t\t\t<video src=\"images/logo-animation.mp4\" autoplay loop style=\"width: 15px;\"></video>
+\t\t\t\t\t\t<div class=\"logo-animation\"></div>
+\t\t\t\t\t</a>
+\t\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
+\t\t\t\t\t</button>
 
-      <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
-        <ul class=\"navbar-nav\">
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"register\">Register</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"login\">Login</a>
+\t\t\t\t\t<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+\t\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t";
+        // line 33
+        if (($context["userSession"] ?? null)) {
+            // line 34
+            echo "\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"logout\">Logout</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t";
+        } else {
+            // line 38
+            echo "\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"register\">Register</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"login\">Login</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t";
+        }
+        // line 45
+        echo "\t\t\t\t\t\t\t";
+        if (($context["userSession"] ?? null)) {
+            // line 46
+            echo "\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<p class=\"nav-link\">Hello
+\t\t\t\t\t\t\t\t\t\t";
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 48), "html", null, true);
+            echo "!</p>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t";
+        }
+        // line 51
+        echo "\t\t\t\t\t\t</ul>
+\t\t\t\t\t</div>
 
-         
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class=\"container\">
-    <div class=\"centeredContent\">
-      ";
-        // line 46
+\t\t\t\t</div>
+\t\t\t</nav>
+\t\t\t<div class=\"container\">
+\t\t\t\t<div class=\"centeredContent\"> ";
+        // line 57
         $this->displayBlock('content', $context, $blocks);
-        // line 47
-        echo "    </div>
-    <div class=\"footer\">
-      ";
-        // line 49
+        // line 58
+        echo "\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"footer\">
+\t\t\t\t\t\t";
+        // line 60
         $this->displayBlock('footer', $context, $blocks);
-        // line 52
-        echo "    </div>
-  </div>
-  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
-  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
-  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
-</body>
+        // line 64
+        echo "\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
+\t\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+\t\t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+\t\t\t</body>
 
 
-  <!-- Google tag (gtag.js) -->
+\t\t\t<!-- Google tag (gtag.js) -->
 
-<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TVEQKKS963');
-</script>
-</html>";
+\t\t\t<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+\t\t\t<script>
+\t\t\t\twindow.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'G-TVEQKKS963');
+\t\t\t</script>
+\t\t</html>
+";
     }
 
-    // line 7
+    // line 8
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 10
+    // line 11
     public function block_addHead($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 11
-        echo "  ";
     }
 
-    // line 46
+    // line 57
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 49
+    // line 60
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 50
-        echo "        &copy; ";
+        // line 61
+        echo "\t\t\t\t\t\t\t&copy;
+\t\t\t\t\t\t\t";
+        // line 62
         echo 2023;
         echo "
-      ";
+\t\t\t\t\t\t";
     }
 
     public function getTemplateName()
@@ -155,9 +184,14 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         return "master.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  147 => 50,  143 => 49,  137 => 46,  133 => 11,  129 => 10,  123 => 7,  102 => 52,  100 => 49,  96 => 47,  94 => 46,  67 => 21,  57 => 12,  55 => 10,  49 => 7,  41 => 1,);
+        return array (  177 => 62,  174 => 61,  170 => 60,  164 => 57,  158 => 11,  152 => 8,  128 => 64,  126 => 60,  122 => 58,  120 => 57,  112 => 51,  106 => 48,  102 => 46,  99 => 45,  90 => 38,  84 => 34,  82 => 33,  68 => 21,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -165,71 +199,86 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
         return new Source("<!DOCTYPE html>
 <html lang=\"en\">
 
-<head>
-  <meta charset=\"UTF-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <title>{% block title %}{% endblock %}</title>
-  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-  <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">
-  {% block addHead %}
-  {% endblock %}
-</head>
+\t<head>
+\t\t<meta charset=\"UTF-8\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+\t\t<title>
+\t\t\t{% block title %}{% endblock %}
+\t\t</title>
+\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"> {% block addHead %}{% endblock %}
+\t\t</head>
 
-<body>
-  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-  
-    <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"/\">
-      <img src=\"images/logo.png\" style=\"width: 75px;\">
-      {# <video src=\"/images/logo-animation.mp4\" autoplay loop style=\"width: 15px;\"></video> #}
-      <div class=\"logo-animation\"></div>
-      </a>
-      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-      </button>
+\t\t<body>
+\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
 
-      <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
-        <ul class=\"navbar-nav\">
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"register\">Register</a>
-          </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"login\">Login</a>
+\t\t\t\t<div class=\"container\">
+\t\t\t\t\t<a
+\t\t\t\t\t\tclass=\"navbar-brand\" href=\"/\">
+\t\t\t\t\t\t{# <img src=\"images/logo.png\" style=\"width: 75px;\"> #}
+\t\t\t\t\t\t<video src=\"images/logo-animation.mp4\" autoplay loop style=\"width: 15px;\"></video>
+\t\t\t\t\t\t<div class=\"logo-animation\"></div>
+\t\t\t\t\t</a>
+\t\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
+\t\t\t\t\t</button>
 
-         
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class=\"container\">
-    <div class=\"centeredContent\">
-      {% block content %}{% endblock %}
-    </div>
-    <div class=\"footer\">
-      {% block footer %}
-        &copy; {{ 2023 }}
-      {% endblock %}
-    </div>
-  </div>
-  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
-  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
-  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
-</body>
+\t\t\t\t\t<div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+\t\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t{% if userSession %}
+\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"logout\">Logout</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"register\">Register</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"login\">Login</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t{% if userSession %}
+\t\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t\t<p class=\"nav-link\">Hello
+\t\t\t\t\t\t\t\t\t\t{{ userSession.first_name }}!</p>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t</div>
+
+\t\t\t\t</div>
+\t\t\t</nav>
+\t\t\t<div class=\"container\">
+\t\t\t\t<div class=\"centeredContent\"> {% block content %}{% endblock %}
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"footer\">
+\t\t\t\t\t\t{% block footer %}
+\t\t\t\t\t\t\t&copy;
+\t\t\t\t\t\t\t{{ 2023 }}
+\t\t\t\t\t\t{% endblock %}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
+\t\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+\t\t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+\t\t\t</body>
 
 
-  <!-- Google tag (gtag.js) -->
+\t\t\t<!-- Google tag (gtag.js) -->
 
-<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TVEQKKS963');
-</script>
-</html>", "master.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/master.html.twig");
+\t\t\t<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-TVEQKKS963\"></script>
+\t\t\t<script>
+\t\t\t\twindow.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'G-TVEQKKS963');
+\t\t\t</script>
+\t\t</html>
+", "master.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/master.html.twig");
     }
 }
