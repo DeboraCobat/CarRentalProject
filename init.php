@@ -58,6 +58,6 @@ $container->set('view', function () use ($container) {
   return $view;
 });
 
-$userSession = $_SESSION['user'];
+$userSession = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
 $passwordPepper = 'mmyb7oSAeXG9DTz2uFqu';
