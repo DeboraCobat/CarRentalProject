@@ -72,16 +72,17 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
         // line 14
         echo "
         <div class=\"form-group\">
-          <form method=\"post\" action=\"/resetpassword\">
-            <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
+            <form method=\"post\" action=\"/resetpassword\">
+                <label for=\"token\">Token:</label><br>
+                <input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
+
 
             <label for=\"password\">New Password:</label><br>
             <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-            ";
-        // line 25
-        echo "
+            <label for=\"password_confirm\">Confirm New Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
+
             <button type=\"submit\" class=\"btn btn-primary\">Reset Password</button>
           </form>
         </div>
@@ -103,7 +104,7 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 
     public function getDebugInfo()
     {
-        return array (  84 => 25,  73 => 14,  67 => 12,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  73 => 14,  67 => 12,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,15 +124,16 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
         {% endif %}
 
         <div class=\"form-group\">
-          <form method=\"post\" action=\"/resetpassword\">
-            <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
+            <form method=\"post\" action=\"/resetpassword\">
+                <label for=\"token\">Token:</label><br>
+                <input type=\"text\" class=\"form-control\" id=\"token\" name=\"token\"><br>
+
 
             <label for=\"password\">New Password:</label><br>
             <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
 
-            {# <label for=\"password_confirm\">Confirm New Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br> #}
+            <label for=\"password_confirm\">Confirm New Password:</label><br>
+            <input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
 
             <button type=\"submit\" class=\"btn btn-primary\">Reset Password</button>
           </form>
