@@ -60,7 +60,12 @@ class __TwigTemplate_16d1cb20b395c46c0d277baf5d878fae extends Template
     <div class=\"col-md-8 col-lg-6\">
     
       <h1>Find my reservation</h1>
-      <form action=\"/findmyreservation\" method=\"post\">
+      <form action=\"/findmyreservation/";
+        // line 11
+        echo twig_escape_filter($this->env, ($context["email"] ?? null), "html", null, true);
+        echo "/";
+        echo twig_escape_filter($this->env, ($context["reservationId"] ?? null), "html", null, true);
+        echo "\" method=\"post\">
         <div class=\"form-group\">
           <label for=\"email\">Email</label>
           <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"";
@@ -95,7 +100,7 @@ class __TwigTemplate_16d1cb20b395c46c0d277baf5d878fae extends Template
 
     public function getDebugInfo()
     {
-        return array (  75 => 18,  68 => 14,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  80 => 18,  73 => 14,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -110,7 +115,7 @@ class __TwigTemplate_16d1cb20b395c46c0d277baf5d878fae extends Template
     <div class=\"col-md-8 col-lg-6\">
     
       <h1>Find my reservation</h1>
-      <form action=\"/findmyreservation\" method=\"post\">
+      <form action=\"/findmyreservation/{{ email }}/{{ reservationId }}\" method=\"post\">
         <div class=\"form-group\">
           <label for=\"email\">Email</label>
           <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"{{ email }}\" required>

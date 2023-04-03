@@ -151,7 +151,7 @@ __________________________________________________
 - troubleshoot hosting and filezille
 
 
-2023/03/31 Debora
+2023/03/30 Debora
 
 1. Done / not done since last scrum:
 - design the route for reservation 
@@ -164,40 +164,3 @@ __________________________________________________
 
 3. Need assistance / figure things out
 - access database on cpanel
-
-2023/04/02 Gabriel
-
-1. Done / not done since last scrum:
--  user booking: user has full information on vehicles available to book
--  vehicle id as well as booking start and end date/time is brought over to booking page to populate trip details
--  hosting and server database has been figured out, website is under gabriel.fsd07.com
-
-2. To do until next Scrum:
-- integrate Stripe api into final booking page
-- generate the information necessary to populate user and reservation tables
-- complete the booking process
-- complete user CRUD
-
-
-3. Need assistance / figure things out
-- integrate stripe api and wrap up booking process 
-
-
-2023/04/02 Debora
-
-1. Done / not done since last scrum:
-- integrate pages of the website
-- work on register form /log out / login security
-- registration needs work
-- start payment integration
-
-2. To do until next Scrum:
-- finish registration - test
-- finish login logout validatio
-- complete  find my reservation system
-
-
-3. Need assistance / figure things out
-- how to test session logged
-- email to reset link
-- change display navigation tab after login
