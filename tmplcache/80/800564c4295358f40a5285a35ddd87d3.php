@@ -72,14 +72,14 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 \t\t\t\t\t";
         }
         // line 16
-        echo "\t\t\t\t\t<div class=\"form-group\">
+        echo "\t\t\t\t\t<div class=\"form-group-sm\">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
 \t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
 \t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Log in</button>
 
 
 \t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
@@ -130,14 +130,14 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 \t\t\t\t\t{% if message is defined %}
 \t\t\t\t\t\t<p>{{ message }}</p>
 \t\t\t\t\t{% endif %}
-\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t<div class=\"form-group-sm\">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
 \t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
 \t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Log in</button>
 
 
 \t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
