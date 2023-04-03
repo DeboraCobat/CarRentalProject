@@ -47,54 +47,54 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Login Page";
+        echo "Login Page
+";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
+        // line 7
         echo "
-<body>
-  <div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-      <div class=\"col-md-8 col-lg-6\">
-        <h1>Login</h1>
-            ";
-        // line 12
+\t<body>
+\t\t<div class=\"container\">
+\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t\t<h1>Login</h1>
+\t\t\t\t\t";
+        // line 13
         if (array_key_exists("message", $context)) {
-            // line 13
-            echo "              <p>";
+            // line 14
+            echo "\t\t\t\t\t\t<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
-            ";
+\t\t\t\t\t";
         }
-        // line 15
-        echo "                <div class=\"form-group\">
-      <form method=\"post\" action=\"/login\">
-        <label for=\"email\">Email:</label><br>
-        <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
+        // line 16
+        echo "\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<form method=\"post\" action=\"/login\">
+\t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
+\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
-        <label for=\"password\">Password:</label><br>
-        <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-                  <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-
-
-        <hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
-
-        <div class=\"d-flex justify-content-between align-items-center\">
-          <a href=\"/resetpassword\">Forgot password?</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+\t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
+\t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
 
 
+\t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
 
-  </div>
-</body>
+\t\t\t\t\t\t\t<div class=\"d-flex justify-content-between align-items-center\">
+\t\t\t\t\t\t\t\t<a href=\"/resetpassword\">Forgot password?</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</form>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+
+\t\t</div>
+\t</body>
 ";
     }
 
@@ -110,49 +110,49 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
     public function getDebugInfo()
     {
-        return array (  74 => 15,  68 => 13,  66 => 12,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  75 => 16,  69 => 14,  67 => 13,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Login Page{% endblock %}
+{% block title %}Login Page
+{% endblock %}
 
 {% block content %}
 
-<body>
-  <div class=\"container\">
-    <div class=\"row justify-content-center mt-5 mb-5\">
-      <div class=\"col-md-8 col-lg-6\">
-        <h1>Login</h1>
-            {% if message is defined %}
-              <p>{{ message }}</p>
-            {% endif %}
-                <div class=\"form-group\">
-      <form method=\"post\" action=\"/login\">
-        <label for=\"email\">Email:</label><br>
-        <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
+\t<body>
+\t\t<div class=\"container\">
+\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t\t<h1>Login</h1>
+\t\t\t\t\t{% if message is defined %}
+\t\t\t\t\t\t<p>{{ message }}</p>
+\t\t\t\t\t{% endif %}
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<form method=\"post\" action=\"/login\">
+\t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
+\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
-        <label for=\"password\">Password:</label><br>
-        <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-                  <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-
-
-        <hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
-
-        <div class=\"d-flex justify-content-between align-items-center\">
-          <a href=\"/resetpassword\">Forgot password?</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+\t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
+\t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
 
 
+\t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
 
-  </div>
-</body>
+\t\t\t\t\t\t\t<div class=\"d-flex justify-content-between align-items-center\">
+\t\t\t\t\t\t\t\t<a href=\"/resetpassword\">Forgot password?</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</form>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+
+\t\t</div>
+\t</body>
 {% endblock %}
 ", "login.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login.html.twig");
     }
