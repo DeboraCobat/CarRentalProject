@@ -37,12 +37,12 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
         } else {
             // incorrect password, show error message
             $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
-            // return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
+            return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
         }
     }    
 
     //  // Show error message
-    //  return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
+     return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
 });
 
 // Check if user is logged in
