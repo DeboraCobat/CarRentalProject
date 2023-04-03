@@ -8,12 +8,12 @@
 			<div class="col-md-10 col-lg-10">
 				<h1>My Reservations</h1>
 				{% if reservations %}
-					{% for reservation in reservations %} {# if reservation.user_id == user_id #}
+					 {% for reservation in reservations  %}
 						<h2>Reservation Details:</h2>
 						<ul>
 							<li>Reservation ID: {{ reservation.id }}</li>
 							<li>Pick-up Date: {{ reservation.start_date }}</li>
-							<li>Return Date: {{ reservation.end_date }}</li>
+							<li>Return Date: {{ reservation.end_date }}</li></br>
 							<li>Vehicle:</li>
 							<ul>
 								<li>Make: {{ reservation.vehicle.make }}</li>

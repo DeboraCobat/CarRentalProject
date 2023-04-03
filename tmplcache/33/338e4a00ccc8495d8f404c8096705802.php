@@ -58,11 +58,10 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
         // line 10
         if (($context["reservations"] ?? null)) {
             // line 11
-            echo "\t\t\t\t\t";
+            echo "\t\t\t\t\t ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["reservations"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-                echo " ";
                 // line 12
                 echo "\t\t\t\t\t\t<h2>Reservation Details:</h2>
 \t\t\t\t\t\t<ul>
@@ -77,7 +76,7 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 \t\t\t\t\t\t\t<li>Return Date: ";
                 // line 16
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "end_date", [], "any", false, false, false, 16), "html", null, true);
-                echo "</li>
+                echo "</li></br>
 \t\t\t\t\t\t\t<li>Vehicle:</li>
 \t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t<li>Make: ";
@@ -131,7 +130,7 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 
     public function getDebugInfo()
     {
-        return array (  116 => 29,  110 => 27,  107 => 26,  97 => 22,  93 => 21,  89 => 20,  85 => 19,  79 => 16,  75 => 15,  71 => 14,  67 => 12,  61 => 11,  59 => 10,  53 => 6,  49 => 5,  44 => 1,  42 => 3,  35 => 1,);
+        return array (  115 => 29,  109 => 27,  106 => 26,  96 => 22,  92 => 21,  88 => 20,  84 => 19,  78 => 16,  74 => 15,  70 => 14,  66 => 12,  61 => 11,  59 => 10,  53 => 6,  49 => 5,  44 => 1,  42 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -146,12 +145,12 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 \t\t\t<div class=\"col-md-10 col-lg-10\">
 \t\t\t\t<h1>My Reservations</h1>
 \t\t\t\t{% if reservations %}
-\t\t\t\t\t{% for reservation in reservations %} {# if reservation.user_id == user_id #}
+\t\t\t\t\t {% for reservation in reservations  %}
 \t\t\t\t\t\t<h2>Reservation Details:</h2>
 \t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t<li>Reservation ID: {{ reservation.id }}</li>
 \t\t\t\t\t\t\t<li>Pick-up Date: {{ reservation.start_date }}</li>
-\t\t\t\t\t\t\t<li>Return Date: {{ reservation.end_date }}</li>
+\t\t\t\t\t\t\t<li>Return Date: {{ reservation.end_date }}</li></br>
 \t\t\t\t\t\t\t<li>Vehicle:</li>
 \t\t\t\t\t\t\t<ul>
 \t\t\t\t\t\t\t\t<li>Make: {{ reservation.vehicle.make }}</li>
