@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>My Reservation</h1>
+    {% if reservation %}
+        <p>Reservation Details:</p>
+        <ul>
+            <li>Reservation ID: {{ reservation.reservation_id }}</li>
+            <li>Name: {{ reservation.name }}</li>
+            <li>Email: {{ reservation.email }}</li>
+            <li>Pick-up Date: {{ reservation.start_date }}</li>
+            <li>Return Date: {{ reservation.end_date }}</li>
+
+            {# <li>Time: {{ reservation.time }}</li> #}
+\        </ul>
+    {% else %}
+        <p>No reservation found for the provided email and reservation ID.</p>
+    {% endif %}
+{% endblock %}
