@@ -30,10 +30,9 @@ $app->post('/findmyreservation', function (Request $request, Response $response)
 
         // Render the reservation details in a new Twig template
         return $this->get('view')->render($response, 'myreservation.html.twig', ['error' => true]);
-        
     } else {
         // Render a message indicating that no reservation was found
-        return $this->get('view')->render($response, 'myreservation.html.twig',['message' => 'No reservation was found for the provided email and reservation ID.']);
+        return $this->get('view')->render($response, 'myreservation.html.twig', ['message' => 'No reservation was found for the provided email and reservation ID.']);
     }
 
     return $response;

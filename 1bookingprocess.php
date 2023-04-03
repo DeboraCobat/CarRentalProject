@@ -54,11 +54,11 @@ $app->get('/booking/trip-details', function ($request, $response, $args) {
 
   // Render the booking details page with the booking information
   return $this->get('view')->render($response, 'booking.html.twig', [
-      'vehicle' => $vehicle,
-      'pickupDateTime' => $pickupDateTime,
-      'returnDateTime' => $returnDateTime,
-      // 'vehicleImage' => 'path/to/vehicle/image/' . $ vehicle['image'] // Change the path according to your project structure/
-      
+    'vehicle' => $vehicle,
+    'pickupDateTime' => $pickupDateTime,
+    'returnDateTime' => $returnDateTime,
+    // 'vehicleImage' => 'path/to/vehicle/image/' . $ vehicle['image'] // Change the path according to your project structure/
+
   ]);
 });
 

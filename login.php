@@ -10,7 +10,7 @@ require_once 'init.php';
 $app->get('/login', function (Request $request, Response $response) {
     return $this->get('view')->render($response, 'login.html.twig');
 });
-    
+
 // Receive submission
 // $app->post('/login', function (Request $request, Response $response, $args) use ($app, $log, $passwordPepper) {
 
@@ -19,7 +19,7 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
     $email = isset($data['email']) ? $data['email'] : '';
     $password = isset($data['password']) ? $data['password'] : '';
 
-    
+
     // Check if user exists
     $record = DB::queryFirstRow("SELECT * FROM users WHERE email = %s", $email);
     $loginSuccess = false;
@@ -50,7 +50,6 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
         } else {
             return $response->withHeader('Location', '/customerprofile')->withStatus(302);
         }
-
     } else {
         // incorrect password, show error message
         $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
@@ -62,7 +61,8 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
 });
 
 // Check if user is logged in
-function checkAuth() {
+function checkAuth()
+{
     session_start();
     if (!isset($_SESSION['user'])) {
         header('Location: /login');

@@ -15,16 +15,15 @@ use Respect\Validation\Validator as Validator;
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($_SERVER['SERVER_NAME'] == 'carrentalproject.org') {
- // hosted on external server
-   DB::$dbName = 'cp5065_gabriel';
-   DB::$user = 'cp5065_gabriel';
-   DB::$password = '=ozlB,15R5n4';
-   DB::$host = 'fsd07.com';
-  } else {
-   DB::$dbName = 'cp5065_gabriel';
-   DB::$user = 'cp5065_gabriel';
-   DB::$password = '=ozlB,15R5n4';
-  
+  // hosted on external server
+  DB::$dbName = 'cp5065_gabriel';
+  DB::$user = 'cp5065_gabriel';
+  DB::$password = '=ozlB,15R5n4';
+  DB::$host = 'fsd07.com';
+} else {
+  DB::$dbName = 'cp5065_gabriel';
+  DB::$user = 'cp5065_gabriel';
+  DB::$password = '=ozlB,15R5n4';
 }
 // Create Container
 $container = new Container();
@@ -33,7 +32,7 @@ AppFactory::setContainer($container);
 // Set view in Container
 // tmpl cache is where TWIG will store the generated php from the templates. Avoids the overhead of parsing the templates on every request
 $container->set('view', function () {
-    return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache','/cache', 'debug' => true]);
+  return Twig::create(__DIR__ . '/templates',  ['cache' => __DIR__ . '/tmplcache', '/cache', 'debug' => true]);
 });
 
 // creates a new instance of a Slim Framework application
