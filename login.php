@@ -21,7 +21,7 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
 
     
     // Check if user exists
-    $record = DB::queryFirstRow("SELECT is_admin, email, password FROM users WHERE email = %s", $email);
+    $record = DB::queryFirstRow("SELECT * FROM users WHERE email = %s", $email);
     $loginSuccess = false;
 
     if ($record) {

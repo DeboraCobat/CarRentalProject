@@ -62,8 +62,6 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
 
-        <h2>All Users</h2>
-
         <div class=\"table-responsive\">
           <ul>
             <li><strong>Name</strong></li>
@@ -73,47 +71,38 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
             <li><strong>Date of Birth</strong></li>
             <li><strong>Driver's License</strong></li>
             <li><strong>License Expiration</strong></li>
-            ";
+            <li>";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 22), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 22), "html", null, true);
+        echo "</li>
+            <li>";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 23), "html", null, true);
+        echo "</li>
+            <li>";
         // line 24
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["users"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 25
-            echo "              <li>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "first_name", [], "any", false, false, false, 25), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "last_name", [], "any", false, false, false, 25), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 26), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", [], "any", false, false, false, 27), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", [], "any", false, false, false, 28), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dob", [], "any", false, false, false, 29), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license", [], "any", false, false, false, 30), "html", null, true);
-            echo "</li>
-              <li>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license_expiration", [], "any", false, false, false, 31), "html", null, true);
-            echo "</li>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 24), "html", null, true);
+        echo "</li>
+            <li>";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 25), "html", null, true);
+        echo "</li>
+            <li>";
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 26), "html", null, true);
+        echo "</li>
+            <li>";
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license", [], "any", false, false, false, 27), "html", null, true);
+        echo "</li>
+            <li>";
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license_expiration", [], "any", false, false, false, 28), "html", null, true);
+        echo "</li>
             ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 38
         echo "          </ul>
         </div>
 
@@ -136,7 +125,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
     public function getDebugInfo()
     {
-        return array (  117 => 33,  109 => 31,  105 => 30,  101 => 29,  97 => 28,  93 => 27,  89 => 26,  82 => 25,  78 => 24,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  106 => 38,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  82 => 23,  76 => 22,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -153,8 +142,6 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
 
-        <h2>All Users</h2>
-
         <div class=\"table-responsive\">
           <ul>
             <li><strong>Name</strong></li>
@@ -164,7 +151,14 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
             <li><strong>Date of Birth</strong></li>
             <li><strong>Driver's License</strong></li>
             <li><strong>License Expiration</strong></li>
-            {% for user in users %}
+            <li>{{ userSession.first_name }} {{ userSession.last_name }}</li>
+            <li>{{ userSession.email }}</li>
+            <li>{{ userSession.phone }}</li>
+            <li>{{ userSession.address }}</li>
+            <li>{{ userSession.dob }}</li>
+            <li>{{ userSession.license }}</li>
+            <li>{{ userSession.license_expiration }}</li>
+            {# {% for user in users %}
               <li>{{ user.first_name }} {{ user.last_name }}</li>
               <li>{{ user.email }}</li>
               <li>{{ user.phone }}</li>
@@ -172,7 +166,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
               <li>{{ user.dob }}</li>
               <li>{{ user.license }}</li>
               <li>{{ user.license_expiration }}</li>
-            {% endfor %}
+            {% endfor %} #}
           </ul>
         </div>
 

@@ -59,5 +59,6 @@ $container->set('view', function () use ($container) {
   return $view;
 });
 
+$userSession = $_SESSION['user'];
 
 $passwordPepper = 'mmyb7oSAeXG9DTz2uFqu';
