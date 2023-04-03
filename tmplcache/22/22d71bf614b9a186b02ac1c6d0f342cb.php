@@ -32,50 +32,51 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 
     protected function doGetParent(array $context)
     {
-        // line 30
+        // line 1
         return "master.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("master.html.twig", "index.html.twig", 30);
+        $this->parent = $this->loadTemplate("master.html.twig", "index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 32
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "home page";
+        echo "home page
+";
     }
 
-    // line 34
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 35
-        echo "<div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
+        // line 7
+        echo "\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"col-md-8 col-lg-6\">
 
-  <h1>Enter trip details</h1>
-  <form method=\"post\" class=\"form-group\" action=\"/selectvehicle\">
-    <label for=\"pickup_date\">Pickup date:</label>
-    <input type=\"date\" class=\"form-group\" id=\"pickup_date\" name=\"pickup_date\" required>
-    
-    <label for=\"pickup_time\">Pickup time:</label>
-    <input type=\"time\" class=\"form-group\" id=\"pickup_time\" name=\"pickup_time\" required>
-    <br>
-    <label for=\"return_date\">Return date:</label>
-    <input type=\"date\" class=\"form-group\" id=\"return_date\" name=\"return_date\" required>
-    
-    <label for=\"return_time\">Return time:</label>
-    <input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
-    <br><br>
-    <button type=\"submit\" class=\"btn btn-primary\" >Select Vehicle</button>
-  </form>
-";
+\t\t\t\t<h1>Enter trip details</h1>
+\t\t\t\t<form method=\"post\" class=\"form-group\" action=\"/selectvehicle\">
+\t\t\t\t\t<label for=\"pickup_date\">Pickup date:</label>
+\t\t\t\t\t<input type=\"date\" class=\"form-group\" id=\"pickup_date\" name=\"pickup_date\" required>
+
+\t\t\t\t\t<label for=\"pickup_time\">Pickup time:</label>
+\t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"pickup_time\" name=\"pickup_time\" required>
+\t\t\t\t\t<br>
+\t\t\t\t\t<label for=\"return_date\">Return date:</label>
+\t\t\t\t\t<input type=\"date\" class=\"form-group\" id=\"return_date\" name=\"return_date\" required>
+
+\t\t\t\t\t<label for=\"return_time\">Return time:</label>
+\t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
+\t\t\t\t\t<br><br>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t</form>
+\t\t\t";
     }
 
     public function getTemplateName()
@@ -90,66 +91,38 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 35,  54 => 34,  47 => 32,  36 => 30,);
+        return array (  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{# {% extends \"master.html.twig\" %}
+        return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Rent a car{% endblock %}
-
-{% block content %}
-
-<h1>Select a pick-up date</h1>
- 
-<form method=\"post\">
-  <label for=\"pickup_date\">Pick-up date:</label>
-  <input type=\"date\" id=\"pickup_date\" name=\"pickup_date\" required>
-  <label for=\"pickup_time\">Pick-up time:</label>
-  <input type=\"time\" id=\"pickup_time\" name=\"pickup_time\" required>
-  <br>
-  <label for=\"return_date\">Return date:</label>
-  <input type=\"date\" id=\"return_date\" name=\"return_date\" required>
-  <label for=\"return_time\">Return time:</label>
-  <input type=\"time\" id=\"return_time\" name=\"return_time\" required>
-  <br>
-  <button type=\"submit\">Submit</button>
-</form>
-
-{% if departureDate is defined and returnDate is defined %}
-  <p>You selected a departure date of {{ departureDate }} and a return date of {{ returnDate }}.</p>
-{% endif %}
-
-
- {% endblock %} #}
-
-{% extends \"master.html.twig\" %}
-
-{% block title %}home page{% endblock %}
-
-{% block content %}
-<div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-
-  <h1>Enter trip details</h1>
-  <form method=\"post\" class=\"form-group\" action=\"/selectvehicle\">
-    <label for=\"pickup_date\">Pickup date:</label>
-    <input type=\"date\" class=\"form-group\" id=\"pickup_date\" name=\"pickup_date\" required>
-    
-    <label for=\"pickup_time\">Pickup time:</label>
-    <input type=\"time\" class=\"form-group\" id=\"pickup_time\" name=\"pickup_time\" required>
-    <br>
-    <label for=\"return_date\">Return date:</label>
-    <input type=\"date\" class=\"form-group\" id=\"return_date\" name=\"return_date\" required>
-    
-    <label for=\"return_time\">Return time:</label>
-    <input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
-    <br><br>
-    <button type=\"submit\" class=\"btn btn-primary\" >Select Vehicle</button>
-  </form>
+{% block title %}home page
 {% endblock %}
+
+{% block content %}
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"col-md-8 col-lg-6\">
+
+\t\t\t\t<h1>Enter trip details</h1>
+\t\t\t\t<form method=\"post\" class=\"form-group\" action=\"/selectvehicle\">
+\t\t\t\t\t<label for=\"pickup_date\">Pickup date:</label>
+\t\t\t\t\t<input type=\"date\" class=\"form-group\" id=\"pickup_date\" name=\"pickup_date\" required>
+
+\t\t\t\t\t<label for=\"pickup_time\">Pickup time:</label>
+\t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"pickup_time\" name=\"pickup_time\" required>
+\t\t\t\t\t<br>
+\t\t\t\t\t<label for=\"return_date\">Return date:</label>
+\t\t\t\t\t<input type=\"date\" class=\"form-group\" id=\"return_date\" name=\"return_date\" required>
+
+\t\t\t\t\t<label for=\"return_time\">Return time:</label>
+\t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
+\t\t\t\t\t<br><br>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t</form>
+\t\t\t{% endblock %}
 ", "index.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\index.html.twig");
     }
 }
