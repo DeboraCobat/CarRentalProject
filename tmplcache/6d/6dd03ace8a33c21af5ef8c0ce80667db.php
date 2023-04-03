@@ -111,7 +111,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
 \t\t\t<div class=\"mt-3\">
 \t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
-\t\t\t\t<a href=\"/findmyreservation_logged.html copy.twig\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
+\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
 \t\t\t</div>
 
 \t\t</div>
@@ -185,7 +185,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
 \t\t\t<div class=\"mt-3\">
 \t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
-\t\t\t\t<a href=\"/findmyreservation_logged.html copy.twig\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
+\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
 \t\t\t</div>
 
 \t\t</div>

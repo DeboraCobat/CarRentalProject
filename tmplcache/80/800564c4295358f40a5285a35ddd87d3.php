@@ -72,7 +72,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 \t\t\t\t\t";
         }
         // line 16
-        echo "\t\t\t\t\t<div class=\"form-group-sm\">
+        echo "\t\t\t\t\t<div class=\"form-group- \">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
@@ -130,7 +130,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 \t\t\t\t\t{% if message is defined %}
 \t\t\t\t\t\t<p>{{ message }}</p>
 \t\t\t\t\t{% endif %}
-\t\t\t\t\t<div class=\"form-group-sm\">
+\t\t\t\t\t<div class=\"form-group- \">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>

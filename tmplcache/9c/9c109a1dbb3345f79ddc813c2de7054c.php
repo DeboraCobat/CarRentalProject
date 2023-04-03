@@ -122,7 +122,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
   </table>
 </div>
 <div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='adduser'\">Add User</button>
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add User</button>
 </div>
 ";
     }
@@ -183,7 +183,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
   </table>
 </div>
 <div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='adduser'\">Add User</button>
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add User</button>
 </div>
 {% endblock %}
 ", "admin/userslist.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/userslist.html.twig");

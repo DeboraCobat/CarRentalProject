@@ -11,6 +11,7 @@ require_once 'reservation.php';
 
 //SEARCH RESERVATION
 require_once 'findmyreservation.php';
+require_once 'myreservation.php';
 require_once '1bookingprocess.php';
 
 //LOGIN

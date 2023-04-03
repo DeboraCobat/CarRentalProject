@@ -81,6 +81,19 @@ $app->get('/home', function (Request $request, Response $response) use ($app) {
     ]);
 });
 
+// // Middleware for authentication
+// $app->add(function ($request, $response, $next) {
+//     if (!isset($_SESSION['user'])) {
+//         return $response->withRedirect('/login');
+//     }
+//     return $next($request, $response);
+// });
+
+// // Protected page
+// $app->get('/protected-page', function ($request, $response, $args) {
+//     // this page requires authentication
+// });
+
 
 //LOGOUT
 $app->get('/logout', function (Request $request, Response $response, $args) use ($log) {
