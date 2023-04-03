@@ -1,4 +1,4 @@
-{% extends "admin/master.html.twig" %}
+{% extends "admin/adminmaster.html.twig" %}
 
 {% block title %}Edit Vehicle{% endblock %}
 
@@ -54,7 +54,7 @@
         <input type="number" id="lper100" name="lper100" step="0.01" class="form-control" value="{{ vehicle.lper100 }}">
       </div>
 
-      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
     </form>
   </div>
 {% endblock %}

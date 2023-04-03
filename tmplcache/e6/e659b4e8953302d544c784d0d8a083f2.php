@@ -47,24 +47,25 @@ class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Login Error";
+        echo "Login Error
+";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
-        echo "  <h2>Login Error</h2>
-  ";
         // line 7
+        echo "\t<h2>Login Error</h2>
+\t";
+        // line 8
         if (($context["error"] ?? null)) {
-            // line 8
-            echo "        <p>Your login attempt failed. Please check your email and password and try again.</p>
-    ";
+            // line 9
+            echo "\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+\t";
         }
-        // line 10
-        echo "  <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
+        // line 11
+        echo "\t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
 ";
     }
 
@@ -80,21 +81,22 @@ class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  67 => 10,  63 => 8,  61 => 7,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  68 => 11,  64 => 9,  62 => 8,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Login Error{% endblock %}
+{% block title %}Login Error
+{% endblock %}
 
 {% block content %}
-  <h2>Login Error</h2>
-  {% if error %}
-        <p>Your login attempt failed. Please check your email and password and try again.</p>
-    {% endif %}
-  <a href=\"/login\" class=\"btn btn-primary\">Try Again</a>
+\t<h2>Login Error</h2>
+\t{% if error %}
+\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+\t{% endif %}
+\t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
 {% endblock %}
 ", "login_error.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login_error.html.twig");
     }

@@ -1,36 +1,33 @@
 {% extends 'master.html.twig' %}
 
+{% set message = "You don't have any reservations yet." %}
+
 {% block content %}
-	<h1>My Reservation</h1>
-	{% if reservation %}
-		<h2>Reservation Details:</h2>
-		<ul>
-			<li>Reservation ID:
-				{{ reservation.reservation_id }}</li>
-			<li>First Name:
-				{{ reservation.first_name }}</li>
-			<li>Last Name:
-				{{ reservation.last_name }}</li>
-			<li>Email:
-				{{ reservation.email }}</li>
-			<li>Pick-up Date:
-				{{ reservation.start_date }}</li>
-			<li>Return Date:
-				{{ reservation.end_date }}</li>
-			<li>Vehicle:</li>
-			<ul>
-				<li>Make:
-					{{ reservation.vehicle.make }}</li>
-				<li>Model:
-					{{ reservation.vehicle.model }}</li>
-				<li>Color:
-					{{ reservation.vehicle.color }}</li>
-				<li>License Plate:
-					{{ reservation.vehicle.license_plate }}</li>
-			</ul>
-		</ul>
-	{% else %}
-		<p>{{ message }}</p>
-	{% endif %}
+	<div class="container">
+		<div class="row justify-content-center mt-10 mb-10">
+			<div class="col-md-10 col-lg-10">
+				<h1>My Reservations</h1>
+				{% if reservations %}
+					 {% for reservation in reservations  %}
+						<h2>Reservation Details:</h2>
+						<ul>
+							<li>Reservation ID: {{ reservation.id }}</li>
+							<li>Pick-up Date: {{ reservation.start_date }}</li>
+							<li>Return Date: {{ reservation.end_date }}</li></br>
+							<li>Vehicle:</li>
+							<ul>
+								<li>Make: {{ reservation.vehicle.make }}</li>
+								<li>Model: {{ reservation.vehicle.model }}</li>
+								<li>Color: {{ reservation.vehicle.color }}</li>
+								<li>License Plate: {{ reservation.vehicle.license_plate }}</li>
+							</ul>
+						</ul>
+					{% endfor %}
+				{% else %}
+					<p>{{ message }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
 

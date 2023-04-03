@@ -57,79 +57,67 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
         $macros = $this->macros;
         // line 7
         echo "
-\t<h1>Your Profile</h1>
-
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
-\t\t\t<div class=\"col-md-8 col-lg-6\">
-
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>Your Profile</h1></br>
 \t\t\t\t<div class=\"table-responsive\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<strong>Name</strong>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 19), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 17), "html", null, true);
         echo "
 \t\t\t\t\t\t\t";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 20), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 18), "html", null, true);
         echo "</li>
-
-\t\t\t\t\t</li>
-\t\t\t\t\t<li>
-\t\t\t\t\t\t<strong>Email</strong>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li>";
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Email</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 22), "html", null, true);
+        echo "</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Phone</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>";
         // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 26), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 26), "html", null, true);
         echo "</li>
-
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<strong>Phone</strong>
-\t\t\t\t</li>
-\t\t\t\t<li>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 32), "html", null, true);
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Address</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 30), "html", null, true);
         echo "</li>
-
-\t\t\t</li>
-\t\t\t<li>
-\t\t\t\t<strong>Address</strong>
-\t\t\t</li>
-\t\t\t<li>";
-        // line 38
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 38), "html", null, true);
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Date of Birth</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>";
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 34), "html", null, true);
         echo "</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t";
+        // line 43
+        echo "\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t</div>
 
-\t\t</li>
-\t\t<li>
-\t\t\t<strong>Date of Birth</strong>
-\t\t</li>
-\t\t<li>";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 44), "html", null, true);
-        echo "</li>
+\t\t\t<div class=\"mt-3\">
+\t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
+\t\t\t</div>
 
-\t</li>
-\t<li>
-\t\t<strong>Driver's License</strong>
-\t</li>
-\t<li>";
-        // line 50
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license", [], "any", false, false, false, 50), "html", null, true);
-        echo "</li>
+\t\t</div>
+\t</div>
 
-</li>
-<li>
-\t<strong>License Expiration</strong>
-</li>
-<li>";
-        // line 56
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license_expiration", [], "any", false, false, false, 56), "html", null, true);
-        echo "</li></li></ul></div></div></div></div>";
+</div>";
     }
 
     public function getTemplateName()
@@ -144,7 +132,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
     public function getDebugInfo()
     {
-        return array (  131 => 56,  122 => 50,  113 => 44,  104 => 38,  95 => 32,  86 => 26,  77 => 20,  73 => 19,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  108 => 43,  103 => 34,  96 => 30,  89 => 26,  82 => 22,  75 => 18,  71 => 17,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -156,12 +144,10 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
 {% block content %}
 
-\t<h1>Your Profile</h1>
-
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
-\t\t\t<div class=\"col-md-8 col-lg-6\">
-
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>Your Profile</h1></br>
 \t\t\t\t<div class=\"table-responsive\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t<li>
@@ -169,42 +155,43 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>{{ userSession.first_name }}
 \t\t\t\t\t\t\t{{ userSession.last_name }}</li>
-
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Email</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.email }}</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Phone</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.phone }}</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Address</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.address }}</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>Date of Birth</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.dob }}</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t{# <strong>Driver's License</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.license }}</li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<strong>License Expiration</strong>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li>{{ userSession.license_expiration }}</li> #}
 \t\t\t\t\t</li>
-\t\t\t\t\t<li>
-\t\t\t\t\t\t<strong>Email</strong>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li>{{ userSession.email }}</li>
+\t\t\t\t</ul>
+\t\t\t</div>
 
-\t\t\t\t</li>
-\t\t\t\t<li>
-\t\t\t\t\t<strong>Phone</strong>
-\t\t\t\t</li>
-\t\t\t\t<li>{{ userSession.phone }}</li>
+\t\t\t<div class=\"mt-3\">
+\t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
+\t\t\t</div>
 
-\t\t\t</li>
-\t\t\t<li>
-\t\t\t\t<strong>Address</strong>
-\t\t\t</li>
-\t\t\t<li>{{ userSession.address }}</li>
+\t\t</div>
+\t</div>
 
-\t\t</li>
-\t\t<li>
-\t\t\t<strong>Date of Birth</strong>
-\t\t</li>
-\t\t<li>{{ userSession.dob }}</li>
-
-\t</li>
-\t<li>
-\t\t<strong>Driver's License</strong>
-\t</li>
-\t<li>{{ userSession.license }}</li>
-
-</li>
-<li>
-\t<strong>License Expiration</strong>
-</li>
-<li>{{ userSession.license_expiration }}</li></li></ul></div></div></div></div>{% endblock %}
+</div>{% endblock %}
 ", "customerprofile.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/customerprofile.html.twig");
     }
 }

@@ -1,4 +1,4 @@
-{% extends "admin/master.html.twig" %}
+{% extends "admin/adminmaster.html.twig" %}
 
 {% block title %}Add User{% endblock %}
 
@@ -59,7 +59,7 @@
           <input type="date" class="form-control" id="license_expiration" name="license_expiration" value="{{ u.license_expiration }}">
         </div>
 
-        <button type="submit" class="btn btn-primary">Add User</button>
+        <button type="submit" class="btn btn-primary btn-sm">Add User</button>
 
       </form>
     </div>
@@ -69,7 +69,7 @@
 {% endblock content %}
 
 
-{# {% extends "admin/master.html.twig" %}
+{# {% extends "admin/adminmaster.html.twig" %}
 
 {% block title %}Add User{% endblock %}
 

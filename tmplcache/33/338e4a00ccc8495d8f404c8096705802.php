@@ -25,7 +25,6 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -39,15 +38,11 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
+        // line 3
+        $context["message"] = "You don't have any reservations yet.";
+        // line 1
         $this->parent = $this->loadTemplate("master.html.twig", "myreservation.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
-    }
-
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        echo "find my reservation";
     }
 
     // line 5
@@ -55,28 +50,71 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "<html>
-    <body>
-        <h1>Your reservation</h1></br>
-        <p>Name: ";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "customer_id", [], "any", false, false, false, 9), "html", null, true);
-        echo "</p></br>
-        <p>Vehicle: ";
+        echo "\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>My Reservations</h1>
+\t\t\t\t";
         // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "vehicle_id", [], "any", false, false, false, 10), "html", null, true);
-        echo "</p></br>
-        <h3>Reservation details</h3> </br>
-         <p>My reservation starts:</br> ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "start_date", [], "any", false, false, false, 12), "html", null, true);
-        echo "</p></br>
-        <p> My reservation ends: </br>";
-        // line 13
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["myreservation"] ?? null), "end_date", [], "any", false, false, false, 13), "html", null, true);
-        echo "</p></br>
-    </body>
-</html>
+        if (($context["reservations"] ?? null)) {
+            // line 11
+            echo "\t\t\t\t\t ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["reservations"] ?? null));
+            foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
+                // line 12
+                echo "\t\t\t\t\t\t<h2>Reservation Details:</h2>
+\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t<li>Reservation ID: ";
+                // line 14
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 14), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t<li>Pick-up Date: ";
+                // line 15
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "start_date", [], "any", false, false, false, 15), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t<li>Return Date: ";
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "end_date", [], "any", false, false, false, 16), "html", null, true);
+                echo "</li></br>
+\t\t\t\t\t\t\t<li>Vehicle:</li>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li>Make: ";
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 19), "make", [], "any", false, false, false, 19), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t<li>Model: ";
+                // line 20
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 20), "model", [], "any", false, false, false, 20), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t<li>Color: ";
+                // line 21
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 21), "color", [], "any", false, false, false, 21), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t<li>License Plate: ";
+                // line 22
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 22), "license_plate", [], "any", false, false, false, 22), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 26
+            echo "\t\t\t\t";
+        } else {
+            // line 27
+            echo "\t\t\t\t\t<p>";
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</p>
+\t\t\t\t";
+        }
+        // line 29
+        echo "\t\t\t</div>
+\t\t</div>
+\t</div>
 ";
     }
 
@@ -92,27 +130,44 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 
     public function getDebugInfo()
     {
-        return array (  76 => 13,  72 => 12,  67 => 10,  63 => 9,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  115 => 29,  109 => 27,  106 => 26,  96 => 22,  92 => 21,  88 => 20,  84 => 19,  78 => 16,  74 => 15,  70 => 14,  66 => 12,  61 => 11,  59 => 10,  53 => 6,  49 => 5,  44 => 1,  42 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"master.html.twig\" %}
+        return new Source("{% extends 'master.html.twig' %}
 
-{% block title %}find my reservation{% endblock %}
+{% set message = \"You don't have any reservations yet.\" %}
 
 {% block content %}
-<html>
-    <body>
-        <h1>Your reservation</h1></br>
-        <p>Name: {{ myreservation.customer_id }}</p></br>
-        <p>Vehicle: {{ myreservation.vehicle_id }}</p></br>
-        <h3>Reservation details</h3> </br>
-         <p>My reservation starts:</br> {{ myreservation.start_date }}</p></br>
-        <p> My reservation ends: </br>{{ myreservation.end_date }}</p></br>
-    </body>
-</html>
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>My Reservations</h1>
+\t\t\t\t{% if reservations %}
+\t\t\t\t\t {% for reservation in reservations  %}
+\t\t\t\t\t\t<h2>Reservation Details:</h2>
+\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t<li>Reservation ID: {{ reservation.id }}</li>
+\t\t\t\t\t\t\t<li>Pick-up Date: {{ reservation.start_date }}</li>
+\t\t\t\t\t\t\t<li>Return Date: {{ reservation.end_date }}</li></br>
+\t\t\t\t\t\t\t<li>Vehicle:</li>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li>Make: {{ reservation.vehicle.make }}</li>
+\t\t\t\t\t\t\t\t<li>Model: {{ reservation.vehicle.model }}</li>
+\t\t\t\t\t\t\t\t<li>Color: {{ reservation.vehicle.color }}</li>
+\t\t\t\t\t\t\t\t<li>License Plate: {{ reservation.vehicle.license_plate }}</li>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t{% endfor %}
+\t\t\t\t{% else %}
+\t\t\t\t\t<p>{{ message }}</p>
+\t\t\t\t{% endif %}
+\t\t\t</div>
+\t\t</div>
+\t</div>
 {% endblock %}
+
 ", "myreservation.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/myreservation.html.twig");
     }
 }

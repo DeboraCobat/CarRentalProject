@@ -47,95 +47,97 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Registration";
+        echo "Registration
+";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
+        // line 7
         echo "
-<div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-      <h1>Registration</h1>
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-5 col-lg-5\">
+\t\t\t\t<h1>Registration</h1></br>
 
-      <form method=\"post\" action=\"/register\">
-          
-        <div class=\"form-group\">
-          <label for=\"first_name\">First Name:</label>
-          <input type=\"text\" class=\"form-control\" id=\"first_name\" name=\"first_name\" value=\"";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "first_name", [], "any", false, false, false, 16), "html", null, true);
+
+\t\t\t\t<form method=\"post\" action=\"/register\">
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"first_name\">First Name:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"first_name\" name=\"first_name\" value=\"";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "first_name", [], "any", false, false, false, 18), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"last_name\">Last Name:</label>
-          <input type=\"text\" class=\"form-control\" id=\"last_name\" name=\"last_name\" value=\"";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "last_name", [], "any", false, false, false, 21), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"last_name\">Last Name:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"last_name\" name=\"last_name\" value=\"";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "last_name", [], "any", false, false, false, 23), "html", null, true);
         echo "\">
-        </div>
-        
-        ";
-        // line 31
-        echo "        
-        <div class=\"form-group\">
-          <label for=\"address\">Address:</label>
-          <input type=\"text\" class=\"form-control\" id=\"address\" name=\"address\" value=\"";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "address", [], "any", false, false, false, 34), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t";
+        // line 33
+        echo "
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"address\">Address:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"address\" name=\"address\" value=\"";
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "address", [], "any", false, false, false, 36), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"phone\">Phone:</label>
-          <input type=\"text\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"";
-        // line 39
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "phone", [], "any", false, false, false, 39), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"phone\">Phone:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"phone\" name=\"phone\" value=\"";
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "phone", [], "any", false, false, false, 41), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"email\">Email:</label>
-          <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "email", [], "any", false, false, false, 44), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"email\">Email:</label>
+\t\t\t\t\t\t<input type=\"email\" class=\"form-control-sm\" id=\"email\" name=\"email\" value=\"";
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "email", [], "any", false, false, false, 46), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"dob\">Date of Birth:</label>
-          <input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"";
-        // line 49
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "dob", [], "any", false, false, false, 49), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"dob\">Date of Birth:</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"dob\" name=\"dob\" value=\"";
+        // line 51
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "dob", [], "any", false, false, false, 51), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"license\">Driver's License:</label>
-          <input type=\"text\" class=\"form-control\" id=\"license\" name=\"license\" value=\"";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 54), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"license\">Driver's License:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"license\" name=\"license\" value=\"";
+        // line 56
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 56), "html", null, true);
         echo "\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"license_expiration\">License Expiration:</label>
-          <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"";
-        // line 59
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 59), "html", null, true);
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"license_expiration\">License Expiration:</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"license_expiration\" name=\"license_expiration\" value=\"";
+        // line 61
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 61), "html", null, true);
         echo "\">
-        </div>
-        
-        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-      </form>
-      
-    </div>
-  </div>
-</div>
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Submit</button>
+\t\t\t\t</form>
+
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
 ";
     }
@@ -152,123 +154,82 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 59,  121 => 54,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  131 => 61,  123 => 56,  115 => 51,  107 => 46,  99 => 41,  91 => 36,  86 => 33,  80 => 23,  72 => 18,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Registration{% endblock %}
+{% block title %}Registration
+{% endblock %}
 
 {% block content %}
 
-<div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-      <h1>Registration</h1>
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t\t<div class=\"col-md-5 col-lg-5\">
+\t\t\t\t<h1>Registration</h1></br>
 
-      <form method=\"post\" action=\"/register\">
-          
-        <div class=\"form-group\">
-          <label for=\"first_name\">First Name:</label>
-          <input type=\"text\" class=\"form-control\" id=\"first_name\" name=\"first_name\" value=\"{{ u.first_name }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"last_name\">Last Name:</label>
-          <input type=\"text\" class=\"form-control\" id=\"last_name\" name=\"last_name\" value=\"{{ u.last_name }}\">
-        </div>
-        
-        {# <div class=\"form-group\">
-          <label for=\"user_type\">User Type:</label>
-          <select class=\"form-control\" id=\"user_type\" name=\"user_type\">
-            <option value=\"admin\">Admin</option>
-            <option value=\"customer\">Customer</option>
-          </select>
-        </div> #}
-        
-        <div class=\"form-group\">
-          <label for=\"address\">Address:</label>
-          <input type=\"text\" class=\"form-control\" id=\"address\" name=\"address\" value=\"{{ u.address }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"phone\">Phone:</label>
-          <input type=\"text\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"{{ u.phone }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"email\">Email:</label>
-          <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"{{ u.email }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"dob\">Date of Birth:</label>
-          <input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"{{ u.dob }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"license\">Driver's License:</label>
-          <input type=\"text\" class=\"form-control\" id=\"license\" name=\"license\" value=\"{{ u.license }}\">
-        </div>
-        
-        <div class=\"form-group\">
-          <label for=\"license_expiration\">License Expiration:</label>
-          <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
-        </div>
-        
-        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
-      </form>
-      
-    </div>
-  </div>
-</div>
+
+\t\t\t\t<form method=\"post\" action=\"/register\">
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"first_name\">First Name:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"first_name\" name=\"first_name\" value=\"{{ u.first_name }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"last_name\">Last Name:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"last_name\" name=\"last_name\" value=\"{{ u.last_name }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t{# <div class=\"form-group\">
+\t\t\t\t\t          <label for=\"user_type\">User Type:</label>
+\t\t\t\t\t          <select class=\"form-control-sm\" id=\"user_type\" name=\"user_type\">
+\t\t\t\t\t            <option value=\"admin\">Admin</option>
+\t\t\t\t\t            <option value=\"customer\">Customer</option>
+\t\t\t\t\t          </select>
+\t\t\t\t\t        </div> #}
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"address\">Address:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"address\" name=\"address\" value=\"{{ u.address }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"phone\">Phone:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"phone\" name=\"phone\" value=\"{{ u.phone }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"email\">Email:</label>
+\t\t\t\t\t\t<input type=\"email\" class=\"form-control-sm\" id=\"email\" name=\"email\" value=\"{{ u.email }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"dob\">Date of Birth:</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"dob\" name=\"dob\" value=\"{{ u.dob }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"license\">Driver's License:</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"license\" name=\"license\" value=\"{{ u.license }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"license_expiration\">License Expiration:</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Submit</button>
+\t\t\t\t</form>
+
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
 {% endblock content %}
-
-{# 
-{% block title %}Registration{% endblock %}
-
-{% block content %}
-
-<h1>Registration</h1>
-
-<form method=\"post\" action=\"/register\">
-    
-<label for=\"first_name\">First Name:</label>
-<input type=\"text\" id=\"first_name\" name=\"first_name\" value=\"{{ u.first_name }}\"><br>
-    
-<label for=\"last_name\">Last Name:</label>
-<input type=\"text\" id=\"last_name\" name=\"last_name\" value=\"{{ u.last_name }}\"><br>
-
-<label for=\"user_type\">User Type:</label>
-<select id=\"user_type\" name=\"user_type\">
-    <option value=\"admin\">Admin</option>
-    <option value=\"customer\">Customer</option>
-</select><br>
-
-<label for=\"address\">Address:</label>
-<input type=\"text\" id=\"address\" name=\"address\" value=\"{{ u.address }}\"><br>
-
-<label for=\"phone\">Phone:</label>
-<input type=\"text\" id=\"phone\" name=\"phone\" value=\"{{ u.phone }}\"><br>
-
-<label for=\"email\">Email:</label>
-<input type=\"email\" id=\"email\" name=\"email\" value=\"{{ u.email }}\"><br>
-
-<label for=\"dob\">Date of Birth:</label>
-<input type=\"date\" id=\"dob\" name=\"dob\" value=\"{{ u.dob }}\"><br>
-
-<label for=\"license\">Driver's License:</label>
-<input type=\"text\" id=\"license\" name=\"license\" value=\"{{ u.license }}\"><br>
-
-<label for=\"license_expiration\">License Expiration:</label>
-<input type=\"date\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\"><br>
-
-<input type=\"submit\" value=\"Submit\">
-
-</form>
-{% endblock content %} #} ", "register.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/register.html.twig");
+", "register.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/register.html.twig");
     }
 }

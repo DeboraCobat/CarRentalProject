@@ -5,17 +5,13 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require_once 'init.php';
 
-// FINDING RESERVATION WITHOUT LOGIN
+// FINDING RESERVATION USER LOGGED
 
-$app->get('/findmyreservation', function (Request $request, Response $response) {
-    return $this->get('view')->render($response, 'findmyreservation.html.twig');
-});
+$app->get('/myreservation', function (Request $request, Response $response) {
+    // return $this->get('view')->render($response, 'myreservation.html.twig');
+    $userId = $_SESSION['user']['id'];
 
-$app->post('/findmyreservation', function (Request $request, Response $response) use ($log) {
-    $data = $request->getParsedBody();
-    $reservationId = isset($data['reservationId']) ? $data['reservationId'] : '';
-
-    $reservations = DB::query("SELECT * FROM reservations WHERE id = %i", $reservationId);
+    $reservations = DB::query("SELECT * FROM reservations WHERE customer_id = %i", $userId);
 
     if ($reservations) {
         foreach ($reservations as &$reservation) {
@@ -35,5 +31,3 @@ $app->post('/findmyreservation', function (Request $request, Response $response)
 
     return $response;
 });
-
-
