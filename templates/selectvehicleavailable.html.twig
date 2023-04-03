@@ -1,29 +1,29 @@
 {% extends 'master.html.twig' %}
 
 {% block content %}
-    <h1>Available Vehicles</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Color</th>
-                <th>Availability</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for vehicle in availableVehicles %}
-                <tr>
-                    <td>{{ vehicle.id }}</td>
-                    <td>{{ vehicle.make }}</td>
-                    <td>{{ vehicle.model }}</td>
-                    <td>{{ vehicle.year }}</td>
-                    <td>{{ vehicle.color }}</td>
-                    <td>{{ vehicle.availability }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+	<h1>Available Vehicles</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Color</th>
+				<th>Availability</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vehicle in availableVehicles %}
+				<tr>
+					<td>{{ vehicle.id }}</td>
+					<td>{{ vehicle.make }}</td>
+					<td>{{ vehicle.model }}</td>
+					<td>{{ vehicle.year }}</td>
+					<td>{{ vehicle.color }}</td>
+					<td>{{ vehicle.availability }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}

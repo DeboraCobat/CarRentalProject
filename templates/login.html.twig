@@ -1,39 +1,39 @@
 {% extends "master.html.twig" %}
 
-{% block title %}Login Page{% endblock %}
+{% block title %}Login Page
+{% endblock %}
 
 {% block content %}
 
-<body>
-  <div class="container">
-    <div class="row justify-content-center mt-5 mb-5">
-      <div class="col-md-8 col-lg-6">
-        <h1>Login</h1>
-            {% if message is defined %}
-              <p>{{ message }}</p>
-            {% endif %}
-                <div class="form-group">
-      <form method="post" action="/login">
-        <label for="email">Email:</label><br>
-        <input type="email" class="form-control"id="email" name="email"><br>
+	<body>
+		<div class="container">
+			<div class="row justify-content-center mt-5 mb-5">
+				<div class="col-md-8 col-lg-6">
+					<h1>Login</h1>
+					{% if message is defined %}
+						<p>{{ message }}</p>
+					{% endif %}
+					<div class="form-group">
+						<form method="post" action="/login">
+							<label for="email">Email:</label><br>
+							<input type="email" class="form-control" id="email" name="email"><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" class="form-control" id="password" name="password"><br>
-                  <button type="submit" class="btn btn-primary">Log in</button>
-
-
-        <hr style="margin-top: 1rem; margin-bottom: 1rem;">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <a href="/resetpassword">Forgot password?</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+							<label for="password">Password:</label><br>
+							<input type="password" class="form-control" id="password" name="password"><br>
+							<button type="submit" class="btn btn-primary">Log in</button>
 
 
+							<hr style="margin-top: 1rem; margin-bottom: 1rem;">
 
-  </div>
-</body>
+							<div class="d-flex justify-content-between align-items-center">
+								<a href="/resetpassword">Forgot password?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</body>
 {% endblock %}

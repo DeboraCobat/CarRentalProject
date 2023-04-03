@@ -1,70 +1,71 @@
 {% extends "master.html.twig" %}
 
-{% block title %}Registration{% endblock %}
+{% block title %}Registration
+{% endblock %}
 
 {% block content %}
 
-<div class="container">
-  <div class="row justify-content-center mt-5 mb-5">
-    <div class="col-md-8 col-lg-6">
-      <h1>Registration</h1>
+	<div class="container">
+		<div class="row justify-content-center mt-5 mb-5">
+			<div class="col-md-8 col-lg-6">
+				<h1>Registration</h1>
 
-      <form method="post" action="/register">
-          
-        <div class="form-group">
-          <label for="first_name">First Name:</label>
-          <input type="text" class="form-control" id="first_name" name="first_name" value="{{ u.first_name }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="last_name">Last Name:</label>
-          <input type="text" class="form-control" id="last_name" name="last_name" value="{{ u.last_name }}">
-        </div>
-        
-        {# <div class="form-group">
-          <label for="user_type">User Type:</label>
-          <select class="form-control" id="user_type" name="user_type">
-            <option value="admin">Admin</option>
-            <option value="customer">Customer</option>
-          </select>
-        </div> #}
-        
-        <div class="form-group">
-          <label for="address">Address:</label>
-          <input type="text" class="form-control" id="address" name="address" value="{{ u.address }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone:</label>
-          <input type="text" class="form-control" id="phone" name="phone" value="{{ u.phone }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" name="email" value="{{ u.email }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="dob">Date of Birth:</label>
-          <input type="date" class="form-control" id="dob" name="dob" value="{{ u.dob }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="license">Driver's License:</label>
-          <input type="text" class="form-control" id="license" name="license" value="{{ u.license }}">
-        </div>
-        
-        <div class="form-group">
-          <label for="license_expiration">License Expiration:</label>
-          <input type="date" class="form-control" id="license_expiration" name="license_expiration" value="{{ u.license_expiration }}">
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      
-    </div>
-  </div>
-</div>
+				<form method="post" action="/register">
+
+					<div class="form-group">
+						<label for="first_name">First Name:</label>
+						<input type="text" class="form-control" id="first_name" name="first_name" value="{{ u.first_name }}">
+					</div>
+
+					<div class="form-group">
+						<label for="last_name">Last Name:</label>
+						<input type="text" class="form-control" id="last_name" name="last_name" value="{{ u.last_name }}">
+					</div>
+
+					{# <div class="form-group">
+					          <label for="user_type">User Type:</label>
+					          <select class="form-control" id="user_type" name="user_type">
+					            <option value="admin">Admin</option>
+					            <option value="customer">Customer</option>
+					          </select>
+					        </div> #}
+
+					<div class="form-group">
+						<label for="address">Address:</label>
+						<input type="text" class="form-control" id="address" name="address" value="{{ u.address }}">
+					</div>
+
+					<div class="form-group">
+						<label for="phone">Phone:</label>
+						<input type="text" class="form-control" id="phone" name="phone" value="{{ u.phone }}">
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" name="email" value="{{ u.email }}">
+					</div>
+
+					<div class="form-group">
+						<label for="dob">Date of Birth:</label>
+						<input type="date" class="form-control" id="dob" name="dob" value="{{ u.dob }}">
+					</div>
+
+					<div class="form-group">
+						<label for="license">Driver's License:</label>
+						<input type="text" class="form-control" id="license" name="license" value="{{ u.license }}">
+					</div>
+
+					<div class="form-group">
+						<label for="license_expiration">License Expiration:</label>
+						<input type="date" class="form-control" id="license_expiration" name="license_expiration" value="{{ u.license_expiration }}">
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
 
 {% endblock content %}
 
@@ -110,4 +111,4 @@
 <input type="submit" value="Submit">
 
 </form>
-{% endblock content %} #} 
+{% endblock content %} #}

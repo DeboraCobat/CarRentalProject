@@ -25,7 +25,6 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -43,20 +42,13 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        echo "Logout Page";
-    }
-
-    // line 5
+    // line 4
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
+        // line 5
         echo "  <h1>Logout</h1>
-  <p>You have successfully logged out. <a href=\"index.php\">Click to continue</a></p>
+  <p>You have successfully logged out.</p>
 ";
     }
 
@@ -72,22 +64,18 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Logout Page{% endblock %}
 
 {% block content %}
   <h1>Logout</h1>
-  <p>You have successfully logged out. <a href=\"index.php\">Click to continue</a></p>
+  <p>You have successfully logged out.</p>
 {% endblock %}
-
-
-
-    ", "logout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/logout.html.twig");
+", "logout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/logout.html.twig");
     }
 }

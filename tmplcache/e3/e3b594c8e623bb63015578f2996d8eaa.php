@@ -55,84 +55,79 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "   
-
+        echo "
 <div class=\"container\">
   <div class=\"row justify-content-center mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
       <h1>Registration</h1>
-        ";
-        // line 12
-        if (($context["register"] ?? null)) {
-            // line 13
-            echo "
+
       <form method=\"post\" action=\"/register\">
           
         <div class=\"form-group\">
           <label for=\"first_name\">First Name:</label>
           <input type=\"text\" class=\"form-control\" id=\"first_name\" name=\"first_name\" value=\"";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "first_name", [], "any", false, false, false, 18), "html", null, true);
-            echo "\">
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "first_name", [], "any", false, false, false, 16), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"last_name\">Last Name:</label>
           <input type=\"text\" class=\"form-control\" id=\"last_name\" name=\"last_name\" value=\"";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "last_name", [], "any", false, false, false, 23), "html", null, true);
-            echo "\">
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "last_name", [], "any", false, false, false, 21), "html", null, true);
+        echo "\">
         </div>
         
         ";
-            // line 33
-            echo "        
+        // line 31
+        echo "        
         <div class=\"form-group\">
           <label for=\"address\">Address:</label>
           <input type=\"text\" class=\"form-control\" id=\"address\" name=\"address\" value=\"";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "address", [], "any", false, false, false, 36), "html", null, true);
-            echo "\">
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "address", [], "any", false, false, false, 34), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"phone\">Phone:</label>
           <input type=\"text\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "phone", [], "any", false, false, false, 41), "html", null, true);
-            echo "\">
+        // line 39
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "phone", [], "any", false, false, false, 39), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"email\">Email:</label>
           <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "email", [], "any", false, false, false, 46), "html", null, true);
-            echo "\">
+        // line 44
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "email", [], "any", false, false, false, 44), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"dob\">Date of Birth:</label>
           <input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "dob", [], "any", false, false, false, 51), "html", null, true);
-            echo "\">
+        // line 49
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "dob", [], "any", false, false, false, 49), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"license\">Driver's License:</label>
           <input type=\"text\" class=\"form-control\" id=\"license\" name=\"license\" value=\"";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 56), "html", null, true);
-            echo "\">
+        // line 54
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 54), "html", null, true);
+        echo "\">
         </div>
         
         <div class=\"form-group\">
           <label for=\"license_expiration\">License Expiration:</label>
           <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 61), "html", null, true);
-            echo "\">
+        // line 59
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 59), "html", null, true);
+        echo "\">
         </div>
         
         <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
@@ -141,14 +136,8 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
     </div>
   </div>
 </div>
+
 ";
-        } else {
-            // line 71
-            echo "        <p>";
-            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-            echo "</p>
-    ";
-        }
     }
 
     public function getTemplateName()
@@ -163,7 +152,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
     public function getDebugInfo()
     {
-        return array (  147 => 71,  134 => 61,  126 => 56,  118 => 51,  110 => 46,  102 => 41,  94 => 36,  89 => 33,  83 => 23,  75 => 18,  68 => 13,  66 => 12,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  129 => 59,  121 => 54,  113 => 49,  105 => 44,  97 => 39,  89 => 34,  84 => 31,  78 => 21,  70 => 16,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,13 +162,11 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 {% block title %}Registration{% endblock %}
 
 {% block content %}
-   
 
 <div class=\"container\">
   <div class=\"row justify-content-center mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
       <h1>Registration</h1>
-        {% if register %}
 
       <form method=\"post\" action=\"/register\">
           
@@ -237,9 +224,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
     </div>
   </div>
 </div>
-{% else %}
-        <p>{{ message }}</p>
-    {% endif %}
+
 {% endblock content %}
 
 {# 

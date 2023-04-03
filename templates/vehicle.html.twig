@@ -1,45 +1,46 @@
 {% extends "admin/master.html.twig" %}
 
-{% block title %}All Vehicles{% endblock %}
+{% block title %}All Vehicles
+{% endblock %}
 
 {% block content %}
-    <h1 class="mb-4">All Vehicles</h1>
-<div class="table-responsive">
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Color</th>
-        <th>License Plate</th>
-        <th>Daily Rate</th>
-        <th>Availability</th>
-        <th>Seats</th>
-        <th>L/100km</th>
-        <th>Image</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for vehicle in vehicles %}
-        <tr>
-          <td>{{ vehicle.make }}</td>
-          <td>{{ vehicle.model }}</td>
-          <td>{{ vehicle.year }}</td>
-          <td>{{ vehicle.color }}</td>
-          <td>{{ vehicle.license_plate }}</td>
-          <td>{{ vehicle.daily_rate }}</td>
-          <td>{{ vehicle.availability }}</td>
-          <td>{{ vehicle.seats }}</td>
-          <td>{{ vehicle.lper100 }}</td>
-          <td><img src="{{ vehicle.image_filepath }}" width="100"></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table> 
-</div>
-<div class="mt-4">
-  <button class="btn btn-primary" onclick="location.href='addvehicle'">Add Vehicle</button>
-</div>
+	<h1 class="mb-4">All Vehicles</h1>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Year</th>
+					<th>Color</th>
+					<th>License Plate</th>
+					<th>Daily Rate</th>
+					<th>Availability</th>
+					<th>Seats</th>
+					<th>L/100km</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for vehicle in vehicles %}
+					<tr>
+						<td>{{ vehicle.make }}</td>
+						<td>{{ vehicle.model }}</td>
+						<td>{{ vehicle.year }}</td>
+						<td>{{ vehicle.color }}</td>
+						<td>{{ vehicle.license_plate }}</td>
+						<td>{{ vehicle.daily_rate }}</td>
+						<td>{{ vehicle.availability }}</td>
+						<td>{{ vehicle.seats }}</td>
+						<td>{{ vehicle.lper100 }}</td>
+						<td><img src="{{ vehicle.image_filepath }}" width="100"></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="mt-4">
+		<button class="btn btn-primary" onclick="location.href='addvehicle'">Add Vehicle</button>
+	</div>
 
 {% endblock %}
