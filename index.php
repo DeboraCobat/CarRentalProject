@@ -9,23 +9,24 @@ use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Psr\Http\Message\UploadedFileInterface;
 
-
+//SETUP
 require_once 'init.php';
 
+//TABLE ITEMS
 require_once 'vehicle.php';
-
+require_once 'user.php';
 require_once 'reservation.php';
 
+//SEARCH RESERVATION
 require_once 'findmyreservation.php';
+require_once '1bookingprocess.php';
 
-require_once 'user.php';
-
+//LOGIN
 require_once 'login.php';
 //require_once 'logout.php';
-
 require_once 'register.php';
+require_once 'resetpassword.php';
 
-require_once '1bookingprocess.php';
 
 $app->run();
 

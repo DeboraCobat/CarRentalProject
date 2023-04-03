@@ -61,34 +61,40 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
         <h1>Login</h1>
-
-        ";
-        // line 13
+            ";
+        // line 12
         if (array_key_exists("message", $context)) {
-            // line 14
-            echo "          <p>";
+            // line 13
+            echo "              <p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
-        ";
+            ";
         }
-        // line 16
-        echo "
-        <div class=\"form-group\">
-          <form method=\"post\" action=\"/login\">
-            <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
+        // line 15
+        echo "                <div class=\"form-group\">
+      <form method=\"post\" action=\"/login\">
+        <label for=\"email\">Email:</label><br>
+        <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
-            <label for=\"password\">Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+        <label for=\"password\">Password:</label><br>
+        <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+                  <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
 
-            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-          </form>
+
+        <hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
+
+        <div class=\"d-flex justify-content-between align-items-center\">
+          <a href=\"/resetpassword\">Forgot password?</a>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-</body>
+</div>
 
+
+
+  </div>
+</body>
 ";
     }
 
@@ -104,7 +110,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
     public function getDebugInfo()
     {
-        return array (  75 => 16,  69 => 14,  67 => 13,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  74 => 15,  68 => 13,  66 => 12,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -120,27 +126,33 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
     <div class=\"row justify-content-center mt-5 mb-5\">
       <div class=\"col-md-8 col-lg-6\">
         <h1>Login</h1>
+            {% if message is defined %}
+              <p>{{ message }}</p>
+            {% endif %}
+                <div class=\"form-group\">
+      <form method=\"post\" action=\"/login\">
+        <label for=\"email\">Email:</label><br>
+        <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
-        {% if message is defined %}
-          <p>{{ message }}</p>
-        {% endif %}
+        <label for=\"password\">Password:</label><br>
+        <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+                  <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
 
-        <div class=\"form-group\">
-          <form method=\"post\" action=\"/login\">
-            <label for=\"email\">Email:</label><br>
-            <input type=\"email\" class=\"form-control\"id=\"email\" name=\"email\"><br>
 
-            <label for=\"password\">Password:</label><br>
-            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
+        <hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
 
-            <button type=\"submit\" class=\"btn btn-primary\">Log in</button>
-          </form>
+        <div class=\"d-flex justify-content-between align-items-center\">
+          <a href=\"/resetpassword\">Forgot password?</a>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-</body>
+</div>
 
+
+
+  </div>
+</body>
 {% endblock %}
 ", "login.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login.html.twig");
     }
