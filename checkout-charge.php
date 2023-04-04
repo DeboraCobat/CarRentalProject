@@ -27,7 +27,7 @@ $amount          = $_POST["amount"];
 $desc            = $_POST["product_name"];
 $charge = \Stripe\Charge::create([
   "amount" => str_replace(",","",$amount) * 100,
-  "currency" => 'inr',
+  "currency" => 'cad',
   "description"=>$desc,
   "source"=> $token,
 ]);
