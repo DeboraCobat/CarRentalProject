@@ -74,7 +74,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 \t\t\t\t\t<label for=\"return_time\">Return time:</label>
 \t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
 \t\t\t\t\t<br><br>
-\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Select Vehicle</button>
 \t\t\t\t</form>
 \t\t\t";
     }
@@ -120,7 +120,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 \t\t\t\t\t<label for=\"return_time\">Return time:</label>
 \t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
 \t\t\t\t\t<br><br>
-\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Select Vehicle</button>
 \t\t\t\t</form>
 \t\t\t{% endblock %}
 ", "index.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\index.html.twig");

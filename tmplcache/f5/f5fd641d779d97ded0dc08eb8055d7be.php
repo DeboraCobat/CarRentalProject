@@ -77,14 +77,8 @@ class __TwigTemplate_2728883367898cc197915d3c18220298 extends Template
   
 
   <input type=\"hidden\" id=\"vehicleId\" name=\"vehicleId\" value=\"\">
-  <input type=\"hidden\" id=\"pickDateTime\" name=\"pickDateTime\" value=\"";
-        // line 34
-        echo twig_escape_filter($this->env, ($context["start_date"] ?? null), "html", null, true);
-        echo "\">
-  <input type=\"hidden\" id=\"returnDateTime\" name=\"returnDateTime\" value=\"";
-        // line 35
-        echo twig_escape_filter($this->env, ($context["end_date"] ?? null), "html", null, true);
-        echo "\">
+  <input type=\"hidden\" id=\"pickDateTime\" name=\"pickDateTime\" value=\"pickDateTime\">
+  <input type=\"hidden\" id=\"returnDateTime\" name=\"returnDateTime\" value=\"returnDateTime\">
   <input type=\"hidden\" id=\"rentalPrice\" name=\"rentalPrice\" value=\"";
         // line 36
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 36), "html", null, true);
@@ -120,7 +114,7 @@ class __TwigTemplate_2728883367898cc197915d3c18220298 extends Template
   const bookButton = document.getElementById('bookButton');
   const userForm = document.getElementById('userForm');
   
-  
+  // id of vehicle is brought over
 const vehicleIdInput = document.getElementById('vehicleId');
 const vehicleId = new URLSearchParams(window.location.search).get('vehicleId');
 console.log('Vehicle ID:', vehicleId);
@@ -203,50 +197,60 @@ vehicleIdInput.value = vehicleId;
             </form>
 
             <script>
+
+                const pickupDateTimeSpan = document.getElementById('pickupDateTime');
+                const returnDateTimeSpan = document.getElementById('returnDateTime');
+
+                const pickupDateTime = pickupDateTimeSpan.innerText;
+                const returnDateTime = returnDateTimeSpan.innerText;
+
+                document.getElementById('pickDateTime').value = pickupDateTime;
+                document.getElementById('returnDateTime').value = returnDateTime;
+
               const insuranceCheckbox = document.getElementById('insurance');
               const totalPriceElement = document.getElementById('totalPrice');
               const taxElement = document.getElementById('tax');
               const finalPriceElement = document.getElementById('finalPrice');
 
               let totalPrice = ";
-        // line 107
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 107) * ($context["rentalDays"] ?? null)), "html", null, true);
+        // line 117
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 117) * ($context["rentalDays"] ?? null)), "html", null, true);
         echo ";
               let tax = ";
-        // line 108
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 108) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
+        // line 118
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 118) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
         echo ";
               let finalPrice = ";
-        // line 109
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 109) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 119
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 119) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo ";
 
               insuranceCheckbox.addEventListener('change', function() {
                 if (this.checked) {
                   totalPrice = ";
-        // line 113
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 113) * ($context["rentalDays"] ?? null)) * 1.1), "html", null, true);
+        // line 123
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 123) * ($context["rentalDays"] ?? null)) * 1.1), "html", null, true);
         echo ";
                   tax = ";
-        // line 114
-        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 114) * ($context["rentalDays"] ?? null)) * 1.1) * 0.15), "html", null, true);
+        // line 124
+        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 124) * ($context["rentalDays"] ?? null)) * 1.1) * 0.15), "html", null, true);
         echo ";
                   finalPrice = ";
-        // line 115
-        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 115) * ($context["rentalDays"] ?? null)) * 1.1) * 1.15), "html", null, true);
+        // line 125
+        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 125) * ($context["rentalDays"] ?? null)) * 1.1) * 1.15), "html", null, true);
         echo ";
                 } else {
                   totalPrice = ";
-        // line 117
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 117) * ($context["rentalDays"] ?? null)), "html", null, true);
+        // line 127
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 127) * ($context["rentalDays"] ?? null)), "html", null, true);
         echo ";
                   tax = ";
-        // line 118
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 118) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
+        // line 128
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 128) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
         echo ";
                   finalPrice = ";
-        // line 119
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 119) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 129
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 129) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo ";
                 }
 
@@ -255,10 +259,6 @@ vehicleIdInput.value = vehicleId;
                 finalPriceElement.textContent = finalPrice.toFixed(2);
               });
 
-              ";
-        // line 139
-        echo "
-// pass these variables as parameters in your post method to send them to the server
 
             </script>
 
@@ -279,7 +279,7 @@ vehicleIdInput.value = vehicleId;
 
     public function getDebugInfo()
     {
-        return array (  260 => 139,  249 => 119,  245 => 118,  241 => 117,  236 => 115,  232 => 114,  228 => 113,  221 => 109,  217 => 108,  213 => 107,  201 => 98,  197 => 97,  193 => 96,  185 => 91,  180 => 90,  178 => 89,  172 => 86,  168 => 85,  160 => 84,  155 => 82,  152 => 81,  110 => 41,  106 => 40,  102 => 39,  98 => 38,  94 => 37,  90 => 36,  86 => 35,  82 => 34,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  253 => 129,  249 => 128,  245 => 127,  240 => 125,  236 => 124,  232 => 123,  225 => 119,  221 => 118,  217 => 117,  195 => 98,  191 => 97,  187 => 96,  179 => 91,  174 => 90,  172 => 89,  166 => 86,  162 => 85,  154 => 84,  149 => 82,  146 => 81,  104 => 41,  100 => 40,  96 => 39,  92 => 38,  88 => 37,  84 => 36,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -317,8 +317,8 @@ vehicleIdInput.value = vehicleId;
   
 
   <input type=\"hidden\" id=\"vehicleId\" name=\"vehicleId\" value=\"\">
-  <input type=\"hidden\" id=\"pickDateTime\" name=\"pickDateTime\" value=\"{{ start_date }}\">
-  <input type=\"hidden\" id=\"returnDateTime\" name=\"returnDateTime\" value=\"{{ end_date }}\">
+  <input type=\"hidden\" id=\"pickDateTime\" name=\"pickDateTime\" value=\"pickDateTime\">
+  <input type=\"hidden\" id=\"returnDateTime\" name=\"returnDateTime\" value=\"returnDateTime\">
   <input type=\"hidden\" id=\"rentalPrice\" name=\"rentalPrice\" value=\"{{ vehicle.daily_rate }}\">
   <input type=\"hidden\" id=\"insurance\" name=\"insurance\" value=\"{{ vehicle.insurance_rate }}\">
   <input type=\"hidden\" id=\"tax\" name=\"tax\" value=\"{{ vehicle.tax_rate }}\">
@@ -336,7 +336,7 @@ vehicleIdInput.value = vehicleId;
   const bookButton = document.getElementById('bookButton');
   const userForm = document.getElementById('userForm');
   
-  
+  // id of vehicle is brought over
 const vehicleIdInput = document.getElementById('vehicleId');
 const vehicleId = new URLSearchParams(window.location.search).get('vehicleId');
 console.log('Vehicle ID:', vehicleId);
@@ -385,6 +385,16 @@ vehicleIdInput.value = vehicleId;
             </form>
 
             <script>
+
+                const pickupDateTimeSpan = document.getElementById('pickupDateTime');
+                const returnDateTimeSpan = document.getElementById('returnDateTime');
+
+                const pickupDateTime = pickupDateTimeSpan.innerText;
+                const returnDateTime = returnDateTimeSpan.innerText;
+
+                document.getElementById('pickDateTime').value = pickupDateTime;
+                document.getElementById('returnDateTime').value = returnDateTime;
+
               const insuranceCheckbox = document.getElementById('insurance');
               const totalPriceElement = document.getElementById('totalPrice');
               const taxElement = document.getElementById('tax');
@@ -410,20 +420,6 @@ vehicleIdInput.value = vehicleId;
                 finalPriceElement.textContent = finalPrice.toFixed(2);
               });
 
-              {# const firstName = document.getElementById('firstName').value;
-              const lastName = document.getElementById('lastName').value;
-              const address = document.getElementById('address').value;
-              const phone = document.getElementById('phone').value;
-              const email = document.getElementById('email').value;
-              const dob = document.getElementById('dob').value;
-              const pickDateTime = document.getElementById('pickDateTime').value;
-              const returnDateTime = document.getElementById('returnDateTime').value;
-              const rentalPrice = document.getElementById('rentalPrice').value;
-              const insurance = document.getElementById('insurance').value;
-              const tax = document.getElementById('tax').value;
-              const finalPrice = document.getElementById('finalPrice').value; #}
-
-// pass these variables as parameters in your post method to send them to the server
 
             </script>
 
