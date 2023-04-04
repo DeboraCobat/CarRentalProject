@@ -125,3 +125,21 @@ DB::insert('users', [
 }
 });
 
+
+// DELETE USER functionality //////////////////////////////////////////////////////////////////
+$app->get('/admin/deleteuser/{id}', function ($request, $response, $args) {
+  $user = DB::queryFirstRow("SELECT * FROM users WHERE id = %i", $args['id']);
+  return $this->get('view')->render($response, 'admin/deleteuser.html.twig', ['user' => $user]);
+});
+
+$app->post('/admin/deleteuser/{id}', function ($request, $response, $args) {
+  $id = $args['id'];
+  $result = DB::delete('users', "id=%i", $id);
+  if ($result) {
+    echo '<script>alert("User with id ' . $id . ' was deleted."); window.location.href="/admin/userslist";</script>';
+  } else {
+    echo '<script>alert("User with id ' . $id . ' was not deleted."); window.location.href="/admin/userslist";</script>';
+  }
+});
+
+
