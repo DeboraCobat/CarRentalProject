@@ -33,15 +33,13 @@
 
   <input type="hidden" id="vehicleId" name="vehicleId" value="">
   <input type="hidden" id="pickDateTime" name="pickDateTime" value="">
-
-  {% set returnDateTime = request.query.get('returnDate') ~ ' ' ~ request.query.get('returnTime') %}
-<input type="hidden" id="returnDateTime" name="returnDateTime" value="{{ returnDateTime }}">
+  <input type="hidden" id="returnDateTime" name="returnDateTime" value="">
 
   {# <input type="hidden" id="returnDateTime" name="returnDateTime" value=""> #}
   <input type="hidden" id="rentalPrice" name="rentalPrice" value="{{ vehicle.daily_rate }}">
   <input type="hidden" id="insurance" name="insurance" value="insurance">
   <input type="hidden" id="tax" name="tax" value="tax">
-  <input type="hidden" id="finalPrice" name="finalPrice" value="finalPrice">
+  <input type="hidden" id="finalPrice" name="finalPrice" value="{{ vehicle.daily_rate * rentalDays * 1.10 }}">
   <input type="hidden" name="make" value="{{ vehicle.make }}">
   <input type="hidden" name="model" value="{{ vehicle.model }}">
 
@@ -97,8 +95,8 @@ vehicleIdInput.value = vehicleId;
             <p>Rental Days: {{ rentalDays }}</p>
 
             <form style="text-align: center;">
-              <input type="checkbox" name="insurance" id="insurance" checked> 
-              <label for="insurance">Take insurance (10% extra)</label><br><br>
+              {# <input type="checkbox" name="insurance" id="insurance" checked>  #}
+              {# <label for="insurance">Take insurance (10% extra)</label><br><br> #}
               <p>Rental Price: $<span id="rentalPrice">{{ vehicle.daily_rate * rentalDays }}</span></p>
               <br>
               <p>Tax (15%): $<span id="tax">{{ vehicle.daily_rate * rentalDays * 0.15 }}</span></p>
