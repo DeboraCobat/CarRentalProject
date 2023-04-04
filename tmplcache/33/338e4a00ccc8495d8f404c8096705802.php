@@ -137,7 +137,7 @@ ul {
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"";
                 // line 42
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 42), "html", null, true);
-                echo "\"></br></br></br>
+                echo "\"></br>
         \t\t\t\t";
                 // line 44
                 echo "\t\t\t\t\t\t\t\t<script
@@ -240,7 +240,7 @@ ul {
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"address\" value=\"{{ reservation.users.address }}\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"amount\" value=\"{{ reservation.final_total }}\">
 \t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"product_name\" value=\"{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"{{ reservation.id }}\"></br></br></br>
+\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"{{ reservation.id }}\"></br>
         \t\t\t\t{# <button type=\"submit\" id=\"checkout-button\">Checkout</button> #}
 \t\t\t\t\t\t\t\t<script
 \t\t\t\t\t\t\t\tsrc=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"

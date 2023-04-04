@@ -24,14 +24,16 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'addHead' => [$this, 'block_addHead'],
             'content' => [$this, 'block_content'],
-            'footer' => [$this, 'block_footer'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "master.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -115,7 +117,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 \t\t\t\t\t\t";
         // line 52
         $this->displayBlock('footer', $context, $blocks);
-        // line 77
+        // line 79
         echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -141,19 +143,14 @@ gtag('config', 'G-TVEQKKS963');
 ";
     }
 
-    // line 8
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
+        echo "Edit Profile";
     }
 
-    // line 11
-    public function block_addHead($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-    }
-
-    // line 50
+    // line 5
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -168,29 +165,85 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<div class=\"footer\">
 \t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<a href=\"#\"><img src=\"images/facebook.png\" alt=\"Facebook icon\" width=\"30\" height=\"30\"></a>
-    <a href=\"#\"><img src=\"images/instagram.png\" alt=\"Instagram icon\" width=\"30\" height=\"30\"></a>
-    <a href=\"#\"><img src=\"images/twitter.png\" alt=\"Twitter icon\" width=\"30\" height=\"30\"></a>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
-\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
 \t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"newsletter\">
-\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for newsletter -->
 \t\t\t\t\t\t\t\t\t\tSubscribe to our newsletter
 \t\t\t\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Enter your email address\">
 \t\t\t\t\t\t\t\t\t\t<button>Subscribe</button>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t&copy;
 \t\t\t\t\t\t\t\t\t";
-        // line 75
+        // line 77
         echo 2023;
         echo "
-\t\t\t\t\t\t\t\t";
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-left mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>Edit Profile</h1>
+\t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"first_name\">First Name</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"first_name\" name=\"first_name\" value=\"";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 14), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"last_name\">Last Name</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"last_name\" name=\"last_name\" value=\"";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 18), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"email\">Email</label>
+\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 22), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"phone\">Phone</label>
+\t\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"";
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 26), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"address\">Address</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"address\" name=\"address\" value=\"";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 30), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"dob\">Date of Birth</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"";
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 34), "html", null, true);
+        echo "\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Save Changes</button>
+\t\t\t\t\t<a href=\"/dashboard\" class=\"btn btn-secondary\">Cancel</a>
+\t\t\t\t</form>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+";
     }
 
     public function getTemplateName()
@@ -205,57 +258,45 @@ gtag('config', 'G-TVEQKKS963');
 
     public function getDebugInfo()
     {
-        return array (  191 => 75,  167 => 53,  163 => 52,  157 => 50,  151 => 11,  145 => 8,  119 => 77,  117 => 52,  114 => 51,  112 => 50,  105 => 45,  99 => 42,  95 => 40,  92 => 39,  83 => 32,  77 => 28,  75 => 27,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
+        return array (  193 => 77,  167 => 53,  163 => 52,  157 => 50,  151 => 11,  145 => 8,  119 => 79,  117 => 52,  114 => 51,  112 => 50,  105 => 45,  99 => 42,  95 => 40,  92 => 39,  83 => 32,  77 => 28,  75 => 27,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html lang=\"en\">
+        return new Source("{% extends \"master.html.twig\" %}
 
-\t<head>
-\t\t<meta charset=\"UTF-8\">
-\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-\t\t<title>
-\t\t\t{% block title %}{% endblock %}
-\t\t</title>
-\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/styles.css\"> {% block addHead %}{% endblock %}
-\t\t</head>
+{% block title %}Edit Profile{% endblock %}
 
-\t\t<body>
-\t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-\t\t\t\t<div class=\"container\">
-\t\t\t\t\t<a class=\"navbar-brand\" href=\"/\">
-\t\t\t\t\t\t<div></a>
-\t\t\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-\t\t\t\t\t\t</button>
-\t\t\t\t\t\t<div class=\"collapse navbar-collapse justify-content-left\" id=\"navbarNav\">
-\t\t\t\t\t\t\t<ul class=\"navbar-nav\">
-\t\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t{% if userSession %}
-\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"logout\">Logout</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"register\">Register</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"login\">Login</a>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t\t\t{% if userSession %}
-\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t\t\t<p class=\"nav-link\">Hello
-\t\t\t\t\t\t\t\t\t\t\t{{ userSession.first_name }}!</p>
-\t\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
+{% block content %}
+
+\t<div class=\"container\">
+\t\t<div class=\"row justify-content-left mt-10 mb-10\">
+\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t\t\t<h1>Edit Profile</h1>
+\t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"first_name\">First Name</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"first_name\" name=\"first_name\" value=\"{{ userSession.first_name }}\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"last_name\">Last Name</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"last_name\" name=\"last_name\" value=\"{{ userSession.last_name }}\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"email\">Email</label>
+\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" value=\"{{ userSession.email }}\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"phone\">Phone</label>
+\t\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"{{ userSession.phone }}\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"address\">Address</label>
+\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"address\" name=\"address\" value=\"{{ userSession.address }}\" required>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label for=\"dob\">Date of Birth</label>
+\t\t\t\t\t\t<input type=\"date\" class=\"form-control\" id=\"dob\" name=\"dob\" value=\"{{ userSession.dob }}\" required>
 \t\t\t\t\t</div>
 \t\t\t\t</nav>
 \t\t\t\t<div class=\"container\">
@@ -266,19 +307,21 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<div class=\"footer\">
 \t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<a href=\"#\"><img src=\"images/facebook.png\" alt=\"Facebook icon\" width=\"30\" height=\"30\"></a>
-    <a href=\"#\"><img src=\"images/instagram.png\" alt=\"Instagram icon\" width=\"30\" height=\"30\"></a>
-    <a href=\"#\"><img src=\"images/twitter.png\" alt=\"Twitter icon\" width=\"30\" height=\"30\"></a>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
+\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
-\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
 \t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"newsletter\">
-\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for newsletter -->
 \t\t\t\t\t\t\t\t\t\tSubscribe to our newsletter
 \t\t\t\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Enter your email address\">
 \t\t\t\t\t\t\t\t\t\t<button>Subscribe</button>

@@ -39,7 +39,7 @@ ul {
 									<input type="hidden" name="address" value="{{ reservation.users.address }}">
 									<input type="hidden" name="amount" value="{{ reservation.final_total }}">
 									<input type="hidden" name="product_name" value="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}">
-									<input type="hidden" name="reservation_id" value="{{ reservation.id }}"></br></br></br>
+									<input type="hidden" name="reservation_id" value="{{ reservation.id }}"></br>
         				{# <button type="submit" id="checkout-button">Checkout</button> #}
 								<script
 								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
