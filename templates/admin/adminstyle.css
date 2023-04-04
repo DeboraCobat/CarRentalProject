@@ -1,0 +1,40 @@
+.centeredContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form label,
+form input,
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form input[type="submit"] {
+    width: auto;
+    margin-top: 10px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
