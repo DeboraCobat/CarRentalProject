@@ -16,8 +16,13 @@ require_once 'init.php';
 // ADMIN CAN SEE LIST OF RESERVATIONS
 
 $app->get('/admin/reservationslist', function ($request, $response, $args) {
-    return $this->get('view')->render($response,  'admin/reservationslist.html.twig');
+    $reservations = DB::query("SELECT * FROM reservations");
+    return $this->get('view')->render($response,  'admin/reservationslist.html.twig', ['reservations' => $reservations]);
 });
+
+
+
+
 
 
 // // USER CAN SEE CALENDAR

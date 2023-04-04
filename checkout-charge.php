@@ -35,8 +35,6 @@ $charge = \Stripe\Charge::create([
 if($charge){
   DB::update('reservations', ['payment_confirmation' => 1], 'id=%s', $reservation_id);
   header("Location:success.php?amount=$amount");
-} else {
-  
-}
+} 
 
 ?>
