@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* GLOBALS*/
+
+:root {
+    --primary-color: #D8A541;
+    --secondary-color: #fff;
+    --text-color: #fff;
+    --background-color: #f2f2f2;
+    --left-margin: 3.25vw;
+}
+
+body {
+    background-image: url("/images/backgroundDark.png");
+    background-size: cover;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MAIN CONTENT*/
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: centelefr;
+    margin-left: var(--left-margin);
+
+}
+.centeredContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form label,
+form input,
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form input[type="submit"] {
+    width: auto;
+    margin-top: 10px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+
+/*footer*/
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary-color);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contact-info p {
+    margin: 0;
+    margin-right: 20px;
+}
+
+.newsletter {
+    font-size: 0.8em;
+}
+
+.small {
+    font-size: 0.8em;
+}
