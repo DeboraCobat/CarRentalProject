@@ -17,21 +17,6 @@ body {
     color: var(--text-color);
 }
 
-body.selectvehicle {
-    background-image: url("/images/nocarLightBackground.png");
-    background-size: cover;
-    background-color: var(--background-color);
-    color: #2b2b2b;
-}
-
-body.bookingvehicle {
-    background-image: url("/images/nocarDarkBackground.png");
-    background-size: cover;
-    background-color: var(--background-color);
-    color: #f1f1f1;
-}
-
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {

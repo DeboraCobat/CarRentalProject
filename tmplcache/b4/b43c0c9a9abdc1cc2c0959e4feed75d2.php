@@ -47,59 +47,59 @@ class __TwigTemplate_50242caba04abfc4ea7774aaef50a051 extends Template
     {
         $macros = $this->macros;
         // line 4
-        echo "    <h1>Available Vehicles</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Color</th>
-                <th>Availability</th>
-            </tr>
-        </thead>
-        <tbody>
-            ";
+        echo "\t<h1>Available Vehicles</h1>
+\t<table>
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>ID</th>
+\t\t\t\t<th>Make</th>
+\t\t\t\t<th>Model</th>
+\t\t\t\t<th>Year</th>
+\t\t\t\t<th>Color</th>
+\t\t\t\t<th>Availability</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t";
         // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["availableVehicles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["vehicle"]) {
             // line 18
-            echo "                <tr>
-                    <td>";
+            echo "\t\t\t\t<tr>
+\t\t\t\t\t<td>";
             // line 19
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "id", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t<td>";
             // line 20
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "make", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t<td>";
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "model", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t<td>";
             // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "year", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t<td>";
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "color", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t<td>";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "availability", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
-                </tr>
-            ";
+\t\t\t\t</tr>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vehicle'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
-        echo "        </tbody>
-    </table>
+        echo "\t\t</tbody>
+\t</table>
 ";
     }
 
@@ -123,31 +123,31 @@ class __TwigTemplate_50242caba04abfc4ea7774aaef50a051 extends Template
         return new Source("{% extends 'master.html.twig' %}
 
 {% block content %}
-    <h1>Available Vehicles</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Color</th>
-                <th>Availability</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for vehicle in availableVehicles %}
-                <tr>
-                    <td>{{ vehicle.id }}</td>
-                    <td>{{ vehicle.make }}</td>
-                    <td>{{ vehicle.model }}</td>
-                    <td>{{ vehicle.year }}</td>
-                    <td>{{ vehicle.color }}</td>
-                    <td>{{ vehicle.availability }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+\t<h1>Available Vehicles</h1>
+\t<table>
+\t\t<thead>
+\t\t\t<tr>
+\t\t\t\t<th>ID</th>
+\t\t\t\t<th>Make</th>
+\t\t\t\t<th>Model</th>
+\t\t\t\t<th>Year</th>
+\t\t\t\t<th>Color</th>
+\t\t\t\t<th>Availability</th>
+\t\t\t</tr>
+\t\t</thead>
+\t\t<tbody>
+\t\t\t{% for vehicle in availableVehicles %}
+\t\t\t\t<tr>
+\t\t\t\t\t<td>{{ vehicle.id }}</td>
+\t\t\t\t\t<td>{{ vehicle.make }}</td>
+\t\t\t\t\t<td>{{ vehicle.model }}</td>
+\t\t\t\t\t<td>{{ vehicle.year }}</td>
+\t\t\t\t\t<td>{{ vehicle.color }}</td>
+\t\t\t\t\t<td>{{ vehicle.availability }}</td>
+\t\t\t\t</tr>
+\t\t\t{% endfor %}
+\t\t</tbody>
+\t</table>
 {% endblock %}
 ", "selectvehicleavailable.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/selectvehicleavailable.html.twig");
     }

@@ -58,7 +58,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
         // line 7
         echo "
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t<div class=\"row justify-content-left mt-10 mb-10\">
 \t\t\t<div class=\"col-md-10 col-lg-10\">
 \t\t\t\t<h1>Your Profile</h1></br>
 \t\t\t\t<div class=\"table-responsive\">
@@ -110,7 +110,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 \t\t\t</div>
 
 \t\t\t<div class=\"mt-3\">
-\t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+\t\t\t\t<a href=\"/editprofile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
 \t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
 \t\t\t</div>
 
@@ -145,7 +145,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 {% block content %}
 
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-10 mb-10\">
+\t\t<div class=\"row justify-content-left mt-10 mb-10\">
 \t\t\t<div class=\"col-md-10 col-lg-10\">
 \t\t\t\t<h1>Your Profile</h1></br>
 \t\t\t\t<div class=\"table-responsive\">
@@ -184,7 +184,7 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 \t\t\t</div>
 
 \t\t\t<div class=\"mt-3\">
-\t\t\t\t<a href=\"/edit-profile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+\t\t\t\t<a href=\"/editprofile\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
 \t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
 \t\t\t</div>
 

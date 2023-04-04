@@ -5,12 +5,13 @@
 {% block content %}
 <div class="container">
   <div class="row justify-content-left mt-5 mb-5">
-    <div class="col-md-8 col-lg-6">
+    <div class="col-md-8 col-lg-12">
     
   <h1>Reservations</h1>
 <div class="table-responsive">
-  <table class="table table-bordered table-striped">
-    <thead>
+  <table class="table table-bordered table-striped"></br>
+    <button class="btn btn-primary btn-sm" onclick="location.href='addreservation'">Add a new reservation</button></br>
+    <thead></br>
       <tr>
         <th>ID</th>
         <th>Customer ID</th>
@@ -39,13 +40,12 @@
           <td>{{ item.total }}</td>
           <td>{{ item.notes }}</td>
           <td>{{ item.payment_confirmation }}</td>
+          <td><a href="/admin/editreservation/{{ item.id }}" class="btn btn-secondary btn-sm">Edit</a></td>
+          <td><a href="/admin/deletereservation/{{ item.id }}" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>
       {% endfor %}
     </tbody>
-  </table>
-</div>
-<div class="mt-4">
-  <button class="btn btn-primary btn-sm" onclick="location.href='reservationslist'">Add Reservation</button>
+  </table> </br>
 </div>
 {% endblock %}
 

@@ -33,13 +33,13 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/addvehicle.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/addvehicle.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -82,9 +82,9 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
         // line 14
         echo "
 <div class=\"container\">
-  <div class=\"row justify-content-start mt-5\">
-    <div class=\"col-md-11 col-lg-11\">
-      <h1 class=\"mb-4\">Add Vehicle</h1>
+  <div class=\"row justify-content-left mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add Vehicle</h1>
 
   <form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
     <div class=\"form-group\">
@@ -167,7 +167,7 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
     ";
         // line 75
         echo "
-    <button type=\"submit\" class=\"btn btn-primary\">Add Vehicle</button>
+    <button type=\"submit\" class=\"btn btn-primary btn-sm\">Add Vehicle</button>
   </form>
 </div>
 
@@ -192,7 +192,7 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}Add Vehicle{% endblock %}
 
@@ -207,9 +207,9 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
 {% endif %}
 
 <div class=\"container\">
-  <div class=\"row justify-content-start mt-5\">
-    <div class=\"col-md-11 col-lg-11\">
-      <h1 class=\"mb-4\">Add Vehicle</h1>
+  <div class=\"row justify-content-left mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-6\">
+      <h1>Add Vehicle</h1>
 
   <form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
     <div class=\"form-group\">
@@ -267,68 +267,12 @@ class __TwigTemplate_af35f9dd5995ffc8b369b56dff8e4498 extends Template
       <input type=\"text\" class=\"form-control\" id=\"image_filepath\" name=\"image_filepath\" value=\"{{ v.image_filepath }}\">
     </div> #}
 
-    <button type=\"submit\" class=\"btn btn-primary\">Add Vehicle</button>
+    <button type=\"submit\" class=\"btn btn-primary btn-sm\">Add Vehicle</button>
   </form>
 </div>
 
 
 {% endblock content %}
-
-{# {% extends \"admin/master.html.twig\" %}
-
-{% block title %}Add Vehicle{% endblock %}
-
-{% block content %}
-
-{% if errorList %}
-    <ul>
-    {% for error in errorList %}
-        <li>{{ error }}</li>
-    {% endfor %}
-    </ul>
-{% endif %}
-
-<h1>Add a vehicle</h1>
-
-<form method=\"post\" action=\"/admin/addvehicle\" enctype=\"multipart/form-data\">
-    <label for=\"make\">Make:</label>
-    <input type=\"text\" id=\"make\" name=\"make\" value=\"{{ v.make }}\"><br>
-
-    <label for=\"model\">Model:</label>
-    <input type=\"text\" id=\"model\" name=\"model\" value=\"{{ v.model }}\"><br>
-
-    <label for=\"year\">Year:</label>
-    <input type=\"number\" id=\"year\" name=\"year\" value=\"{{ v.year }}\"><br>
-
-    <label for=\"color\">Color:</label>
-    <input type=\"text\" id=\"color\" name=\"color\" value=\"{{ v.color }}\"><br>
-
-    <label for=\"license_plate\">License Plate:</label>
-    <input type=\"text\" id=\"license_plate\" name=\"license_plate\" value=\"{{ v.license_plate }}\"><br>
-
-    <label for=\"daily_rate\">Daily Rate:</label>
-    <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" value=\"{{ v.daily_rate }}\"><br>
-
-    <label for=\"availability\">Availability:</label>
-    <input type=\"text\" id=\"availability\" name=\"availability\" value=\"{{ v.availability }}\"><br>
-
-    <label for=\"seats\">Number of Seats:</label>
-    <input type=\"number\" id=\"seats\" name=\"seats\" value=\"{{ v.seats }}\"><br>
-
-    <label for=\"lper100\">Fuel Consumption (L/100km):</label>
-    <input type=\"number\" id=\"lper100\" name=\"lper100\" value=\"{{ v.lper100 }}\"><br>
-
-    <label for=\"image\">Upload Image:</label>
-    <input type=\"file\" id=\"file\" name=\"file\"><br>
-
-    {# <label for=\"image_filepath\">Image Filepath:</label>
-    <input type=\"text\" id=\"image_filepath\" name=\"image_filepath\" value=\"{{ v.image_filepath }}\"><br> #}
-
-    {# <input type=\"submit\" value=\"Add Vehicle\">
-</form>
-
-{% endblock content %} #}
-
 ", "admin/addvehicle.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/addvehicle.html.twig");
     }
 }

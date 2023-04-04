@@ -5,12 +5,14 @@
 {% block content %}
 <div class="container">
   <div class="row justify-content-left mt-5 mb-5">
-    <div class="col-md-8 col-lg-6">
+    <div class="col-md-8 col-lg-12">
     
   <h1>All Users</h1>
 <div class="table-responsive">
   <table class="table table-bordered table-striped">
-    <thead>
+      <button class="btn btn-primary btn-sm" onclick="location.href='addreservation'">Add a new reservation</button></br>
+
+    <thead></br>
       <tr>
         <th>Name</th>
         <th>Email</th>
@@ -31,12 +33,11 @@
           <td>{{ user.dob }}</td>
           <td>{{ user.license }}</td>
           <td>{{ user.license_expiration }}</td>
+          <td><a href="/admin/edituser/{{ user.id }}" class="btn btn-secondary btn-sm">Edit</a></td>
+          <td><a href="/admin/deleteuser/{{ user.id }}" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
-</div>
-<div class="mt-4">
-  <button class="btn btn-primary btn-sm" onclick="location.href='adduser'">Add User</button>
 </div>
 {% endblock %}
