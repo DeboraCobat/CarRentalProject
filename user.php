@@ -136,7 +136,7 @@ $app->post('/admin/deleteuser/{id}', function ($request, $response, $args) {
   $id = $args['id'];
   $result = DB::delete('users', "id=%i", $id);
   if ($result) {
-    echo '<script>alert("User with id ' . $id . ' was deleted."); window.location.href="/admin/userslist";</script>';
+    echo '<script>alert("User with id ' . $id . ' has been deleted."); window.location.href="/admin/userslist";</script>';
   } else {
     echo '<script>alert("User with id ' . $id . ' was not deleted."); window.location.href="/admin/userslist";</script>';
   }
