@@ -1,3 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* GLOBALS*/
+
+/* :root {
+    --primary-color: #D8A541;
+    --secondary-color: #fff;
+    --text-color: #fff;
+    --background-color: #f2f2f2;
+    --left-margin: 3.25vw;
+} */
+
+body {
+    background-image: url("images/backgroundLight.png");
+    background-size: cover;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* .centeredContent {
     max-width: 800px;
     margin: 0 auto;

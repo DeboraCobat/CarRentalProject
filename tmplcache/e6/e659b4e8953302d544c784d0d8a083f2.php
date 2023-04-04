@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* logout.html.twig */
-class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
+/* login_error.html.twig */
+class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
 {
     private $source;
     private $macros = [];
@@ -25,6 +25,7 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'content' => [$this, 'block_content'],
         ];
     }
@@ -38,27 +39,39 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("master.html.twig", "logout.html.twig", 1);
+        $this->parent = $this->loadTemplate("master.html.twig", "login_error.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        echo "Login Error
+";
+    }
+
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
-        echo "\t<h1>Logout</h1>
-\t<p>You have successfully logged out.</p>
-\t<a href=\"";
-        // line 6
-        echo "/";
-        echo "\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+        // line 7
+        echo "\t<h2>Login Error</h2>
+\t";
+        // line 8
+        if (($context["error"] ?? null)) {
+            // line 9
+            echo "\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+\t";
+        }
+        // line 11
+        echo "\t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
 ";
     }
 
     public function getTemplateName()
     {
-        return "logout.html.twig";
+        return "login_error.html.twig";
     }
 
     public function isTraitable()
@@ -68,18 +81,23 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
 
     public function getDebugInfo()
     {
-        return array (  54 => 6,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  68 => 11,  64 => 9,  62 => 8,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block content %}
-\t<h1>Logout</h1>
-\t<p>You have successfully logged out.</p>
-\t<a href=\"{{ '/' }}\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+{% block title %}Login Error
 {% endblock %}
-", "logout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/logout.html.twig");
+
+{% block content %}
+\t<h2>Login Error</h2>
+\t{% if error %}
+\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+\t{% endif %}
+\t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
+{% endblock %}
+", "login_error.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/login_error.html.twig");
     }
 }

@@ -19,6 +19,8 @@ require_once 'login.php';
 require_once 'register.php';
 require_once 'resetpassword.php';
 
+//CUSTOMER PROFILE
+require_once 'customerprofileedit.php';
 require_once 'customerprofile.php';
 
 //CRUD CONTROLLER
