@@ -57,12 +57,13 @@ class __TwigTemplate_09312abd9872809c7a2b10eedd13fce8 extends Template
         // line 6
         echo "<div class=\"container\">
   <div class=\"row justify-content-left mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
+    <div class=\"col-md-8 col-lg-12\">
     
   <h1>Reservations</h1>
 <div class=\"table-responsive\">
-  <table class=\"table table-bordered table-striped\">
-    <thead>
+  <table class=\"table table-bordered table-striped\"></br>
+    <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+    <thead></br>
       <tr>
         <th>ID</th>
         <th>Customer ID</th>
@@ -79,68 +80,73 @@ class __TwigTemplate_09312abd9872809c7a2b10eedd13fce8 extends Template
     </thead>
     <tbody>
       ";
-        // line 29
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["reservations"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 30
+            // line 31
             echo "        <tr>
           <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 31), "html", null, true);
-            echo "</td>
-          <td>";
             // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "customer_id", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
           <td>";
             // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "vehicle_id", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "customer_id", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
           <td>";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "start_date", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "vehicle_id", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
           <td>";
             // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "end_date", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "start_date", [], "any", false, false, false, 35), "html", null, true);
             echo "</td>
           <td>";
             // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "rental_price", [], "any", false, false, false, 36), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "end_date", [], "any", false, false, false, 36), "html", null, true);
             echo "</td>
           <td>";
             // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "insurance_price", [], "any", false, false, false, 37), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "rental_price", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
           <td>";
             // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "taxes", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "insurance_price", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
           <td>";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "total", [], "any", false, false, false, 39), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "taxes", [], "any", false, false, false, 39), "html", null, true);
             echo "</td>
           <td>";
             // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "notes", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "total", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
           <td>";
             // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "payment_confirmation", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "notes", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
+          <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "payment_confirmation", [], "any", false, false, false, 42), "html", null, true);
+            echo "</td>
+          <td><a href=\"/admin/editreservation/";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 43), "html", null, true);
+            echo "\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
+          <td><a href=\"/admin/deletereservation/";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 44), "html", null, true);
+            echo "\" class=\"btn btn-danger btn-sm\">Delete</a></td>
         </tr>
       ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 47
         echo "    </tbody>
-  </table>
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
+  </table> </br>
 </div>
 ";
     }
@@ -157,7 +163,7 @@ class __TwigTemplate_09312abd9872809c7a2b10eedd13fce8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  139 => 44,  130 => 41,  126 => 40,  122 => 39,  118 => 38,  114 => 37,  110 => 36,  106 => 35,  102 => 34,  98 => 33,  94 => 32,  90 => 31,  87 => 30,  83 => 29,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  148 => 47,  139 => 44,  135 => 43,  131 => 42,  127 => 41,  123 => 40,  119 => 39,  115 => 38,  111 => 37,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  91 => 32,  88 => 31,  84 => 30,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -169,12 +175,13 @@ class __TwigTemplate_09312abd9872809c7a2b10eedd13fce8 extends Template
 {% block content %}
 <div class=\"container\">
   <div class=\"row justify-content-left mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
+    <div class=\"col-md-8 col-lg-12\">
     
   <h1>Reservations</h1>
 <div class=\"table-responsive\">
-  <table class=\"table table-bordered table-striped\">
-    <thead>
+  <table class=\"table table-bordered table-striped\"></br>
+    <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+    <thead></br>
       <tr>
         <th>ID</th>
         <th>Customer ID</th>
@@ -203,13 +210,12 @@ class __TwigTemplate_09312abd9872809c7a2b10eedd13fce8 extends Template
           <td>{{ item.total }}</td>
           <td>{{ item.notes }}</td>
           <td>{{ item.payment_confirmation }}</td>
+          <td><a href=\"/admin/editreservation/{{ item.id }}\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
+          <td><a href=\"/admin/deletereservation/{{ item.id }}\" class=\"btn btn-danger btn-sm\">Delete</a></td>
         </tr>
       {% endfor %}
     </tbody>
-  </table>
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
+  </table> </br>
 </div>
 {% endblock %}
 
