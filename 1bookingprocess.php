@@ -116,77 +116,10 @@ $app->post('/booking/trip-details', function ($request, $response, $args) {
   ));
 
   // Redirect the user to a success page
-  header('Location: success.php');
+  header('Location: http://carrentalproject.org/findmyreservation');
+  
   exit;
 });
 
 
 
-
-// 
-// // Controller action that renders the booking details page
-// function bookingDetails($request, $response, $args) {
-//   // Get the vehicle ID from the URL query parameter
-//   $vehicleId = $args['vehicleId'];
-
-//   // Retrieve the vehicle details from the database using the ID
-//   $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id=%i", $vehicleId);
-
-//   // Get the pickup and return date/time from the URL query parameters
-//   $pickupDateTime = $request->getQueryParam('pickupDateTime');
-//   $returnDateTime = $request->getQueryParam('returnDateTime');
-
-//   // Render the booking details page and pass the variables to the template
-//   return $this->get('view')->render($response, 'booking.html.twig', [
-//       'vehicle' => $vehicle,
-//       'pickupDateTime' => $pickupDateTime,
-//       'returnDateTime' => $returnDateTime
-//   ]);
-// }
-
-
-
-
-
-
-
-/////////////////////////////////// abandoned code /////////////// might reuse later ////////////
-
-
-// Display trip details form
-// $app->get('/selectdate', function ($request, $response, $args) {
-//   return $this->get('view')->render($response, 'selectdate.html.twig');
-// });
-
-// Display available vehicles for selected dates
-// $app->get('/selectvehicle', function ($request, $response, $args) {
-//   $pickupDateTime = $request->getQueryParams()['pickup_date'] . ' ' . $request->getQueryParams()['pickup_time'];
-//   $returnDateTime = $request->getQueryParams()['return_date'] . ' ' . $request->getQueryParams()['return_time'];
-
-//   $availableVehicles = DB::query("SELECT id, make, model, year, color FROM vehicles WHERE availability = 1 AND id NOT IN (
-//     SELECT id FROM vehicles WHERE (pickup_date >= '$pickupDateTime' AND pickup_date < '$returnDateTime') OR (return_date > '$pickupDateTime' AND return_date <= '$returnDateTime')
-// )");
-
-//   return $this->get('view')->render($response, 'selectvehicle.html.twig', [
-//     'availableVehicles' => $availableVehicles,
-//     'pickupDateTime' => $pickupDateTime,
-//     'returnDateTime' => $returnDateTime
-//   ]);
-// });
-
-// $app->post('/booking/{vehicle_id}', function ($request, $response, $args) {
-//   $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
-//   $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
-
-//   // Do something with the pickupDateTime and returnDateTime values, such as saving them to a database
-
-//   return $this->get('view')->render($response, 'confirmation.html.twig', [
-//       'vehicleId' => $args['vehicle_id'],
-//       'pickupDateTime' => $pickupDateTime,
-//       'returnDateTime' => $returnDateTime
-//   ]);
-// });
-
-
-// $pickupDateTime = $request->getParsedBody()['pickup_date'] . ' ' . $request->getParsedBody()['pickup_time'];
-// $returnDateTime = $request->getParsedBody()['return_date'] . ' ' . $request->getParsedBody()['return_time'];
