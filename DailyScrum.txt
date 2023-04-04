@@ -221,7 +221,7 @@ ______________________________________________________________
 - have payemnts go through and show on stripe 
 
 
-2023/04/02 Debora
+2023/04/03 Debora
 
 1. Done / not done since last scrum:
 - integrate pages of the website
@@ -239,4 +239,46 @@ ______________________________________________________________
 - how to test session logged
 - email to reset link
 - change display navigation tab after login
+
+______________________________________________________________
+
+2023/04/04 Gabriel
+
+1. Done / not done since last scrum:
+-  strip payment confirmation
+-  upon booking trip reservation, reservations table is populated, as well as a user is created
+
+2. To do until next Scrum:
+- ajax for vehicle list (and admin panel if time allows)
+- help finish admin CRUD
+- success page for payment
+- redirect to trip information after booking
+
+3. Need assistance / figure things out
+- how to add end trip date/time to db
+- change currenct from INR to CAD in Stripe
+
+
+2023/04/04 Debora
+
+1. Done / not done since last scrum:
+- integrate pages of the website
+- work on log out / login security
+- registration needs work
+- finish registration - test
+- finish login logout validatio
+- complete  find my reservation system
+- how to test session logged
+- change display navigation tab after login
+
+2. To do until next Scrum:
+- finish CRUD
+- finish CSS
+- test the whole system
+
+3. Need assistance / figure things out
+- email to reset link
+
+
+
 

@@ -59,7 +59,7 @@ class __TwigTemplate_d2cb4cce40f5606036eb83bcfb66fa1b extends Template
         echo "
 \t<body>
 \t\t<div class=\"container\">
-\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t\t<div class=\"col-md-8 col-lg-6\">
 \t\t\t\t\t<h1>Login</h1>
 \t\t\t\t\t";
@@ -72,14 +72,14 @@ class __TwigTemplate_d2cb4cce40f5606036eb83bcfb66fa1b extends Template
 \t\t\t\t\t";
         }
         // line 16
-        echo "\t\t\t\t\t<div class=\"form-group\">
+        echo "\t\t\t\t\t<div class=\"form-group- \">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
 \t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
 \t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Log in</button>
 
 
 \t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">
@@ -124,20 +124,20 @@ class __TwigTemplate_d2cb4cce40f5606036eb83bcfb66fa1b extends Template
 
 \t<body>
 \t\t<div class=\"container\">
-\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t\t<div class=\"col-md-8 col-lg-6\">
 \t\t\t\t\t<h1>Login</h1>
 \t\t\t\t\t{% if message is defined %}
 \t\t\t\t\t\t<p>{{ message }}</p>
 \t\t\t\t\t{% endif %}
-\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t<div class=\"form-group- \">
 \t\t\t\t\t\t<form method=\"post\" action=\"/login\">
 \t\t\t\t\t\t\t<label for=\"email\">Email:</label><br>
 \t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\"><br>
 
 \t\t\t\t\t\t\t<label for=\"password\">Password:</label><br>
 \t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\"><br>
-\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Log in</button>
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Log in</button>
 
 
 \t\t\t\t\t\t\t<hr style=\"margin-top: 1rem; margin-bottom: 1rem;\">

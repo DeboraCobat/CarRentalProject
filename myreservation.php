@@ -4,6 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 require_once 'init.php';
+require_once 'secrets.php';
 
 // FINDING RESERVATION USER LOGGED
 
@@ -31,3 +32,5 @@ $app->get('/myreservation', function (Request $request, Response $response) {
 
     return $response;
 });
+
+////////////////////////////////////////// STRIPE //////////////////////////////
