@@ -47,15 +47,70 @@ class __TwigTemplate_c2588a483af64a4564da1d21ec5aa24b extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Edit reservation";
+        echo "Edit Reservation
+";
     }
 
-    // line 5
+    // line 6
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
-        echo "  ";
+        // line 7
+        echo "<h1>Edit a Reservation</h1><form method=\"POST\" action=\"/admin/editreservation/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "id", [], "any", false, false, false, 7), "html", null, true);
+        echo "\">
+<label for=\"customer_id\">Customer ID:</label>
+<input type=\"text\" name=\"customer_id\" value=\"";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "customer_id", [], "any", false, false, false, 9), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"vehicle_id\">Vehicle ID:</label>
+<input type=\"text\" name=\"vehicle_id\" value=\"";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "vehicle_id", [], "any", false, false, false, 11), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"start_date\">Start Date:</label>
+<input type=\"date\" name=\"start_date\" value=\"";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "start_date", [], "any", false, false, false, 13), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"end_date\">End Date:</label>
+<input type=\"date\" name=\"end_date\" value=\"";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "end_date", [], "any", false, false, false, 15), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"rental_price\">Rental Price:</label>
+<input type=\"number\" name=\"rental_price\" value=\"";
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "rental_price", [], "any", false, false, false, 17), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"insurance_price\">Insurance Price:</label>
+<input type=\"number\" name=\"insurance_price\" value=\"";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "insurance_price", [], "any", false, false, false, 19), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"taxes\">Taxes:</label>
+<input type=\"number\" name=\"taxes\" value=\"";
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "taxes", [], "any", false, false, false, 21), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"final_total\">Total:</label>
+<input type=\"number\" name=\"final_total\" value=\"";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "final_total", [], "any", false, false, false, 23), "html", null, true);
+        echo "\" required><br><br>
+<label for=\"notes\">Notes:</label>
+<input type=\"text\" name=\"notes\" value=\"";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "notes", [], "any", false, false, false, 25), "html", null, true);
+        echo "\"><br><br>
+<label for=\"payment_confirmation\">Payment Confirmation:</label>
+<input type=\"text\" name=\"payment_confirmation\" value=\"";
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["reservation"] ?? null), "payment_confirmation", [], "any", false, false, false, 27), "html", null, true);
+        echo "\"><br><br>
+<input type=\"submit\"
+";
     }
 
     public function getTemplateName()
@@ -70,110 +125,41 @@ class __TwigTemplate_c2588a483af64a4564da1d21ec5aa24b extends Template
 
     public function getDebugInfo()
     {
-        return array (  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  110 => 27,  105 => 25,  100 => 23,  95 => 21,  90 => 19,  85 => 17,  80 => 15,  75 => 13,  70 => 11,  65 => 9,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
-{% block title %}Edit reservation{% endblock %}
-
-{% block content %}
-  {# <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-    <h1>Edit Vehicle</h1>
-
-    <form method=\"POST\" action=\"/admin/editvehicle/{{ vehicle.id }}\">
-      <div class=\"form-group\">
-        <label for=\"make\">Make:</label>
-        <input type=\"text\" id=\"make\" name=\"make\" class=\"form-control\" value=\"{{ vehicle.make }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"model\">Model:</label>
-        <input type=\"text\" id=\"model\" name=\"model\" class=\"form-control\" value=\"{{ vehicle.model }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"year\">Year:</label>
-        <input type=\"number\" id=\"year\" name=\"year\" class=\"form-control\" value=\"{{ vehicle.year }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"color\">Color:</label>
-        <input type=\"text\" id=\"color\" name=\"color\" class=\"form-control\" value=\"{{ vehicle.color }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"license_plate\">License Plate:</label>
-        <input type=\"text\" id=\"license_plate\" name=\"license_plate\" class=\"form-control\" value=\"{{ vehicle.license_plate }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"daily_rate\">Daily Rate:</label>
-        <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.daily_rate }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"availability\">Availability:</label>
-        <input type=\"text\" id=\"availability\" name=\"availability\" class=\"form-control\" value=\"{{ vehicle.availability }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"seats\">Seats:</label>
-        <input type=\"number\" id=\"seats\" name=\"seats\" class=\"form-control\" value=\"{{ vehicle.seats }}\">
-      </div>
-
-      <div class=\"form-group\">
-        <label for=\"lper100\">L/100km:</label>
-        <input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.lper100 }}\">
-      </div>
-
-      <button type=\"submit\" class=\"btn btn-primary btn-sm\">Save Changes</button>
-    </form>
-  </div> #}
+{% block title %}Edit Reservation
 {% endblock %}
 
-
-{# {% extends \"admin/master.html.twig\" %}
-
-{% block title %}Edit Vehicle{% endblock %}
-
 {% block content %}
-  <h1>Edit Vehicle</h1>
-  <form method=\"POST\" action=\"/admin/editvehicle/{{ vehicle.id }}\">
-    <label for=\"make\">Make:</label>
-    <input type=\"text\" id=\"make\" name=\"make\" value=\"{{ vehicle.make }}\"><br>
+<h1>Edit a Reservation</h1><form method=\"POST\" action=\"/admin/editreservation/{{ reservation.id }}\">
+<label for=\"customer_id\">Customer ID:</label>
+<input type=\"text\" name=\"customer_id\" value=\"{{ reservation.customer_id }}\" required><br><br>
+<label for=\"vehicle_id\">Vehicle ID:</label>
+<input type=\"text\" name=\"vehicle_id\" value=\"{{ reservation.vehicle_id }}\" required><br><br>
+<label for=\"start_date\">Start Date:</label>
+<input type=\"date\" name=\"start_date\" value=\"{{ reservation.start_date }}\" required><br><br>
+<label for=\"end_date\">End Date:</label>
+<input type=\"date\" name=\"end_date\" value=\"{{ reservation.end_date }}\" required><br><br>
+<label for=\"rental_price\">Rental Price:</label>
+<input type=\"number\" name=\"rental_price\" value=\"{{ reservation.rental_price }}\" required><br><br>
+<label for=\"insurance_price\">Insurance Price:</label>
+<input type=\"number\" name=\"insurance_price\" value=\"{{ reservation.insurance_price }}\" required><br><br>
+<label for=\"taxes\">Taxes:</label>
+<input type=\"number\" name=\"taxes\" value=\"{{ reservation.taxes }}\" required><br><br>
+<label for=\"final_total\">Total:</label>
+<input type=\"number\" name=\"final_total\" value=\"{{ reservation.final_total }}\" required><br><br>
+<label for=\"notes\">Notes:</label>
+<input type=\"text\" name=\"notes\" value=\"{{ reservation.notes }}\"><br><br>
+<label for=\"payment_confirmation\">Payment Confirmation:</label>
+<input type=\"text\" name=\"payment_confirmation\" value=\"{{ reservation.payment_confirmation }}\"><br><br>
+<input type=\"submit\"
+{% endblock %}
 
-    <label for=\"model\">Model:</label>
-    <input type=\"text\" id=\"model\" name=\"model\" value=\"{{ vehicle.model }}\"><br>
-
-    <label for=\"year\">Year:</label>
-    <input type=\"number\" id=\"year\" name=\"year\" value=\"{{ vehicle.year }}\"><br>
-
-    <label for=\"color\">Color:</label>
-    <input type=\"text\" id=\"color\" name=\"color\" value=\"{{ vehicle.color }}\"><br>
-
-    <label for=\"license_plate\">License Plate:</label>
-    <input type=\"text\" id=\"license_plate\" name=\"license_plate\" value=\"{{ vehicle.license_plate }}\"><br>
-
-    <label for=\"daily_rate\">Daily Rate:</label>
-    <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" value=\"{{ vehicle.daily_rate }}\"><br>
-
-    <label for=\"availability\">Availability:</label>
-    <input type=\"text\" id=\"availability\" name=\"availability\" value=\"{{ vehicle.availability }}\"><br>
-
-    <label for=\"seats\">Seats:</label>
-    <input type=\"number\" id=\"seats\" name=\"seats\" value=\"{{ vehicle.seats }}\"><br>
-
-    <label for=\"lper100\">L/100km:</label>
-    <input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" value=\"{{ vehicle.lper100 }}\"><br>
-
-    <input type=\"submit\" value=\"Save Changes\">
-  </form>
-{% endblock %} #}
 ", "admin/editreservation.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/editreservation.html.twig");
     }
 }
