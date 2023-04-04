@@ -32,17 +32,22 @@
   
 
   <input type="hidden" id="vehicleId" name="vehicleId" value="">
-  <input type="hidden" id="pickDateTime" name="pickDateTime" value="pickDateTime">
-  <input type="hidden" id="returnDateTime" name="returnDateTime" value="returnDateTime">
+  <input type="hidden" id="pickDateTime" name="pickDateTime" value="">
+
+  {% set returnDateTime = request.query.get('returnDate') ~ ' ' ~ request.query.get('returnTime') %}
+<input type="hidden" id="returnDateTime" name="returnDateTime" value="{{ returnDateTime }}">
+
+  {# <input type="hidden" id="returnDateTime" name="returnDateTime" value=""> #}
   <input type="hidden" id="rentalPrice" name="rentalPrice" value="{{ vehicle.daily_rate }}">
-  <input type="hidden" id="insurance" name="insurance" value="{{ vehicle.insurance_rate }}">
-  <input type="hidden" id="tax" name="tax" value="{{ vehicle.tax_rate }}">
-  <input type="hidden" id="finalPrice" name="finalPrice" value="{{ vehicle.daily_rate * rentalDays * 1.15 }}">
+  <input type="hidden" id="insurance" name="insurance" value="insurance">
+  <input type="hidden" id="tax" name="tax" value="tax">
+  <input type="hidden" id="finalPrice" name="finalPrice" value="finalPrice">
   <input type="hidden" name="make" value="{{ vehicle.make }}">
   <input type="hidden" name="model" value="{{ vehicle.model }}">
 
   <input type="submit" value="Book" id="bookButton">
 </form>
+
 
 
 
@@ -79,7 +84,7 @@ vehicleIdInput.value = vehicleId;
    </div>
 
    {# /////////////////////////////////////////////////////////////// TRIP DETAILS #}
-        <div style="flex: 1; text-align: center;">
+        <div style="flex: 1; text-align: center; margin-left: 15%;">
             <img src="/{{ vehicle.image_filepath }}" width="200">
             <h1>Your Trip Details</h1>
             <p>{{ vehicle.make }} {{ vehicle.model }}, {{ vehicle.seats }} seats</p>
@@ -95,7 +100,9 @@ vehicleIdInput.value = vehicleId;
               <input type="checkbox" name="insurance" id="insurance" checked> 
               <label for="insurance">Take insurance (10% extra)</label><br><br>
               <p>Rental Price: $<span id="rentalPrice">{{ vehicle.daily_rate * rentalDays }}</span></p>
+              <br>
               <p>Tax (15%): $<span id="tax">{{ vehicle.daily_rate * rentalDays * 0.15 }}</span></p>
+              <br>
               <p>Final Rental Price: $<span id="finalPrice">{{ vehicle.daily_rate * rentalDays * 1.15 }}</span></p>
             </form>
 

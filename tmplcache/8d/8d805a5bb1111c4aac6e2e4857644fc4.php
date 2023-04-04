@@ -33,13 +33,13 @@ class __TwigTemplate_f463326170dc92cd4082c30100da05d8 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/vehicleslist.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/vehicleslist.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -57,7 +57,7 @@ class __TwigTemplate_f463326170dc92cd4082c30100da05d8 extends Template
         // line 6
         echo "
 <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
     
   <h1>All Vehicles</h1>
@@ -156,14 +156,14 @@ class __TwigTemplate_f463326170dc92cd4082c30100da05d8 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}All Vehicles{% endblock %}
 
 {% block content %}
 
 <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
     
   <h1>All Vehicles</h1>
