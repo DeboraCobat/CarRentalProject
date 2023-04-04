@@ -3,19 +3,29 @@
 {% set message = "You don't have any reservations yet." %}
 
 {% block content %}
+<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
  <script src="https://js.stripe.com/v3/"></script>
 	<div class="container">
-		<div class="row justify-content- left mt-10 mb-10">
-			<div class="col-md-10 col-lg-10">
+		
+<div class="container mt-4">
+  <div class="row justify-content-left">
+    <div class="col-md-10 col-lg-12">
+      <hr class="my-4">
+      <ul class="no-bullets">
 				<h1>My Reservations</h1>
-				{% if reservations %}
-					 {% for reservation in reservations  %}
-						<h2>Reservation Details:</h2>
-						<ul>
+				{% if reservations %}</br>
+					 {% for reservation in reservations  %}</br>
+						<ul></br>
 							<li>Reservation ID: {{ reservation.id }}</li>
 							<li>Pick-up Date: {{ reservation.start_date }}</li>
 							<li>Return Date: {{ reservation.end_date }}</li></br>
-							<li>Vehicle:</li>
+							<li>VEHICLE:</li></br>
 							<ul>
 								<li>Make: {{ reservation.vehicle.make }}</li>
 								<li>Model: {{ reservation.vehicle.model }}</li>
@@ -29,7 +39,7 @@
 									<input type="hidden" name="address" value="{{ reservation.users.address }}">
 									<input type="hidden" name="amount" value="{{ reservation.final_total }}">
 									<input type="hidden" name="product_name" value="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}">
-									<input type="hidden" name="reservation_id" value="{{ reservation.id }}">
+									<input type="hidden" name="reservation_id" value="{{ reservation.id }}"></br></br></br>
         				{# <button type="submit" id="checkout-button">Checkout</button> #}
 								<script
 								src="https://checkout.stripe.com/checkout.js" class="stripe-button"

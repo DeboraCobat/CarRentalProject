@@ -1,54 +1,37 @@
 {% extends "master.html.twig" %}
 
-{% block title %}Customer Dashboard
-{% endblock %}
+{% block title %}Customer Dashboard{% endblock %}
 
 {% block content %}
-
-	<div class="container">
-		<div class="row justify-content-left mt-10 mb-10">
-			<div class="col-md-10 col-lg-10">
-				<h1>Your Profile</h1></br>
-				<div class="table-responsive">
-					<ul>
-						<li>
-							<strong>Name</strong>
-						</li>
-						<li>{{ userSession.first_name }}
-							{{ userSession.last_name }}</li>
-						<li>
-							<strong>Email</strong>
-						</li>
-						<li>{{ userSession.email }}</li>
-						<li>
-							<strong>Phone</strong>
-						</li>
-						<li>{{ userSession.phone }}</li>
-						<li>
-							<strong>Address</strong>
-						</li>
-						<li>{{ userSession.address }}</li>
-						<li>
-							<strong>Date of Birth</strong>
-						</li>
-						<li>{{ userSession.dob }}</li>
-						<li>
-							{# <strong>Driver's License</strong>
-						</li>
-						<li>{{ userSession.license }}</li>
-						<li>
-							<strong>License Expiration</strong>
-						</li>
-						<li>{{ userSession.license_expiration }}</li> #}
-					</li>
-				</ul>
-			</div>
-
-			<div class="mt-3">
-				<a href="/customerprofileedit" class="btn btn-primary btn-sm">Edit Profile</a>
-				<a href="/myreservation" class="btn btn-secondary btn-sm">My Reservation</a>
-			</div>
-
-		</div>
-	</div>
+<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<div class="container mt-4">
+  <div class="row justify-content-left">
+    <div class="col-md-10 col-lg-12">
+      <h1>Your Profile</h1>
+      <hr class="my-4">
+      <ul class="no-bullets">
+        <li><strong>Name:</strong> {{ userSession.first_name }} {{ userSession.last_name }}</li>
+        <li><strong>Email:</strong> {{ userSession.email }}</li>
+        <li><strong>Phone:</strong> {{ userSession.phone }}</li>
+        <li><strong>Address:</strong> {{ userSession.address }}</li>
+        <li><strong>Date of Birth:</strong> {{ userSession.dob }}</li>
+        <!--
+        <li><strong>Driver's License:</strong> {{ userSession.license }}</li>
+        <li><strong>License Expiration:</strong> {{ userSession.license_expiration }}</li>
+        -->
+      </ul>
+  
+      <div class="mt-3">
+        <a href="/customerprofileedit" class="btn btn-primary btn-sm">Edit Profile</a>
+        <a href="/myreservation" class="btn btn-secondary btn-sm">My Reservations</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

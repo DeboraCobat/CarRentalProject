@@ -47,75 +47,68 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Customer Dashboard
-";
+        echo "Customer Dashboard";
     }
 
-    // line 6
+    // line 5
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 7
-        echo "
-\t<div class=\"container\">
-\t\t<div class=\"row justify-content-left mt-10 mb-10\">
-\t\t\t<div class=\"col-md-10 col-lg-10\">
-\t\t\t\t<h1>Your Profile</h1></br>
-\t\t\t\t<div class=\"table-responsive\">
-\t\t\t\t\t<ul>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Name</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 17), "html", null, true);
-        echo "
-\t\t\t\t\t\t\t";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 18), "html", null, true);
+        // line 6
+        echo "<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<div class=\"container mt-4\">
+  <div class=\"row justify-content-left\">
+    <div class=\"col-md-10 col-lg-12\">
+      <h1>Your Profile</h1>
+      <hr class=\"my-4\">
+      <ul class=\"no-bullets\">
+        <li><strong>Name:</strong> ";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 19), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 19), "html", null, true);
         echo "</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Email</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>";
+        <li><strong>Email:</strong> ";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 20), "html", null, true);
+        echo "</li>
+        <li><strong>Phone:</strong> ";
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 21), "html", null, true);
+        echo "</li>
+        <li><strong>Address:</strong> ";
         // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 22), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 22), "html", null, true);
         echo "</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Phone</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>";
+        <li><strong>Date of Birth:</strong> ";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 23), "html", null, true);
+        echo "</li>
+        <!--
+        <li><strong>Driver's License:</strong> ";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license", [], "any", false, false, false, 25), "html", null, true);
+        echo "</li>
+        <li><strong>License Expiration:</strong> ";
         // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 26), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "license_expiration", [], "any", false, false, false, 26), "html", null, true);
         echo "</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Address</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>";
-        // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 30), "html", null, true);
-        echo "</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Date of Birth</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 34), "html", null, true);
-        echo "</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t";
-        // line 43
-        echo "\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-
-\t\t\t<div class=\"mt-3\">
-\t\t\t\t<a href=\"/customerprofileedit\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
-\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
-\t\t\t</div>
-
-\t\t</div>
-\t</div>
+        -->
+      </ul>
+  
+      <div class=\"mt-3\">
+        <a href=\"/customerprofileedit\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+        <a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservations</a>
+      </div>
+    </div>
+  </div>
+</div>
 ";
     }
 
@@ -131,65 +124,47 @@ class __TwigTemplate_bb8f4bf7eaed962c3198f33cde7b1258 extends Template
 
     public function getDebugInfo()
     {
-        return array (  108 => 43,  103 => 34,  96 => 30,  89 => 26,  82 => 22,  75 => 18,  71 => 17,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  100 => 26,  96 => 25,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  73 => 19,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-{% block title %}Customer Dashboard
-{% endblock %}
+{% block title %}Customer Dashboard{% endblock %}
 
 {% block content %}
-
-\t<div class=\"container\">
-\t\t<div class=\"row justify-content-left mt-10 mb-10\">
-\t\t\t<div class=\"col-md-10 col-lg-10\">
-\t\t\t\t<h1>Your Profile</h1></br>
-\t\t\t\t<div class=\"table-responsive\">
-\t\t\t\t\t<ul>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Name</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.first_name }}
-\t\t\t\t\t\t\t{{ userSession.last_name }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Email</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.email }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Phone</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.phone }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Address</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.address }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>Date of Birth</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.dob }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t{# <strong>Driver's License</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.license }}</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<strong>License Expiration</strong>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>{{ userSession.license_expiration }}</li> #}
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t</div>
-
-\t\t\t<div class=\"mt-3\">
-\t\t\t\t<a href=\"/customerprofileedit\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
-\t\t\t\t<a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservation</a>
-\t\t\t</div>
-
-\t\t</div>
-\t</div>
-{% endblock %}
-", "customerprofile.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/customerprofile.html.twig");
+<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+<div class=\"container mt-4\">
+  <div class=\"row justify-content-left\">
+    <div class=\"col-md-10 col-lg-12\">
+      <h1>Your Profile</h1>
+      <hr class=\"my-4\">
+      <ul class=\"no-bullets\">
+        <li><strong>Name:</strong> {{ userSession.first_name }} {{ userSession.last_name }}</li>
+        <li><strong>Email:</strong> {{ userSession.email }}</li>
+        <li><strong>Phone:</strong> {{ userSession.phone }}</li>
+        <li><strong>Address:</strong> {{ userSession.address }}</li>
+        <li><strong>Date of Birth:</strong> {{ userSession.dob }}</li>
+        <!--
+        <li><strong>Driver's License:</strong> {{ userSession.license }}</li>
+        <li><strong>License Expiration:</strong> {{ userSession.license_expiration }}</li>
+        -->
+      </ul>
+  
+      <div class=\"mt-3\">
+        <a href=\"/customerprofileedit\" class=\"btn btn-primary btn-sm\">Edit Profile</a>
+        <a href=\"/myreservation\" class=\"btn btn-secondary btn-sm\">My Reservations</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}", "customerprofile.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/customerprofile.html.twig");
     }
 }
