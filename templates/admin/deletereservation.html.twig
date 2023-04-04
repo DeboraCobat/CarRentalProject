@@ -1,0 +1,20 @@
+{% extends "admin/adminmaster.html.twig" %}
+
+{% block title %}Delete Vehicle{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-left mt-5 mb-5">
+    <div class="col-md-8 col-lg-6">
+    <p>Are you sure you want to delete the following Reservation?</p>
+    <p><strong>ID:</strong> {{ reservations.id }}</p>
+    <p><strong>Customer:</strong> {{ reservations.users.first_name }} {{ reservations.users.last_name }}</p>
+    <p><strong>Vehicle:</strong> {{ reservations.vehicle.make }} {{ reservations.vehicle.model }}</p>
+    <form method="post" action="/admin/deletereservation/{{ reservations.id }}">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
