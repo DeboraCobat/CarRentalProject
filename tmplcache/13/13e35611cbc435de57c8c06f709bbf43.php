@@ -49,7 +49,7 @@ class __TwigTemplate_e81132a99fc860a7f8e53e871fbc437f extends Template
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <!-- Combined CSS -->
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"/adminstyle.css\">
         ";
         // line 9
         $this->displayBlock('addHead', $context, $blocks);
@@ -155,7 +155,7 @@ class __TwigTemplate_e81132a99fc860a7f8e53e871fbc437f extends Template
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <!-- Combined CSS -->
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"/admin.css\">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"/adminstyle.css\">
         {% block addHead %}{% endblock %}
     </head>
      <body>

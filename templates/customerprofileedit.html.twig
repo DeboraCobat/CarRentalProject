@@ -1,0 +1,32 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Customer Edit Profile{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row justify-content-left mt-10 mb-10">
+			<div class="col-md-10 col-lg-10">
+				<h1>Edit Your Profile</h1></br>
+				<form method="POST" action="/updateprofile">
+					<label for="first_name">First Name:</label>
+					<input type="text" id="first_name" name="first_name" value="{{ userSession.first_name }}" required><br><br>
+					<label for="last_name">Last Name:</label>
+					<input type="text" id="last_name" name="last_name" value="{{ userSession.last_name }}" required><br><br>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" value="{{ userSession.email }}" required><br><br>
+					<label for="phone">Phone:</label>
+					<input type="tel" id="phone" name="phone" value="{{ userSession.phone }}" required><br><br>
+					<label for="address">Address:</label>
+					<input type="text" id="address" name="address" value="{{ userSession.address }}" required><br><br>
+					<label for="dob">Date of Birth:</label>
+					<input type="date" id="dob" name="dob" value="{{ userSession.dob }}" required><br><br>
+					<input type="submit" value="Update Profile">
+				</form>
+				<div class="mt-3">
+					<a href="/customerprofile" class="btn btn-primary btn-sm">Back to Profile</a>
+					<a href="/myreservation" class="btn btn-secondary btn-sm">My Reservation</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

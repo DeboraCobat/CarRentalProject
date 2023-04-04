@@ -42,13 +42,17 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 3
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 5
+        // line 4
         echo "\t<h1>Logout</h1>
 \t<p>You have successfully logged out.</p>
+\t<a href=\"";
+        // line 6
+        echo "/";
+        echo "\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
 ";
     }
 
@@ -64,17 +68,17 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 5,  46 => 4,  35 => 1,);
+        return array (  54 => 6,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"master.html.twig\" %}
 
-
 {% block content %}
 \t<h1>Logout</h1>
 \t<p>You have successfully logged out.</p>
+\t<a href=\"{{ '/' }}\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
 {% endblock %}
 ", "logout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/logout.html.twig");
     }

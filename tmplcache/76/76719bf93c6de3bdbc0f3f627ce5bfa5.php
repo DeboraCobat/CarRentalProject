@@ -115,7 +115,7 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 \t\t\t\t\t\t";
         // line 52
         $this->displayBlock('footer', $context, $blocks);
-        // line 79
+        // line 77
         echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -168,28 +168,26 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<div class=\"footer\">
 \t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
-\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
-\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<a href=\"#\"><img src=\"images/facebook.png\" alt=\"Facebook icon\" width=\"30\" height=\"30\"></a>
+    <a href=\"#\"><img src=\"images/instagram.png\" alt=\"Instagram icon\" width=\"30\" height=\"30\"></a>
+    <a href=\"#\"><img src=\"images/twitter.png\" alt=\"Twitter icon\" width=\"30\" height=\"30\"></a>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
-\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"newsletter\">
-\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for newsletter -->
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\tSubscribe to our newsletter
 \t\t\t\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Enter your email address\">
 \t\t\t\t\t\t\t\t\t\t<button>Subscribe</button>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t&copy;
 \t\t\t\t\t\t\t\t\t";
-        // line 77
+        // line 75
         echo 2023;
         echo "
 \t\t\t\t\t\t\t\t";
@@ -207,7 +205,7 @@ gtag('config', 'G-TVEQKKS963');
 
     public function getDebugInfo()
     {
-        return array (  193 => 77,  167 => 53,  163 => 52,  157 => 50,  151 => 11,  145 => 8,  119 => 79,  117 => 52,  114 => 51,  112 => 50,  105 => 45,  99 => 42,  95 => 40,  92 => 39,  83 => 32,  77 => 28,  75 => 27,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
+        return array (  191 => 75,  167 => 53,  163 => 52,  157 => 50,  151 => 11,  145 => 8,  119 => 77,  117 => 52,  114 => 51,  112 => 50,  105 => 45,  99 => 42,  95 => 40,  92 => 39,  83 => 32,  77 => 28,  75 => 27,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -268,21 +266,19 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<div class=\"footer\">
 \t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
-\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
-\t\t\t\t\t\t\t\t\t<div class=\"social-media\"></div>
-\t\t\t\t\t\t\t\t\t<!-- Placeholder for social media logo -->
+\t\t\t\t\t\t\t\t\t<a href=\"#\"><img src=\"images/facebook.png\" alt=\"Facebook icon\" width=\"30\" height=\"30\"></a>
+    <a href=\"#\"><img src=\"images/instagram.png\" alt=\"Instagram icon\" width=\"30\" height=\"30\"></a>
+    <a href=\"#\"><img src=\"images/twitter.png\" alt=\"Twitter icon\" width=\"30\" height=\"30\"></a>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
-\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
+\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"newsletter\">
-\t\t\t\t\t\t\t\t\t\t<!-- Placeholder for newsletter -->
+\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t\tSubscribe to our newsletter
 \t\t\t\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Enter your email address\">
 \t\t\t\t\t\t\t\t\t\t<button>Subscribe</button>
