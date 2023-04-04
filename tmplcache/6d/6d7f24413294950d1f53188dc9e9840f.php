@@ -55,90 +55,101 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
     {
         $macros = $this->macros;
         // line 6
-        echo "  <div class=\"container\">
-  <div class=\"row justify-content-left mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-    <h1>Edit Vehicle</h1>
+        echo "
+  <div class=\"container\">
+    <div class=\"row\">
+      <div class=\"col-12\">
+        <div class=\"table-responsive\">
+          <table class=\"table table-bordered table-striped\">
+          
+      <h1>Edit Vehicle</h1>
 
-    <form method=\"POST\" action=\"/admin/editvehicle/";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "id", [], "any", false, false, false, 11), "html", null, true);
+      <form method=\"POST\" action=\"/admin/editvehicle/";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "id", [], "any", false, false, false, 15), "html", null, true);
         echo "\">
-      <div class=\"form-group\">
-        <label for=\"make\">Make:</label>
-        <input type=\"text\" id=\"make\" name=\"make\" class=\"form-control\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 14), "html", null, true);
-        echo "\">
-      </div>
+        <table>
+          <tbody>
+            <tr>
+              <td><label for=\"make\">Make:</label></td>
+              <td><input type=\"text\" id=\"make\" name=\"make\" class=\"form-control\" value=\"";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 20), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"model\">Model:</label>
-        <input type=\"text\" id=\"model\" name=\"model\" class=\"form-control\" value=\"";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 19), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"model\">Model:</label></td>
+              <td><input type=\"text\" id=\"model\" name=\"model\" class=\"form-control\" value=\"";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 25), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"year\">Year:</label>
-        <input type=\"number\" id=\"year\" name=\"year\" class=\"form-control\" value=\"";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "year", [], "any", false, false, false, 24), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"year\">Year:</label></td>
+              <td><input type=\"number\" id=\"year\" name=\"year\" class=\"form-control\" value=\"";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "year", [], "any", false, false, false, 30), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"color\">Color:</label>
-        <input type=\"text\" id=\"color\" name=\"color\" class=\"form-control\" value=\"";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "color", [], "any", false, false, false, 29), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"color\">Color:</label></td>
+              <td><input type=\"text\" id=\"color\" name=\"color\" class=\"form-control\" value=\"";
+        // line 35
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "color", [], "any", false, false, false, 35), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"license_plate\">License Plate:</label>
-        <input type=\"text\" id=\"license_plate\" name=\"license_plate\" class=\"form-control\" value=\"";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "license_plate", [], "any", false, false, false, 34), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"license_plate\">License Plate:</label></td>
+              <td><input type=\"text\" id=\"license_plate\" name=\"license_plate\" class=\"form-control\" value=\"";
+        // line 40
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "license_plate", [], "any", false, false, false, 40), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"daily_rate\">Daily Rate:</label>
-        <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" class=\"form-control\" value=\"";
-        // line 39
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 39), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"daily_rate\">Daily Rate:</label></td>
+              <td><input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" class=\"form-control\" value=\"";
+        // line 45
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 45), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"availability\">Availability:</label>
-        <input type=\"text\" id=\"availability\" name=\"availability\" class=\"form-control\" value=\"";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "availability", [], "any", false, false, false, 44), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"availability\">Availability:</label></td>
+              <td><input type=\"text\" id=\"availability\" name=\"availability\" class=\"form-control\" value=\"";
+        // line 50
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "availability", [], "any", false, false, false, 50), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"seats\">Seats:</label>
-        <input type=\"number\" id=\"seats\" name=\"seats\" class=\"form-control\" value=\"";
-        // line 49
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "seats", [], "any", false, false, false, 49), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"seats\">Seats:</label></td>
+              <td><input type=\"number\" id=\"seats\" name=\"seats\" class=\"form-control\" value=\"";
+        // line 55
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "seats", [], "any", false, false, false, 55), "html", null, true);
+        echo "\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"lper100\">L/100km:</label>
-        <input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" class=\"form-control\" value=\"";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "lper100", [], "any", false, false, false, 54), "html", null, true);
-        echo "\">
-      </div>
+            <tr>
+              <td><label for=\"lper100\">L/100km:</label></td>
+              <td><input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" class=\"form-control\" value=\"";
+        // line 60
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "lper100", [], "any", false, false, false, 60), "html", null, true);
+        echo "\"></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <button type=\"submit\" class=\"btn btn-primary btn-sm\">Save Changes</button>
-    </form>
+        <button type=\"submit\" class=\"btn btn-primary btn-sm\">Save Changes</button>
+      </form>
+    </div>
   </div>
+</div>
+
 ";
     }
 
@@ -154,7 +165,7 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
 
     public function getDebugInfo()
     {
-        return array (  135 => 54,  127 => 49,  119 => 44,  111 => 39,  103 => 34,  95 => 29,  87 => 24,  79 => 19,  71 => 14,  65 => 11,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  141 => 60,  133 => 55,  125 => 50,  117 => 45,  109 => 40,  101 => 35,  93 => 30,  85 => 25,  77 => 20,  69 => 15,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -164,63 +175,72 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
 {% block title %}Edit Vehicle{% endblock %}
 
 {% block content %}
+
   <div class=\"container\">
-  <div class=\"row justify-content-left mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
-    <h1>Edit Vehicle</h1>
+    <div class=\"row\">
+      <div class=\"col-12\">
+        <div class=\"table-responsive\">
+          <table class=\"table table-bordered table-striped\">
+          
+      <h1>Edit Vehicle</h1>
 
-    <form method=\"POST\" action=\"/admin/editvehicle/{{ vehicle.id }}\">
-      <div class=\"form-group\">
-        <label for=\"make\">Make:</label>
-        <input type=\"text\" id=\"make\" name=\"make\" class=\"form-control\" value=\"{{ vehicle.make }}\">
-      </div>
+      <form method=\"POST\" action=\"/admin/editvehicle/{{ vehicle.id }}\">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for=\"make\">Make:</label></td>
+              <td><input type=\"text\" id=\"make\" name=\"make\" class=\"form-control\" value=\"{{ vehicle.make }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"model\">Model:</label>
-        <input type=\"text\" id=\"model\" name=\"model\" class=\"form-control\" value=\"{{ vehicle.model }}\">
-      </div>
+            <tr>
+              <td><label for=\"model\">Model:</label></td>
+              <td><input type=\"text\" id=\"model\" name=\"model\" class=\"form-control\" value=\"{{ vehicle.model }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"year\">Year:</label>
-        <input type=\"number\" id=\"year\" name=\"year\" class=\"form-control\" value=\"{{ vehicle.year }}\">
-      </div>
+            <tr>
+              <td><label for=\"year\">Year:</label></td>
+              <td><input type=\"number\" id=\"year\" name=\"year\" class=\"form-control\" value=\"{{ vehicle.year }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"color\">Color:</label>
-        <input type=\"text\" id=\"color\" name=\"color\" class=\"form-control\" value=\"{{ vehicle.color }}\">
-      </div>
+            <tr>
+              <td><label for=\"color\">Color:</label></td>
+              <td><input type=\"text\" id=\"color\" name=\"color\" class=\"form-control\" value=\"{{ vehicle.color }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"license_plate\">License Plate:</label>
-        <input type=\"text\" id=\"license_plate\" name=\"license_plate\" class=\"form-control\" value=\"{{ vehicle.license_plate }}\">
-      </div>
+            <tr>
+              <td><label for=\"license_plate\">License Plate:</label></td>
+              <td><input type=\"text\" id=\"license_plate\" name=\"license_plate\" class=\"form-control\" value=\"{{ vehicle.license_plate }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"daily_rate\">Daily Rate:</label>
-        <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.daily_rate }}\">
-      </div>
+            <tr>
+              <td><label for=\"daily_rate\">Daily Rate:</label></td>
+              <td><input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.daily_rate }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"availability\">Availability:</label>
-        <input type=\"text\" id=\"availability\" name=\"availability\" class=\"form-control\" value=\"{{ vehicle.availability }}\">
-      </div>
+            <tr>
+              <td><label for=\"availability\">Availability:</label></td>
+              <td><input type=\"text\" id=\"availability\" name=\"availability\" class=\"form-control\" value=\"{{ vehicle.availability }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"seats\">Seats:</label>
-        <input type=\"number\" id=\"seats\" name=\"seats\" class=\"form-control\" value=\"{{ vehicle.seats }}\">
-      </div>
+            <tr>
+              <td><label for=\"seats\">Seats:</label></td>
+              <td><input type=\"number\" id=\"seats\" name=\"seats\" class=\"form-control\" value=\"{{ vehicle.seats }}\"></td>
+            </tr>
 
-      <div class=\"form-group\">
-        <label for=\"lper100\">L/100km:</label>
-        <input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.lper100 }}\">
-      </div>
+            <tr>
+              <td><label for=\"lper100\">L/100km:</label></td>
+              <td><input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" class=\"form-control\" value=\"{{ vehicle.lper100 }}\"></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <button type=\"submit\" class=\"btn btn-primary btn-sm\">Save Changes</button>
-    </form>
+        <button type=\"submit\" class=\"btn btn-primary btn-sm\">Save Changes</button>
+      </form>
+    </div>
   </div>
+</div>
+
 {% endblock %}
-
-
 ", "admin/editvehicle.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/editvehicle.html.twig");
     }
 }

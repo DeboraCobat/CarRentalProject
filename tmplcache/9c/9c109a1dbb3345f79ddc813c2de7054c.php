@@ -62,7 +62,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
   <h1>All Users</h1>
 <div class=\"table-responsive\">
   <table class=\"table table-bordered table-striped\">
-      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add a new user</button></br>
 
     <thead></br>
       <tr>
@@ -163,7 +163,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
   <h1>All Users</h1>
 <div class=\"table-responsive\">
   <table class=\"table table-bordered table-striped\">
-      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add a new user</button></br>
 
     <thead></br>
       <tr>
