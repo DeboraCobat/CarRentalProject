@@ -56,13 +56,15 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
         $macros = $this->macros;
         // line 6
         echo "<div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-12\">
     
   <h1>All Users</h1>
 <div class=\"table-responsive\">
   <table class=\"table table-bordered table-striped\">
-    <thead>
+      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+
+    <thead></br>
       <tr>
         <th>Name</th>
         <th>Email</th>
@@ -75,54 +77,59 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
     </thead>
     <tbody>
       ";
-        // line 25
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["users"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 26
+            // line 28
             echo "        <tr>
           <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "first_name", [], "any", false, false, false, 27), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "last_name", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 28), "html", null, true);
-            echo "</td>
-          <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "first_name", [], "any", false, false, false, 29), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "last_name", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
           <td>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
           <td>";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dob", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", [], "any", false, false, false, 31), "html", null, true);
             echo "</td>
           <td>";
             // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
           <td>";
             // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license_expiration", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dob", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
+          <td>";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license", [], "any", false, false, false, 34), "html", null, true);
+            echo "</td>
+          <td>";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license_expiration", [], "any", false, false, false, 35), "html", null, true);
+            echo "</td>
+          <td><a href=\"/admin/edituser/";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 36), "html", null, true);
+            echo "\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
+          <td><a href=\"/admin/deleteuser/";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 37), "html", null, true);
+            echo "\" class=\"btn btn-danger btn-sm\">Delete</a></td>
         </tr>
       ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 40
         echo "    </tbody>
   </table>
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add User</button>
 </div>
 ";
     }
@@ -139,7 +146,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
 
     public function getDebugInfo()
     {
-        return array (  121 => 36,  112 => 33,  108 => 32,  104 => 31,  100 => 30,  96 => 29,  92 => 28,  86 => 27,  83 => 26,  79 => 25,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  131 => 40,  122 => 37,  118 => 36,  114 => 35,  110 => 34,  106 => 33,  102 => 32,  98 => 31,  94 => 30,  88 => 29,  85 => 28,  81 => 27,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,13 +157,15 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
 
 {% block content %}
 <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
-    <div class=\"col-md-8 col-lg-6\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
+    <div class=\"col-md-8 col-lg-12\">
     
   <h1>All Users</h1>
 <div class=\"table-responsive\">
   <table class=\"table table-bordered table-striped\">
-    <thead>
+      <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addreservation'\">Add a new reservation</button></br>
+
+    <thead></br>
       <tr>
         <th>Name</th>
         <th>Email</th>
@@ -177,13 +186,12 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
           <td>{{ user.dob }}</td>
           <td>{{ user.license }}</td>
           <td>{{ user.license_expiration }}</td>
+          <td><a href=\"/admin/edituser/{{ user.id }}\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
+          <td><a href=\"/admin/deleteuser/{{ user.id }}\" class=\"btn btn-danger btn-sm\">Delete</a></td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
-</div>
-<div class=\"mt-4\">
-  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='adduser'\">Add User</button>
 </div>
 {% endblock %}
 ", "admin/userslist.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/userslist.html.twig");

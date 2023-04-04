@@ -56,7 +56,7 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
         $macros = $this->macros;
         // line 6
         echo "  <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
     <h1>Edit Vehicle</h1>
 
@@ -165,7 +165,7 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
 
 {% block content %}
   <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
     <h1>Edit Vehicle</h1>
 
@@ -221,43 +221,6 @@ class __TwigTemplate_baccfb79c0425ecd0b23ab34f9e1b09c extends Template
 {% endblock %}
 
 
-{# {% extends \"admin/master.html.twig\" %}
-
-{% block title %}Edit Vehicle{% endblock %}
-
-{% block content %}
-  <h1>Edit Vehicle</h1>
-  <form method=\"POST\" action=\"/admin/editvehicle/{{ vehicle.id }}\">
-    <label for=\"make\">Make:</label>
-    <input type=\"text\" id=\"make\" name=\"make\" value=\"{{ vehicle.make }}\"><br>
-
-    <label for=\"model\">Model:</label>
-    <input type=\"text\" id=\"model\" name=\"model\" value=\"{{ vehicle.model }}\"><br>
-
-    <label for=\"year\">Year:</label>
-    <input type=\"number\" id=\"year\" name=\"year\" value=\"{{ vehicle.year }}\"><br>
-
-    <label for=\"color\">Color:</label>
-    <input type=\"text\" id=\"color\" name=\"color\" value=\"{{ vehicle.color }}\"><br>
-
-    <label for=\"license_plate\">License Plate:</label>
-    <input type=\"text\" id=\"license_plate\" name=\"license_plate\" value=\"{{ vehicle.license_plate }}\"><br>
-
-    <label for=\"daily_rate\">Daily Rate:</label>
-    <input type=\"number\" id=\"daily_rate\" name=\"daily_rate\" step=\"0.01\" value=\"{{ vehicle.daily_rate }}\"><br>
-
-    <label for=\"availability\">Availability:</label>
-    <input type=\"text\" id=\"availability\" name=\"availability\" value=\"{{ vehicle.availability }}\"><br>
-
-    <label for=\"seats\">Seats:</label>
-    <input type=\"number\" id=\"seats\" name=\"seats\" value=\"{{ vehicle.seats }}\"><br>
-
-    <label for=\"lper100\">L/100km:</label>
-    <input type=\"number\" id=\"lper100\" name=\"lper100\" step=\"0.01\" value=\"{{ vehicle.lper100 }}\"><br>
-
-    <input type=\"submit\" value=\"Save Changes\">
-  </form>
-{% endblock %} #}
 ", "admin/editvehicle.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/admin/editvehicle.html.twig");
     }
 }

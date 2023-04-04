@@ -16,10 +16,47 @@ $app->get('/admin/edituser', function (Request $request, Response $response) {
 });
 
 
-// VEHICLES
-$app->get('/admin/editvehicle', function (Request $request, Response $response) {
-    return $this->get('view')->render($response, 'admin/editvehicle.html.twig');
+// VEHICLES -----------------------------------------------------------------------------
+// $app->get('/admin/editvehicle', function (Request $request, Response $response) {
+//     return $this->get('view')->render($response, 'admin/editvehicle.html.twig');
+// });
+
+// Define the route for editing a vehicle
+$app->get('/admin/editvehicle', function ($request, $response, $args) {
+    // Retrieve all vehicles from the database
+    $vehicles = $this->db->query('SELECT * FROM vehicles')->fetchAll();
+    
+    // Render the edit vehicle form with the list of vehicles
+    return $this->view->render($response, 'admin/editvehicle.html.twig', [
+        'vehicles' => $vehicles
+    ]);
 });
+
+// Define the route for updating a vehicle
+$app->post('/admin/editvehicle/{id}', function ($request, $response, $args) {
+    $vehicleId = $args['id'];
+    
+    // Retrieve the vehicle to be edited from the database
+    $vehicle = $this->db->query('SELECT * FROM vehicles WHERE id = ' . $vehicleId)->fetch();
+    
+    // Update the vehicle with the submitted data
+    $vehicle->make = $request->getParam('make');
+    $vehicle->model = $request->getParam('model');
+    $vehicle->year = $request->getParam('year');
+    $vehicle->color = $request->getParam('color');
+    $vehicle->license_plate = $request->getParam('license_plate');
+    $vehicle->daily_rate = $request->getParam('daily_rate');
+    $vehicle->availability = $request->getParam('availability');
+    $vehicle->seats = $request->getParam('seats');
+    $vehicle->lper100 = $request->getParam('lper100');
+    
+    // Save the updated vehicle to the database
+    $result = $vehicle->save();
+    
+    // Redirect to the list of all vehicles
+    return $response->withRedirect('/admin/vehicles');
+});
+
 
 
 //RESERVATIONS
