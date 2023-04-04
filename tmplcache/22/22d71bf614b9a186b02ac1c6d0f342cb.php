@@ -57,7 +57,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
         $macros = $this->macros;
         // line 7
         echo "\t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
 
 \t\t\t\t<h1>Enter trip details</h1>
@@ -103,7 +103,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 
 {% block content %}
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
 
 \t\t\t\t<h1>Enter trip details</h1>

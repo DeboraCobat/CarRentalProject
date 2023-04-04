@@ -47,7 +47,8 @@ class __TwigTemplate_2728883367898cc197915d3c18220298 extends Template
     {
         $macros = $this->macros;
         // line 4
-        echo "    <div style=\"display: flex;\">
+        echo "<body class=\"bookingvehicle\">
+    <div style=\"display: flex;\">
         <div style=\"flex: 1;\">
             <div style=\"flex: 1;\">
     
@@ -80,28 +81,28 @@ class __TwigTemplate_2728883367898cc197915d3c18220298 extends Template
   <input type=\"hidden\" id=\"pickDateTime\" name=\"pickDateTime\" value=\"pickDateTime\">
   <input type=\"hidden\" id=\"returnDateTime\" name=\"returnDateTime\" value=\"returnDateTime\">
   <input type=\"hidden\" id=\"rentalPrice\" name=\"rentalPrice\" value=\"";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 36), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 37), "html", null, true);
         echo "\">
   <input type=\"hidden\" id=\"insurance\" name=\"insurance\" value=\"";
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "insurance_rate", [], "any", false, false, false, 37), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "insurance_rate", [], "any", false, false, false, 38), "html", null, true);
         echo "\">
   <input type=\"hidden\" id=\"tax\" name=\"tax\" value=\"";
-        // line 38
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "tax_rate", [], "any", false, false, false, 38), "html", null, true);
+        // line 39
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "tax_rate", [], "any", false, false, false, 39), "html", null, true);
         echo "\">
   <input type=\"hidden\" id=\"finalPrice\" name=\"finalPrice\" value=\"";
-        // line 39
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 39) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 40
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 40) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo "\">
   <input type=\"hidden\" name=\"make\" value=\"";
-        // line 40
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 40), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 41), "html", null, true);
         echo "\">
   <input type=\"hidden\" name=\"model\" value=\"";
-        // line 41
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 41), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 42), "html", null, true);
         echo "\">
 
   <input type=\"submit\" value=\"Book\" id=\"bookButton\">
@@ -142,40 +143,40 @@ vehicleIdInput.value = vehicleId;
    </div>
 
    ";
-        // line 81
+        // line 82
         echo "        <div style=\"flex: 1; text-align: center;\">
             <img src=\"/";
-        // line 82
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "image_filepath", [], "any", false, false, false, 82), "html", null, true);
+        // line 83
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "image_filepath", [], "any", false, false, false, 83), "html", null, true);
         echo "\" width=\"200\">
             <h1>Your Trip Details</h1>
             <p>";
-        // line 84
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 84), "html", null, true);
+        // line 85
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "make", [], "any", false, false, false, 85), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 84), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "model", [], "any", false, false, false, 85), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "seats", [], "any", false, false, false, 84), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "seats", [], "any", false, false, false, 85), "html", null, true);
         echo " seats</p>
             <p>Pickup Date and Time: <span id=\"pickupDateTime\">";
-        // line 85
+        // line 86
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, ($context["pickupDateTime"] ?? null), "Y-m-d H:i"), "html", null, true);
         echo "</span></p>
             <p>Return Date and Time: <span id=\"returnDateTime\">";
-        // line 86
+        // line 87
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, ($context["returnDateTime"] ?? null), "Y-m-d H:i"), "html", null, true);
         echo "</span></p>
 
 
             ";
-        // line 89
-        $context["rentalDays"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_date_converter($this->env, ($context["returnDateTime"] ?? null)), "diff", [0 => twig_date_converter($this->env, ($context["pickupDateTime"] ?? null))], "method", false, false, false, 89), "days", [], "any", false, false, false, 89);
         // line 90
+        $context["rentalDays"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_date_converter($this->env, ($context["returnDateTime"] ?? null)), "diff", [0 => twig_date_converter($this->env, ($context["pickupDateTime"] ?? null))], "method", false, false, false, 90), "days", [], "any", false, false, false, 90);
+        // line 91
         echo "            <p>Daily Price: \$";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 90), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 91), "html", null, true);
         echo "</p>
             <p>Rental Days: ";
-        // line 91
+        // line 92
         echo twig_escape_filter($this->env, ($context["rentalDays"] ?? null), "html", null, true);
         echo "</p>
 
@@ -183,16 +184,16 @@ vehicleIdInput.value = vehicleId;
               <input type=\"checkbox\" name=\"insurance\" id=\"insurance\" checked> 
               <label for=\"insurance\">Take insurance (10% extra)</label><br><br>
               <p>Rental Price: \$<span id=\"rentalPrice\">";
-        // line 96
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 96) * ($context["rentalDays"] ?? null)), "html", null, true);
+        // line 97
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 97) * ($context["rentalDays"] ?? null)), "html", null, true);
         echo "</span></p>
               <p>Tax (15%): \$<span id=\"tax\">";
-        // line 97
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 97) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
+        // line 98
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 98) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
         echo "</span></p>
               <p>Final Rental Price: \$<span id=\"finalPrice\">";
-        // line 98
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 98) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 99
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 99) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo "</span></p>
             </form>
 
@@ -213,44 +214,44 @@ vehicleIdInput.value = vehicleId;
               const finalPriceElement = document.getElementById('finalPrice');
 
               let totalPrice = ";
-        // line 117
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 117) * ($context["rentalDays"] ?? null)), "html", null, true);
+        // line 118
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 118) * ($context["rentalDays"] ?? null)), "html", null, true);
         echo ";
               let tax = ";
-        // line 118
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 118) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
+        // line 119
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 119) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
         echo ";
               let finalPrice = ";
-        // line 119
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 119) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 120
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 120) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo ";
 
               insuranceCheckbox.addEventListener('change', function() {
                 if (this.checked) {
                   totalPrice = ";
-        // line 123
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 123) * ($context["rentalDays"] ?? null)) * 1.1), "html", null, true);
+        // line 124
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 124) * ($context["rentalDays"] ?? null)) * 1.1), "html", null, true);
         echo ";
                   tax = ";
-        // line 124
-        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 124) * ($context["rentalDays"] ?? null)) * 1.1) * 0.15), "html", null, true);
+        // line 125
+        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 125) * ($context["rentalDays"] ?? null)) * 1.1) * 0.15), "html", null, true);
         echo ";
                   finalPrice = ";
-        // line 125
-        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 125) * ($context["rentalDays"] ?? null)) * 1.1) * 1.15), "html", null, true);
+        // line 126
+        echo twig_escape_filter($this->env, (((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 126) * ($context["rentalDays"] ?? null)) * 1.1) * 1.15), "html", null, true);
         echo ";
                 } else {
                   totalPrice = ";
-        // line 127
-        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 127) * ($context["rentalDays"] ?? null)), "html", null, true);
+        // line 128
+        echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 128) * ($context["rentalDays"] ?? null)), "html", null, true);
         echo ";
                   tax = ";
-        // line 128
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 128) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
+        // line 129
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 129) * ($context["rentalDays"] ?? null)) * 0.15), "html", null, true);
         echo ";
                   finalPrice = ";
-        // line 129
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 129) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
+        // line 130
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["vehicle"] ?? null), "daily_rate", [], "any", false, false, false, 130) * ($context["rentalDays"] ?? null)) * 1.15), "html", null, true);
         echo ";
                 }
 
@@ -279,7 +280,7 @@ vehicleIdInput.value = vehicleId;
 
     public function getDebugInfo()
     {
-        return array (  253 => 129,  249 => 128,  245 => 127,  240 => 125,  236 => 124,  232 => 123,  225 => 119,  221 => 118,  217 => 117,  195 => 98,  191 => 97,  187 => 96,  179 => 91,  174 => 90,  172 => 89,  166 => 86,  162 => 85,  154 => 84,  149 => 82,  146 => 81,  104 => 41,  100 => 40,  96 => 39,  92 => 38,  88 => 37,  84 => 36,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  254 => 130,  250 => 129,  246 => 128,  241 => 126,  237 => 125,  233 => 124,  226 => 120,  222 => 119,  218 => 118,  196 => 99,  192 => 98,  188 => 97,  180 => 92,  175 => 91,  173 => 90,  167 => 87,  163 => 86,  155 => 85,  150 => 83,  147 => 82,  105 => 42,  101 => 41,  97 => 40,  93 => 39,  89 => 38,  85 => 37,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -287,6 +288,7 @@ vehicleIdInput.value = vehicleId;
         return new Source("{% extends 'master.html.twig' %}
 
 {% block content %}
+<body class=\"bookingvehicle\">
     <div style=\"display: flex;\">
         <div style=\"flex: 1;\">
             <div style=\"flex: 1;\">
