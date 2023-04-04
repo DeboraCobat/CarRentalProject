@@ -1,11 +1,12 @@
 {% extends 'master.html.twig' %}
 
 {% block content %}
+<body class="bookingvehicle">
     <div style="display: flex;">
         <div style="flex: 1;">
             <div style="flex: 1;">
     
-    <form autocomplete="off" method="post" id="userForm" style="text-align: center;" action="checkout-charge.php">
+<form autocomplete="off" method="post" id="userForm" style="text-align: center;" action="">
   
   <label for="firstName">First Name:</label>
   <input type="text" id="firstName" name="firstName" required><br><br>
@@ -24,41 +25,39 @@
   
   <label for="dob">Date of Birth:</label>
   <input type="date" id="dob" name="dob" required><br><br>
-
-
-  <script
-    id="stripeCheckout"
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W"
-    data-amount= finalPrice
-    data-name="{{ vehicle.make }} {{ vehicle.model }}"
-    data-description=""
-    data-image="/{{ vehicle.image_filepath }}"
-    data-currency="CAD"
-    data-locale="auto">
-</script>
-<script>
-const stripeCheckout = document.getElementById('stripeCheckout');
-stripeCheckout.dataset.amount = finalPrice;
-</script>
-
  <br><br>
   
   <input type="checkbox" id="tosCheckbox" name="tosCheckbox" required>
   <label for="tosCheckbox">I have read and agree to the Terms of Service</label><br><br>
   
+
+  <input type="hidden" id="vehicleId" name="vehicleId" value="">
+  <input type="hidden" id="pickDateTime" name="pickDateTime" value="pickDateTime">
+  <input type="hidden" id="returnDateTime" name="returnDateTime" value="returnDateTime">
+  <input type="hidden" id="rentalPrice" name="rentalPrice" value="{{ vehicle.daily_rate }}">
+  <input type="hidden" id="insurance" name="insurance" value="{{ vehicle.insurance_rate }}">
+  <input type="hidden" id="tax" name="tax" value="{{ vehicle.tax_rate }}">
+  <input type="hidden" id="finalPrice" name="finalPrice" value="{{ vehicle.daily_rate * rentalDays * 1.15 }}">
   <input type="hidden" name="make" value="{{ vehicle.make }}">
   <input type="hidden" name="model" value="{{ vehicle.model }}">
-  <input type="hidden" name="final_price" value="<{{ vehicle.daily_rate * rentalDays * 1.15 }}>">
 
   <input type="submit" value="Book" id="bookButton">
 </form>
+
+
 
 <script> // to ensure that the TOS button is clicked before hitting submit
   const tosCheckbox = document.getElementById('tosCheckbox');
   const bookButton = document.getElementById('bookButton');
   const userForm = document.getElementById('userForm');
   
+  // id of vehicle is brought over
+const vehicleIdInput = document.getElementById('vehicleId');
+const vehicleId = new URLSearchParams(window.location.search).get('vehicleId');
+console.log('Vehicle ID:', vehicleId);
+vehicleIdInput.value = vehicleId;
+
+
   tosCheckbox.addEventListener('change', function() {
     if (this.checked) {
       bookButton.disabled = false;
@@ -73,17 +72,20 @@ stripeCheckout.dataset.amount = finalPrice;
       alert('Please accept the Terms of Service to continue.');
     }
   });
-</script>
+
+  </script>
 
 </div>
+   </div>
 
-        </div>
+   {# /////////////////////////////////////////////////////////////// TRIP DETAILS #}
         <div style="flex: 1; text-align: center;">
             <img src="/{{ vehicle.image_filepath }}" width="200">
             <h1>Your Trip Details</h1>
             <p>{{ vehicle.make }} {{ vehicle.model }}, {{ vehicle.seats }} seats</p>
-            <p>Pickup Date and Time: {{ pickupDateTime|date('Y-m-d H:i') }}</p>
-            <p>Return Date and Time: {{ returnDateTime|date('Y-m-d H:i') }}</p>
+            <p>Pickup Date and Time: <span id="pickupDateTime">{{ pickupDateTime|date('Y-m-d H:i') }}</span></p>
+            <p>Return Date and Time: <span id="returnDateTime">{{ returnDateTime|date('Y-m-d H:i') }}</span></p>
+
 
             {% set rentalDays = date(returnDateTime).diff(date(pickupDateTime)).days %}
             <p>Daily Price: ${{ vehicle.daily_rate }}</p>
@@ -92,12 +94,22 @@ stripeCheckout.dataset.amount = finalPrice;
             <form style="text-align: center;">
               <input type="checkbox" name="insurance" id="insurance" checked> 
               <label for="insurance">Take insurance (10% extra)</label><br><br>
-              <p>Total Rental Price: $<span id="totalPrice">{{ vehicle.daily_rate * rentalDays }}</span></p>
+              <p>Rental Price: $<span id="rentalPrice">{{ vehicle.daily_rate * rentalDays }}</span></p>
               <p>Tax (15%): $<span id="tax">{{ vehicle.daily_rate * rentalDays * 0.15 }}</span></p>
               <p>Final Rental Price: $<span id="finalPrice">{{ vehicle.daily_rate * rentalDays * 1.15 }}</span></p>
             </form>
 
             <script>
+
+                const pickupDateTimeSpan = document.getElementById('pickupDateTime');
+                const returnDateTimeSpan = document.getElementById('returnDateTime');
+
+                const pickupDateTime = pickupDateTimeSpan.innerText;
+                const returnDateTime = returnDateTimeSpan.innerText;
+
+                document.getElementById('pickDateTime').value = pickupDateTime;
+                document.getElementById('returnDateTime').value = returnDateTime;
+
               const insuranceCheckbox = document.getElementById('insurance');
               const totalPriceElement = document.getElementById('totalPrice');
               const taxElement = document.getElementById('tax');
@@ -122,6 +134,8 @@ stripeCheckout.dataset.amount = finalPrice;
                 taxElement.textContent = tax.toFixed(2);
                 finalPriceElement.textContent = finalPrice.toFixed(2);
               });
+
+
             </script>
 
         </div> 

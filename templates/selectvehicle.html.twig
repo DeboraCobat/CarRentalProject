@@ -1,6 +1,7 @@
 {% extends 'master.html.twig' %}
 
 {% block content %}
+<body class="selectvehicle">
 	<h1>Available Vehicles</h1>
 	<table>
 		<thead>
@@ -36,6 +37,7 @@
 		<input type="hidden" name="return_date" value="{{ returnDateTime }}">
 		<input type="hidden" name="return_time" value="{{ returnTime }}">
 	</form>
+	</body>
 	<script>
 		const selectBtns = document.querySelectorAll('.select-btn');
 

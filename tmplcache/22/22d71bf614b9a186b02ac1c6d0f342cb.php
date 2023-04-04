@@ -57,7 +57,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
         $macros = $this->macros;
         // line 7
         echo "\t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
 
 \t\t\t\t<h1>Enter trip details</h1>
@@ -74,7 +74,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 \t\t\t\t\t<label for=\"return_time\">Return time:</label>
 \t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
 \t\t\t\t\t<br><br>
-\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Select Vehicle</button>
 \t\t\t\t</form>
 \t\t\t";
     }
@@ -103,7 +103,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 
 {% block content %}
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
 
 \t\t\t\t<h1>Enter trip details</h1>
@@ -120,7 +120,7 @@ class __TwigTemplate_c606d0a249defb463cf6a743bdf3d7cf extends Template
 \t\t\t\t\t<label for=\"return_time\">Return time:</label>
 \t\t\t\t\t<input type=\"time\" class=\"form-group\" id=\"return_time\" name=\"return_time\" required>
 \t\t\t\t\t<br><br>
-\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Select Vehicle</button>
+\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Select Vehicle</button>
 \t\t\t\t</form>
 \t\t\t{% endblock %}
 ", "index.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\index.html.twig");
