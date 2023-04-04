@@ -34,22 +34,30 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<head>
+        echo "<!DOCTYPE html>
+<html>
+<head>
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"/\">
-\t";
-        // line 8
-        echo "</head>
-
-<div class=\"admin-sidebar\">
-    <nav class=\"sidebar\">
-        <a href=\"userslist\" class=\"list-group-item\">Users</a>
-        <a href=\"vehicleslist\" class=\"list-group-item\">Vehicles</a>
-        <a href=\"reservationslist\" class=\"list-group-item\">Reservations</a>
-    </nav>
-</div>
-";
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/adminstyle.css\">
+</head>
+<body>
+    <nav class=\"navbar navbar-expand-sm bg-light justify-content-center\">
+        <ul class=\"navbar-nav\">
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"userslist\">Users</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"vehicleslist\">Vehicles</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"reservationslist\">Reservations</a>
+                 <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"logout\">Logout</a>
+            </li>
+            </li>
+        </ul>
+    </nav>";
     }
 
     public function getTemplateName()
@@ -59,27 +67,34 @@ class __TwigTemplate_fa3bf5d6c070cbd036ad9ae8803198c4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  43 => 8,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<head>
+        return new Source("<!DOCTYPE html>
+<html>
+<head>
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"/\">
-\t{# <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
-\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js\"></script>
-\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script> #}
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/adminstyle.css\">
 </head>
-
-<div class=\"admin-sidebar\">
-    <nav class=\"sidebar\">
-        <a href=\"userslist\" class=\"list-group-item\">Users</a>
-        <a href=\"vehicleslist\" class=\"list-group-item\">Vehicles</a>
-        <a href=\"reservationslist\" class=\"list-group-item\">Reservations</a>
-    </nav>
-</div>
-", "admin/adminpanel.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\adminpanel.html.twig");
+<body>
+    <nav class=\"navbar navbar-expand-sm bg-light justify-content-center\">
+        <ul class=\"navbar-nav\">
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"userslist\">Users</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"vehicleslist\">Vehicles</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"reservationslist\">Reservations</a>
+                 <li class=\"nav-item\">
+                <a class=\"nav-link btn btn-sm\" href=\"logout\">Logout</a>
+            </li>
+            </li>
+        </ul>
+    </nav>", "admin/adminpanel.html.twig", "C:\\xampp\\htdocs\\CarRentalProject\\templates\\admin\\adminpanel.html.twig");
     }
 }

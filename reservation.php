@@ -16,8 +16,13 @@ require_once 'init.php';
 // ADMIN CAN SEE LIST OF RESERVATIONS
 
 $app->get('/admin/reservationslist', function ($request, $response, $args) {
-    return $this->get('view')->render($response,  'admin/reservationslist.html.twig');
+    $reservations = DB::query("SELECT * FROM reservations");
+    return $this->get('view')->render($response,  'admin/reservationslist.html.twig', ['reservations' => $reservations]);
 });
+
+
+
+
 
 
 // // USER CAN SEE CALENDAR
@@ -81,6 +86,24 @@ $app->post('/', function ($request, $response, $args) {
     ]);
 });
 
+// DELETE VEHICLE function //////////////////////////////////////////////////////////////////
+$app->get('/admin/deletereservation/{id}', function ($request, $response, $args) {
+    $reservations = DB::queryFirstRow("SELECT * FROM reservations WHERE id = %i", $args['id']);
+    return $this->get('view')->render($response, 'admin/deletereservation.html.twig', ['reservations' => $reservations]);
+  });
+  
+  $app->post('/admin/deletereservation/{id}', function ($request, $response, $args) {
+    $id = $args['id'];
+    $result = DB::delete('reservations', "id=%i", $id);
+    if ($result) {
+      echo '<script>alert("Reservation with id ' . $id . ' was deleted."); window.location.href="/admin/reservationslist";</script>';
+    } else {
+      echo '<script>alert("Reservation with id ' . $id . ' was not deleted."); window.location.href="/admin/reservationslist";</script>';
+    }
+  });
+
+  
+  
 
 // USER CAN SELECT DATE TO SEE CARS AVAILABLE
 
