@@ -24,7 +24,9 @@ require_once 'customerprofile.php';
 //CRUD CONTROLLER
 
 //UPDATE
-require_once 'updatecontroller.php';
+require_once 'userupdatecontroller.php';
+require_once 'vehicleupdatecontroller.php';
+// require_once 'reservationupdatecontroller.php';
 
 
 

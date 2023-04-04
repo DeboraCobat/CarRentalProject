@@ -1,99 +1,30 @@
 {% extends "admin/adminmaster.html.twig" %}
 
-{% block title %}Edit Vehicle{% endblock %}
-
-{% block content %}
-  <div class="container">
-  <div class="row justify-content-center mt-5 mb-5">
-    <div class="col-md-8 col-lg-6">
-    <h1>Edit Vehicle</h1>
-
-    <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
-      <div class="form-group">
-        <label for="make">Make:</label>
-        <input type="text" id="make" name="make" class="form-control" value="{{ vehicle.make }}">
-      </div>
-
-      <div class="form-group">
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" class="form-control" value="{{ vehicle.model }}">
-      </div>
-
-      <div class="form-group">
-        <label for="year">Year:</label>
-        <input type="number" id="year" name="year" class="form-control" value="{{ vehicle.year }}">
-      </div>
-
-      <div class="form-group">
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" class="form-control" value="{{ vehicle.color }}">
-      </div>
-
-      <div class="form-group">
-        <label for="license_plate">License Plate:</label>
-        <input type="text" id="license_plate" name="license_plate" class="form-control" value="{{ vehicle.license_plate }}">
-      </div>
-
-      <div class="form-group">
-        <label for="daily_rate">Daily Rate:</label>
-        <input type="number" id="daily_rate" name="daily_rate" step="0.01" class="form-control" value="{{ vehicle.daily_rate }}">
-      </div>
-
-      <div class="form-group">
-        <label for="availability">Availability:</label>
-        <input type="text" id="availability" name="availability" class="form-control" value="{{ vehicle.availability }}">
-      </div>
-
-      <div class="form-group">
-        <label for="seats">Seats:</label>
-        <input type="number" id="seats" name="seats" class="form-control" value="{{ vehicle.seats }}">
-      </div>
-
-      <div class="form-group">
-        <label for="lper100">L/100km:</label>
-        <input type="number" id="lper100" name="lper100" step="0.01" class="form-control" value="{{ vehicle.lper100 }}">
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
-    </form>
-  </div>
+{% block title %}Edit Vehicle
 {% endblock %}
 
-
-{# {% extends "admin/master.html.twig" %}
-
-{% block title %}Edit Vehicle{% endblock %}
-
 {% block content %}
-  <h1>Edit Vehicle</h1>
-  <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
-    <label for="make">Make:</label>
-    <input type="text" id="make" name="make" value="{{ vehicle.make }}"><br>
+h1>Edit a Reservation</h1><form method="POST" action="/admin/editreservation/{{ reservation.id }}">
+<label for="customer_id">Customer ID:</label>
+<input type="text" name="customer_id" value="{{ reservation.customer_id }}" required><br><br>
+<label for="vehicle_id">Vehicle ID:</label>
+<input type="text" name="vehicle_id" value="{{ reservation.vehicle_id }}" required><br><br>
+<label for="start_date">Start Date:</label>
+<input type="date" name="start_date" value="{{ reservation.start_date }}" required><br><br>
+<label for="end_date">End Date:</label>
+<input type="date" name="end_date" value="{{ reservation.end_date }}" required><br><br>
+<label for="rental_price">Rental Price:</label>
+<input type="number" name="rental_price" value="{{ reservation.rental_price }}" required><br><br>
+<label for="insurance_price">Insurance Price:</label>
+<input type="number" name="insurance_price" value="{{ reservation.insurance_price }}" required><br><br>
+<label for="taxes">Taxes:</label>
+<input type="number" name="taxes" value="{{ reservation.taxes }}" required><br><br>
+<label for="total">Total:</label>
+<input type="number" name="total" value="{{ reservation.total }}" required><br><br>
+<label for="notes">Notes:</label>
+<input type="text" name="notes" value="{{ reservation.notes }}"><br><br>
+<label for="payment_confirmation">Payment Confirmation:</label>
+<input type="text" name="payment_confirmation" value="{{ reservation.payment_confirmation }}"><br><br>
+<input type="submit"
+{% endblock %}
 
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="model" value="{{ vehicle.model }}"><br>
-
-    <label for="year">Year:</label>
-    <input type="number" id="year" name="year" value="{{ vehicle.year }}"><br>
-
-    <label for="color">Color:</label>
-    <input type="text" id="color" name="color" value="{{ vehicle.color }}"><br>
-
-    <label for="license_plate">License Plate:</label>
-    <input type="text" id="license_plate" name="license_plate" value="{{ vehicle.license_plate }}"><br>
-
-    <label for="daily_rate">Daily Rate:</label>
-    <input type="number" id="daily_rate" name="daily_rate" step="0.01" value="{{ vehicle.daily_rate }}"><br>
-
-    <label for="availability">Availability:</label>
-    <input type="text" id="availability" name="availability" value="{{ vehicle.availability }}"><br>
-
-    <label for="seats">Seats:</label>
-    <input type="number" id="seats" name="seats" value="{{ vehicle.seats }}"><br>
-
-    <label for="lper100">L/100km:</label>
-    <input type="number" id="lper100" name="lper100" step="0.01" value="{{ vehicle.lper100 }}"><br>
-
-    <input type="submit" value="Save Changes">
-  </form>
-{% endblock %} #}
