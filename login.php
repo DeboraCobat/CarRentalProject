@@ -112,3 +112,22 @@ $app->get('/logout', function (Request $request, Response $response, $args) use 
         'usersession' => null
     ]);
 });
+
+
+//LOGOUT ADMIN
+$app->get('/admin/logout', function (Request $request, Response $response, $args) use ($log) {
+    session_start();
+    if (isset($_SESSION['user'])) {
+        $log->debug(sprintf(
+            "Logout successful for uid=%d, from %s",
+            $_SESSION['user']['id'],
+            $_SERVER['REMOTE_ADDR']
+        ));
+
+        unset($_SESSION['user']);
+    }
+
+    return $this->get('view')->render($response, 'admin/logout.html.twig', [
+        'usersession' => null
+    ]);
+});

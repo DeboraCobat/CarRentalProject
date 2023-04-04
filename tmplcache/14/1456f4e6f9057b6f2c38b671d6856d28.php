@@ -33,13 +33,13 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/adduser.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/adduser.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -82,7 +82,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
         // line 14
         echo "
 <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
       <h1>Add a User</h1>
 
@@ -152,7 +152,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
         echo "\">
         </div>
 
-        <button type=\"submit\" class=\"btn btn-primary\">Add User</button>
+        <button type=\"submit\" class=\"btn btn-primary btn-sm\">Add User</button>
 
       </form>
     </div>
@@ -179,7 +179,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}Add User{% endblock %}
 
@@ -194,7 +194,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
 {% endif %}
 
 <div class=\"container\">
-  <div class=\"row justify-content-center mt-5 mb-5\">
+  <div class=\"row justify-content-left mt-5 mb-5\">
     <div class=\"col-md-8 col-lg-6\">
       <h1>Add a User</h1>
 
@@ -240,7 +240,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
           <input type=\"date\" class=\"form-control\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
         </div>
 
-        <button type=\"submit\" class=\"btn btn-primary\">Add User</button>
+        <button type=\"submit\" class=\"btn btn-primary btn-sm\">Add User</button>
 
       </form>
     </div>
@@ -250,7 +250,7 @@ class __TwigTemplate_9a12b06ad057d52f7b44bad87ef3fab0 extends Template
 {% endblock content %}
 
 
-{# {% extends \"admin/master.html.twig\" %}
+{# {% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}Add User{% endblock %}
 

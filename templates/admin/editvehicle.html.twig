@@ -3,98 +3,69 @@
 {% block title %}Edit Vehicle{% endblock %}
 
 {% block content %}
+
   <div class="container">
-  <div class="row justify-content-left mt-5 mb-5">
-    <div class="col-md-8 col-lg-6">
-    <h1>Edit Vehicle</h1>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+          
+      <h1>Edit Vehicle</h1>
 
-    <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
-      <div class="form-group">
-        <label for="make">Make:</label>
-        <input type="text" id="make" name="make" class="form-control" value="{{ vehicle.make }}">
-      </div>
+      <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="make">Make:</label></td>
+              <td><input type="text" id="make" name="make" class="form-control" value="{{ vehicle.make }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="model">Model:</label>
-        <input type="text" id="model" name="model" class="form-control" value="{{ vehicle.model }}">
-      </div>
+            <tr>
+              <td><label for="model">Model:</label></td>
+              <td><input type="text" id="model" name="model" class="form-control" value="{{ vehicle.model }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="year">Year:</label>
-        <input type="number" id="year" name="year" class="form-control" value="{{ vehicle.year }}">
-      </div>
+            <tr>
+              <td><label for="year">Year:</label></td>
+              <td><input type="number" id="year" name="year" class="form-control" value="{{ vehicle.year }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" class="form-control" value="{{ vehicle.color }}">
-      </div>
+            <tr>
+              <td><label for="color">Color:</label></td>
+              <td><input type="text" id="color" name="color" class="form-control" value="{{ vehicle.color }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="license_plate">License Plate:</label>
-        <input type="text" id="license_plate" name="license_plate" class="form-control" value="{{ vehicle.license_plate }}">
-      </div>
+            <tr>
+              <td><label for="license_plate">License Plate:</label></td>
+              <td><input type="text" id="license_plate" name="license_plate" class="form-control" value="{{ vehicle.license_plate }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="daily_rate">Daily Rate:</label>
-        <input type="number" id="daily_rate" name="daily_rate" step="0.01" class="form-control" value="{{ vehicle.daily_rate }}">
-      </div>
+            <tr>
+              <td><label for="daily_rate">Daily Rate:</label></td>
+              <td><input type="number" id="daily_rate" name="daily_rate" step="0.01" class="form-control" value="{{ vehicle.daily_rate }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="availability">Availability:</label>
-        <input type="text" id="availability" name="availability" class="form-control" value="{{ vehicle.availability }}">
-      </div>
+            <tr>
+              <td><label for="availability">Availability:</label></td>
+              <td><input type="text" id="availability" name="availability" class="form-control" value="{{ vehicle.availability }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="seats">Seats:</label>
-        <input type="number" id="seats" name="seats" class="form-control" value="{{ vehicle.seats }}">
-      </div>
+            <tr>
+              <td><label for="seats">Seats:</label></td>
+              <td><input type="number" id="seats" name="seats" class="form-control" value="{{ vehicle.seats }}"></td>
+            </tr>
 
-      <div class="form-group">
-        <label for="lper100">L/100km:</label>
-        <input type="number" id="lper100" name="lper100" step="0.01" class="form-control" value="{{ vehicle.lper100 }}">
-      </div>
+            <tr>
+              <td><label for="lper100">L/100km:</label></td>
+              <td><input type="number" id="lper100" name="lper100" step="0.01" class="form-control" value="{{ vehicle.lper100 }}"></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
-    </form>
+        <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+      </form>
+    </div>
   </div>
+</div>
+
 {% endblock %}
-
-
-
-{# {% extends "admin/master.html.twig" %}
-
-{% block title %}Edit Vehicle{% endblock %}
-
-{% block content %}
-  <h1>Edit Vehicle</h1>
-  <form method="POST" action="/admin/editvehicle/{{ vehicle.id }}">
-    <label for="make">Make:</label>
-    <input type="text" id="make" name="make" value="{{ vehicle.make }}"><br>
-
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="model" value="{{ vehicle.model }}"><br>
-
-    <label for="year">Year:</label>
-    <input type="number" id="year" name="year" value="{{ vehicle.year }}"><br>
-
-    <label for="color">Color:</label>
-    <input type="text" id="color" name="color" value="{{ vehicle.color }}"><br>
-
-    <label for="license_plate">License Plate:</label>
-    <input type="text" id="license_plate" name="license_plate" value="{{ vehicle.license_plate }}"><br>
-
-    <label for="daily_rate">Daily Rate:</label>
-    <input type="number" id="daily_rate" name="daily_rate" step="0.01" value="{{ vehicle.daily_rate }}"><br>
-
-    <label for="availability">Availability:</label>
-    <input type="text" id="availability" name="availability" value="{{ vehicle.availability }}"><br>
-
-    <label for="seats">Seats:</label>
-    <input type="number" id="seats" name="seats" value="{{ vehicle.seats }}"><br>
-
-    <label for="lper100">L/100km:</label>
-    <input type="number" id="lper100" name="lper100" step="0.01" value="{{ vehicle.lper100 }}"><br>
-
-    <input type="submit" value="Save Changes">
-  </form>
-{% endblock %} #}
