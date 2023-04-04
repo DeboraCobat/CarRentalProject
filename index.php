@@ -26,7 +26,7 @@ require_once 'customerprofile.php';
 //UPDATE
 require_once 'userupdatecontroller.php';
 require_once 'vehicleupdatecontroller.php';
-// require_once 'reservationupdatecontroller.php';
+require_once 'reservationupdatecontroller.php';
 
 
 

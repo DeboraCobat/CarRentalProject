@@ -1,10 +1,10 @@
 {% extends "admin/adminmaster.html.twig" %}
 
-{% block title %}Edit Vehicle
+{% block title %}Edit Reservation
 {% endblock %}
 
 {% block content %}
-h1>Edit a Reservation</h1><form method="POST" action="/admin/editreservation/{{ reservation.id }}">
+<h1>Edit a Reservation</h1><form method="POST" action="/admin/editreservation/{{ reservation.id }}">
 <label for="customer_id">Customer ID:</label>
 <input type="text" name="customer_id" value="{{ reservation.customer_id }}" required><br><br>
 <label for="vehicle_id">Vehicle ID:</label>
@@ -19,8 +19,8 @@ h1>Edit a Reservation</h1><form method="POST" action="/admin/editreservation/{{ 
 <input type="number" name="insurance_price" value="{{ reservation.insurance_price }}" required><br><br>
 <label for="taxes">Taxes:</label>
 <input type="number" name="taxes" value="{{ reservation.taxes }}" required><br><br>
-<label for="total">Total:</label>
-<input type="number" name="total" value="{{ reservation.total }}" required><br><br>
+<label for="final_total">Total:</label>
+<input type="number" name="final_total" value="{{ reservation.final_total }}" required><br><br>
 <label for="notes">Notes:</label>
 <input type="text" name="notes" value="{{ reservation.notes }}"><br><br>
 <label for="payment_confirmation">Payment Confirmation:</label>
