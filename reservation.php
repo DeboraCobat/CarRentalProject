@@ -86,6 +86,22 @@ $app->post('/', function ($request, $response, $args) {
     ]);
 });
 
+// DELETE VEHICLE function //////////////////////////////////////////////////////////////////
+$app->get('/admin/deletereservation/{id}', function ($request, $response, $args) {
+    $vehicle = DB::queryFirstRow("SELECT * FROM reservations WHERE id = %i", $args['id']);
+    return $this->get('view')->render($response, 'admin/deletereservations.html.twig', ['vehicle' => $vehicle]);
+  });
+  
+//   $app->post('/admin/deletevehicle/{id}', function ($request, $response, $args) {
+//     $id = $args['id'];
+//     $result = DB::delete('vehicles', "id=%i", $id);
+//     if ($result) {
+//       echo '<script>alert("Vehicle with id ' . $id . ' was deleted."); window.location.href="/admin/vehicleslist";</script>';
+//     } else {
+//       echo '<script>alert("Vehicle with id ' . $id . ' was not deleted."); window.location.href="/admin/vehicleslist";</script>';
+//     }
+//   });
+  
 
 // USER CAN SELECT DATE TO SEE CARS AVAILABLE
 
