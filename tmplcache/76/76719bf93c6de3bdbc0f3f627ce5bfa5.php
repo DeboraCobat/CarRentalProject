@@ -177,7 +177,7 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
 \t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
-\t\t\t\t\t\t\t\t\t\tContact us: info@yourcompany.com | 555-555-5555
+\t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
@@ -277,7 +277,7 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t\t\t<div
 \t\t\t\t\t\t\t\t\t\tclass=\"contact-info\">
 \t\t\t\t\t\t\t\t\t\t<!-- Placeholder for contact information -->
-\t\t\t\t\t\t\t\t\t\tContact us: info@yourcompany.com | 555-555-5555
+\t\t\t\t\t\t\t\t\t\tContact us: info@autogo.com | 514-312-9877
 \t\t\t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t\t\t<div
