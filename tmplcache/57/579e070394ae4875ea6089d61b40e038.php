@@ -33,13 +33,13 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/reservationslist.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/reservationslist.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -140,7 +140,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
   </table>
 </div>
 <div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
 </div>
 ";
     }
@@ -162,7 +162,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}All Reservations{% endblock %}
 
@@ -209,7 +209,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
   </table>
 </div>
 <div class=\"mt-4\">
-  <button class=\"btn btn-primary\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='reservationslist'\">Add Reservation</button>
 </div>
 {% endblock %}
 

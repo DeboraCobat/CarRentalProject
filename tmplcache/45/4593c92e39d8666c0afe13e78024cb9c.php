@@ -33,13 +33,13 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/vehicleslist.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/vehicleslist.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -120,7 +120,7 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
             // line 38
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "lper100", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
-          <td><img src=\"";
+          <td><img src=\"/";
             // line 39
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vehicle"], "image_filepath", [], "any", false, false, false, 39), "html", null, true);
             echo "\" width=\"100\"></td>
@@ -133,7 +133,12 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
         // line 42
         echo "    </tbody>
   </table> </br>
-  <button class=\"btn\" onclick=\"location.href='/admin/addvehicle'\">Add Vehicle</button></br>
+  <div class=\"mt-4\">
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addvehicle'\">Add</button>
+  <button class=\"btn btn-secondary btn-sm\" onclick=\"location.href='editvehicle'\">Edit</button>
+  <button class=\"btn btn-danger btn-sm\" onclick=\"location.href='deletevehicle'\">Delete</button>
+</div>
+
   </div></br>
 
 ";
@@ -156,7 +161,7 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}All Vehicles{% endblock %}
 
@@ -194,12 +199,17 @@ class __TwigTemplate_7f1ea5ae09642714d92f3055e3aacd12 extends Template
           <td>{{ vehicle.availability }}</td>
           <td>{{ vehicle.seats }}</td>
           <td>{{ vehicle.lper100 }}</td>
-          <td><img src=\"{{ vehicle.image_filepath }}\" width=\"100\"></td>
+          <td><img src=\"/{{ vehicle.image_filepath }}\" width=\"100\"></td>
         </tr>
       {% endfor %}
     </tbody>
   </table> </br>
-  <button class=\"btn\" onclick=\"location.href='/admin/addvehicle'\">Add Vehicle</button></br>
+  <div class=\"mt-4\">
+  <button class=\"btn btn-primary btn-sm\" onclick=\"location.href='addvehicle'\">Add</button>
+  <button class=\"btn btn-secondary btn-sm\" onclick=\"location.href='editvehicle'\">Edit</button>
+  <button class=\"btn btn-danger btn-sm\" onclick=\"location.href='deletevehicle'\">Delete</button>
+</div>
+
   </div></br>
 
 {% endblock %}

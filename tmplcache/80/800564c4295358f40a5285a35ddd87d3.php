@@ -59,7 +59,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
         echo "
 \t<body>
 \t\t<div class=\"container\">
-\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t\t<div class=\"col-md-8 col-lg-6\">
 \t\t\t\t\t<h1>Login</h1>
 \t\t\t\t\t";
@@ -124,7 +124,7 @@ class __TwigTemplate_6917f129594adac571b10ecb942d722a extends Template
 
 \t<body>
 \t\t<div class=\"container\">
-\t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
+\t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t\t<div class=\"col-md-8 col-lg-6\">
 \t\t\t\t\t<h1>Login</h1>
 \t\t\t\t\t{% if message is defined %}

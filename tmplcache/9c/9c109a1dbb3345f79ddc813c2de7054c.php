@@ -33,13 +33,13 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "admin/master.html.twig";
+        return "admin/adminmaster.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("admin/master.html.twig", "admin/userslist.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/adminmaster.html.twig", "admin/userslist.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -144,7 +144,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"admin/master.html.twig\" %}
+        return new Source("{% extends \"admin/adminmaster.html.twig\" %}
 
 {% block title %}All Users{% endblock %}
 

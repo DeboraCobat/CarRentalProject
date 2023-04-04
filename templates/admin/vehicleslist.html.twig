@@ -41,7 +41,12 @@
       {% endfor %}
     </tbody>
   </table> </br>
-  <button class="btn" onclick="location.href='/admin/addvehicle'">Add Vehicle</button></br>
+  <div class="mt-4">
+  <button class="btn btn-primary btn-sm" onclick="location.href='addvehicle'">Add</button>
+  <button class="btn btn-secondary btn-sm" onclick="location.href='editvehicle'">Edit</button>
+  <button class="btn btn-danger btn-sm" onclick="location.href='deletevehicle'">Delete</button>
+</div>
+
   </div></br>
 
 {% endblock %}

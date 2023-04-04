@@ -21,5 +21,11 @@ require_once 'resetpassword.php';
 
 require_once 'customerprofile.php';
 
+//CRUD CONTROLLER
+
+//UPDATE
+require_once 'updatecontroller.php';
+
+
 
 $app->run();
