@@ -4,15 +4,16 @@
 {% endblock %}
 
 {% block content %}
+
 	<div class="container">
 		<div class="row justify-content-left mt-5 mb-5">
-			<div class="col-md-8 col-lg-6">
+			<div class="col-md-10 col-lg-12">
 
 				<h1>Find my reservation</h1>
 				<form method="post" action="/findmyreservation">
-					<div class="form-group">
-						<label for="reservationId">Reservation ID</label>
-						<input type="number" class="form-control" id="reservationId" name="reservationId" value="{{ reservationId }}" required>
+					<div class="form-group"></br>
+						<label for="reservationId">Reservation ID</label></br>
+						<input type="number" class="form-control" id="reservationId" name="reservationId" value="{{ reservationId }}" required></br>
 					</div>
 					<button type="submit" class="btn btn-primary btn-sm">Find Reservation</button>
 				</form>

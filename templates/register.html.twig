@@ -5,9 +5,17 @@
 
 {% block content %}
 
+{% if successMessage is defined %}
+    <div class="success-message">{{ successMessage }}</div>
+{% endif %}
+
+{% if errorMessage is defined %}
+    <div class="error-message">{{ errorMessage }}</div>
+{% endif %}
+
 	<div class="container">
-		<div class="row justify-content-left mt-10 mb-10">
-			<div class="col-md-5 col-lg-5">
+			<div class="row justify-content-left mt-5 mb-5">
+				<div class="col-md-8 col-lg-6">
 				<h1>Registration</h1></br>
 
 
@@ -67,5 +75,12 @@
 			</div>
 		</div>
 	</div>
+{% if successMessage is defined %}
+    <div class="success-message">{{ successMessage }}</div>
+{% endif %}
+
+{% if errorMessage is defined %}
+    <div class="error-message">{{ errorMessage }}</div>
+{% endif %}
 
 {% endblock content %}
