@@ -24,8 +24,8 @@ $app->post('/register', function ($request, $response, $args) {
   $phone = $data['phone'];
   $email = $data['email'];
   $dob = $data['dob'];
-  $license = $data['license'];
-  $licenseExpiration = $data['license_expiration'];
+  // $license = $data['license'];
+  // $licenseExpiration = $data['license_expiration'];
 
   // Validate
   $errorList = [];
@@ -57,14 +57,14 @@ $app->post('/register', function ($request, $response, $args) {
     $errorList[] = "Date of birth is not valid";
     $dob = "";
   }
-  if (strlen($license) < 2 || strlen($license) > 20) {
-    $errorList[] = "Driver's license number must be 2-20 characters long";
-    $license = "";
-  }
-  if (!strtotime($licenseExpiration)) {
-    $errorList[] = "Driver's license expiration date is not valid";
-    $licenseExpiration = "";
-  }
+  // if (strlen($license) < 2 || strlen($license) > 20) {
+  //   $errorList[] = "Driver's license number must be 2-20 characters long";
+  //   $license = "";
+  // }
+  // if (!strtotime($licenseExpiration)) {
+  //   $errorList[] = "Driver's license expiration date is not valid";
+  //   $licenseExpiration = "";
+  // }
 
   if ($errorList) { // STATE 2: errors
     $valuesList = [
@@ -75,8 +75,8 @@ $app->post('/register', function ($request, $response, $args) {
       'phone' => $phone,
       'email' => $email,
       'dob' => $dob,
-      'license' => $license,
-      'license_expiration' => $licenseExpiration
+      // 'license' => $license,
+      // 'license_expiration' => $licenseExpiration
     ];
     return $this->get('view')->render($response, 'register.html.twig', ['errorList' => $errorList, 'v' => $valuesList]);
   } else {
@@ -94,8 +94,8 @@ $app->post('/register', function ($request, $response, $args) {
       'phone' => $phone,
       'email' => $email,
       'dob' => $dob,
-      'license' => $license,
-      'license_expiration' => $licenseExpiration
+      // 'license' => $license,
+      // 'license_expiration' => $licenseExpiration
     ]);
 
     $successMessage = "User added successfully!";

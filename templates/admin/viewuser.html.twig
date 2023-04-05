@@ -22,8 +22,8 @@
 <th>Phone</th>
 <th>Email</th>
 <th>Date of Birth</th>
-<th>Driver's License</th>
-<th>License Expiration</th>
+{# <th>Driver's License</th>
+<th>License Expiration</th> #}
 </tr>
 </thead>
 <tbody>
@@ -36,8 +36,8 @@
 <td>{{ user.phone }}</td>
 <td>{{ user.email }}</td>
 <td>{{ user.dob|date("m/d/Y") }}</td>
-<td>{{ user.license }}</td>
-<td>{{ user.license_expiration|date("m/d/Y") }}</td>
+{# <td>{{ user.license }}</td>
+<td>{{ user.license_expiration|date("m/d/Y") }}</td> #}
 </tr>
 {% endfor %}
 </tbody>

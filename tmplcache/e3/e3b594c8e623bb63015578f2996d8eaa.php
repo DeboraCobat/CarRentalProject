@@ -116,22 +116,9 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
         echo "\">
 \t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<label for=\"license\">Driver's License:</label>
-\t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"license\" name=\"license\" value=\"";
-        // line 56
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license", [], "any", false, false, false, 56), "html", null, true);
-        echo "\">
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<label for=\"license_expiration\">License Expiration:</label>
-\t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"license_expiration\" name=\"license_expiration\" value=\"";
-        // line 61
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["u"] ?? null), "license_expiration", [], "any", false, false, false, 61), "html", null, true);
-        echo "\">
-\t\t\t\t\t</div>
-
+\t\t\t\t\t";
+        // line 63
+        echo "
 \t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Submit</button>
 \t\t\t\t</form>
 
@@ -154,7 +141,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
     public function getDebugInfo()
     {
-        return array (  131 => 61,  123 => 56,  115 => 51,  107 => 46,  99 => 41,  91 => 36,  86 => 33,  80 => 23,  72 => 18,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  121 => 63,  115 => 51,  107 => 46,  99 => 41,  91 => 36,  86 => 33,  80 => 23,  72 => 18,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -212,7 +199,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 \t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"dob\" name=\"dob\" value=\"{{ u.dob }}\">
 \t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t{# <div class=\"form-group\">
 \t\t\t\t\t\t<label for=\"license\">Driver's License:</label>
 \t\t\t\t\t\t<input type=\"text\" class=\"form-control-sm\" id=\"license\" name=\"license\" value=\"{{ u.license }}\">
 \t\t\t\t\t</div>
@@ -220,7 +207,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 \t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t<label for=\"license_expiration\">License Expiration:</label>
 \t\t\t\t\t\t<input type=\"date\" class=\"form-control-sm\" id=\"license_expiration\" name=\"license_expiration\" value=\"{{ u.license_expiration }}\">
-\t\t\t\t\t</div>
+\t\t\t\t\t</div> #}
 
 \t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Submit</button>
 \t\t\t\t</form>
