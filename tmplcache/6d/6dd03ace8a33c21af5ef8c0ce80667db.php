@@ -110,6 +110,28 @@ ul {
   </div>
 </div>
 ";
+        // line 37
+        if (array_key_exists("successMessage", $context)) {
+            // line 38
+            echo "    <div class=\"success-message\">";
+            echo twig_escape_filter($this->env, ($context["successMessage"] ?? null), "html", null, true);
+            echo "</div>
+";
+        }
+        // line 40
+        echo "
+";
+        // line 41
+        if (array_key_exists("errorMessage", $context)) {
+            // line 42
+            echo "    <div class=\"error-message\">";
+            echo twig_escape_filter($this->env, ($context["errorMessage"] ?? null), "html", null, true);
+            echo "</div>
+";
+        }
+        // line 44
+        echo "
+";
     }
 
     public function getTemplateName()
@@ -124,7 +146,7 @@ ul {
 
     public function getDebugInfo()
     {
-        return array (  100 => 26,  96 => 25,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  73 => 19,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  133 => 44,  127 => 42,  125 => 41,  122 => 40,  116 => 38,  114 => 37,  100 => 26,  96 => 25,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  73 => 19,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -165,6 +187,14 @@ ul {
     </div>
   </div>
 </div>
+{% if successMessage is defined %}
+    <div class=\"success-message\">{{ successMessage }}</div>
+{% endif %}
+
+{% if errorMessage is defined %}
+    <div class=\"error-message\">{{ errorMessage }}</div>
+{% endif %}
+
 {% endblock %}", "customerprofile.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/customerprofile.html.twig");
     }
 }

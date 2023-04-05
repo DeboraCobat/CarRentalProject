@@ -56,15 +56,19 @@ class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
     {
         $macros = $this->macros;
         // line 7
-        echo "\t<h2>Login Error</h2>
+        echo "<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t<h2>Login Error</h2></br>
 \t";
-        // line 8
+        // line 11
         if (($context["error"] ?? null)) {
-            // line 9
-            echo "\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+            // line 12
+            echo "\t\t<p>Your login attempt failed.</p></br>
+\t\t<p>Please check your email and password and try again.</p></br></br>
 \t";
         }
-        // line 11
+        // line 15
         echo "\t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
 ";
     }
@@ -81,7 +85,7 @@ class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  68 => 11,  64 => 9,  62 => 8,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  72 => 15,  67 => 12,  65 => 11,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -92,9 +96,13 @@ class __TwigTemplate_683280f730fc85e6fdb0fcd1efa9e3f0 extends Template
 {% endblock %}
 
 {% block content %}
-\t<h2>Login Error</h2>
+<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t<h2>Login Error</h2></br>
 \t{% if error %}
-\t\t<p>Your login attempt failed. Please check your email and password and try again.</p>
+\t\t<p>Your login attempt failed.</p></br>
+\t\t<p>Please check your email and password and try again.</p></br></br>
 \t{% endif %}
 \t<a href=\"/login\" class=\"btn btn-primary btn-sm\">Try Again</a>
 {% endblock %}

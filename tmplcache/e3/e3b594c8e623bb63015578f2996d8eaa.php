@@ -81,7 +81,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
         echo "
 \t<div class=\"container\">
 \t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
-\t\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t<div class=\"col-md-56 col-lg-6\">
 \t\t\t\t<h1>Registration</h1></br>
 
 
@@ -206,7 +206,7 @@ class __TwigTemplate_fdeb42060499aa367ddcacd63954b50a extends Template
 
 \t<div class=\"container\">
 \t\t\t<div class=\"row justify-content-left mt-5 mb-5\">
-\t\t\t\t<div class=\"col-md-8 col-lg-6\">
+\t\t\t\t<div class=\"col-md-56 col-lg-6\">
 \t\t\t\t<h1>Registration</h1></br>
 
 

@@ -4,9 +4,13 @@
 {% endblock %}
 
 {% block content %}
-	<h2>Login Error</h2>
+<div class="container mt-4">
+			<div class="row justify-content-left">
+				<div class="col-md-10 col-lg-12">
+	<h2>Login Error</h2></br>
 	{% if error %}
-		<p>Your login attempt failed. Please check your email and password and try again.</p>
+		<p>Your login attempt failed.</p></br>
+		<p>Please check your email and password and try again.</p></br></br>
 	{% endif %}
 	<a href="/login" class="btn btn-primary btn-sm">Try Again</a>
 {% endblock %}

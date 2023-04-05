@@ -47,10 +47,13 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
     {
         $macros = $this->macros;
         // line 4
-        echo "\t<h1>Logout</h1>
-\t<p>You have successfully logged out.</p>
+        echo "<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t<h1>Logout</h1></br>
+\t<p>You have successfully logged out.</p></br></br></br>
 \t<a href=\"";
-        // line 6
+        // line 9
         echo "/";
         echo "\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
 ";
@@ -68,7 +71,7 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
 
     public function getDebugInfo()
     {
-        return array (  54 => 6,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  57 => 9,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -76,8 +79,11 @@ class __TwigTemplate_224a093aac6abe30072de894623f0b13 extends Template
         return new Source("{% extends \"master.html.twig\" %}
 
 {% block content %}
-\t<h1>Logout</h1>
-\t<p>You have successfully logged out.</p>
+<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t<h1>Logout</h1></br>
+\t<p>You have successfully logged out.</p></br></br></br>
 \t<a href=\"{{ '/' }}\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
 {% endblock %}
 ", "logout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/logout.html.twig");
