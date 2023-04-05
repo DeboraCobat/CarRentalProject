@@ -19,8 +19,8 @@
         <th>Phone</th>
         <th>Address</th>
         <th>Date of Birth</th>
-        <th>Driver's License</th>
-        <th>License Expiration</th>
+        {# <th>Driver's License</th>
+        <th>License Expiration</th> #}
       </tr>
     </thead>
     <tbody>
@@ -31,8 +31,8 @@
           <td>{{ user.phone }}</td>
           <td>{{ user.address }}</td>
           <td>{{ user.dob }}</td>
-          <td>{{ user.license }}</td>
-          <td>{{ user.license_expiration }}</td>
+          {# <td>{{ user.license }}</td>
+          <td>{{ user.license_expiration }}</td> #}
           <td><a href="/admin/edituser/{{ user.id }}" class="btn btn-secondary btn-sm">Edit</a></td>
           <td><a href="/admin/deleteuser/{{ user.id }}" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>

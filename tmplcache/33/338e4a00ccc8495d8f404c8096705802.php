@@ -38,148 +38,148 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 3
-        $context["message"] = "You don't have any reservations yet.";
-        // line 1
         $this->parent = $this->loadTemplate("master.html.twig", "myreservation.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 4
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
-        echo "<style>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-</style>
- <script src=\"https://js.stripe.com/v3/\"></script>
-\t<div class=\"container\">
-\t\t
-<div class=\"container mt-4\">
-  <div class=\"row justify-content-left\">
-    <div class=\"col-md-10 col-lg-12\">
-      <hr class=\"my-4\">
-      <ul class=\"no-bullets\">
-\t\t\t\t<h1>My Reservations</h1>
-\t\t\t\t";
-        // line 22
+        // line 5
+        echo "\t\t\t\t<style>
+\t\t\t\t\tul {
+\t\t\t\t\t\tlist-style: none;
+\t\t\t\t\t\tpadding: 0;
+\t\t\t\t\t\tmargin: 0;
+\t\t\t\t\t}
+\t\t\t\t</style>
+\t\t\t\t<script src=\"https://js.stripe.com/v3/\"></script>
+\t\t\t\t<div class=\"container\">
+
+\t\t\t\t\t<div class=\"container mt-4\">
+\t\t\t\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t\t\t\t\t\t\t\t<hr class=\"my-4\">
+\t\t\t\t\t\t\t\t<ul class=\"no-bullets\">
+\t\t\t\t\t\t\t\t\t<h1>My Reservations</h1>
+\t\t\t\t\t\t\t\t\t";
+        // line 21
         if (($context["reservations"] ?? null)) {
-            echo "</br>
-\t\t\t\t\t ";
+            // line 22
+            echo "\t\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t\t";
             // line 23
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["reservations"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-                echo "</br>
-\t\t\t\t\t\t<ul></br>
-\t\t\t\t\t\t\t<li>Reservation ID: ";
-                // line 25
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 25), "html", null, true);
-                echo "</li>
-\t\t\t\t\t\t\t<li>Pick-up Date: ";
-                // line 26
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "start_date", [], "any", false, false, false, 26), "html", null, true);
-                echo "</li>
-\t\t\t\t\t\t\t<li>Return Date: ";
+                // line 24
+                echo "\t\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t\t<ul></br>
+\t\t\t\t\t\t\t\t\t<li>Reservation ID:
+\t\t\t\t\t\t\t\t\t\t";
                 // line 27
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "end_date", [], "any", false, false, false, 27), "html", null, true);
-                echo "</li></br>
-\t\t\t\t\t\t\t<li>VEHICLE:</li></br>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>Make: ";
-                // line 30
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 30), "make", [], "any", false, false, false, 30), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 27), "html", null, true);
                 echo "</li>
-\t\t\t\t\t\t\t\t<li>Model: ";
+\t\t\t\t\t\t\t\t\t<li>Pick-up Date:
+\t\t\t\t\t\t\t\t\t\t";
+                // line 29
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "start_date", [], "any", false, false, false, 29), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t\t<li>Return Date:
+\t\t\t\t\t\t\t\t\t\t";
                 // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 31), "model", [], "any", false, false, false, 31), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "end_date", [], "any", false, false, false, 31), "html", null, true);
                 echo "</li>
-\t\t\t\t\t\t\t\t<li>Color: ";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 32), "color", [], "any", false, false, false, 32), "html", null, true);
+\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t<li>VEHICLE:</li>
+\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li>Make:
+\t\t\t\t\t\t\t\t\t";
+                // line 37
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 37), "make", [], "any", false, false, false, 37), "html", null, true);
                 echo "</li>
-\t\t\t\t\t\t\t\t<li>License Plate: ";
-                // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 33), "license_plate", [], "any", false, false, false, 33), "html", null, true);
+\t\t\t\t\t\t\t\t<li>Model:
+\t\t\t\t\t\t\t\t\t";
+                // line 39
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 39), "model", [], "any", false, false, false, 39), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t<li>Color:
+\t\t\t\t\t\t\t\t\t";
+                // line 41
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 41), "color", [], "any", false, false, false, 41), "html", null, true);
+                echo "</li>
+\t\t\t\t\t\t\t\t<li>License Plate:
+\t\t\t\t\t\t\t\t\t";
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 43), "license_plate", [], "any", false, false, false, 43), "html", null, true);
                 echo "</li>
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t<form action=\"checkout-charge.php\" method=\"POST\">
-\t\t\t\t\t\t\t \t\t<input type=\"hidden\" name=\"c_name\" value=\"";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "customer_id", [], "any", false, false, false, 37), "html", null, true);
-                echo "\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"phone\" value=\"";
-                // line 38
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 38), "first_name", [], "any", false, false, false, 38), "html", null, true);
-                echo " ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 38), "last_name", [], "any", false, false, false, 38), "html", null, true);
-                echo "\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"address\" value=\"";
-                // line 39
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 39), "address", [], "any", false, false, false, 39), "html", null, true);
-                echo "\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"amount\" value=\"";
-                // line 40
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "final_total", [], "any", false, false, false, 40), "html", null, true);
-                echo "\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"product_name\" value=\"";
-                // line 41
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 41), "make", [], "any", false, false, false, 41), "html", null, true);
-                echo " ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 41), "model", [], "any", false, false, false, 41), "html", null, true);
-                echo "\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"";
-                // line 42
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 42), "html", null, true);
-                echo "\"></br></br></br>
-        \t\t\t\t";
-                // line 44
-                echo "\t\t\t\t\t\t\t\t<script
-\t\t\t\t\t\t\t\tsrc=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
-\t\t\t\t\t\t\t\tdata-key=\"pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W\"
-\t\t\t\t\t\t\t\tdata-amount=\"";
+\t\t\t\t\t\t<form action=\"checkout-charge.php\" method=\"POST\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"c_name\" value=\"";
                 // line 47
-                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["reservation"], "final_total", [], "any", false, false, false, 47) * 100), "html", null, true);
-                echo "\"
-\t\t\t\t\t\t\t\tdata-name=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "customer_id", [], "any", false, false, false, 47), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"phone\" value=\"";
                 // line 48
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 48), "make", [], "any", false, false, false, 48), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 48), "first_name", [], "any", false, false, false, 48), "html", null, true);
                 echo " ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 48), "model", [], "any", false, false, false, 48), "html", null, true);
-                echo "\"
-\t\t\t\t\t\t\t\tdata-image=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 48), "last_name", [], "any", false, false, false, 48), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"address\" value=\"";
                 // line 49
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicles"] ?? null), "image_filepath", [], "any", false, false, false, 49), "html", null, true);
-                echo "\"
-\t\t\t\t\t\t\t\tdata-currency=\"cad\"
-\t\t\t\t\t\t\t\tdata-locale=\"auto\">
-\t\t\t\t\t\t\t\t</script>
-      \t\t\t\t</form>
-\t\t\t\t\t";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "users", [], "any", false, false, false, 49), "address", [], "any", false, false, false, 49), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"amount\" value=\"";
+                // line 50
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "final_total", [], "any", false, false, false, 50), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"product_name\" value=\"";
+                // line 51
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 51), "make", [], "any", false, false, false, 51), "html", null, true);
+                echo " ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 51), "model", [], "any", false, false, false, 51), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"";
+                // line 52
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 52), "html", null, true);
+                echo "\"></br>
+\t\t\t\t\t\t";
+                // line 54
+                echo "\t\t\t\t\t\t<script src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\" data-key=\"pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W\" data-amount=\"";
+                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["reservation"], "final_total", [], "any", false, false, false, 54) * 100), "html", null, true);
+                echo "\" data-name=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 54), "make", [], "any", false, false, false, 54), "html", null, true);
+                echo " ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["reservation"], "vehicle", [], "any", false, false, false, 54), "model", [], "any", false, false, false, 54), "html", null, true);
+                echo "\" data-image=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["vehicles"] ?? null), "image_filepath", [], "any", false, false, false, 54), "html", null, true);
+                echo "\" data-currency=\"cad\" data-locale=\"auto\"></script>
+\t\t\t\t\t</form>
+\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 55
-            echo "\t\t\t\t";
+            // line 57
+            echo "\t\t\t";
         } else {
-            // line 56
-            echo "\t\t\t\t\t<p>";
+            // line 58
+            echo "\t\t\t\t<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-            echo "</p>
-\t\t\t\t";
+            echo "</p></br></br></br>
+\t\t\t\t<a href=\"";
+            // line 59
+            echo "/";
+            echo "\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+\t\t\t";
         }
-        // line 58
-        echo "\t\t\t</div>
-\t\t</div>
+        // line 61
+        echo "\t\t</div>
 \t</div>
-";
+</div>";
     }
 
     public function getTemplateName()
@@ -194,73 +194,74 @@ ul {
 
     public function getDebugInfo()
     {
-        return array (  179 => 58,  173 => 56,  170 => 55,  158 => 49,  152 => 48,  148 => 47,  143 => 44,  139 => 42,  133 => 41,  129 => 40,  125 => 39,  119 => 38,  115 => 37,  108 => 33,  104 => 32,  100 => 31,  96 => 30,  90 => 27,  86 => 26,  82 => 25,  75 => 23,  71 => 22,  53 => 6,  49 => 5,  44 => 1,  42 => 3,  35 => 1,);
+        return array (  180 => 61,  175 => 59,  170 => 58,  167 => 57,  151 => 54,  147 => 52,  141 => 51,  137 => 50,  133 => 49,  127 => 48,  123 => 47,  116 => 43,  111 => 41,  106 => 39,  101 => 37,  92 => 31,  87 => 29,  82 => 27,  77 => 24,  73 => 23,  70 => 22,  68 => 21,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'master.html.twig' %}
 
-{% set message = \"You don't have any reservations yet.\" %}
 
 {% block content %}
-<style>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-</style>
- <script src=\"https://js.stripe.com/v3/\"></script>
-\t<div class=\"container\">
-\t\t
-<div class=\"container mt-4\">
-  <div class=\"row justify-content-left\">
-    <div class=\"col-md-10 col-lg-12\">
-      <hr class=\"my-4\">
-      <ul class=\"no-bullets\">
-\t\t\t\t<h1>My Reservations</h1>
-\t\t\t\t{% if reservations %}</br>
-\t\t\t\t\t {% for reservation in reservations  %}</br>
-\t\t\t\t\t\t<ul></br>
-\t\t\t\t\t\t\t<li>Reservation ID: {{ reservation.id }}</li>
-\t\t\t\t\t\t\t<li>Pick-up Date: {{ reservation.start_date }}</li>
-\t\t\t\t\t\t\t<li>Return Date: {{ reservation.end_date }}</li></br>
-\t\t\t\t\t\t\t<li>VEHICLE:</li></br>
+\t\t\t\t<style>
+\t\t\t\t\tul {
+\t\t\t\t\t\tlist-style: none;
+\t\t\t\t\t\tpadding: 0;
+\t\t\t\t\t\tmargin: 0;
+\t\t\t\t\t}
+\t\t\t\t</style>
+\t\t\t\t<script src=\"https://js.stripe.com/v3/\"></script>
+\t\t\t\t<div class=\"container\">
+
+\t\t\t\t\t<div class=\"container mt-4\">
+\t\t\t\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t\t\t\t\t\t\t\t<hr class=\"my-4\">
+\t\t\t\t\t\t\t\t<ul class=\"no-bullets\">
+\t\t\t\t\t\t\t\t\t<h1>My Reservations</h1>
+\t\t\t\t\t\t\t\t\t{% if reservations %}
+\t\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t\t{% for reservation in reservations  %}
+\t\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t\t<ul></br>
+\t\t\t\t\t\t\t\t\t<li>Reservation ID:
+\t\t\t\t\t\t\t\t\t\t{{ reservation.id }}</li>
+\t\t\t\t\t\t\t\t\t<li>Pick-up Date:
+\t\t\t\t\t\t\t\t\t\t{{ reservation.start_date }}</li>
+\t\t\t\t\t\t\t\t\t<li>Return Date:
+\t\t\t\t\t\t\t\t\t\t{{ reservation.end_date }}</li>
+\t\t\t\t\t\t\t\t</br>
+\t\t\t\t\t\t\t\t<li>VEHICLE:</li>
+\t\t\t\t\t\t\t</br>
 \t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li>Make: {{ reservation.vehicle.make }}</li>
-\t\t\t\t\t\t\t\t<li>Model: {{ reservation.vehicle.model }}</li>
-\t\t\t\t\t\t\t\t<li>Color: {{ reservation.vehicle.color }}</li>
-\t\t\t\t\t\t\t\t<li>License Plate: {{ reservation.vehicle.license_plate }}</li>
+\t\t\t\t\t\t\t\t<li>Make:
+\t\t\t\t\t\t\t\t\t{{ reservation.vehicle.make }}</li>
+\t\t\t\t\t\t\t\t<li>Model:
+\t\t\t\t\t\t\t\t\t{{ reservation.vehicle.model }}</li>
+\t\t\t\t\t\t\t\t<li>Color:
+\t\t\t\t\t\t\t\t\t{{ reservation.vehicle.color }}</li>
+\t\t\t\t\t\t\t\t<li>License Plate:
+\t\t\t\t\t\t\t\t\t{{ reservation.vehicle.license_plate }}</li>
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t<form action=\"checkout-charge.php\" method=\"POST\">
-\t\t\t\t\t\t\t \t\t<input type=\"hidden\" name=\"c_name\" value=\"{{ reservation.customer_id }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"phone\" value=\"{{ reservation.users.first_name }} {{ reservation.users.last_name }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"address\" value=\"{{ reservation.users.address }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"amount\" value=\"{{ reservation.final_total }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"product_name\" value=\"{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}\">
-\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"{{ reservation.id }}\"></br></br></br>
-        \t\t\t\t{# <button type=\"submit\" id=\"checkout-button\">Checkout</button> #}
-\t\t\t\t\t\t\t\t<script
-\t\t\t\t\t\t\t\tsrc=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
-\t\t\t\t\t\t\t\tdata-key=\"pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W\"
-\t\t\t\t\t\t\t\tdata-amount=\"{{ reservation.final_total * 100 }}\"
-\t\t\t\t\t\t\t\tdata-name=\"{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}\"
-\t\t\t\t\t\t\t\tdata-image=\"{{ vehicles.image_filepath }}\"
-\t\t\t\t\t\t\t\tdata-currency=\"cad\"
-\t\t\t\t\t\t\t\tdata-locale=\"auto\">
-\t\t\t\t\t\t\t\t</script>
-      \t\t\t\t</form>
-\t\t\t\t\t{% endfor %}
-\t\t\t\t{% else %}
-\t\t\t\t\t<p>{{ message }}</p>
-\t\t\t\t{% endif %}
-\t\t\t</div>
+\t\t\t\t\t\t<form action=\"checkout-charge.php\" method=\"POST\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"c_name\" value=\"{{ reservation.customer_id }}\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"phone\" value=\"{{ reservation.users.first_name }} {{ reservation.users.last_name }}\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"address\" value=\"{{ reservation.users.address }}\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"amount\" value=\"{{ reservation.final_total }}\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"product_name\" value=\"{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}\">
+\t\t\t\t\t\t\t<input type=\"hidden\" name=\"reservation_id\" value=\"{{ reservation.id }}\"></br>
+\t\t\t\t\t\t{# <button type=\"submit\" id=\"checkout-button\">Checkout</button> #}
+\t\t\t\t\t\t<script src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\" data-key=\"pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W\" data-amount=\"{{ reservation.final_total * 100 }}\" data-name=\"{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}\" data-image=\"{{ vehicles.image_filepath }}\" data-currency=\"cad\" data-locale=\"auto\"></script>
+\t\t\t\t\t</form>
+\t\t\t\t{% endfor %}
+\t\t\t{% else %}
+\t\t\t\t<p>{{ message }}</p></br></br></br>
+\t\t\t\t<a href=\"{{ '/' }}\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+\t\t\t{% endif %}
 \t\t</div>
 \t</div>
-{% endblock %}
-
+</div>{% endblock %}
 ", "myreservation.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/carrentalproject/templates/myreservation.html.twig");
     }
 }

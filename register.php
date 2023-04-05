@@ -15,7 +15,6 @@ $app->get('/register', function ($request, $response, $args) {
 // adding the user to users list
 $app->post('/register', function ($request, $response, $args) {
 
-  // Extract values submitted
   $data = $request->getParsedBody();
   $firstName = $data['first_name'];
   $lastName = $data['last_name'];

@@ -11,15 +11,13 @@ require_once 'init.php';
 $app->get('/admin/editvehicle/{id}', function ($request, $response, $args) {
     $vehicleId = $args['id'];
 
-    // Retrieve the vehicle to be edited from the database
     $vehicles = DB::query("SELECT * FROM vehicles WHERE id = %i", $vehicleId);
     $vehicle = reset($vehicles);
 
-    // Render the edit vehicle form with the selected vehicle
     return $this->get('view')->render($response, 'admin/editvehicle.html.twig', ['vehicle' => $vehicle]);
 });
 
-// Save method:
+// 
 class Vehicle
 {
     public $id;
@@ -48,7 +46,7 @@ class Vehicle
         $this->lper100 = $lper100;
     }
 
-    // Save method
+    // Save 
     public function save()
     {
         $result = DB::query(
@@ -69,16 +67,16 @@ class Vehicle
     }
 }
 
-// Define the route for updating a vehicle 
+// Define the route 
 $app->post('/admin/editvehicle/{id}', function ($request, $response, $args) {
     $vehicleId = $args['id'];
 
-    // Retrieve the vehicle to be edited from the database
+    // Retrieve the vehicle
     $vehicles = DB::query("SELECT * FROM vehicles WHERE id = %i", $vehicleId);
     $row = reset($vehicles);
     $vehicle = new Vehicle($row['id'], $row['make'], $row['model'], $row['year'], $row['color'], $row['license_plate'], $row['daily_rate'], $row['availability'], $row['seats'], $row['lper100']);
 
-    // Update the vehicle with the submitted data
+    // Update the vehicle
     $data = $request->getParsedBody();
     $vehicle->make = $data['make'];
     $vehicle->model = $data['model'];
@@ -90,8 +88,6 @@ $app->post('/admin/editvehicle/{id}', function ($request, $response, $args) {
     $vehicle->seats = $data['seats'];
     $vehicle->lper100 = $data['lper100'];
 
-
-    // Save the updated vehicle to the database
     $result = $vehicle->save();
 
 

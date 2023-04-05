@@ -12,7 +12,6 @@ $app->get('/login', function (Request $request, Response $response) {
 });
 
 // Receive submission
-// $app->post('/login', function (Request $request, Response $response, $args) use ($app, $log, $passwordPepper) {
 
 $app->post('/login', function (Request $request, Response $response, $args) use ($log) {
     $data = $request->getParsedBody();
@@ -40,23 +39,22 @@ $app->post('/login', function (Request $request, Response $response, $args) use 
 
     // Check if password is correct
     if ($loginSuccess) {
-        unset($record['password']); // for security reasons remove password from session
-        $_SESSION['user'] = $record; // remember user logged in
+        unset($record['password']); 
+        $_SESSION['user'] = $record; 
         $log->debug(sprintf("Login successful for email %s, uid=%d, from %s", $email, $record['id'], $_SERVER['REMOTE_ADDR']));
 
-        // authenticated, redirect to appropriate page based on user type
+  
         if ($record['is_admin']) {
             return $response->withHeader('Location', 'admin/adminpanel')->withStatus(302);
         } else {
             return $response->withHeader('Location', '/customerprofile')->withStatus(302);
         }
     } else {
-        // incorrect password, show error message
         $log->info(sprintf('Login failed for email %s from %s', $email, $_SERVER['REMOTE_ADDR']));
         return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
     }
 
-    // Show error message
+    // error message
     return $this->get('view')->render($response, 'login_error.html.twig', ['error' => true]);
 });
 
@@ -80,20 +78,6 @@ $app->get('/home', function (Request $request, Response $response) use ($app) {
         ]
     ]);
 });
-
-// // Middleware for authentication
-// $app->add(function ($request, $response, $next) {
-//     if (!isset($_SESSION['user'])) {
-//         return $response->withRedirect('/login');
-//     }
-//     return $next($request, $response);
-// });
-
-// // Protected page
-// $app->get('/protected-page', function ($request, $response, $args) {
-//     // this page requires authentication
-// });
-
 
 //LOGOUT
 $app->get('/logout', function (Request $request, Response $response, $args) use ($log) {

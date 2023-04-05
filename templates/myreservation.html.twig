@@ -1,62 +1,63 @@
 {% extends 'master.html.twig' %}
 
-{% set message = "You don't have any reservations yet." %}
 
 {% block content %}
-<style>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-</style>
- <script src="https://js.stripe.com/v3/"></script>
-	<div class="container">
-		
-<div class="container mt-4">
-  <div class="row justify-content-left">
-    <div class="col-md-10 col-lg-12">
-      <hr class="my-4">
-      <ul class="no-bullets">
-				<h1>My Reservations</h1>
-				{% if reservations %}</br>
-					 {% for reservation in reservations  %}</br>
-						<ul></br>
-							<li>Reservation ID: {{ reservation.id }}</li>
-							<li>Pick-up Date: {{ reservation.start_date }}</li>
-							<li>Return Date: {{ reservation.end_date }}</li></br>
-							<li>VEHICLE:</li></br>
+				<style>
+					ul {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+					}
+				</style>
+				<script src="https://js.stripe.com/v3/"></script>
+				<div class="container">
+
+					<div class="container mt-4">
+						<div class="row justify-content-left">
+							<div class="col-md-10 col-lg-12">
+								<hr class="my-4">
+								<ul class="no-bullets">
+									<h1>My Reservations</h1>
+									{% if reservations %}
+									</br>
+									{% for reservation in reservations  %}
+									</br>
+									<ul></br>
+									<li>Reservation ID:
+										{{ reservation.id }}</li>
+									<li>Pick-up Date:
+										{{ reservation.start_date }}</li>
+									<li>Return Date:
+										{{ reservation.end_date }}</li>
+								</br>
+								<li>VEHICLE:</li>
+							</br>
 							<ul>
-								<li>Make: {{ reservation.vehicle.make }}</li>
-								<li>Model: {{ reservation.vehicle.model }}</li>
-								<li>Color: {{ reservation.vehicle.color }}</li>
-								<li>License Plate: {{ reservation.vehicle.license_plate }}</li>
+								<li>Make:
+									{{ reservation.vehicle.make }}</li>
+								<li>Model:
+									{{ reservation.vehicle.model }}</li>
+								<li>Color:
+									{{ reservation.vehicle.color }}</li>
+								<li>License Plate:
+									{{ reservation.vehicle.license_plate }}</li>
 							</ul>
 						</ul>
-							<form action="checkout-charge.php" method="POST">
-							 		<input type="hidden" name="c_name" value="{{ reservation.customer_id }}">
-									<input type="hidden" name="phone" value="{{ reservation.users.first_name }} {{ reservation.users.last_name }}">
-									<input type="hidden" name="address" value="{{ reservation.users.address }}">
-									<input type="hidden" name="amount" value="{{ reservation.final_total }}">
-									<input type="hidden" name="product_name" value="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}">
-									<input type="hidden" name="reservation_id" value="{{ reservation.id }}"></br></br></br>
-        				{# <button type="submit" id="checkout-button">Checkout</button> #}
-								<script
-								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-								data-key="pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W"
-								data-amount="{{ reservation.final_total * 100 }}"
-								data-name="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}"
-								data-image="{{ vehicles.image_filepath }}"
-								data-currency="cad"
-								data-locale="auto">
-								</script>
-      				</form>
-					{% endfor %}
-				{% else %}
-					<p>{{ message }}</p>
-				{% endif %}
-			</div>
+						<form action="checkout-charge.php" method="POST">
+							<input type="hidden" name="c_name" value="{{ reservation.customer_id }}">
+							<input type="hidden" name="phone" value="{{ reservation.users.first_name }} {{ reservation.users.last_name }}">
+							<input type="hidden" name="address" value="{{ reservation.users.address }}">
+							<input type="hidden" name="amount" value="{{ reservation.final_total }}">
+							<input type="hidden" name="product_name" value="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}">
+							<input type="hidden" name="reservation_id" value="{{ reservation.id }}"></br>
+						{# <button type="submit" id="checkout-button">Checkout</button> #}
+						<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51MsXcLJzhRIY3i5LeaGpgIQ9cHj8h0mwvZazt0JSNCk88nZyabvuDxiP2ju6wVisTEylFUPmS11X6ZuAitmtvDwZ00zwYYHn5W" data-amount="{{ reservation.final_total * 100 }}" data-name="{{ reservation.vehicle.make }} {{ reservation.vehicle.model }}" data-image="{{ vehicles.image_filepath }}" data-currency="cad" data-locale="auto"></script>
+					</form>
+				{% endfor %}
+			{% else %}
+				<p>{{ message }}</p></br></br></br>
+				<a href="{{ '/' }}" class="btn btn-primary btn-sm">Back to Main Page</a>
+			{% endif %}
 		</div>
 	</div>
-{% endblock %}
-
+</div>{% endblock %}

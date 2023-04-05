@@ -59,8 +59,9 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 
 \t\t<body>
 \t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+\t\t\t<a class=\"navbar-brand\" href=\"/\">
+\t\t\t<img src=\"/images/isologo.png\" class=\"logo\" width=\"120px\" margin-left: \"30px\">
 \t\t\t\t<div class=\"container\">
-\t\t\t\t\t<a class=\"navbar-brand\" href=\"/\">
 \t\t\t\t\t\t<div></a>
 \t\t\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
@@ -71,15 +72,15 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 \t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"findmyreservation\">Find my reservation</a>
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
-        // line 27
+        // line 28
         if (($context["userSession"] ?? null)) {
-            // line 28
+            // line 29
             echo "\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"logout\">Logout</a>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
         } else {
-            // line 32
+            // line 33
             echo "\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"register\">Register</a>
 \t\t\t\t\t\t\t\t\t</li>
@@ -88,34 +89,34 @@ class __TwigTemplate_223fbcb053f8e792313aec0e11443067 extends Template
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
         }
-        // line 39
+        // line 40
         echo "\t\t\t\t\t\t\t\t";
         if (($context["userSession"] ?? null)) {
-            // line 40
+            // line 41
             echo "\t\t\t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t\t\t<p class=\"nav-link\">Hello
 \t\t\t\t\t\t\t\t\t\t\t";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 42), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 43), "html", null, true);
             echo "!</p>
 \t\t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t";
         }
-        // line 45
+        // line 46
         echo "\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</nav>
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"centeredContent\"> ";
-        // line 50
-        $this->displayBlock('content', $context, $blocks);
         // line 51
+        $this->displayBlock('content', $context, $blocks);
+        // line 52
         echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t\t";
-        // line 52
+        // line 53
         $this->displayBlock('footer', $context, $blocks);
-        // line 77
+        // line 78
         echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>
@@ -153,17 +154,17 @@ gtag('config', 'G-TVEQKKS963');
         $macros = $this->macros;
     }
 
-    // line 50
+    // line 51
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 52
+    // line 53
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 53
+        // line 54
         echo "\t\t\t\t\t\t<div class=\"footer\">
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<div class=\"footer\">
@@ -187,7 +188,7 @@ gtag('config', 'G-TVEQKKS963');
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t&copy;
 \t\t\t\t\t\t\t\t\t";
-        // line 75
+        // line 76
         echo 2023;
         echo "
 \t\t\t\t\t\t\t\t";
@@ -205,7 +206,7 @@ gtag('config', 'G-TVEQKKS963');
 
     public function getDebugInfo()
     {
-        return array (  191 => 75,  167 => 53,  163 => 52,  157 => 50,  151 => 11,  145 => 8,  119 => 77,  117 => 52,  114 => 51,  112 => 50,  105 => 45,  99 => 42,  95 => 40,  92 => 39,  83 => 32,  77 => 28,  75 => 27,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
+        return array (  192 => 76,  168 => 54,  164 => 53,  158 => 51,  152 => 11,  146 => 8,  120 => 78,  118 => 53,  115 => 52,  113 => 51,  106 => 46,  100 => 43,  96 => 41,  93 => 40,  84 => 33,  78 => 29,  76 => 28,  58 => 12,  56 => 11,  52 => 9,  50 => 8,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -225,8 +226,9 @@ gtag('config', 'G-TVEQKKS963');
 
 \t\t<body>
 \t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+\t\t\t<a class=\"navbar-brand\" href=\"/\">
+\t\t\t<img src=\"/images/isologo.png\" class=\"logo\" width=\"120px\" margin-left: \"30px\">
 \t\t\t\t<div class=\"container\">
-\t\t\t\t\t<a class=\"navbar-brand\" href=\"/\">
 \t\t\t\t\t\t<div></a>
 \t\t\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>

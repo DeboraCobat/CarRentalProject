@@ -19,18 +19,15 @@ $app->post('/findmyreservation', function (Request $request, Response $response)
 
     if ($reservations) {
         foreach ($reservations as &$reservation) {
-            // Query the database to find the corresponding vehicle based on the reservation's vehicle ID
-            $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $reservation['vehicle_id']);
 
-            // Add the vehicle information to the reservation array
+            $vehicle = DB::queryFirstRow("SELECT * FROM vehicles WHERE id = %i", $reservation['vehicle_id']);
             $reservation['vehicle'] = $vehicle;
         }
 
-        // Render the reservation details in a new Twig template
+
         return $this->get('view')->render($response, 'myreservation.html.twig', ['reservations' => $reservations]);
     } else {
-        // Render a message indicating that no reservation was found
-        return $this->get('view')->render($response, 'myreservation.html.twig', ['message' => 'No reservation was found for the provided email and reservation ID.']);
+        return $this->get('view')->render($response, 'myreservation.html.twig', ['message' => 'No reservation was found for the provided reservation ID.']);
     }
 
     return $response;
