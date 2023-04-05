@@ -120,7 +120,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
             echo "</td>
           <td>";
             // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "total", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "final_total", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
           <td>";
             // line 41
@@ -207,7 +207,7 @@ class __TwigTemplate_61d2364f950034896bdce8d219c4ec29 extends Template
           <td>{{ item.rental_price }}</td>
           <td>{{ item.insurance_price }}</td>
           <td>{{ item.taxes }}</td>
-          <td>{{ item.total }}</td>
+          <td>{{ item.final_total }}</td>
           <td>{{ item.notes }}</td>
           <td>{{ item.payment_confirmation }}</td>
           <td><a href=\"/admin/editreservation/{{ item.id }}\" class=\"btn btn-secondary btn-sm\">Edit</a></td>

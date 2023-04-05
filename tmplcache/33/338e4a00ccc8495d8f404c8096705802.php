@@ -170,13 +170,9 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
             echo "\t\t\t\t<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p></br></br></br>
-\t\t\t\t<a href=\"";
-            // line 59
-            echo "/customerprofile";
-            echo "\" class=\"btn btn-primary btn-sm\">Back to my profile</a>
 \t\t\t";
         }
-        // line 61
+        // line 60
         echo "\t\t</div>
 \t</div>
 </div>";
@@ -194,7 +190,7 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 
     public function getDebugInfo()
     {
-        return array (  180 => 61,  175 => 59,  170 => 58,  167 => 57,  151 => 54,  147 => 52,  141 => 51,  137 => 50,  133 => 49,  127 => 48,  123 => 47,  116 => 43,  111 => 41,  106 => 39,  101 => 37,  92 => 31,  87 => 29,  82 => 27,  77 => 24,  73 => 23,  70 => 22,  68 => 21,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  176 => 60,  170 => 58,  167 => 57,  151 => 54,  147 => 52,  141 => 51,  137 => 50,  133 => 49,  127 => 48,  123 => 47,  116 => 43,  111 => 41,  106 => 39,  101 => 37,  92 => 31,  87 => 29,  82 => 27,  77 => 24,  73 => 23,  70 => 22,  68 => 21,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -257,7 +253,6 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 \t\t\t\t{% endfor %}
 \t\t\t{% else %}
 \t\t\t\t<p>{{ message }}</p></br></br></br>
-\t\t\t\t<a href=\"{{ '/customerprofile' }}\" class=\"btn btn-primary btn-sm\">Back to my profile</a>
 \t\t\t{% endif %}
 \t\t</div>
 \t</div>
