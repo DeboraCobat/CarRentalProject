@@ -58,8 +58,9 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
         echo "\t<div class=\"container\">
 \t\t<div class=\"container mt-4\">
 \t\t\t<div class=\"row justify-content-left\">
-\t\t\t\t<div class=\"col-md-10 col-lg-12\">
-\t\t\t\t<h1>Edit Your Profile</h1></br>
+\t\t\t\t";
+        // line 10
+        echo "\t\t\t\t<h1>Edit Your Profile</h1></br>
 \t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
 \t\t\t\t\t<label for=\"first_name\">First Name:</label>
 \t\t\t\t\t<input type=\"text\" id=\"first_name\" name=\"first_name\" value=\"";
@@ -115,7 +116,7 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
 
     public function getDebugInfo()
     {
-        return array (  92 => 23,  87 => 21,  82 => 19,  77 => 17,  72 => 15,  67 => 13,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  93 => 23,  88 => 21,  83 => 19,  78 => 17,  73 => 15,  68 => 13,  63 => 10,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -128,7 +129,7 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
 \t<div class=\"container\">
 \t\t<div class=\"container mt-4\">
 \t\t\t<div class=\"row justify-content-left\">
-\t\t\t\t<div class=\"col-md-10 col-lg-12\">
+\t\t\t\t{# <div class=\"col-md-12 col-lg-12\"> #}
 \t\t\t\t<h1>Edit Your Profile</h1></br>
 \t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
 \t\t\t\t\t<label for=\"first_name\">First Name:</label>
