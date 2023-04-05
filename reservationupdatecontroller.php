@@ -15,13 +15,9 @@ $app->get('/admin/editreservation/{id}', function ($request, $response, $args) {
     // Retrieve the reservation 
     $reservations = DB::query("SELECT * FROM reservations WHERE id = %i", $reservationId);
     $reservation = reset($reservations);
-
-    // Render the edit reservation form with the selected reservation
     return $this->get('view')->render($response, 'admin/editreservation.html.twig', ['reservation' => $reservation]);
 });
 
-
-// reservation class
 class Reservation
 {
     public $id;
@@ -53,7 +49,7 @@ class Reservation
         $this->payment_confirmation = $payment_confirmation;
     }
 
-    // Save method
+    // Save
 public function save()
 {
     $query = "UPDATE reservations SET customer_id = %i, vehicle_id = %i, start_date = %s, end_date = %s, rental_price = %s, insurance_price = %s, taxes = %s, final_total = %s, notes = %s, payment_confirmation = %s WHERE id = %i";
@@ -77,11 +73,11 @@ public function save()
 
 }
 
-// Define the route for updating a reservation
+// Define the route 
 $app->post('/admin/editreservation/{id}', function ($request, $response, $args) {
     $reservationId = $args['id'];
 
-    // Retrieve the reservation to be edited from the database
+    // Retrieve the reservation 
 $reservations = DB::query("SELECT * FROM reservations WHERE id = %i", $reservationId);
 $row = reset($reservations);
 $reservation = new Reservation(
@@ -98,7 +94,7 @@ $row['notes'],
 $row['payment_confirmation']
 );
 
-// Update the reservation with the submitted data
+// Update the reservation
 $data = $request->getParsedBody();
 $reservation->customer_id = $data['customer_id'];
 $reservation->vehicle_id = $data['vehicle_id'];
@@ -112,7 +108,6 @@ $reservation->notes = $data['notes'];
 $reservation->payment_confirmation = $data['payment_confirmation'];
 $reservation->save();
 
-// Save the updated reservation to the database
 $result = $reservation->save();
 
 // Return a response indicating whether the update was successful

@@ -21,4 +21,4 @@ $app->get('/resetpassword', function ($request, $response) {
 //     $resetLink = "https://example.com/reset_password.php?token=$token";
 //     // use a library like PHPMailer to send the email
 // }
-// ?>
+// 

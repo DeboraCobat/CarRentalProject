@@ -63,16 +63,3 @@ $userSession = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 $passwordPepper = 'mmyb7oSAeXG9DTz2uFqu';
 
 
-function authMiddleware($request, $response, $next) {
-  // Check if user is authenticated
-  if (!isset($_SESSION['user'])) {
-      // Redirect to login page if not authenticated
-      return $response->withRedirect('/login');
-  }
-
-  // User is authenticated, proceed to the next middleware or route handler
-  return $next($request, $response);
-}
-
-
-

@@ -48,7 +48,7 @@ class User
     }
 
 
-    // Save method
+    // Save 
     public function save()
     {
         $result = DB::query(
@@ -69,11 +69,11 @@ class User
 }
 
 
-// Define the route for updating a user
+// Define the route 
 $app->post('/admin/edituser/{id}', function ($request, $response, $args) {
     $userId = $args['id'];
 
-    // Retrieve the user to be edited from the database
+    // Retrieve the user
     $users = DB::query("SELECT * FROM users WHERE id = %i", $userId);
     $row = reset($users);
     $user = new User($row['id'], $row['first_name'], $row['last_name'], $row['email'], $row['phone'], $row['address'], $row['dob']);
@@ -90,18 +90,15 @@ $app->post('/admin/edituser/{id}', function ($request, $response, $args) {
     // $user->license_expiration = $data['license_expiration'];
     $user->save();
 
-    // Save the updated user to the database
     $result = $user->save();
 
-
-    // Return a response indicating whether the update was successful
     if ($result) {
         return $response->withStatus(200)->write('User updated successfully');
     } else {
         return $response->withStatus(500)->write('Failed to update user');
     }
 
-    //Redirect back to the user list page
-return $response->withRedirect('/admin/users');
+//     //Redirect back to the user list page
+// return $response->withRedirect('/admin/users');
 
 });
