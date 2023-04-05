@@ -56,39 +56,40 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
         $macros = $this->macros;
         // line 6
         echo "\t<div class=\"container\">
-\t\t<div class=\"row justify-content-left mt-10 mb-10\">
-\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
 \t\t\t\t<h1>Edit Your Profile</h1></br>
 \t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
 \t\t\t\t\t<label for=\"first_name\">First Name:</label>
 \t\t\t\t\t<input type=\"text\" id=\"first_name\" name=\"first_name\" value=\"";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 12), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "first_name", [], "any", false, false, false, 13), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<label for=\"last_name\">Last Name:</label>
 \t\t\t\t\t<input type=\"text\" id=\"last_name\" name=\"last_name\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 14), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "last_name", [], "any", false, false, false, 15), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<label for=\"email\">Email:</label>
 \t\t\t\t\t<input type=\"email\" id=\"email\" name=\"email\" value=\"";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 16), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "email", [], "any", false, false, false, 17), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<label for=\"phone\">Phone:</label>
 \t\t\t\t\t<input type=\"tel\" id=\"phone\" name=\"phone\" value=\"";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 18), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "phone", [], "any", false, false, false, 19), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<label for=\"address\">Address:</label>
 \t\t\t\t\t<input type=\"text\" id=\"address\" name=\"address\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 20), "html", null, true);
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "address", [], "any", false, false, false, 21), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<label for=\"dob\">Date of Birth:</label>
 \t\t\t\t\t<input type=\"date\" id=\"dob\" name=\"dob\" value=\"";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 22), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userSession"] ?? null), "dob", [], "any", false, false, false, 23), "html", null, true);
         echo "\" required><br><br>
 \t\t\t\t\t<input type=\"submit\" value=\"Update Profile\">
 \t\t\t\t</form>
@@ -114,7 +115,7 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 22,  86 => 20,  81 => 18,  76 => 16,  71 => 14,  66 => 12,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  92 => 23,  87 => 21,  82 => 19,  77 => 17,  72 => 15,  67 => 13,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -125,8 +126,9 @@ class __TwigTemplate_8b470b2881af69d443b1c8356b47e11f extends Template
 
 {% block content %}
 \t<div class=\"container\">
-\t\t<div class=\"row justify-content-left mt-10 mb-10\">
-\t\t\t<div class=\"col-md-10 col-lg-10\">
+\t\t<div class=\"container mt-4\">
+\t\t\t<div class=\"row justify-content-left\">
+\t\t\t\t<div class=\"col-md-10 col-lg-12\">
 \t\t\t\t<h1>Edit Your Profile</h1></br>
 \t\t\t\t<form method=\"POST\" action=\"/updateprofile\">
 \t\t\t\t\t<label for=\"first_name\">First Name:</label>

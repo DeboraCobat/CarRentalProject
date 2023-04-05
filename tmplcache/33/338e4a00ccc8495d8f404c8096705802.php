@@ -172,8 +172,8 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
             echo "</p></br></br></br>
 \t\t\t\t<a href=\"";
             // line 59
-            echo "/";
-            echo "\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+            echo "/customerprofile";
+            echo "\" class=\"btn btn-primary btn-sm\">Back to my profile</a>
 \t\t\t";
         }
         // line 61
@@ -257,7 +257,7 @@ class __TwigTemplate_3f08ae001ad1251d4c723f3da49b28af extends Template
 \t\t\t\t{% endfor %}
 \t\t\t{% else %}
 \t\t\t\t<p>{{ message }}</p></br></br></br>
-\t\t\t\t<a href=\"{{ '/' }}\" class=\"btn btn-primary btn-sm\">Back to Main Page</a>
+\t\t\t\t<a href=\"{{ '/customerprofile' }}\" class=\"btn btn-primary btn-sm\">Back to my profile</a>
 \t\t\t{% endif %}
 \t\t</div>
 \t</div>

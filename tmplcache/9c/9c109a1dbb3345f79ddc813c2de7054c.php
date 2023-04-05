@@ -71,9 +71,9 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
         <th>Phone</th>
         <th>Address</th>
         <th>Date of Birth</th>
-        <th>Driver's License</th>
-        <th>License Expiration</th>
-      </tr>
+        ";
+        // line 24
+        echo "      </tr>
     </thead>
     <tbody>
       ";
@@ -105,16 +105,9 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
             // line 33
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "dob", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
-          <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-          <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "license_expiration", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-          <td><a href=\"/admin/edituser/";
+          ";
             // line 36
+            echo "          <td><a href=\"/admin/edituser/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 36), "html", null, true);
             echo "\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
           <td><a href=\"/admin/deleteuser/";
@@ -146,7 +139,7 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
 
     public function getDebugInfo()
     {
-        return array (  131 => 40,  122 => 37,  118 => 36,  114 => 35,  110 => 34,  106 => 33,  102 => 32,  98 => 31,  94 => 30,  88 => 29,  85 => 28,  81 => 27,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
+        return array (  124 => 40,  115 => 37,  110 => 36,  106 => 33,  102 => 32,  98 => 31,  94 => 30,  88 => 29,  85 => 28,  81 => 27,  76 => 24,  58 => 6,  54 => 5,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,8 +165,8 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
         <th>Phone</th>
         <th>Address</th>
         <th>Date of Birth</th>
-        <th>Driver's License</th>
-        <th>License Expiration</th>
+        {# <th>Driver's License</th>
+        <th>License Expiration</th> #}
       </tr>
     </thead>
     <tbody>
@@ -184,8 +177,8 @@ class __TwigTemplate_778d4faf7a7199e0ff9776df5c10231a extends Template
           <td>{{ user.phone }}</td>
           <td>{{ user.address }}</td>
           <td>{{ user.dob }}</td>
-          <td>{{ user.license }}</td>
-          <td>{{ user.license_expiration }}</td>
+          {# <td>{{ user.license }}</td>
+          <td>{{ user.license_expiration }}</td> #}
           <td><a href=\"/admin/edituser/{{ user.id }}\" class=\"btn btn-secondary btn-sm\">Edit</a></td>
           <td><a href=\"/admin/deleteuser/{{ user.id }}\" class=\"btn btn-danger btn-sm\">Delete</a></td>
         </tr>

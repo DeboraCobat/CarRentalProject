@@ -27,4 +27,5 @@ $app->get('/myreservation', function (Request $request, Response $response) {
     return $response;
 });
 
+
 ////////////////////////////////////////// STRIPE //////////////////////////////

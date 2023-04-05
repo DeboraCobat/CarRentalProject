@@ -6,9 +6,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 require_once 'init.php';
 
 
-// $app->get('/customerprofileedit', function ($request, $response, $args) {
-//     // Get the user's session data
-//     $userId = $_SESSION['user']['id'];
+$app->get('/customerprofileedit', function (Request $request, Response $response) {
+    return $this->get('view')->render($response, 'customerprofileedit.html.twig');
+});
 
 //     // Render the edit profile page with the user's data
 //     $userId = $_SESSION['user']['id'];
@@ -16,20 +16,16 @@ require_once 'init.php';
 //         'userId' => $userId
 //     ]);
 
-// })//->add($authMiddleware);
-
 // $app->post('/customerprofileedit', function ($request, $response, $args) use ($authMiddleware) {
 //     // Get the user's session data
 //     $userSession = $this->session->get('user');
 
-//     // Check for null user session data
 //     if ($userSession == null) {
 //         // Handle null user session data
 //         // For example, redirect the user to a login page
 //         return $response->withRedirect('/login');
 //     }
 
-//     // Retrieve the form data from the request
 //     $formData = $request->getParsedBody();
 
 //     // Update the user's session data with the new form data
@@ -48,4 +44,4 @@ require_once 'init.php';
 //     // Redirect the user back to the profile page
 //     return $response->withRedirect('/customerprofile');
     
-// })->add($authMiddleware);
+// })
