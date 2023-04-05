@@ -56,21 +56,40 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
     {
         $macros = $this->macros;
         // line 7
+        if (array_key_exists("successMessage", $context)) {
+            // line 8
+            echo "    <div class=\"success-message\">";
+            echo twig_escape_filter($this->env, ($context["successMessage"] ?? null), "html", null, true);
+            echo "</div>
+";
+        }
+        // line 10
+        echo "
+";
+        // line 11
+        if (array_key_exists("errorMessage", $context)) {
+            // line 12
+            echo "    <div class=\"error-message\">";
+            echo twig_escape_filter($this->env, ($context["errorMessage"] ?? null), "html", null, true);
+            echo "</div>
+";
+        }
+        // line 14
         echo "\t<div class=\"container\">
 \t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
 \t\t\t\t<h1>Reset Password</h1>
 
 \t\t\t\t";
-        // line 12
+        // line 19
         if (array_key_exists("message", $context)) {
-            // line 13
+            // line 20
             echo "\t\t\t\t\t<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
 \t\t\t\t";
         }
-        // line 15
+        // line 22
         echo "
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t<form method=\"post\" action=\"/resetpassword\">
@@ -84,7 +103,7 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 \t\t\t\t\t\t<label for=\"password_confirm\">Confirm New Password:</label><br>
 \t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
 
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset Password</button>
+\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset</button>
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -105,7 +124,7 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 
     public function getDebugInfo()
     {
-        return array (  74 => 15,  68 => 13,  66 => 12,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
+        return array (  93 => 22,  87 => 20,  85 => 19,  78 => 14,  72 => 12,  70 => 11,  67 => 10,  61 => 8,  59 => 7,  55 => 6,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -116,6 +135,13 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 {% endblock %}
 
 {% block content %}
+{% if successMessage is defined %}
+    <div class=\"success-message\">{{ successMessage }}</div>
+{% endif %}
+
+{% if errorMessage is defined %}
+    <div class=\"error-message\">{{ errorMessage }}</div>
+{% endif %}
 \t<div class=\"container\">
 \t\t<div class=\"row justify-content-left mt-5 mb-5\">
 \t\t\t<div class=\"col-md-8 col-lg-6\">
@@ -137,7 +163,7 @@ class __TwigTemplate_8bec0b8cbaeed8984dfc1dcbf03d37fe extends Template
 \t\t\t\t\t\t<label for=\"password_confirm\">Confirm New Password:</label><br>
 \t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password_confirm\" name=\"password_confirm\"><br>
 
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset Password</button>
+\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-sm\">Reset</button>
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</div>
